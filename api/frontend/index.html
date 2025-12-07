@@ -3,1434 +3,1069 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FrameShift API Tester</title>
+    <title>FrameShift - AI Ad Generator</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root {
+            /* Darker, professional color palette */
+            --bg-app: #0F0F13;
+            --bg-panel: #18181F;
+            --bg-panel-light: #22222B;
+            --border: #33333F;
+            --accent: #6366F1; /* Indigo */
+            --accent-hover: #4F46E5;
+            --text-main: #EEEEF2;
+            --text-dim: #A1A1AA;
+            --success: #10B981;
+            --warning: #F59E0B;
+            --danger: #EF4444;
+            
+            --header-height: 60px;
+            --timeline-height: 280px;
+            --sidebar-width: 320px;
+            --inspector-width: 320px;
         }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 20px;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-app);
+            color: var(--text-main);
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
+        /* --- Header --- */
+        .app-header {
+            height: var(--header-height);
+            background: var(--bg-panel);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            justify-content: space-between;
+            flex-shrink: 0;
         }
 
-        h1 {
-            color: white;
-            text-align: center;
-            margin-bottom: 30px;
-            font-size: 2.5em;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        .app-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
-
-        .card {
-            background: white;
+        
+        .status-pill {
+            background: var(--bg-panel-light);
+            padding: 4px 12px;
             border-radius: 12px;
-            padding: 25px;
-            margin-bottom: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            font-size: 0.8rem;
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .status-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--text-dim); }
+        .status-dot.online { background: var(--success); }
+
+        /* --- Main Workspace --- */
+        .workspace {
+            display: flex;
+            flex: 1;
+            overflow: hidden;
         }
 
-        .card h2 {
-            color: #333;
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #667eea;
+        /* Left Sidebar: Assets/Runs */
+        .sidebar {
+            width: var(--sidebar-width);
+            background: var(--bg-panel);
+            border-right: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            flex-shrink: 0;
         }
 
-        .form-group {
-            margin-bottom: 15px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 5px;
-            color: #555;
+        .panel-header {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
             font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-dim);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        input[type="text"],
-        input[type="number"],
-        input[type="file"],
-        textarea,
-        select {
-            width: 100%;
-            padding: 10px;
-            border: 2px solid #e0e0e0;
-            border-radius: 6px;
-            font-size: 14px;
-            transition: border-color 0.3s;
-        }
-
-        input:focus,
-        textarea:focus,
-        select:focus {
-            outline: none;
-            border-color: #667eea;
-        }
-
-        textarea {
-            min-height: 80px;
-            resize: vertical;
-        }
-
-        button {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 6px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
-        }
-
-        button:active {
-            transform: translateY(0);
-        }
-
-        button:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-            transform: none;
-        }
-
-        .response {
-            background: #f5f5f5;
-            border-left: 4px solid #667eea;
-            padding: 15px;
-            margin-top: 15px;
-            border-radius: 4px;
-            font-family: 'Monaco', 'Courier New', monospace;
-            font-size: 13px;
-            max-height: 400px;
+        .scroll-content {
+            flex: 1;
             overflow-y: auto;
+            padding: 10px;
         }
 
-        .response pre {
-            white-space: pre-wrap;
-            word-wrap: break-word;
+        .asset-item {
+            background: var(--bg-panel-light);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 10px;
+            margin-bottom: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .asset-item:hover { border-color: var(--text-dim); }
+        .asset-item.active { border-color: var(--accent); background: rgba(99, 102, 241, 0.1); }
+        .asset-title { font-weight: 500; font-size: 0.9rem; margin-bottom: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .asset-meta { font-size: 0.75rem; color: var(--text-dim); }
+
+        /* Center: Viewport */
+        .viewport {
+            flex: 1;
+            background: #000;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
         }
 
-        .success {
-            border-left-color: #4caf50;
-            background: #e8f5e9;
-        }
-
-        .error {
-            border-left-color: #f44336;
-            background: #ffebee;
-            color: #c62828;
-        }
-
-        .loading {
-            display: inline-block;
-            margin-left: 10px;
-        }
-
-        .loading::after {
-            content: '...';
-            animation: dots 1.5s steps(3, end) infinite;
-        }
-
-        @keyframes dots {
-            0%, 20% { content: '.'; }
-            40% { content: '..'; }
-            60%, 100% { content: '...'; }
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .info {
-            background: #e3f2fd;
-            border-left: 4px solid #2196f3;
-            padding: 15px;
-            margin-bottom: 15px;
-            border-radius: 4px;
-        }
-
-        .info strong {
-            color: #1976d2;
+        .video-container {
+            position: relative;
+            max-width: 95%;
+            max-height: 95%;
+            box-shadow: 0 0 40px rgba(0,0,0,0.5);
         }
 
         video {
-            width: 100%;
-            border-radius: 8px;
-            margin-top: 10px;
-        }
-
-        #framePreviewWrapper {
-            position: relative;
-            display: inline-block;
-        }
-
-        #bboxCanvas {
-            position: absolute;
-            top: 0;
-            left: 0;
-            cursor: crosshair;
-        }
-
-        .bbox-list {
-            margin-top: 10px;
-            font-size: 13px;
-            color: #333;
-        }
-
-        .status-badge {
-            display: inline-block;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 12px;
-            font-weight: 600;
-            margin-left: 10px;
-        }
-
-        .status-ready {
-            background: #4caf50;
-            color: white;
-        }
-
-        .status-waiting {
-            background: #ff9800;
-            color: white;
-        }
-
-        .checkbox-group {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .checkbox-group input[type="checkbox"] {
-            width: auto;
-        }
-
-        .api-status {
-            background: white;
-            border-radius: 8px;
-            padding: 10px 20px;
-            text-align: center;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-
-        .api-status.online {
-            border-left: 4px solid #4caf50;
-        }
-
-        .api-status.offline {
-            border-left: 4px solid #f44336;
-        }
-
-        .workflow {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 20px;
-            overflow-x: auto;
-            padding: 10px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 8px;
-        }
-
-        .workflow-step {
-            background: white;
-            padding: 15px 20px;
-            border-radius: 8px;
-            min-width: 150px;
-            text-align: center;
-            position: relative;
-        }
-
-        .workflow-step::after {
-            content: '→';
-            position: absolute;
-            right: -15px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 24px;
-            color: white;
-        }
-
-        .workflow-step:last-child::after {
-            content: '';
-        }
-
-        .workflow-step.active {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-        }
-
-        .workflow-step.completed {
-            background: #4caf50;
-            color: white;
-        }
-
-        .run-item {
-            background: #f9f9f9;
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            padding: 15px;
-            margin-bottom: 10px;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .run-item:hover {
-            border-color: #667eea;
-            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
-            transform: translateY(-2px);
-        }
-
-        .run-item.selected {
-            border-color: #667eea;
-            background: #f0f4ff;
-        }
-
-        .run-item h4 {
-            margin: 0 0 10px 0;
-            color: #333;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .run-item p {
-            margin: 5px 0;
-            color: #666;
-            font-size: 14px;
-        }
-
-        .run-badge {
-            display: inline-block;
-            padding: 3px 8px;
+            display: block;
+            max-width: 100%;
+            max-height: 100%;
             border-radius: 4px;
-            font-size: 11px;
-            font-weight: 600;
-            margin-left: 5px;
         }
 
-        .run-badge.edited {
-            background: #4caf50;
-            color: white;
+        #drawCanvas {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none;
         }
+        #drawCanvas.drawing { pointer-events: all; cursor: crosshair; }
 
-        .run-badge.segmented {
-            background: #2196f3;
-            color: white;
-        }
-
-        .run-actions {
-            margin-top: 10px;
+        .transport-controls {
+            position: absolute;
+            bottom: 20px;
+            background: rgba(24, 24, 31, 0.9);
+            border: 1px solid var(--border);
+            padding: 8px 16px;
+            border-radius: 8px;
             display: flex;
+            gap: 12px;
+            align-items: center;
+            backdrop-filter: blur(4px);
+        }
+
+        .t-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-main);
+            cursor: pointer;
+            width: 32px;
+            height: 32px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .t-btn:hover { background: rgba(255,255,255,0.1); }
+        .t-btn svg { width: 16px; height: 16px; fill: currentColor; }
+
+        .timecode {
+            font-family: 'Monaco', monospace;
+            font-size: 0.9rem;
+            color: var(--accent);
+            min-width: 100px;
+            text-align: center;
+        }
+
+        /* Right Sidebar: Inspector */
+        .inspector {
+            width: var(--inspector-width);
+            background: var(--bg-panel);
+            border-left: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            flex-shrink: 0;
+        }
+
+        /* Tabbed Inspector */
+        .tab-bar {
+            display: flex;
+            border-bottom: 1px solid var(--border);
+        }
+        .tab-btn {
+            flex: 1;
+            background: transparent;
+            border: none;
+            padding: 12px;
+            color: var(--text-dim);
+            font-weight: 600;
+            font-size: 0.8rem;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+        }
+        .tab-btn:hover { color: var(--text-main); }
+        .tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+        .tab-content {
+            padding: 16px;
+            display: none;
+            flex: 1;
+            overflow-y: auto;
+        }
+        .tab-content.active { display: block; }
+
+        .property-group { margin-bottom: 20px; }
+        .property-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-dim);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        /* Form Elements */
+        input[type="text"], input[type="number"], textarea, select {
+            width: 100%;
+            background: var(--bg-app);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            padding: 8px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-family: inherit;
+        }
+        input:focus, textarea:focus, select:focus { outline: none; border-color: var(--accent); }
+        textarea { resize: vertical; min-height: 80px; }
+
+        .btn {
+            width: 100%;
+            padding: 10px;
+            border-radius: 6px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .btn-primary { background: var(--accent); color: #fff; }
+        .btn-primary:hover:not(:disabled) { background: var(--accent-hover); }
+        .btn-secondary { background: var(--bg-panel-light); border: 1px solid var(--border); color: var(--text-main); }
+        .btn-secondary:hover { border-color: var(--text-dim); }
+        .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+        .toggle-btn { background: var(--bg-app); border: 1px solid var(--border); color: var(--text-dim); }
+        .toggle-btn.active { background: rgba(99, 102, 241, 0.2); border-color: var(--accent); color: var(--accent); }
+
+        /* --- Bottom Timeline --- */
+        .timeline-panel {
+            height: var(--timeline-height);
+            background: var(--bg-panel);
+            border-top: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            flex-shrink: 0;
+        }
+
+        .timeline-toolbar {
+            height: 40px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            padding: 0 10px;
             gap: 10px;
         }
 
-        .run-actions button {
-            padding: 8px 15px;
-            font-size: 13px;
+        .track-container {
+            flex: 1;
+            overflow-x: auto;
+            overflow-y: hidden;
+            position: relative;
+            background: var(--bg-app);
         }
 
-        .run-preview {
-            width: 100%;
-            max-height: 150px;
-            object-fit: cover;
-            border-radius: 6px;
-            margin-top: 10px;
+        .ruler {
+            height: 24px;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            background: var(--bg-panel);
+            z-index: 10;
+            cursor: pointer;
         }
+        .playhead {
+            position: absolute;
+            top: 0; left: 0;
+            width: 2px;
+            height: 100%;
+            background: var(--accent);
+            z-index: 20;
+            pointer-events: none;
+        }
+        .playhead-head {
+            position: absolute;
+            top: 0; left: -6px;
+            width: 0; height: 0;
+            border-left: 7px solid transparent;
+            border-right: 7px solid transparent;
+            border-top: 8px solid var(--accent);
+        }
+
+        /* Tracks */
+        .track {
+            height: 40px;
+            border-bottom: 1px solid #222;
+            position: relative;
+            margin-top: 4px;
+        }
+        .track-label {
+            position: sticky;
+            left: 0;
+            width: 100px;
+            height: 100%;
+            background: var(--bg-panel);
+            border-right: 1px solid var(--border);
+            z-index: 5;
+            display: flex;
+            align-items: center;
+            padding-left: 10px;
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            font-weight: 600;
+        }
+        
+        .clip-block {
+            position: absolute;
+            top: 4px; bottom: 4px;
+            background: rgba(99, 102, 241, 0.3);
+            border: 1px solid var(--accent);
+            border-radius: 4px;
+            padding: 0 6px;
+            font-size: 0.7rem;
+            color: #fff;
+            overflow: hidden;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+        .clip-block:hover { background: rgba(99, 102, 241, 0.5); }
+        .clip-block.selected { background: var(--accent); border-color: #fff; }
+
+        .keyframe-marker {
+            position: absolute;
+            top: 12px;
+            width: 8px; height: 8px;
+            background: var(--warning);
+            border-radius: 50%;
+            transform: translateX(-50%);
+            cursor: pointer;
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 20px; right: 20px;
+            padding: 12px 20px;
+            background: var(--bg-panel-light);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            z-index: 1000;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .toast.show { transform: translateY(0); opacity: 1; }
+        .toast.error { border-color: var(--danger); color: var(--danger); }
+        .toast.success { border-color: var(--success); color: var(--success); }
+
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>🎬 FrameShift API Tester</h1>
 
-        <!-- API Status -->
-        <div id="apiStatus" class="api-status">
-            <span id="statusText">Checking API status...</span>
+    <!-- Header -->
+    <header class="app-header">
+        <div class="app-title">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect>
+                <line x1="7" y1="2" x2="7" y2="22"></line>
+                <line x1="17" y1="2" x2="17" y2="22"></line>
+                <line x1="2" y1="12" x2="22" y2="12"></line>
+                <line x1="2" y1="7" x2="7" y2="7"></line>
+                <line x1="2" y1="17" x2="7" y2="17"></line>
+                <line x1="17" y1="17" x2="22" y2="17"></line>
+                <line x1="17" y1="7" x2="22" y2="7"></line>
+            </svg>
+            FrameShift Pro
         </div>
-
-        <!-- Workflow Progress -->
-        <div class="workflow">
-            <div class="workflow-step" id="step-upload">
-                <div>📤 Upload</div>
-            </div>
-            <div class="workflow-step" id="step-segment">
-                <div>✂️ Segment</div>
-            </div>
-            <div class="workflow-step" id="step-edit">
-                <div>✨ Edit</div>
-            </div>
-            <div class="workflow-step" id="step-download">
-                <div>💾 Download</div>
-            </div>
+        <div class="status-pill">
+            <div class="status-dot" id="apiStatusDot"></div>
+            <span id="apiStatusText">Connecting...</span>
         </div>
+    </header>
 
-        <!-- Step 1: Upload Video -->
-        <div class="card">
-            <h2>Step 1: Upload Video</h2>
-            <div class="form-group">
-                <label>Select Video File:</label>
-                <input type="file" id="videoFile" accept="video/*">
+    <div class="workspace">
+        
+        <!-- Left Sidebar: Media & Runs -->
+        <aside class="sidebar">
+            <div class="panel-header">
+                <span>Project Media</span>
+                <button class="t-btn" onclick="document.getElementById('videoFile').click()" title="Upload Video">
+                    <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                </button>
+                <input type="file" id="videoFile" accept="video/*" style="display:none" onchange="uploadVideo(this)">
             </div>
-            <button onclick="uploadVideo()" id="uploadBtn">Upload Video</button>
-            <div id="uploadResponse"></div>
-        </div>
+            <div class="scroll-content" id="mediaList">
+                <div style="padding: 20px; text-align: center; color: var(--text-dim);">
+                    No media uploaded.<br>Click + to start.
+                </div>
+            </div>
 
-        <!-- Step 2: Segment Video -->
-        <div class="card">
-            <h2>Step 2: Segment Video <span class="status-badge status-waiting" id="segmentStatus">Waiting for upload</span></h2>
-            <div class="info">
-                <strong>Upload ID:</strong> <span id="currentUploadId">-</span>
+            <div class="panel-header" style="border-top: 1px solid var(--border);">
+                <span>Output Runs</span>
+                <button class="t-btn" onclick="loadRuns()" title="Refresh Runs">
+                    <svg viewBox="0 0 24 24"><path d="M23 4v6h-6M1 20v-6h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
             </div>
-            
-            <!-- Video Info -->
-            <div id="videoInfo" style="display: none;" class="info">
-                <strong>Video:</strong> <span id="videoFrameCount">-</span> frames @ <span id="videoFPS">-</span> fps | 
-                <span id="videoDuration">-</span>s | <span id="videoDimensions">-</span>
+            <div class="scroll-content" id="runList"></div>
+        </aside>
+
+        <!-- Center: Player -->
+        <main class="viewport">
+            <div class="video-container">
+                <video id="videoPlayer" playsinline></video>
+                <canvas id="drawCanvas"></canvas>
             </div>
-            
-            <!-- Frame Scrubber -->
-            <div id="frameScrubber" style="display: none; margin: 20px 0;">
-                <h3 style="margin-bottom: 10px;">🎬 Select Frame Range</h3>
+
+            <div class="transport-controls">
+                <button class="t-btn" onclick="seekRel(-1)" title="-1 Frame">
+                    <svg viewBox="0 0 24 24"><polygon points="11 19 2 12 11 5 11 19" fill="currentColor"/><line x1="22" y1="5" x2="22" y2="19" stroke="currentColor" stroke-width="2"/></svg>
+                </button>
+                <button class="t-btn" onclick="togglePlay()" title="Play/Pause">
+                    <svg id="playIcon" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3" fill="currentColor"/></svg>
+                    <svg id="pauseIcon" viewBox="0 0 24 24" style="display:none"><rect x="6" y="4" width="4" height="16" fill="currentColor"/><rect x="14" y="4" width="4" height="16" fill="currentColor"/></svg>
+                </button>
+                <button class="t-btn" onclick="seekRel(1)" title="+1 Frame">
+                    <svg viewBox="0 0 24 24"><polygon points="13 19 22 12 13 5 13 19" fill="currentColor"/><line x1="2" y1="5" x2="2" y2="19" stroke="currentColor" stroke-width="2"/></svg>
+                </button>
                 
-                <!-- Frame Preview -->
-                <div style="text-align: center; margin-bottom: 15px;">
-                    <div id="framePreviewWrapper">
-                        <img id="framePreview" style="max-width: 100%; max-height: 300px; border-radius: 8px; border: 2px solid #667eea;" alt="Frame preview" />
-                        <canvas id="bboxCanvas"></canvas>
-                    </div>
-                    <div style="margin-top: 10px; font-weight: 600; font-size: 16px;">
-                        Frame <span id="currentFrameNum">0</span> / <span id="totalFrames">0</span>
-                    </div>
-                    <div class="bbox-list" id="bboxList"></div>
-                </div>
+                <div class="timecode" id="timecode">00:00:00:00</div>
                 
-                <!-- Scrubber Slider -->
-                <div class="form-group">
-                    <label>Scrub Through Frames:</label>
-                    <input type="range" id="frameScrubberSlider" min="0" max="100" value="0" 
-                           style="width: 100%;" oninput="scrubFrame(this.value)">
-                </div>
-                
-                <!-- Start/End Frame Selection -->
-                <div class="grid">
-                    <div class="form-group">
-                        <label>Start Frame:</label>
-                        <input type="number" id="startFrame" min="0" value="0" 
-                               onchange="updateFrameRange()">
-                    </div>
-                    <div class="form-group">
-                        <label>End Frame (optional):</label>
-                        <input type="number" id="endFrame" min="0" 
-                               onchange="updateFrameRange()" placeholder="Leave empty for end">
-                    </div>
-                </div>
-                
-                <div style="background: #e8f5e9; padding: 12px; border-radius: 6px; margin-top: 10px; border-left: 4px solid #4caf50;">
-                    <strong>Selected Range:</strong> 
-                    Frame <span id="selectedStart">0</span> to <span id="selectedEnd">end</span>
-                    (<span id="selectedCount">all</span> frames will be processed)
-                </div>
+                <div style="width: 1px; height: 20px; background: var(--border); margin: 0 4px;"></div>
 
-                <div id="bboxTools" style="display: none; margin-top: 15px;">
-                    <h3 style="margin-bottom: 8px;">📦 Bounding Boxes (rectangular crops)</h3>
-                    <div class="checkbox-group">
-                        <input type="checkbox" id="drawMode">
-                        <label for="drawMode">Enable draw mode (click and drag on the frame)</label>
-                    </div>
-                    <div class="grid" style="margin-top: 10px;">
-                        <button onclick="clearBoxesForFrame()">Clear boxes on this frame</button>
-                        <button id="saveBoxesBtn" onclick="saveBoxesRun()">Save boxes as a run</button>
-                    </div>
-                    <p style="color: #666; margin-top: 8px;">Draw rectangular crops per frame or use segmentation to get boxes, then save as a run for editing.</p>
-                </div>
+                <button class="t-btn" onclick="setInPoint()" title="Set In Point (I)">
+                    <svg viewBox="0 0 24 24"><path d="M4 4v16M4 12h8M12 12l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <button class="t-btn" onclick="setOutPoint()" title="Set Out Point (O)">
+                    <svg viewBox="0 0 24 24"><path d="M20 4v16M20 12h-8M12 12l4-4m-4 4l4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <button class="t-btn toggle-btn" id="drawModeBtn" onclick="toggleDrawMode()" title="Draw Bounding Boxes">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2" stroke="currentColor" stroke-width="2" fill="none"/><circle cx="12" cy="12" r="3" fill="currentColor"/></svg>
+                </button>
+            </div>
+        </main>
+
+        <!-- Right Sidebar: Inspector -->
+        <aside class="inspector">
+            <div class="tab-bar">
+                <button class="tab-btn active" onclick="showTab('tab-veo')">AI Generate</button>
+                <button class="tab-btn" onclick="showTab('tab-tracking')">Edit & Retouch</button>
+                <button class="tab-btn" onclick="showTab('tab-auto')">Auto Segment</button>
             </div>
             
-            <!-- Segmentation Options -->
-            <div class="form-group">
-                <label>Text Prompt (optional):</label>
-                <input type="text" id="segmentPrompt" placeholder="e.g., person, shirt, logo" value="person">
-            </div>
-            <div class="grid">
-                <div class="form-group">
-                    <label>Max Frames (optional):</label>
-                    <input type="number" id="maxFrames" placeholder="Leave empty for all in range" value="">
+            <!-- Tab: AI Generate (Veo) -->
+            <div id="tab-veo" class="tab-content active">
+                <div class="property-group">
+                    <div class="property-label">Clip Selection</div>
+                    <div style="margin-bottom: 10px;">
+                        <label class="property-label" style="font-size: 0.7rem;">In Point</label>
+                        <input type="text" id="inPointVal" value="--" readonly>
+                    </div>
+                    <div style="margin-bottom: 10px;">
+                        <label class="property-label" style="font-size: 0.7rem;">Out Point</label>
+                        <input type="text" id="outPointVal" value="--" readonly>
+                    </div>
+                    <button class="btn btn-secondary" onclick="addClip()">+ Add Clip Region</button>
                 </div>
-                <div class="form-group">
-                    <label>Output Every N Frames:</label>
-                    <input type="number" id="outputEveryN" value="1">
-                </div>
-            </div>
-            <div class="form-group checkbox-group">
-                <input type="checkbox" id="saveMasks">
-                <label for="saveMasks">Save Masks (optional)</label>
-            </div>
-            <button onclick="segmentVideo()" id="segmentBtn" disabled>Segment Video</button>
-            <div id="segmentResponse"></div>
-        </div>
 
-        <!-- Step 3: Edit Video -->
-        <div class="card">
-            <h2>Step 3: Edit Video <span class="status-badge status-waiting" id="editStatus">Waiting for segmentation</span></h2>
-            <div class="info">
-                <strong>Run ID:</strong> <span id="currentRunId">-</span>
-            </div>
-            <div class="form-group">
-                <label>Edit Prompt:</label>
-                <textarea id="editPrompt" placeholder="e.g., add a Nike logo to the shirt in the center">add a bright red circle on the chest</textarea>
-            </div>
-            <div class="form-group">
-                <label>Segment IDs to Edit (optional, comma-separated):</label>
-                <input type="text" id="segmentIds" placeholder="e.g., 0,2,5 (leave empty for all)">
-            </div>
-            <div class="grid">
-                <div class="form-group" id="reuseContainer">
-                    <label>Reuse Edit Every N Frames:</label>
-                    <input type="number" id="reuseEveryN" value="1">
-                </div>
-                <div class="form-group">
-                    <label>Model:</label>
-                    <select id="model">
-                        <option value="gemini-2.5-flash-image">Gemini 2.5 Flash</option>
-                        <option value="gemini-2.0-flash-exp">Gemini 2.0 Flash Exp</option>
-                    </select>
+                <div class="property-group">
+                    <div class="property-label">Generation</div>
+                    <div style="margin-bottom: 10px;">
+                        <label class="property-label" style="font-size: 0.7rem;">Prompt</label>
+                        <textarea id="veoPrompt" placeholder="Describe the desired ad generation..."></textarea>
+                    </div>
+                    <button class="btn btn-primary" onclick="generateVeoForSelected()">Generate Selected</button>
+                    <button class="btn btn-secondary" style="margin-top:8px" onclick="generateVeoForAll()" id="genAllBtn" disabled>Generate All Clips</button>
                 </div>
             </div>
-            <button onclick="editVideo()" id="editBtn" disabled>Edit Video</button>
-            <div id="editResponse"></div>
-        </div>
 
-        <!-- Step 4: Download & View Results -->
-        <div class="card">
-            <h2>Step 4: Download & View Results <span class="status-badge status-waiting" id="downloadStatus">Waiting for edit</span></h2>
-            <div class="info">
-                <strong>Output Path:</strong> <span id="outputPath">-</span>
+            <!-- Tab: Manual Tracking (Boxes) -->
+            <div id="tab-tracking" class="tab-content">
+                <div class="property-group">
+                    <div class="property-label">Manual Tracking</div>
+                    <p style="font-size: 0.8rem; color: var(--text-dim); margin-bottom: 10px;">
+                        Draw boxes on keyframes to track objects. The AI will interpolate between keyframes.
+                    </p>
+                    <div style="margin-bottom: 10px;">
+                        <button class="btn btn-secondary" onclick="toggleDrawMode()" id="drawToggleInspector">Enable Drawing</button>
+                    </div>
+                    <div style="display: flex; gap: 8px;">
+                        <button class="btn btn-secondary" onclick="clearBoxes()">Clear Frame</button>
+                        <button class="btn btn-primary" onclick="saveBoxesRun()">Save Tracking Run</button>
+                    </div>
+                </div>
+                <div class="property-group">
+                    <div class="property-label">Edit Video</div>
+                    <div style="margin-bottom: 10px;">
+                        <label class="property-label" style="font-size: 0.7rem;">Edit Prompt</label>
+                        <textarea id="editPrompt" placeholder="E.g. 'Add Nike logo to shirt'"></textarea>
+                    </div>
+                    <button class="btn btn-primary" onclick="editVideo()">Run Edit</button>
+                </div>
             </div>
-            <button onclick="downloadVideo()" id="downloadBtn" disabled>Download Edited Video</button>
-            <button onclick="viewRunInfo()" id="infoBtn" disabled>View Run Info</button>
-            <div id="downloadResponse"></div>
-            <div id="videoPreview"></div>
-        </div>
 
-        <!-- Run Browser -->
-        <div class="card">
-            <h2>📚 Browse Past Runs</h2>
-            <p style="color: #666; margin-bottom: 15px;">Select a previous run to view details, re-edit, or continue from where you left off.</p>
+            <!-- Tab: Auto Segmentation -->
+            <div id="tab-auto" class="tab-content">
+                <div class="property-group">
+                    <div class="property-label">Auto Segmentation (SAM2)</div>
+                    <div style="margin-bottom: 10px;">
+                        <label class="property-label" style="font-size: 0.7rem;">Prompt (Optional)</label>
+                        <input type="text" id="segmentPrompt" placeholder="E.g., 'person', 'car'">
+                    </div>
+                    <div style="margin-bottom: 10px; display: flex; gap: 8px; align-items: center;">
+                        <input type="checkbox" id="saveMasks" style="width: auto;">
+                        <label for="saveMasks" style="font-size: 0.8rem;">Save Masks</label>
+                    </div>
+                    <button class="btn btn-primary" onclick="segmentVideo()">Segment Video</button>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Bottom Timeline -->
+    <div class="timeline-panel">
+        <div class="timeline-toolbar">
+            <span style="font-size: 0.8rem; color: var(--text-dim);">Timeline</span>
+            <div style="flex: 1;"></div>
+            <button class="t-btn" onclick="zoomTimeline(0.8)" title="Zoom Out">-</button>
+            <button class="t-btn" onclick="zoomTimeline(1.2)" title="Zoom In">+</button>
+        </div>
+        <div class="track-container" id="timelineTrackContainer">
+            <div class="ruler" id="timeRuler"></div>
+            <div class="playhead" id="timelinePlayhead"><div class="playhead-head"></div></div>
+
+            <div class="track" style="height: 60px;">
+                <div class="track-label">Video</div>
+                <div id="videoTrack" style="position:absolute; top:0; bottom:0; left:0; right:0;"></div>
+            </div>
             
-            <button onclick="loadRunBrowser()" id="loadRunsBtn">Load Available Runs</button>
-            
-            <div id="runBrowser" style="display: none; margin-top: 20px;">
-                <div class="form-group">
-                    <label>Filter by prompt:</label>
-                    <input type="text" id="runFilter" placeholder="Type to filter..." oninput="filterRuns()">
-                </div>
-                
-                <div id="runList" style="max-height: 500px; overflow-y: auto;">
-                    <!-- Runs will be loaded here -->
-                </div>
+            <div class="track">
+                <div class="track-label">Regions</div>
+                <div id="clipTrack" style="position:absolute; top:0; bottom:0; left:0; right:0;"></div>
             </div>
-            
-            <div id="runBrowserResponse"></div>
-        </div>
 
-        <!-- Veo Generation -->
-        <div class="card">
-            <h2>🎥 Veo: First/Last Frame Generation</h2>
-            <p style="color: #666; margin-bottom: 10px;">Generate a Veo clip directly from the uploaded video using its first and last frame in a time range, plus a prompt.</p>
-            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px;">
-                <div class="form-group">
-                    <label>Start time (seconds)</label>
-                    <input type="number" step="0.01" id="veoStartTime" placeholder="e.g. 0">
-                </div>
-                <div class="form-group">
-                    <label>End time (seconds)</label>
-                    <input type="number" step="0.01" id="veoEndTime" placeholder="e.g. 5">
-                </div>
-                <div class="form-group">
-                    <label>Fade duration (seconds, when stitching)</label>
-                    <input type="number" step="0.05" id="veoFade" value="0.3">
-                </div>
-                <div class="form-group">
-                    <label>Veo only (skip original pre/post)</label>
-                    <input type="checkbox" id="veoOnly">
-                </div>
+            <div class="track">
+                <div class="track-label">Objects</div>
+                <div id="boxTrack" style="position:absolute; top:0; bottom:0; left:0; right:0;"></div>
             </div>
-            <div class="form-group">
-                <label>Prompt</label>
-                <textarea id="veoPrompt" placeholder="Describe the animation; first/last frame will match the selected times."></textarea>
-            </div>
-            <button onclick="generateVeoVideo()">Generate with Veo</button>
-            <div id="veoResponse" class="response"></div>
-        </div>
-
-        <!-- Quick Actions -->
-        <div class="card">
-            <h2>🔧 Quick Actions</h2>
-            <div class="grid">
-                <button onclick="listAllRuns()">List All Runs</button>
-                <button onclick="testExistingRun()">Test with Existing Run</button>
-                <button onclick="clearAll()">Clear All</button>
-            </div>
-            <div id="quickResponse"></div>
         </div>
     </div>
 
+    <div id="toast" class="toast">Action completed</div>
+
     <script>
         const API_BASE = 'http://localhost:8000/api/v1';
-        let currentUploadId = null;
-        let currentRunId = null;
-        let currentOutputPath = null;
-        let manualBoxes = {}; // frameIdx -> [{x,y,w,h}]
-        let isDrawing = false;
-        let drawStart = null;
-        let manualBoxesMode = false;
+        
+        let appState = {
+            uploadId: null,
+            runId: null,
+            duration: 0,
+            fps: 24,
+            currentTime: 0,
+            isPlaying: false,
+            inPoint: null,
+            outPoint: null,
+            zoom: 10,
+            clips: [],
+            boxes: {},
+            drawMode: false,
+            isDrawing: false,
+            drawStart: null,
+            selectedClipId: null
+        };
 
-        // Check API status on load
-        async function checkAPIStatus() {
+        // Elements
+        const video = document.getElementById('videoPlayer');
+        const canvas = document.getElementById('drawCanvas');
+        const ctx = canvas.getContext('2d');
+        const playhead = document.getElementById('timelinePlayhead');
+        const ruler = document.getElementById('timeRuler');
+        const clipTrack = document.getElementById('clipTrack');
+        const boxTrack = document.getElementById('boxTrack');
+        const videoTrack = document.getElementById('videoTrack');
+
+        // Initialization
+        (async function init() {
             try {
-                const response = await fetch(`${API_BASE}/health`);
-                if (response.ok) {
-                    document.getElementById('apiStatus').className = 'api-status online';
-                    document.getElementById('statusText').textContent = '✅ API is online and ready';
-                } else {
-                    throw new Error('API returned error');
+                await fetch(`${API_BASE}/health`);
+                updateStatus(true);
+                loadRuns();
+            } catch (e) { updateStatus(false); }
+            setupPlayer();
+            setupTimeline();
+            setupDrawing();
+            window.addEventListener('resize', resizeCanvas);
+        })();
+
+        function showTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+
+        function updateStatus(online) {
+            const dot = document.getElementById('apiStatusDot');
+            const txt = document.getElementById('apiStatusText');
+            if (online) { dot.classList.add('online'); txt.textContent = 'Connected'; }
+            else { dot.classList.remove('online'); txt.textContent = 'Offline'; }
+        }
+
+        function showToast(msg, type='success') {
+            const t = document.getElementById('toast');
+            t.textContent = msg;
+            t.className = `toast show ${type}`;
+            setTimeout(() => t.classList.remove('show'), 3000);
+        }
+
+        // Player
+        function setupPlayer() {
+            video.addEventListener('loadedmetadata', () => {
+                appState.duration = video.duration;
+                renderTimeline(); 
+                resizeCanvas();
+            });
+            video.addEventListener('timeupdate', () => {
+                appState.currentTime = video.currentTime;
+                updateTimecode();
+                updatePlayhead();
+                if (appState.drawMode) redrawBoxes();
+            });
+            video.addEventListener('play', () => {
+                appState.isPlaying = true;
+                document.getElementById('playIcon').style.display = 'none';
+                document.getElementById('pauseIcon').style.display = 'block';
+            });
+            video.addEventListener('pause', () => {
+                appState.isPlaying = false;
+                document.getElementById('playIcon').style.display = 'block';
+                document.getElementById('pauseIcon').style.display = 'none';
+            });
+        }
+
+        function togglePlay() { video.paused ? video.play() : video.pause(); }
+        function seekRel(frames) {
+            const dt = 1 / appState.fps;
+            video.currentTime = Math.max(0, Math.min(appState.duration, video.currentTime + (frames * dt)));
+        }
+        function updateTimecode() {
+            const frames = Math.floor(video.currentTime * appState.fps);
+            const h = Math.floor(frames / (3600 * appState.fps));
+            const m = Math.floor((frames % (3600 * appState.fps)) / (60 * appState.fps));
+            const s = Math.floor((frames % (60 * appState.fps)) / appState.fps);
+            const f = frames % appState.fps;
+            document.getElementById('timecode').textContent = `${pad(h)}:${pad(m)}:${pad(s)}:${pad(f)}`;
+        }
+        function pad(n) { return n.toString().padStart(2, '0'); }
+
+        // Timeline
+        function setupTimeline() {
+            ruler.addEventListener('click', (e) => {
+                const rect = ruler.getBoundingClientRect();
+                const offsetX = e.clientX - rect.left + document.getElementById('timelineTrackContainer').scrollLeft;
+                video.currentTime = Math.max(0, Math.min(appState.duration, offsetX / appState.zoom));
+            });
+        }
+        function zoomTimeline(factor) {
+            appState.zoom = Math.max(1, Math.min(200, appState.zoom * factor));
+            renderTimeline();
+            updatePlayhead();
+        }
+        function renderTimeline() {
+            if (!appState.duration) return;
+            const width = appState.duration * appState.zoom;
+            ruler.style.width = `${width}px`;
+            ruler.innerHTML = '';
+            videoTrack.innerHTML = `<div style="width:100%; height:100%; background: #333; border-radius:4px;"></div>`;
+            for (let t = 0; t <= appState.duration; t += 1) {
+                if (appState.zoom < 5 && t % 5 !== 0) continue;
+                const tick = document.createElement('div');
+                tick.style.position = 'absolute';
+                tick.style.left = `${t * appState.zoom}px`;
+                tick.style.bottom = '0';
+                tick.style.height = t % 5 === 0 ? '12px' : '6px';
+                tick.style.borderLeft = '1px solid #666';
+                if (t % 5 === 0 || appState.zoom > 30) {
+                    const label = document.createElement('span');
+                    label.textContent = formatTimeShort(t);
+                    label.style.position = 'absolute';
+                    label.style.left = '4px';
+                    label.style.top = '0';
+                    label.style.fontSize = '10px';
+                    label.style.color = '#888';
+                    tick.appendChild(label);
                 }
-            } catch (error) {
-                document.getElementById('apiStatus').className = 'api-status offline';
-                document.getElementById('statusText').textContent = '❌ API is offline - Make sure server is running on port 8000';
+                ruler.appendChild(tick);
             }
+            renderClips();
+            renderKeyframes();
+        }
+        function updatePlayhead() {
+            playhead.style.transform = `translateX(${appState.currentTime * appState.zoom}px)`;
+        }
+        function formatTimeShort(s) {
+            const m = Math.floor(s / 60);
+            const sec = Math.floor(s % 60);
+            return `${m}:${pad(sec)}`;
         }
 
-        // Video info and frame scrubbing
-        let videoInfo = null;
-        let currentScrubFrame = 0;
-
-        async function loadVideoInfo(uploadId) {
-            try {
-                const response = await fetch(`${API_BASE}/upload/info?upload_id=${uploadId}`);
-                
-                if (!response.ok) {
-                    throw new Error('Failed to get video info');
-                }
-                
-                videoInfo = await response.json();
-                
-                // Update UI
-                document.getElementById('videoFrameCount').textContent = videoInfo.frame_count;
-                document.getElementById('videoFPS').textContent = videoInfo.fps.toFixed(2);
-                document.getElementById('videoDuration').textContent = videoInfo.duration_seconds.toFixed(2);
-                document.getElementById('videoDimensions').textContent = `${videoInfo.width}x${videoInfo.height}`;
-                document.getElementById('totalFrames').textContent = videoInfo.frame_count;
-                
-                // Setup scrubber
-                document.getElementById('frameScrubberSlider').max = videoInfo.frame_count - 1;
-                document.getElementById('endFrame').max = videoInfo.frame_count - 1;
-                document.getElementById('endFrame').placeholder = videoInfo.frame_count - 1;
-                document.getElementById('startFrame').max = videoInfo.frame_count - 1;
-                
-                // Show video info and scrubber
-                document.getElementById('videoInfo').style.display = 'block';
-                document.getElementById('frameScrubber').style.display = 'block';
-                document.getElementById('bboxTools').style.display = 'block';
-                manualBoxes = {};
-                
-                // Load first frame
-                await loadFrame(0);
-                updateFrameRange();
-                
-            } catch (error) {
-                console.error('Error loading video info:', error);
-                showResponse('uploadResponse', 'Note: Frame preview unavailable. You can still proceed with segmentation.', 'error');
-            }
+        // Clips
+        function setInPoint() {
+            appState.inPoint = video.currentTime;
+            document.getElementById('inPointVal').value = formatTimecode(appState.inPoint);
         }
-
-        async function loadFrame(frameIdx) {
-            if (!currentUploadId) return;
-            
-            try {
-                const img = document.getElementById('framePreview');
-                img.src = `${API_BASE}/upload/${currentUploadId}/frame/${frameIdx}`;
-                img.onload = () => {
-                    syncCanvasToImage();
-                    redrawBoxes(frameIdx);
-                };
-                document.getElementById('currentFrameNum').textContent = frameIdx;
-                currentScrubFrame = frameIdx;
-            } catch (error) {
-                console.error('Error loading frame:', error);
-            }
+        function setOutPoint() {
+            appState.outPoint = video.currentTime;
+            document.getElementById('outPointVal').value = formatTimecode(appState.outPoint);
         }
+        function formatTimecode(t) { return t !== null ? t.toFixed(2) + 's' : '--'; }
 
-        function scrubFrame(value) {
-            const frameIdx = parseInt(value);
-            loadFrame(frameIdx);
-            redrawBoxes(frameIdx);
-        }
-
-        function updateFrameRange() {
-            const start = parseInt(document.getElementById('startFrame').value) || 0;
-            const endInput = document.getElementById('endFrame').value;
-            const end = endInput ? parseInt(endInput) : (videoInfo ? videoInfo.frame_count - 1 : 0);
-            
-            document.getElementById('selectedStart').textContent = start;
-            document.getElementById('selectedEnd').textContent = endInput ? end : 'end';
-            
-            const count = end - start + 1;
-            document.getElementById('selectedCount').textContent = count;
-        }
-
-        // Upload video
-        async function uploadVideo() {
-            const fileInput = document.getElementById('videoFile');
-            const file = fileInput.files[0];
-            
-            if (!file) {
-                showResponse('uploadResponse', 'Please select a video file', 'error');
-                return;
-            }
-
-            const btn = document.getElementById('uploadBtn');
-            btn.disabled = true;
-            btn.innerHTML = 'Uploading<span class="loading"></span>';
-
-            const formData = new FormData();
-            formData.append('file', file);
-
-            try {
-                const response = await fetch(`${API_BASE}/upload`, {
-                    method: 'POST',
-                    body: formData
-                });
-
-                const data = await response.json();
-
-                if (response.ok) {
-                    currentUploadId = data.upload_id;
-                    document.getElementById('currentUploadId').textContent = currentUploadId;
-                    document.getElementById('segmentBtn').disabled = false;
-                    document.getElementById('segmentStatus').className = 'status-badge status-ready';
-                    document.getElementById('segmentStatus').textContent = 'Ready';
-                    updateWorkflowStep('step-upload', 'completed');
-                    updateWorkflowStep('step-segment', 'active');
-                    showResponse('uploadResponse', JSON.stringify(data, null, 2), 'success');
-                    
-                    // Load video info and enable frame scrubbing
-                    await loadVideoInfo(currentUploadId);
-                } else {
-                    throw new Error(data.detail || 'Upload failed');
-                }
-            } catch (error) {
-                showResponse('uploadResponse', 'Error: ' + error.message, 'error');
-            } finally {
-                btn.disabled = false;
-                btn.innerHTML = 'Upload Video';
-            }
-        }
-
-        // Segment video
-        async function segmentVideo() {
-            if (!currentUploadId) {
-                showResponse('segmentResponse', 'Please upload a video first', 'error');
-                return;
-            }
-
-            const btn = document.getElementById('saveBoxesBtn') || document.getElementById('segmentBtn');
-            btn.disabled = true;
-            btn.innerHTML = 'Segmenting<span class="loading"></span>';
-
-            const payload = {
-                upload_id: currentUploadId,
-                save_masks: document.getElementById('saveMasks').checked,
-                output_every_n: parseInt(document.getElementById('outputEveryN').value) || 1
+        function addClip() {
+            if (appState.inPoint === null || appState.outPoint === null) return showToast('Set In/Out points', 'error');
+            if (appState.inPoint >= appState.outPoint) return showToast('Out must be > In', 'error');
+            const clip = {
+                id: Date.now(),
+                start: appState.inPoint,
+                end: appState.outPoint,
+                prompt: document.getElementById('veoPrompt').value,
+                label: `Clip ${appState.clips.length + 1}`
             };
+            appState.clips.push(clip);
+            appState.inPoint = null; appState.outPoint = null;
+            document.getElementById('inPointVal').value = '--';
+            document.getElementById('outPointVal').value = '--';
+            renderClips();
+            updateGenButton();
+            selectClip(clip); // Select newly created clip
+            showToast('Clip region added');
+        }
 
-            const prompt = document.getElementById('segmentPrompt').value.trim();
-            if (prompt) payload.text_prompt = prompt;
+        function renderClips() {
+            clipTrack.innerHTML = '';
+            appState.clips.forEach(clip => {
+                const left = clip.start * appState.zoom;
+                const width = (clip.end - clip.start) * appState.zoom;
+                const el = document.createElement('div');
+                el.className = `clip-block ${appState.selectedClipId === clip.id ? 'selected' : ''}`;
+                el.style.left = `${left}px`;
+                el.style.width = `${width}px`;
+                el.textContent = clip.label;
+                el.onclick = (e) => { e.stopPropagation(); selectClip(clip); };
+                const del = document.createElement('span');
+                del.innerHTML = '&times;';
+                del.style.marginLeft = 'auto';
+                del.style.padding = '0 4px';
+                del.style.cursor = 'pointer';
+                del.onclick = (e) => { e.stopPropagation(); removeClip(clip.id); };
+                el.appendChild(del);
+                clipTrack.appendChild(el);
+            });
+        }
 
-            // Use selected frame range if available
-            const startFrame = parseInt(document.getElementById('startFrame').value);
-            const endFrame = parseInt(document.getElementById('endFrame').value);
-            
-            if (startFrame) {
-                payload.start_frame_idx = startFrame;
+        function selectClip(clip) {
+            appState.selectedClipId = clip.id;
+            document.getElementById('veoPrompt').value = clip.prompt || '';
+            video.currentTime = clip.start;
+            showTab('tab-veo'); // Switch to Veo tab
+            renderClips(); // Refresh to show selection state
+        }
+
+        function removeClip(id) {
+            appState.clips = appState.clips.filter(c => c.id !== id);
+            if (appState.selectedClipId === id) {
+                appState.selectedClipId = null;
+                document.getElementById('veoPrompt').value = '';
             }
-            
-            if (endFrame) {
-                payload.end_frame_idx = endFrame;
-            }
+            renderClips();
+            updateGenButton();
+        }
+        function updateGenButton() { document.getElementById('genAllBtn').disabled = appState.clips.length === 0; }
 
-            const maxFrames = document.getElementById('maxFrames').value.trim();
-            if (maxFrames) payload.max_frames = parseInt(maxFrames);
-
+        // API
+        async function uploadVideo(input) {
+            if (!input.files[0]) return;
+            const file = input.files[0];
+            video.src = URL.createObjectURL(file);
+            const fd = new FormData();
+            fd.append('file', file);
             try {
-                const response = await fetch(`${API_BASE}/segment`, {
+                const res = await fetch(`${API_BASE}/upload`, { method: 'POST', body: fd });
+                const data = await res.json();
+                if (res.ok) {
+                    appState.uploadId = data.upload_id;
+                    const item = document.createElement('div');
+                    item.className = 'asset-item active';
+                    item.innerHTML = `<div class="asset-title">${file.name}</div><div class="asset-meta">${(file.size/1024/1024).toFixed(1)} MB</div>`;
+                    document.getElementById('mediaList').innerHTML = '';
+                    document.getElementById('mediaList').appendChild(item);
+                    const infoRes = await fetch(`${API_BASE}/upload/info?upload_id=${data.upload_id}`);
+                    const info = await infoRes.json();
+                    appState.fps = info.fps || 30;
+                    showToast('Video uploaded');
+                } else throw new Error(data.detail);
+            } catch (e) { showToast(e.message, 'error'); }
+        }
+
+        async function loadRuns() {
+            const res = await fetch(`${API_BASE}/runs?include_metadata=true`);
+            const data = await res.json();
+            const list = document.getElementById('runList');
+            list.innerHTML = '';
+            data.runs.forEach(run => {
+                const div = document.createElement('div');
+                div.className = 'asset-item';
+                div.innerHTML = `<div class="asset-title">${run.run_id}</div><div class="asset-meta">${run.processed_frames || 0} frames ${run.has_edited_video ? '• Edited' : ''}</div>`;
+                div.onclick = () => loadRun(run.run_id);
+                list.appendChild(div);
+            });
+        }
+
+        async function loadRun(runId) {
+            try {
+                const vidRes = await fetch(`${API_BASE}/download/video/${runId}`, { method: 'HEAD' });
+                if (vidRes.ok) {
+                    video.src = `${API_BASE}/download/video/${runId}`;
+                    showToast(`Loaded run ${runId}`);
+                } else showToast('Run has no video output yet', 'warning');
+            } catch (e) { console.error(e); }
+        }
+
+        async function generateVeoForSelected() {
+            if (!appState.uploadId) return showToast('Upload first', 'error');
+            let clip = appState.clips.find(c => c.id === appState.selectedClipId);
+            if (!clip) {
+                // Fallback to in/out points if set
+                if (appState.inPoint !== null && appState.outPoint !== null) {
+                    clip = { start: appState.inPoint, end: appState.outPoint, prompt: document.getElementById('veoPrompt').value };
+                } else {
+                    return showToast('Select a clip or set In/Out points', 'error');
+                }
+            }
+            // Update clip prompt from textarea
+            if (clip.id) {
+                clip.prompt = document.getElementById('veoPrompt').value;
+                renderClips();
+            }
+            
+            showToast('Generating Veo clip...');
+            try {
+                const res = await fetch(`${API_BASE}/veo/generate`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
+                    body: JSON.stringify({
+                        upload_id: appState.uploadId,
+                        start_time: clip.start,
+                        end_time: clip.end,
+                        prompt: clip.prompt,
+                        veo_only: true
+                    })
                 });
-
-                const data = await response.json();
-
-                if (response.ok) {
-                    currentRunId = data.run_id;
-                    document.getElementById('currentRunId').textContent = currentRunId;
-                    document.getElementById('editBtn').disabled = false;
-                    document.getElementById('infoBtn').disabled = false;
-                    document.getElementById('editStatus').className = 'status-badge status-ready';
-                    document.getElementById('editStatus').textContent = 'Ready';
-                    updateWorkflowStep('step-segment', 'completed');
-                    updateWorkflowStep('step-edit', 'active');
-                    manualBoxesMode = false;
-                    setReuseVisibility(true);
-                    showResponse('segmentResponse', JSON.stringify(data, null, 2), 'success');
-                } else {
-                    throw new Error(data.detail || 'Segmentation failed');
-                }
-            } catch (error) {
-                showResponse('segmentResponse', 'Error: ' + error.message, 'error');
-            } finally {
-                btn.disabled = false;
-                if (btn.id === 'saveBoxesBtn') {
-                    btn.innerHTML = 'Save boxes as a run';
-                } else {
-                    btn.innerHTML = 'Segment Video';
-                }
-            }
+                if (!res.ok) throw new Error('Failed');
+                showToast('Veo generation complete!');
+                loadRuns();
+            } catch (e) { showToast('Generation failed', 'error'); }
         }
 
-        // Edit video
+        async function generateVeoForAll() {
+            if (!appState.uploadId) return showToast('Upload first', 'error');
+            showToast('Batch generating clips...');
+            for (const clip of appState.clips) {
+                try {
+                    await fetch(`${API_BASE}/veo/generate`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            upload_id: appState.uploadId,
+                            start_time: clip.start,
+                            end_time: clip.end,
+                            prompt: clip.prompt,
+                            veo_only: true
+                        })
+                    });
+                    showToast(`Clip "${clip.label}" done`);
+                } catch (e) { showToast(`Clip "${clip.label}" failed`, 'error'); }
+            }
+            loadRuns();
+        }
+
         async function editVideo() {
-            if (!currentRunId) {
-                showResponse('editResponse', 'Please segment a video first', 'error');
-                return;
-            }
-
-            const editPrompt = document.getElementById('editPrompt').value.trim();
-            if (!editPrompt) {
-                showResponse('editResponse', 'Please enter an edit prompt', 'error');
-                return;
-            }
-
-            const btn = document.getElementById('editBtn');
-            btn.disabled = true;
-            btn.innerHTML = 'Editing<span class="loading"></span>';
-
-            const payload = {
-                run_id: currentRunId,
-                edit_prompt: editPrompt,
-                model: document.getElementById('model').value,
-                reuse_edit_every_n_frames: manualBoxesMode ? 1 : (parseInt(document.getElementById('reuseEveryN').value) || 1)
-            };
-            const startFrameVal = parseInt(document.getElementById('startFrame').value);
-            const endFrameVal = parseInt(document.getElementById('endFrame').value);
-            if (!isNaN(startFrameVal)) payload.start_frame_idx = startFrameVal;
-            if (!isNaN(endFrameVal)) payload.end_frame_idx = endFrameVal;
-
-            const segmentIds = document.getElementById('segmentIds').value.trim();
-            if (segmentIds) {
-                payload.segment_ids = segmentIds.split(',').map(id => parseInt(id.trim()));
-            }
-
+            if (!appState.runId) return showToast('No segmentation run selected', 'error');
+            showToast('Starting edit...');
+            const prompt = document.getElementById('editPrompt').value;
             try {
-                const response = await fetch(`${API_BASE}/edit`, {
+                const res = await fetch(`${API_BASE}/edit`, {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({
+                        run_id: appState.runId,
+                        edit_prompt: prompt,
+                        model: 'gemini-2.5-flash-image'
+                    })
                 });
-
-                const data = await response.json();
-
-                if (response.ok) {
-                    currentOutputPath = data.output_video_path;
-                    document.getElementById('outputPath').textContent = currentOutputPath;
-                    document.getElementById('downloadBtn').disabled = false;
-                    document.getElementById('downloadStatus').className = 'status-badge status-ready';
-                    document.getElementById('downloadStatus').textContent = 'Ready';
-                    updateWorkflowStep('step-edit', 'completed');
-                    updateWorkflowStep('step-download', 'active');
-                    showResponse('editResponse', JSON.stringify(data, null, 2), 'success');
-                } else {
-                    throw new Error(data.detail || 'Edit failed');
-                }
-            } catch (error) {
-                showResponse('editResponse', 'Error: ' + error.message, 'error');
-            } finally {
-                btn.disabled = false;
-                btn.innerHTML = 'Edit Video';
-            }
+                if (res.ok) showToast('Edit complete!');
+                else throw new Error('Failed');
+            } catch(e) { showToast(e.message, 'error'); }
         }
 
-        // Download video
-        async function downloadVideo() {
-            if (!currentRunId) {
-                showResponse('downloadResponse', 'No video to download', 'error');
-                return;
-            }
-
+        async function segmentVideo() {
+            if (!appState.uploadId) return showToast('Upload first', 'error');
+            showToast('Segmenting...');
             try {
-                const response = await fetch(`${API_BASE}/download/video/${currentRunId}`);
-                
-                if (response.ok) {
-                    const blob = await response.blob();
-                    const url = window.URL.createObjectURL(blob);
-                    
-                    // Create download link
-                    const a = document.createElement('a');
-                    a.href = url;
-                    a.download = `edited_${currentRunId}.mp4`;
-                    a.click();
-                    
-                    // Show preview
-                    const videoPreview = document.getElementById('videoPreview');
-                    videoPreview.innerHTML = `
-                        <h3 style="margin-top: 20px;">Video Preview:</h3>
-                        <video controls src="${url}"></video>
-                    `;
-                    
-                    updateWorkflowStep('step-download', 'completed');
-                    showResponse('downloadResponse', '✅ Video downloaded successfully!', 'success');
-                } else {
-                    throw new Error('Download failed');
-                }
-            } catch (error) {
-                showResponse('downloadResponse', 'Error: ' + error.message, 'error');
-            }
+                const res = await fetch(`${API_BASE}/segment`, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({
+                        upload_id: appState.uploadId,
+                        save_masks: document.getElementById('saveMasks').checked,
+                        text_prompt: document.getElementById('segmentPrompt').value
+                    })
+                });
+                const data = await res.json();
+                if (res.ok) {
+                    appState.runId = data.run_id;
+                    showToast('Segmentation complete');
+                    loadRuns();
+                } else throw new Error(data.detail);
+            } catch(e) { showToast(e.message, 'error'); }
         }
 
-        // View run info
-        // (Function moved and enhanced above in Run Browser section)
-
-        // List all runs
-        async function listAllRuns() {
-            try {
-                const response = await fetch(`${API_BASE}/runs`);
-                const data = await response.json();
-
-                if (response.ok) {
-                    showResponse('quickResponse', JSON.stringify(data, null, 2), 'success');
-                } else {
-                    throw new Error('Failed to list runs');
-                }
-            } catch (error) {
-                showResponse('quickResponse', 'Error: ' + error.message, 'error');
-            }
-        }
-
-        // Test with existing run
-        async function testExistingRun() {
-            const runId = prompt('Enter existing run ID:');
-            if (!runId) return;
-
-            currentRunId = runId;
-            document.getElementById('currentRunId').textContent = currentRunId;
-            document.getElementById('editBtn').disabled = false;
-            document.getElementById('infoBtn').disabled = false;
-            document.getElementById('downloadBtn').disabled = false;
-            document.getElementById('editStatus').className = 'status-badge status-ready';
-            document.getElementById('editStatus').textContent = 'Ready';
-            document.getElementById('downloadStatus').className = 'status-badge status-ready';
-            document.getElementById('downloadStatus').textContent = 'Ready';
-
-            showResponse('quickResponse', `Using run ID: ${runId}`, 'success');
-            viewRunInfo();
-        }
-
-        // Clear all
-        function clearAll() {
-            currentUploadId = null;
-            currentRunId = null;
-            currentOutputPath = null;
-            manualBoxes = {};
-            manualBoxesMode = false;
-            
-            document.getElementById('currentUploadId').textContent = '-';
-            document.getElementById('currentRunId').textContent = '-';
-            document.getElementById('outputPath').textContent = '-';
-            
-            document.getElementById('segmentBtn').disabled = true;
-            document.getElementById('editBtn').disabled = true;
-            document.getElementById('downloadBtn').disabled = true;
-            document.getElementById('infoBtn').disabled = true;
-            
-            document.getElementById('segmentStatus').className = 'status-badge status-waiting';
-            document.getElementById('segmentStatus').textContent = 'Waiting for upload';
-            document.getElementById('editStatus').className = 'status-badge status-waiting';
-            document.getElementById('editStatus').textContent = 'Waiting for segmentation';
-            document.getElementById('downloadStatus').className = 'status-badge status-waiting';
-            document.getElementById('downloadStatus').textContent = 'Waiting for edit';
-            
-            document.getElementById('uploadResponse').innerHTML = '';
-            document.getElementById('segmentResponse').innerHTML = '';
-            document.getElementById('editResponse').innerHTML = '';
-            document.getElementById('downloadResponse').innerHTML = '';
-            document.getElementById('videoPreview').innerHTML = '';
-            document.getElementById('quickResponse').innerHTML = '';
-            redrawBoxes();
-            setReuseVisibility(true);
-            
-            ['step-upload', 'step-segment', 'step-edit', 'step-download'].forEach(id => {
-                document.getElementById(id).className = 'workflow-step';
+        // Drawing
+        function setupDrawing() {
+            canvas.addEventListener('mousedown', e => {
+                if (!appState.drawMode) return;
+                appState.isDrawing = true;
+                const rect = canvas.getBoundingClientRect();
+                appState.drawStart = {
+                    x: (e.clientX - rect.left) * (canvas.width / rect.width),
+                    y: (e.clientY - rect.top) * (canvas.height / rect.height)
+                };
             });
-            
-            showResponse('quickResponse', 'All fields cleared', 'success');
-        }
-
-        // Helper functions
-        function showResponse(elementId, message, type = 'success') {
-            const element = document.getElementById(elementId);
-            element.innerHTML = `<div class="response ${type}"><pre>${message}</pre></div>`;
-        }
-
-        function setReuseVisibility(show) {
-            const container = document.getElementById('reuseContainer');
-            if (!container) return;
-            container.style.display = show ? 'block' : 'none';
-            if (!show) {
-                document.getElementById('reuseEveryN').value = 1;
-            }
-        }
-
-        function syncCanvasToImage() {
-            const img = document.getElementById('framePreview');
-            const canvas = document.getElementById('bboxCanvas');
-            if (!img || !canvas) return;
-            canvas.width = img.clientWidth;
-            canvas.height = img.clientHeight;
-            canvas.style.width = `${img.clientWidth}px`;
-            canvas.style.height = `${img.clientHeight}px`;
-        }
-
-        function getCanvasScale() {
-            const canvas = document.getElementById('bboxCanvas');
-            if (!canvas || !videoInfo) return { scaleX: 1, scaleY: 1 };
-            const safeW = canvas.width || 1;
-            const safeH = canvas.height || 1;
-            return {
-                scaleX: safeW / Math.max(videoInfo.width, 1),
-                scaleY: safeH / Math.max(videoInfo.height, 1)
-            };
-        }
-
-        function redrawBoxes(frameIdx = currentScrubFrame, tempRect = null) {
-            const canvas = document.getElementById('bboxCanvas');
-            const list = document.getElementById('bboxList');
-            if (!canvas || !list) return;
-            syncCanvasToImage();
-            const ctx = canvas.getContext('2d');
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-            const boxes = manualBoxes[frameIdx] || [];
-            const { scaleX, scaleY } = getCanvasScale();
-
-            ctx.lineWidth = 2;
-            ctx.strokeStyle = '#ff5722';
-            boxes.forEach((box, idx) => {
-                const x = box.x * scaleX;
-                const y = box.y * scaleY;
-                const w = box.w * scaleX;
-                const h = box.h * scaleY;
-                ctx.strokeRect(x, y, w, h);
-                ctx.fillStyle = '#ff5722';
-                ctx.fillText(`#${idx}`, x + 4, y + 12);
+            canvas.addEventListener('mousemove', e => {
+                if (!appState.isDrawing) return;
+                const rect = canvas.getBoundingClientRect();
+                const curr = {
+                    x: (e.clientX - rect.left) * (canvas.width / rect.width),
+                    y: (e.clientY - rect.top) * (canvas.height / rect.height)
+                };
+                redrawBoxes();
+                ctx.strokeStyle = '#6366F1'; ctx.lineWidth = 2;
+                ctx.strokeRect(appState.drawStart.x, appState.drawStart.y, curr.x - appState.drawStart.x, curr.y - appState.drawStart.y);
             });
-
-            if (tempRect) {
-                ctx.setLineDash([6, 4]);
-                ctx.strokeStyle = '#2196f3';
-                const { start, end } = tempRect;
-                ctx.strokeRect(
-                    Math.min(start.x, end.x),
-                    Math.min(start.y, end.y),
-                    Math.abs(end.x - start.x),
-                    Math.abs(end.y - start.y)
-                );
-                ctx.setLineDash([]);
-            }
-
-            if (boxes.length === 0) {
-                list.textContent = 'No boxes on this frame yet.';
+            canvas.addEventListener('mouseup', e => {
+                if (!appState.isDrawing) return;
+                appState.isDrawing = false;
+                const rect = canvas.getBoundingClientRect();
+                const curr = {
+                    x: (e.clientX - rect.left) * (canvas.width / rect.width),
+                    y: (e.clientY - rect.top) * (canvas.height / rect.height)
+                };
+                const x = Math.min(appState.drawStart.x, curr.x);
+                const y = Math.min(appState.drawStart.y, curr.y);
+                const w = Math.abs(curr.x - appState.drawStart.x);
+                const h = Math.abs(curr.y - appState.drawStart.y);
+                if (w > 5 && h > 5) {
+                    const f = Math.floor(video.currentTime * appState.fps);
+                    if (!appState.boxes[f]) appState.boxes[f] = [];
+                    appState.boxes[f].push({x,y,w,h});
+                    renderKeyframes();
+                    redrawBoxes();
+                }
+            });
+        }
+        function toggleDrawMode() {
+            appState.drawMode = !appState.drawMode;
+            const btn = document.getElementById('drawModeBtn');
+            if (appState.drawMode) {
+                canvas.classList.add('drawing'); btn.classList.add('active');
+                document.getElementById('drawToggleInspector').textContent = 'Disable Drawing';
             } else {
-                list.textContent = `Boxes on this frame: ${boxes.map((b, i) => `#${i} (${b.x},${b.y},${b.w},${b.h})`).join(' | ')}`;
+                canvas.classList.remove('drawing'); btn.classList.remove('active');
+                document.getElementById('drawToggleInspector').textContent = 'Enable Drawing';
             }
         }
-
-        function canvasPos(event) {
-            const canvas = document.getElementById('bboxCanvas');
-            const rect = canvas.getBoundingClientRect();
-            return { x: event.clientX - rect.left, y: event.clientY - rect.top };
+        function redrawBoxes() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            const f = Math.floor(video.currentTime * appState.fps);
+            const boxes = appState.boxes[f] || [];
+            boxes.forEach((b, i) => {
+                ctx.strokeStyle = '#6366F1'; ctx.lineWidth = 2;
+                ctx.strokeRect(b.x, b.y, b.w, b.h);
+                ctx.fillStyle = '#6366F1'; ctx.fillRect(b.x, b.y - 20, 20, 20);
+                ctx.fillStyle = '#fff'; ctx.fillText(i+1, b.x+6, b.y-6);
+            });
         }
-
-        function startDraw(event) {
-            if (!videoInfo || !document.getElementById('drawMode').checked) return;
-            isDrawing = true;
-            drawStart = canvasPos(event);
+        function renderKeyframes() {
+            boxTrack.innerHTML = '';
+            Object.keys(appState.boxes).forEach(fIdx => {
+                const t = fIdx / appState.fps;
+                const left = t * appState.zoom;
+                const m = document.createElement('div');
+                m.className = 'keyframe-marker';
+                m.style.left = `${left}px`;
+                m.onclick = () => video.currentTime = t;
+                boxTrack.appendChild(m);
+            });
         }
-
-        function moveDraw(event) {
-            if (!isDrawing) return;
-            const pos = canvasPos(event);
-            redrawBoxes(currentScrubFrame, { start: drawStart, end: pos });
+        function clearBoxes() {
+            const f = Math.floor(video.currentTime * appState.fps);
+            delete appState.boxes[f];
+            redrawBoxes(); renderKeyframes();
         }
-
-        function endDraw(event) {
-            if (!isDrawing || !videoInfo) {
-                isDrawing = false;
-                return;
-            }
-            const end = canvasPos(event);
-            isDrawing = false;
-            const { scaleX, scaleY } = getCanvasScale();
-            const x = Math.round(Math.min(drawStart.x, end.x) / scaleX);
-            const y = Math.round(Math.min(drawStart.y, end.y) / scaleY);
-            const w = Math.round(Math.abs(end.x - drawStart.x) / scaleX);
-            const h = Math.round(Math.abs(end.y - drawStart.y) / scaleY);
-            if (w < 4 || h < 4) {
-                redrawBoxes(currentScrubFrame);
-                return;
-            }
-            if (!manualBoxes[currentScrubFrame]) {
-                manualBoxes[currentScrubFrame] = [];
-            }
-            manualBoxes[currentScrubFrame].push({ x, y, w, h });
-            redrawBoxes(currentScrubFrame);
-        }
-
-        function clearBoxesForFrame() {
-            if (manualBoxes[currentScrubFrame]) {
-                delete manualBoxes[currentScrubFrame];
-                redrawBoxes(currentScrubFrame);
-            }
-        }
-
+        function resizeCanvas() { canvas.width = video.clientWidth; canvas.height = video.clientHeight; redrawBoxes(); }
         async function saveBoxesRun() {
-            if (!currentUploadId) {
-                showResponse('segmentResponse', 'Upload a video before saving boxes', 'error');
-                return;
-            }
-            const framesPayload = Object.entries(manualBoxes).map(([frameIdx, boxes]) => ({
-                frame_index: parseInt(frameIdx),
-                boxes: boxes.map((box, idx) => ({
-                    ...box,
-                    segment_id: box.segment_id ?? idx
-                }))
-            })).sort((a, b) => a.frame_index - b.frame_index);
-
-            if (framesPayload.length === 0) {
-                showResponse('segmentResponse', 'No boxes to save. Draw boxes first.', 'error');
-                return;
-            }
-
-            const payload = {
-                upload_id: currentUploadId,
-                frames: framesPayload,
-            };
-            const startFrameVal = parseInt(document.getElementById('startFrame').value);
-            const endFrameVal = parseInt(document.getElementById('endFrame').value);
-            if (!isNaN(startFrameVal)) payload.start_frame_idx = startFrameVal;
-            if (!isNaN(endFrameVal)) payload.end_frame_idx = endFrameVal;
-            const prompt = document.getElementById('segmentPrompt').value.trim();
-            if (prompt) payload.text_prompt = prompt;
-
-            const btn = document.getElementById('segmentBtn');
-            btn.disabled = true;
-            btn.innerHTML = 'Saving boxes<span class="loading"></span>';
-
+            if (!appState.uploadId) return showToast('No upload', 'error');
+            const frames = Object.entries(appState.boxes).map(([f, boxes]) => ({ frame_index: parseInt(f), boxes: boxes }));
+            if (frames.length === 0) return showToast('No boxes drawn', 'warning');
             try {
-                const response = await fetch(`${API_BASE}/boxes/manual`, {
+                const res = await fetch(`${API_BASE}/boxes/manual`, {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({ upload_id: appState.uploadId, frames: frames })
                 });
-
-                const data = await response.json();
-                if (response.ok) {
-                    currentRunId = data.run_id;
-                    document.getElementById('currentRunId').textContent = currentRunId;
-                    document.getElementById('editBtn').disabled = false;
-                    document.getElementById('infoBtn').disabled = false;
-                    document.getElementById('editStatus').className = 'status-badge status-ready';
-                    document.getElementById('editStatus').textContent = 'Ready';
-                    updateWorkflowStep('step-segment', 'completed');
-                    updateWorkflowStep('step-edit', 'active');
-                    manualBoxes = {};
-                    redrawBoxes(currentScrubFrame);
-                    manualBoxesMode = true;
-                    setReuseVisibility(false);
-                    showResponse('segmentResponse', 'Saved bounding boxes as a run. Proceed to edit!', 'success');
-                } else {
-                    throw new Error(data.detail || 'Failed to save boxes');
+                const data = await res.json();
+                if(res.ok) {
+                    showToast(`Run ${data.run_id} created!`);
+                    appState.runId = data.run_id;
+                    loadRuns();
                 }
-            } catch (error) {
-                showResponse('segmentResponse', 'Error: ' + error.message, 'error');
-            } finally {
-                btn.disabled = false;
-                btn.innerHTML = 'Segment Video';
-            }
+            } catch(e) { showToast(e.message, 'error'); }
         }
-
-        function updateWorkflowStep(stepId, status) {
-            const step = document.getElementById(stepId);
-            step.className = `workflow-step ${status}`;
-        }
-
-        // Bounding box canvas events
-        const bboxCanvas = document.getElementById('bboxCanvas');
-        if (bboxCanvas) {
-            bboxCanvas.addEventListener('mousedown', startDraw);
-            bboxCanvas.addEventListener('mousemove', moveDraw);
-            bboxCanvas.addEventListener('mouseup', endDraw);
-            bboxCanvas.addEventListener('mouseleave', endDraw);
-        }
-
-        // Run Browser functionality
-        let allRuns = [];
-        let selectedRun = null;
-
-        async function loadRunBrowser() {
-            const btn = document.getElementById('loadRunsBtn');
-            btn.disabled = true;
-            btn.innerHTML = 'Loading<span class="loading"></span>';
-
-            try {
-                const response = await fetch(`${API_BASE}/runs?include_metadata=true`);
-                const data = await response.json();
-
-                if (response.ok) {
-                    allRuns = data.runs;
-                    displayRuns(allRuns);
-                    document.getElementById('runBrowser').style.display = 'block';
-                    showResponse('runBrowserResponse', `Loaded ${allRuns.length} runs`, 'success');
-                } else {
-                    throw new Error(data.detail || 'Failed to load runs');
-                }
-            } catch (error) {
-                showResponse('runBrowserResponse', 'Error: ' + error.message, 'error');
-            } finally {
-                btn.disabled = false;
-                btn.innerHTML = 'Refresh Runs';
-            }
-        }
-
-        function displayRuns(runs) {
-            const runList = document.getElementById('runList');
-            
-            if (runs.length === 0) {
-                runList.innerHTML = '<p style="text-align: center; color: #999; padding: 20px;">No runs found</p>';
-                return;
-            }
-
-            runList.innerHTML = runs.map(run => {
-                const badges = [];
-                if (run.has_edited_video) badges.push('<span class="run-badge edited">Edited</span>');
-                if (run.has_metadata) badges.push('<span class="run-badge segmented">Segmented</span>');
-
-                return `
-                    <div class="run-item" onclick="selectRun('${run.run_id}')">
-                        <h4>
-                            <span>🎬 ${run.run_id}</span>
-                            <span>${badges.join(' ')}</span>
-                        </h4>
-                        ${run.has_metadata ? `
-                            <p><strong>Prompt:</strong> ${run.text_prompt || 'None'}</p>
-                            <p><strong>Frames:</strong> ${run.processed_frames} processed (${run.start_frame_idx || 0} - ${run.end_frame_idx || run.total_video_frames})</p>
-                            <p><strong>FPS:</strong> ${run.fps ? run.fps.toFixed(2) : 'N/A'} | <strong>Available Frames:</strong> ${run.total_available_frames}</p>
-                            <img class="run-preview" src="${API_BASE}/runs/${run.run_id}/preview/${run.available_frames[0] || 0}" 
-                                 onerror="this.style.display='none'" alt="Frame preview">
-                        ` : '<p><em>No metadata available</em></p>'}
-                        <div class="run-actions">
-                            <button onclick="loadRunForEdit('${run.run_id}'); event.stopPropagation();">Edit This Run</button>
-                            <button onclick="viewRunInfo('${run.run_id}'); event.stopPropagation();">View Details</button>
-                            ${run.has_edited_video ? `<button onclick="downloadVideoByRunId('${run.run_id}'); event.stopPropagation();">Download Video</button>` : ''}
-                        </div>
-                    </div>
-                `;
-            }).join('');
-        }
-
-        function filterRuns() {
-            const filter = document.getElementById('runFilter').value.toLowerCase();
-            const filtered = allRuns.filter(run => {
-                const prompt = (run.text_prompt || '').toLowerCase();
-                const runId = run.run_id.toLowerCase();
-                return prompt.includes(filter) || runId.includes(filter);
-            });
-            displayRuns(filtered);
-        }
-
-        function selectRun(runId) {
-            // Remove previous selection
-            document.querySelectorAll('.run-item').forEach(item => {
-                item.classList.remove('selected');
-            });
-            
-            // Add selection to clicked item
-            event.currentTarget.classList.add('selected');
-            selectedRun = runId;
-        }
-
-        async function loadRunForEdit(runId) {
-            try {
-                // Load run info
-                const response = await fetch(`${API_BASE}/run/info`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ run_id: runId })
-                });
-
-                const data = await response.json();
-
-                if (response.ok) {
-                    // Set the run ID for editing
-                    currentRunId = runId;
-                    document.getElementById('currentRunId').textContent = currentRunId;
-                    
-                    // Enable edit controls
-                    document.getElementById('editBtn').disabled = false;
-                    document.getElementById('infoBtn').disabled = false;
-                    document.getElementById('downloadBtn').disabled = false;
-                    document.getElementById('editStatus').className = 'status-badge status-ready';
-                    document.getElementById('editStatus').textContent = 'Ready';
-                    document.getElementById('downloadStatus').className = 'status-badge status-ready';
-                    document.getElementById('downloadStatus').textContent = 'Ready';
-                    
-                    // Update workflow
-                    updateWorkflowStep('step-upload', 'completed');
-                    updateWorkflowStep('step-segment', 'completed');
-                    updateWorkflowStep('step-edit', 'active');
-                    
-                    // Scroll to edit section
-                    document.querySelector('.card:nth-child(5)').scrollIntoView({ behavior: 'smooth' });
-                    
-                    showResponse('runBrowserResponse', `Loaded run ${runId} - ready to edit!`, 'success');
-                } else {
-                    throw new Error(data.detail || 'Failed to load run');
-                }
-            } catch (error) {
-                showResponse('runBrowserResponse', 'Error: ' + error.message, 'error');
-            }
-        }
-
-        async function viewRunInfo(runId) {
-            // If runId is provided, use it; otherwise use currentRunId
-            const targetRunId = runId || currentRunId;
-            
-            if (!targetRunId) {
-                showResponse('runBrowserResponse', 'No run ID available', 'error');
-                return;
-            }
-
-            try {
-                const response = await fetch(`${API_BASE}/run/info`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ run_id: targetRunId })
-                });
-
-                const data = await response.json();
-
-                if (response.ok) {
-                    const responseElement = runId ? 'runBrowserResponse' : 'downloadResponse';
-                    showResponse(responseElement, JSON.stringify(data, null, 2), 'success');
-                } else {
-                    throw new Error(data.detail || 'Failed to get run info');
-                }
-            } catch (error) {
-                const responseElement = runId ? 'runBrowserResponse' : 'downloadResponse';
-                showResponse(responseElement, 'Error: ' + error.message, 'error');
-            }
-        }
-
-        async function downloadVideoByRunId(runId) {
-            try {
-                const response = await fetch(`${API_BASE}/download/video/${runId}`);
-                
-                if (response.ok) {
-                    const blob = await response.blob();
-                    const url = window.URL.createObjectURL(blob);
-                    
-                    const a = document.createElement('a');
-                    a.href = url;
-                    a.download = `edited_${runId}.mp4`;
-                    a.click();
-                    
-                    showResponse('runBrowserResponse', `Downloaded video for run ${runId}`, 'success');
-                } else {
-                    throw new Error('Download failed');
-                }
-            } catch (error) {
-                showResponse('runBrowserResponse', 'Error: ' + error.message, 'error');
-            }
-        }
-
-        // Veo generation from start/end time and prompt
-        async function generateVeoVideo() {
-            if (!currentUploadId) {
-                showResponse('veoResponse', 'Please upload a video first', 'error');
-                return;
-            }
-            const start = parseFloat(document.getElementById('veoStartTime').value);
-            const end = parseFloat(document.getElementById('veoEndTime').value);
-            const prompt = document.getElementById('veoPrompt').value.trim();
-            const fade = parseFloat(document.getElementById('veoFade').value || '0.3');
-            const veoOnly = document.getElementById('veoOnly').checked;
-
-            if (isNaN(start) || isNaN(end) || end <= start) {
-                showResponse('veoResponse', 'Please provide valid start/end times (end > start).', 'error');
-                return;
-            }
-            if (!prompt) {
-                showResponse('veoResponse', 'Please enter a prompt.', 'error');
-                return;
-            }
-
-            const payload = {
-                upload_id: currentUploadId,
-                start_time: start,
-                end_time: end,
-                prompt: prompt,
-                fade_duration: fade,
-                include_original: !veoOnly,
-                veo_only: veoOnly
-            };
-
-            showResponse('veoResponse', 'Generating...', 'success');
-            try {
-                const resp = await fetch(`${API_BASE}/veo/generate`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-                const data = await resp.json();
-                if (!resp.ok) {
-                    throw new Error(data.detail || 'Veo generation failed');
-                }
-                showResponse('veoResponse', JSON.stringify(data, null, 2), 'success');
-            } catch (err) {
-                showResponse('veoResponse', 'Error: ' + err.message, 'error');
-            }
-        }
-
-        // Initialize
-        checkAPIStatus();
     </script>
 </body>
 </html>
-
