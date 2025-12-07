@@ -86,7 +86,9 @@ def edit_video_with_tracked_object(
     reference_images=None,
     max_frames=None,
     aspect_ratio=None,
-    resolution="1K"
+    resolution="1K",
+    segment_ids=None,
+    reuse_edit_every_n_frames=1
 ):
     """
     Edit tracked objects in a video using Gemini image editing.
@@ -100,6 +102,8 @@ def edit_video_with_tracked_object(
         max_frames: Maximum number of frames to process (None = all)
         aspect_ratio: Aspect ratio for generated images (None = auto)
         resolution: Resolution for generated images ("1K", "2K", "4K")
+        segment_ids: List of segment IDs to edit (None = all segments). E.g., [0, 2] to only edit segments 0 and 2
+        reuse_edit_every_n_frames: Edit once every N frames and reuse for intermediate frames (default: 1 = edit every frame)
     """
     run_dir = Path(run_dir)
     
@@ -128,6 +132,12 @@ def edit_video_with_tracked_object(
         print(f"📎 Reference images: {len(reference_images)}")
         for i, ref in enumerate(reference_images, 1):
             print(f"     {i}. {ref}")
+    if segment_ids is not None:
+        print(f"🎯 Target segments: {segment_ids}")
+    else:
+        print(f"🎯 Target segments: all")
+    if reuse_edit_every_n_frames > 1:
+        print(f"♻️  Reuse edit every {reuse_edit_every_n_frames} frames")
     print(f"{'='*60}\n")
     
     # Initialize Gemini client
@@ -205,6 +215,10 @@ def edit_video_with_tracked_object(
     frame_idx = 0
     processed_count = 0
     
+    # Cache for reusing edits across frames
+    # Structure: {segment_id: {frame_idx: edited_crop_pil}}
+    edit_cache = {}
+    
     while frame_idx < total_frames:
         ret, frame_bgr = cap.read()
         if not ret:
@@ -223,178 +237,221 @@ def edit_video_with_tracked_object(
             
             # Process each segment in this frame
             for segment in frame_data['segments']:
-                print(f"  Segment {segment['segment_id']}:")
+                seg_id = segment['segment_id']
+                
+                # Filter by segment_ids if specified
+                if segment_ids is not None and seg_id not in segment_ids:
+                    print(f"  Segment {seg_id}: Skipped (not in target list)")
+                    continue
+                
+                print(f"  Segment {seg_id}:")
                 print(f"    BBox: {[int(x) for x in segment['bbox']]}")
                 
-                # Get bbox coordinates
+                # Get bbox coordinates (these define the original segment location)
                 x1, y1, x2, y2 = [int(coord) for coord in segment['bbox']]
+                original_bbox_width = x2 - x1
+                original_bbox_height = y2 - y1
                 
-                # Crop the segment from the original frame
-                cropped = frame_pil.crop((x1, y1, x2, y2))
-                crop_width, crop_height = cropped.size
+                # Check if we should reuse a cached edit
+                should_edit = (frame_idx % reuse_edit_every_n_frames == 0)
+                cached_edit = None
                 
-                print(f"    Crop size: {crop_width}x{crop_height}")
+                if not should_edit and seg_id in edit_cache:
+                    # Find the most recent edit for this segment
+                    cached_frames = sorted([f for f in edit_cache[seg_id].keys() if f < frame_idx])
+                    if cached_frames:
+                        last_edit_frame = cached_frames[-1]
+                        cached_edit = edit_cache[seg_id][last_edit_frame]
+                        print(f"    ♻️  Reusing edit from frame {last_edit_frame}")
                 
-                # Add black borders to match standard aspect ratios
-                # This preserves the original image without distortion
-                # and ensures uniform dimensions for Gemini API
-                
-                # Target resolution: aim for 512x512 or nearest standard size
-                TARGET_SIZE = 512
-                MIN_SIZE = 256
-                MAX_SIZE = 1024
-                
-                # First, ensure minimum size with scaling if needed
-                scale_factor = 1.0
-                if crop_width < MIN_SIZE or crop_height < MIN_SIZE:
-                    scale_factor = MIN_SIZE / min(crop_width, crop_height)
-                    crop_width = int(crop_width * scale_factor)
-                    crop_height = int(crop_height * scale_factor)
-                    cropped = cropped.resize((crop_width, crop_height), Image.LANCZOS)
-                    print(f"      Scaled up to: {crop_width}x{crop_height}")
-                
-                # Then scale down if too large
-                if crop_width > MAX_SIZE or crop_height > MAX_SIZE:
-                    scale_factor = MAX_SIZE / max(crop_width, crop_height)
-                    crop_width = int(crop_width * scale_factor)
-                    crop_height = int(crop_height * scale_factor)
-                    cropped = cropped.resize((crop_width, crop_height), Image.LANCZOS)
-                    print(f"      Scaled down to: {crop_width}x{crop_height}")
-                
-                # Determine target dimensions with black borders
-                # Use square format for simplicity and consistency
-                target_dim = max(crop_width, crop_height)
-                
-                # Round up to nearest standard size for better API compatibility
-                if target_dim <= 256:
-                    target_dim = 256
-                elif target_dim <= 512:
-                    target_dim = 512
-                elif target_dim <= 768:
-                    target_dim = 768
+                if cached_edit is not None:
+                    # Use cached edit - it's already at original bbox size
+                    edited_crop = cached_edit
                 else:
-                    target_dim = 1024
-                
-                # Create padded image with black borders
-                padded = Image.new('RGB', (target_dim, target_dim), (0, 0, 0))
-                paste_x = (target_dim - crop_width) // 2
-                paste_y = (target_dim - crop_height) // 2
-                padded.paste(cropped, (paste_x, paste_y))
-                
-                # Store padding info for later mask application
-                padding_info = {
-                    'paste_x': paste_x,
-                    'paste_y': paste_y,
-                    'original_width': crop_width,
-                    'original_height': crop_height,
-                    'padded_size': target_dim
-                }
-                
-                cropped_for_edit = padded
-                print(f"      Padded to: {target_dim}x{target_dim} (borders: {paste_x}px, {paste_y}px)")
-                
-                # Edit the cropped segment with Gemini
-                print(f"    Editing crop...")
-                try:
-                    # Build content list
-                    content = [edit_prompt, cropped_for_edit]
-                    if reference_pil_images:
-                        content.extend(reference_pil_images)
+                    # Perform new edit
+                    # Crop the segment from the original frame
+                    cropped = frame_pil.crop((x1, y1, x2, y2))
                     
-                    # Truncate prompt for display
-                    display_prompt = edit_prompt[:60] + '...' if len(edit_prompt) > 60 else edit_prompt
-                    print(f"      🎨 Editing with Gemini: '{display_prompt}'")
+                    print(f"    Original bbox crop: {original_bbox_width}x{original_bbox_height}")
                     
-                    if reference_pil_images:
-                        for i, ref_img in enumerate(reference_pil_images, 1):
-                            ref_name = Path(reference_images[i-1]).name
-                            ref_size = f"{ref_img.width}x{ref_img.height}"
-                            print(f"        📎 Using reference {i}: {ref_name} ({ref_size})")
+                    # For Gemini editing, we'll work with a scaled version
+                    # but track all transformations so we can reverse them
                     
-                    response = client.models.generate_content(
-                        model=model,
-                        contents=content,
-                        config=generation_config
-                    )
+                    # Target resolution: aim for 512-1024px on longest side
+                    MIN_SIZE = 256
+                    TARGET_SIZE = 512
+                    MAX_SIZE = 1024
                     
-                    # Extract edited image
-                    edited_crop = None
-                    for part in response.parts:
-                        if part.inline_data is not None:
-                            # Convert genai Image to PIL Image
-                            genai_image = part.as_image()
-                            # genai's as_image() already returns a PIL Image, but let's ensure it
-                            if hasattr(genai_image, 'size'):
-                                # It's already a PIL Image
-                                edited_crop = genai_image
-                            else:
-                                # It's a genai Image object, need to convert
-                                # The inline_data contains the image bytes
-                                import io
-                                image_bytes = part.inline_data.data
-                                edited_crop = Image.open(io.BytesIO(image_bytes))
-                            break
+                    # Calculate working dimensions (maintain aspect ratio)
+                    working_width = original_bbox_width
+                    working_height = original_bbox_height
                     
-                    if edited_crop is None:
-                        print(f"        ⚠️  No image returned, using original")
-                        # Use original cropped image from frame
-                        original_bbox_width = x2 - x1
-                        original_bbox_height = y2 - y1
-                        edited_crop = frame_pil.crop((x1, y1, x2, y2))
+                    # Scale up if too small
+                    if working_width < MIN_SIZE or working_height < MIN_SIZE:
+                        scale_factor = MIN_SIZE / min(working_width, working_height)
+                        working_width = int(working_width * scale_factor)
+                        working_height = int(working_height * scale_factor)
+                        print(f"      Scaling up by {scale_factor:.2f}x to: {working_width}x{working_height}")
+                    
+                    # Scale down if too large
+                    elif working_width > MAX_SIZE or working_height > MAX_SIZE:
+                        scale_factor = MAX_SIZE / max(working_width, working_height)
+                        working_width = int(working_width * scale_factor)
+                        working_height = int(working_height * scale_factor)
+                        print(f"      Scaling down by {scale_factor:.2f}x to: {working_width}x{working_height}")
+                    
+                    # Resize crop to working dimensions
+                    cropped_working = cropped.resize((working_width, working_height), Image.LANCZOS)
+                    
+                    # Add padding to make square (helps with Gemini API consistency)
+                    target_dim = max(working_width, working_height)
+                    
+                    # Round up to nearest standard size
+                    if target_dim <= 256:
+                        target_dim = 256
+                    elif target_dim <= 512:
+                        target_dim = 512
+                    elif target_dim <= 768:
+                        target_dim = 768
                     else:
-                        # Verify it's a PIL Image now
-                        if not hasattr(edited_crop, 'size'):
-                            print(f"        ⚠️  Could not convert to PIL Image, using original")
-                            original_bbox_width = x2 - x1
-                            original_bbox_height = y2 - y1
+                        target_dim = 1024
+                    
+                    # Create padded square image
+                    padded = Image.new('RGB', (target_dim, target_dim), (0, 0, 0))
+                    paste_x = (target_dim - working_width) // 2
+                    paste_y = (target_dim - working_height) // 2
+                    padded.paste(cropped_working, (paste_x, paste_y))
+                    
+                    # Store transformation info for reversal
+                    transform_info = {
+                        'paste_x': paste_x,
+                        'paste_y': paste_y,
+                        'working_width': working_width,
+                        'working_height': working_height,
+                        'padded_size': target_dim,
+                        'original_bbox_width': original_bbox_width,
+                        'original_bbox_height': original_bbox_height
+                    }
+                    
+                    cropped_for_edit = padded
+                    print(f"      Working size: {working_width}x{working_height}")
+                    print(f"      Padded to: {target_dim}x{target_dim} (padding: x={paste_x}, y={paste_y})")
+                    
+                    # Edit the cropped segment with Gemini
+                    print(f"    Editing crop...")
+                    try:
+                        # Build content list
+                        content = [edit_prompt, cropped_for_edit]
+                        if reference_pil_images:
+                            content.extend(reference_pil_images)
+                        
+                        # Truncate prompt for display
+                        display_prompt = edit_prompt[:60] + '...' if len(edit_prompt) > 60 else edit_prompt
+                        print(f"      🎨 Editing with Gemini: '{display_prompt}'")
+                        
+                        if reference_pil_images:
+                            for i, ref_img in enumerate(reference_pil_images, 1):
+                                ref_name = Path(reference_images[i-1]).name
+                                ref_size = f"{ref_img.width}x{ref_img.height}"
+                                print(f"        📎 Using reference {i}: {ref_name} ({ref_size})")
+                        
+                        response = client.models.generate_content(
+                            model=model,
+                            contents=content,
+                            config=generation_config
+                        )
+                        
+                        # Extract edited image
+                        edited_crop = None
+                        for part in response.parts:
+                            if part.inline_data is not None:
+                                # Convert genai Image to PIL Image
+                                genai_image = part.as_image()
+                                # genai's as_image() already returns a PIL Image, but let's ensure it
+                                if hasattr(genai_image, 'size'):
+                                    # It's already a PIL Image
+                                    edited_crop = genai_image
+                                else:
+                                    # It's a genai Image object, need to convert
+                                    # The inline_data contains the image bytes
+                                    import io
+                                    image_bytes = part.inline_data.data
+                                    edited_crop = Image.open(io.BytesIO(image_bytes))
+                                break
+                        
+                        if edited_crop is None:
+                            print(f"        ⚠️  No image returned, using original")
+                            # Use original cropped image from frame at original bbox size
                             edited_crop = frame_pil.crop((x1, y1, x2, y2))
                         else:
-                            print(f"        ✅ Edit successful ({edited_crop.size[0]}x{edited_crop.size[1]})")
-                            
-                            # Extract the center region from padded result
-                            # The edited image should match the padded size
-                            if edited_crop.size == (padding_info['padded_size'], padding_info['padded_size']):
-                                # Crop out the padding to get back to original dimensions
-                                edited_crop = edited_crop.crop((
-                                    padding_info['paste_x'],
-                                    padding_info['paste_y'],
-                                    padding_info['paste_x'] + padding_info['original_width'],
-                                    padding_info['paste_y'] + padding_info['original_height']
-                                ))
-                                print(f"        Extracted from padding: {edited_crop.size[0]}x{edited_crop.size[1]}")
-                            
-                            # Now resize to match the ORIGINAL crop bbox size (before any scaling)
-                            original_bbox_width = x2 - x1
-                            original_bbox_height = y2 - y1
-                            if edited_crop.size != (original_bbox_width, original_bbox_height):
-                                edited_crop = edited_crop.resize((original_bbox_width, original_bbox_height), Image.LANCZOS)
+                            # Verify it's a PIL Image now
+                            if not hasattr(edited_crop, 'size'):
+                                print(f"        ⚠️  Could not convert to PIL Image, using original")
+                                edited_crop = frame_pil.crop((x1, y1, x2, y2))
+                            else:
+                                print(f"        ✅ Edit successful, received: {edited_crop.size[0]}x{edited_crop.size[1]}")
+                                
+                                # Reverse transformations:
+                                # 1. If Gemini returned a padded square, extract the working area
+                                if edited_crop.size == (transform_info['padded_size'], transform_info['padded_size']):
+                                    edited_crop = edited_crop.crop((
+                                        transform_info['paste_x'],
+                                        transform_info['paste_y'],
+                                        transform_info['paste_x'] + transform_info['working_width'],
+                                        transform_info['paste_y'] + transform_info['working_height']
+                                    ))
+                                    print(f"        Removed padding: {edited_crop.size[0]}x{edited_crop.size[1]}")
+                                
+                                # 2. Resize back to original bbox dimensions
+                                if edited_crop.size != (transform_info['original_bbox_width'], transform_info['original_bbox_height']):
+                                    edited_crop = edited_crop.resize(
+                                        (transform_info['original_bbox_width'], transform_info['original_bbox_height']), 
+                                        Image.LANCZOS
+                                    )
+                                    print(f"        Resized to original bbox: {edited_crop.size[0]}x{edited_crop.size[1]}")
+                        
+                    except Exception as e:
+                        print(f"        ❌ Error during editing: {e}")
+                        import traceback
+                        print(f"        Traceback: {traceback.format_exc()}")
+                        # Use original cropped image at original bbox size
+                        edited_crop = frame_pil.crop((x1, y1, x2, y2))
                     
-                except Exception as e:
-                    print(f"        ❌ Error during editing: {e}")
-                    import traceback
-                    print(f"        Traceback: {traceback.format_exc()}")
-                    # Use original cropped image
-                    original_bbox_width = x2 - x1
-                    original_bbox_height = y2 - y1
-                    edited_crop = frame_pil.crop((x1, y1, x2, y2))
+                    # Cache the edit for potential reuse
+                    if seg_id not in edit_cache:
+                        edit_cache[seg_id] = {}
+                    edit_cache[seg_id][frame_idx] = edited_crop.copy()
+                
                 
                 # Load the mask
                 mask_file = segment.get('mask_file')
                 if mask_file:
                     mask_path = frame_dir / mask_file
                     if mask_path.exists():
-                        # Load mask
+                        # Load mask - mask is saved at original crop size
                         mask_pil = Image.open(mask_path).convert('L')
-                        mask_array = np.array(mask_pil)
                         
-                        # Ensure edited crop matches the bbox size (should already be correct)
+                        # The original bbox dimensions
                         original_bbox_width = x2 - x1
                         original_bbox_height = y2 - y1
+                        
+                        # Ensure edited crop matches the original bbox size
                         if edited_crop.size != (original_bbox_width, original_bbox_height):
+                            print(f"        Resizing edited crop from {edited_crop.size} to {(original_bbox_width, original_bbox_height)}")
                             edited_crop = edited_crop.resize((original_bbox_width, original_bbox_height), Image.LANCZOS)
+                        
+                        # Resize mask to match edited crop dimensions exactly
+                        # Mask was saved at crop size, so it should match, but ensure it does
+                        if mask_pil.size != (original_bbox_width, original_bbox_height):
+                            print(f"        Resizing mask from {mask_pil.size} to {(original_bbox_width, original_bbox_height)}")
+                            mask_pil = mask_pil.resize((original_bbox_width, original_bbox_height), Image.LANCZOS)
+                        
+                        mask_array = np.array(mask_pil)
                         
                         # Apply mask to edited crop
                         masked_edit = apply_mask_to_image(edited_crop, mask_array)
+                        
+                        print(f"        Mask size: {mask_array.shape}, Edited crop: {edited_crop.size}")
                         
                         # Composite back onto original frame
                         frame_pil = composite_on_frame(frame_pil, masked_edit, (x1, y1))
@@ -431,26 +488,33 @@ def edit_video_with_tracked_object(
 
 if __name__ == "__main__":
     if len(sys.argv) < 3:
-        print("Usage: python video_edit_tracked.py <run_directory> <edit_prompt> [reference_images...] [--max-frames N]")
+        print("Usage: python video_edit_tracked.py <run_directory> <edit_prompt> [options]")
+        print("\nOptions:")
+        print("  reference_images...    Paths to reference images (e.g., logos)")
+        print("  --max-frames N         Only process first N frames")
+        print("  --segments IDs         Comma-separated segment IDs to edit (e.g., '0,2,5')")
+        print("  --reuse-every N        Reuse edits every N frames (default: 1)")
         print("\nExamples:")
-        print("  # Add a logo to tracked shirt")
+        print("  # Add a logo to all tracked segments")
         print("  python video_edit_tracked.py video_segments/run_c5cf4832 \\")
-        print("    'add the logo to the shirt in the direct center onto the shirt' \\")
+        print("    'add the logo to the shirt in the direct center' \\")
         print("    media/ref_logo.png")
         print()
-        print("  # Change color of tracked object")
+        print("  # Edit only segment 0 (ignore other segments)")
         print("  python video_edit_tracked.py video_segments/run_c5cf4832 \\")
-        print("    'change the shirt color to bright red'")
+        print("    'change to bright red' --segments 0")
         print()
-        print("  # Process only first 50 frames")
+        print("  # Edit segments 2 and 5 only")
         print("  python video_edit_tracked.py video_segments/run_c5cf4832 \\")
-        print("    'add stripes to the shirt' --max-frames 50")
+        print("    'add stripes' --segments 2,5")
         print()
-        print("Arguments:")
-        print("  run_directory: Path to video segmentation run folder")
-        print("  edit_prompt: Text description of the edit to perform")
-        print("  reference_images: Optional paths to reference images (e.g., logos)")
-        print("  --max-frames N: Only process first N frames (optional)")
+        print("  # Edit once every 10 frames (reuse for frames 1-9, 11-19, etc.)")
+        print("  python video_edit_tracked.py video_segments/run_c5cf4832 \\")
+        print("    'add logo' media/logo.png --reuse-every 10")
+        print()
+        print("  # Combine: edit segment 0 only, first 50 frames, reuse every 5 frames")
+        print("  python video_edit_tracked.py video_segments/run_c5cf4832 \\")
+        print("    'add logo' media/logo.png --segments 0 --max-frames 50 --reuse-every 5")
         sys.exit(1)
     
     run_directory = sys.argv[1]
@@ -459,6 +523,8 @@ if __name__ == "__main__":
     # Parse remaining arguments
     reference_images = []
     max_frames = None
+    segment_ids = None
+    reuse_every = 1
     
     i = 3
     while i < len(sys.argv):
@@ -469,6 +535,21 @@ if __name__ == "__main__":
                 i += 2
             else:
                 print("Error: --max-frames requires a value")
+                sys.exit(1)
+        elif arg == '--segments':
+            if i + 1 < len(sys.argv):
+                # Parse comma-separated segment IDs
+                segment_ids = [int(s.strip()) for s in sys.argv[i + 1].split(',')]
+                i += 2
+            else:
+                print("Error: --segments requires a comma-separated list of IDs")
+                sys.exit(1)
+        elif arg == '--reuse-every':
+            if i + 1 < len(sys.argv):
+                reuse_every = int(sys.argv[i + 1])
+                i += 2
+            else:
+                print("Error: --reuse-every requires a value")
                 sys.exit(1)
         else:
             # Assume it's a reference image
@@ -482,6 +563,8 @@ if __name__ == "__main__":
         run_directory,
         edit_prompt,
         reference_images=reference_images if reference_images else None,
-        max_frames=max_frames
+        max_frames=max_frames,
+        segment_ids=segment_ids,
+        reuse_edit_every_n_frames=reuse_every
     )
 

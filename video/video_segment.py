@@ -179,4 +179,4 @@ if __name__ == "__main__":
     output_every_n = int(sys.argv[4]) if len(sys.argv) > 4 else 1
     
     segment_video(video_file, prompt, max_frames, output_every_n, save_masks=True)
-
+    

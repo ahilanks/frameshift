@@ -1,0 +1,4109 @@
+{
+    "video_path": "media/racecar.mp4",
+    "text_prompt": "the VELO.COM company logo in the very front center of the car",
+    "total_video_frames": 2238,
+    "processed_frames": 20,
+    "fps": 25.0,
+    "frames": {
+        "0": {
+            "frame_index": 0,
+            "timestamp_ms": 0.0,
+            "num_segments": 11,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "the VELO.COM company logo in the very front center of the car_0",
+                    "bbox": [
+                        213.0,
+                        279.0,
+                        255.0,
+                        324.0
+                    ],
+                    "area": 771.0,
+                    "centroid": [
+                        234.99092088197148,
+                        301.0544747081712
+                    ],
+                    "score": 0.68359375,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                },
+                {
+                    "segment_id": 1,
+                    "name": "the VELO.COM company logo in the very front center of the car_1",
+                    "bbox": [
+                        433.0,
+                        170.0,
+                        519.0,
+                        200.0
+                    ],
+                    "area": 810.0,
+                    "centroid": [
+                        478.5308641975309,
+                        185.69753086419752
+                    ],
+                    "score": 0.8203125,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": "segment_1_mask.png"
+                },
+                {
+                    "segment_id": 2,
+                    "name": "the VELO.COM company logo in the very front center of the car_2",
+                    "bbox": [
+                        512.0,
+                        211.0,
+                        552.0,
+                        240.0
+                    ],
+                    "area": 547.0,
+                    "centroid": [
+                        531.9762340036563,
+                        225.08043875685559
+                    ],
+                    "score": 0.78515625,
+                    "crop_file": "segment_2_crop.png",
+                    "mask_file": "segment_2_mask.png"
+                },
+                {
+                    "segment_id": 3,
+                    "name": "the VELO.COM company logo in the very front center of the car_3",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        421.0,
+                        196.0
+                    ],
+                    "area": 1034.0,
+                    "centroid": [
+                        379.6489361702128,
+                        189.09187620889747
+                    ],
+                    "score": 0.84375,
+                    "crop_file": "segment_3_crop.png",
+                    "mask_file": "segment_3_mask.png"
+                },
+                {
+                    "segment_id": 4,
+                    "name": "the VELO.COM company logo in the very front center of the car_4",
+                    "bbox": [
+                        469.0,
+                        273.0,
+                        519.0,
+                        313.0
+                    ],
+                    "area": 646.0,
+                    "centroid": [
+                        493.6625386996904,
+                        293.328173374613
+                    ],
+                    "score": 0.609375,
+                    "crop_file": "segment_4_crop.png",
+                    "mask_file": "segment_4_mask.png"
+                },
+                {
+                    "segment_id": 5,
+                    "name": "the VELO.COM company logo in the very front center of the car_5",
+                    "bbox": [
+                        575.0,
+                        253.0,
+                        613.0,
+                        301.0
+                    ],
+                    "area": 705.0,
+                    "centroid": [
+                        594.1035460992907,
+                        276.78723404255317
+                    ],
+                    "score": 0.6875,
+                    "crop_file": "segment_5_crop.png",
+                    "mask_file": "segment_5_mask.png"
+                },
+                {
+                    "segment_id": 6,
+                    "name": "the VELO.COM company logo in the very front center of the car_6",
+                    "bbox": [
+                        154.0,
+                        267.0,
+                        188.0,
+                        336.0
+                    ],
+                    "area": 775.0,
+                    "centroid": [
+                        169.72516129032257,
+                        301.1083870967742
+                    ],
+                    "score": 0.72265625,
+                    "crop_file": "segment_6_crop.png",
+                    "mask_file": "segment_6_mask.png"
+                },
+                {
+                    "segment_id": 7,
+                    "name": "the VELO.COM company logo in the very front center of the car_7",
+                    "bbox": [
+                        50.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "area": 401.0,
+                    "centroid": [
+                        71.11970074812967,
+                        25.418952618453865
+                    ],
+                    "score": 0.58984375,
+                    "crop_file": "segment_7_crop.png",
+                    "mask_file": "segment_7_mask.png"
+                },
+                {
+                    "segment_id": 8,
+                    "name": "the VELO.COM company logo in the very front center of the car_8",
+                    "bbox": [
+                        213.0,
+                        238.0,
+                        257.0,
+                        253.0
+                    ],
+                    "area": 487.0,
+                    "centroid": [
+                        235.73511293634496,
+                        246.12320328542094
+                    ],
+                    "score": 0.60546875,
+                    "crop_file": "segment_8_crop.png",
+                    "mask_file": "segment_8_mask.png"
+                },
+                {
+                    "segment_id": 9,
+                    "name": "the VELO.COM company logo in the very front center of the car_9",
+                    "bbox": [
+                        232.0,
+                        161.0,
+                        337.0,
+                        205.0
+                    ],
+                    "area": 1668.0,
+                    "centroid": [
+                        284.8171462829736,
+                        181.48860911270984
+                    ],
+                    "score": 0.72265625,
+                    "crop_file": "segment_9_crop.png",
+                    "mask_file": "segment_9_mask.png"
+                },
+                {
+                    "segment_id": 10,
+                    "name": "the VELO.COM company logo in the very front center of the car_10",
+                    "bbox": [
+                        467.0,
+                        236.0,
+                        518.0,
+                        248.0
+                    ],
+                    "area": 523.0,
+                    "centroid": [
+                        491.81453154875715,
+                        242.96749521988528
+                    ],
+                    "score": 0.66796875,
+                    "crop_file": "segment_10_crop.png",
+                    "mask_file": "segment_10_mask.png"
+                }
+            ]
+        },
+        "1": {
+            "frame_index": 1,
+            "timestamp_ms": 40.0,
+            "num_segments": 11,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "the VELO.COM company logo in the very front center of the car_0",
+                    "bbox": [
+                        214.0,
+                        279.0,
+                        255.0,
+                        323.0
+                    ],
+                    "area": 737.0,
+                    "centroid": [
+                        235.17774762550883,
+                        300.9687924016282
+                    ],
+                    "score": 0.68359375,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                },
+                {
+                    "segment_id": 1,
+                    "name": "the VELO.COM company logo in the very front center of the car_1",
+                    "bbox": [
+                        433.0,
+                        170.0,
+                        519.0,
+                        200.0
+                    ],
+                    "area": 792.0,
+                    "centroid": [
+                        478.55429292929296,
+                        185.80176767676767
+                    ],
+                    "score": 0.8203125,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": "segment_1_mask.png"
+                },
+                {
+                    "segment_id": 2,
+                    "name": "the VELO.COM company logo in the very front center of the car_2",
+                    "bbox": [
+                        512.0,
+                        212.0,
+                        552.0,
+                        240.0
+                    ],
+                    "area": 528.0,
+                    "centroid": [
+                        532.3863636363636,
+                        225.15530303030303
+                    ],
+                    "score": 0.78515625,
+                    "crop_file": "segment_2_crop.png",
+                    "mask_file": "segment_2_mask.png"
+                },
+                {
+                    "segment_id": 3,
+                    "name": "the VELO.COM company logo in the very front center of the car_3",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "area": 1053.0,
+                    "centroid": [
+                        379.982905982906,
+                        189.27065527065528
+                    ],
+                    "score": 0.84375,
+                    "crop_file": "segment_3_crop.png",
+                    "mask_file": "segment_3_mask.png"
+                },
+                {
+                    "segment_id": 4,
+                    "name": "the VELO.COM company logo in the very front center of the car_4",
+                    "bbox": [
+                        468.0,
+                        272.0,
+                        520.0,
+                        313.0
+                    ],
+                    "area": 658.0,
+                    "centroid": [
+                        493.5364741641337,
+                        293.36018237082067
+                    ],
+                    "score": 0.609375,
+                    "crop_file": "segment_4_crop.png",
+                    "mask_file": "segment_4_mask.png"
+                },
+                {
+                    "segment_id": 5,
+                    "name": "the VELO.COM company logo in the very front center of the car_5",
+                    "bbox": [
+                        575.0,
+                        254.0,
+                        613.0,
+                        300.0
+                    ],
+                    "area": 697.0,
+                    "centroid": [
+                        594.2797704447632,
+                        276.8163558106169
+                    ],
+                    "score": 0.6875,
+                    "crop_file": "segment_5_crop.png",
+                    "mask_file": "segment_5_mask.png"
+                },
+                {
+                    "segment_id": 6,
+                    "name": "the VELO.COM company logo in the very front center of the car_6",
+                    "bbox": [
+                        154.0,
+                        264.0,
+                        190.0,
+                        336.0
+                    ],
+                    "area": 824.0,
+                    "centroid": [
+                        170.45873786407768,
+                        299.77912621359224
+                    ],
+                    "score": 0.72265625,
+                    "crop_file": "segment_6_crop.png",
+                    "mask_file": "segment_6_mask.png"
+                },
+                {
+                    "segment_id": 7,
+                    "name": "the VELO.COM company logo in the very front center of the car_7",
+                    "bbox": [
+                        50.0,
+                        20.0,
+                        91.0,
+                        32.0
+                    ],
+                    "area": 409.0,
+                    "centroid": [
+                        71.21515892420538,
+                        25.542787286063568
+                    ],
+                    "score": 0.58984375,
+                    "crop_file": "segment_7_crop.png",
+                    "mask_file": "segment_7_mask.png"
+                },
+                {
+                    "segment_id": 8,
+                    "name": "the VELO.COM company logo in the very front center of the car_8",
+                    "bbox": [
+                        214.0,
+                        239.0,
+                        257.0,
+                        252.0
+                    ],
+                    "area": 462.0,
+                    "centroid": [
+                        235.82251082251082,
+                        246.0064935064935
+                    ],
+                    "score": 0.60546875,
+                    "crop_file": "segment_8_crop.png",
+                    "mask_file": "segment_8_mask.png"
+                },
+                {
+                    "segment_id": 9,
+                    "name": "the VELO.COM company logo in the very front center of the car_9",
+                    "bbox": [
+                        233.0,
+                        160.0,
+                        337.0,
+                        205.0
+                    ],
+                    "area": 1713.0,
+                    "centroid": [
+                        285.2790426152948,
+                        181.32340922358435
+                    ],
+                    "score": 0.72265625,
+                    "crop_file": "segment_9_crop.png",
+                    "mask_file": "segment_9_mask.png"
+                },
+                {
+                    "segment_id": 10,
+                    "name": "the VELO.COM company logo in the very front center of the car_10",
+                    "bbox": [
+                        467.0,
+                        237.0,
+                        518.0,
+                        248.0
+                    ],
+                    "area": 512.0,
+                    "centroid": [
+                        492.224609375,
+                        243.052734375
+                    ],
+                    "score": 0.66796875,
+                    "crop_file": "segment_10_crop.png",
+                    "mask_file": "segment_10_mask.png"
+                }
+            ]
+        },
+        "2": {
+            "frame_index": 2,
+            "timestamp_ms": 80.0,
+            "num_segments": 11,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "the VELO.COM company logo in the very front center of the car_0",
+                    "bbox": [
+                        213.0,
+                        279.0,
+                        255.0,
+                        324.0
+                    ],
+                    "area": 784.0,
+                    "centroid": [
+                        235.0625,
+                        301.2308673469388
+                    ],
+                    "score": 0.68359375,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                },
+                {
+                    "segment_id": 1,
+                    "name": "the VELO.COM company logo in the very front center of the car_1",
+                    "bbox": [
+                        433.0,
+                        170.0,
+                        518.0,
+                        200.0
+                    ],
+                    "area": 756.0,
+                    "centroid": [
+                        478.76851851851853,
+                        185.739417989418
+                    ],
+                    "score": 0.8203125,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": "segment_1_mask.png"
+                },
+                {
+                    "segment_id": 2,
+                    "name": "the VELO.COM company logo in the very front center of the car_2",
+                    "bbox": [
+                        512.0,
+                        211.0,
+                        553.0,
+                        240.0
+                    ],
+                    "area": 555.0,
+                    "centroid": [
+                        532.3675675675676,
+                        225.12612612612614
+                    ],
+                    "score": 0.78515625,
+                    "crop_file": "segment_2_crop.png",
+                    "mask_file": "segment_2_mask.png"
+                },
+                {
+                    "segment_id": 3,
+                    "name": "the VELO.COM company logo in the very front center of the car_3",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "area": 1056.0,
+                    "centroid": [
+                        380.03125,
+                        189.3030303030303
+                    ],
+                    "score": 0.84375,
+                    "crop_file": "segment_3_crop.png",
+                    "mask_file": "segment_3_mask.png"
+                },
+                {
+                    "segment_id": 4,
+                    "name": "the VELO.COM company logo in the very front center of the car_4",
+                    "bbox": [
+                        469.0,
+                        273.0,
+                        520.0,
+                        313.0
+                    ],
+                    "area": 651.0,
+                    "centroid": [
+                        493.7649769585253,
+                        293.6236559139785
+                    ],
+                    "score": 0.609375,
+                    "crop_file": "segment_4_crop.png",
+                    "mask_file": "segment_4_mask.png"
+                },
+                {
+                    "segment_id": 5,
+                    "name": "the VELO.COM company logo in the very front center of the car_5",
+                    "bbox": [
+                        576.0,
+                        253.0,
+                        613.0,
+                        301.0
+                    ],
+                    "area": 726.0,
+                    "centroid": [
+                        594.3911845730028,
+                        276.89256198347107
+                    ],
+                    "score": 0.6875,
+                    "crop_file": "segment_5_crop.png",
+                    "mask_file": "segment_5_mask.png"
+                },
+                {
+                    "segment_id": 6,
+                    "name": "the VELO.COM company logo in the very front center of the car_6",
+                    "bbox": [
+                        154.0,
+                        264.0,
+                        191.0,
+                        336.0
+                    ],
+                    "area": 809.0,
+                    "centroid": [
+                        170.21755253399257,
+                        300.50061804697157
+                    ],
+                    "score": 0.72265625,
+                    "crop_file": "segment_6_crop.png",
+                    "mask_file": "segment_6_mask.png"
+                },
+                {
+                    "segment_id": 7,
+                    "name": "the VELO.COM company logo in the very front center of the car_7",
+                    "bbox": [
+                        50.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "area": 405.0,
+                    "centroid": [
+                        71.25925925925925,
+                        25.496296296296297
+                    ],
+                    "score": 0.58984375,
+                    "crop_file": "segment_7_crop.png",
+                    "mask_file": "segment_7_mask.png"
+                },
+                {
+                    "segment_id": 8,
+                    "name": "the VELO.COM company logo in the very front center of the car_8",
+                    "bbox": [
+                        213.0,
+                        238.0,
+                        257.0,
+                        252.0
+                    ],
+                    "area": 504.0,
+                    "centroid": [
+                        235.73214285714286,
+                        246.1329365079365
+                    ],
+                    "score": 0.60546875,
+                    "crop_file": "segment_8_crop.png",
+                    "mask_file": "segment_8_mask.png"
+                },
+                {
+                    "segment_id": 9,
+                    "name": "the VELO.COM company logo in the very front center of the car_9",
+                    "bbox": [
+                        232.0,
+                        160.0,
+                        337.0,
+                        205.0
+                    ],
+                    "area": 1746.0,
+                    "centroid": [
+                        284.94329896907215,
+                        181.3413516609393
+                    ],
+                    "score": 0.72265625,
+                    "crop_file": "segment_9_crop.png",
+                    "mask_file": "segment_9_mask.png"
+                },
+                {
+                    "segment_id": 10,
+                    "name": "the VELO.COM company logo in the very front center of the car_10",
+                    "bbox": [
+                        467.0,
+                        237.0,
+                        518.0,
+                        248.0
+                    ],
+                    "area": 526.0,
+                    "centroid": [
+                        491.8688212927757,
+                        243.05133079847909
+                    ],
+                    "score": 0.66796875,
+                    "crop_file": "segment_10_crop.png",
+                    "mask_file": "segment_10_mask.png"
+                }
+            ]
+        },
+        "3": {
+            "frame_index": 3,
+            "timestamp_ms": 120.0,
+            "num_segments": 11,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "the VELO.COM company logo in the very front center of the car_0",
+                    "bbox": [
+                        213.0,
+                        279.0,
+                        255.0,
+                        324.0
+                    ],
+                    "area": 781.0,
+                    "centroid": [
+                        234.99743918053778,
+                        301.3085787451985
+                    ],
+                    "score": 0.68359375,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                },
+                {
+                    "segment_id": 1,
+                    "name": "the VELO.COM company logo in the very front center of the car_1",
+                    "bbox": [
+                        433.0,
+                        170.0,
+                        518.0,
+                        200.0
+                    ],
+                    "area": 755.0,
+                    "centroid": [
+                        478.6317880794702,
+                        185.6701986754967
+                    ],
+                    "score": 0.8203125,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": "segment_1_mask.png"
+                },
+                {
+                    "segment_id": 2,
+                    "name": "the VELO.COM company logo in the very front center of the car_2",
+                    "bbox": [
+                        512.0,
+                        211.0,
+                        553.0,
+                        240.0
+                    ],
+                    "area": 551.0,
+                    "centroid": [
+                        532.4664246823957,
+                        225.15063520871144
+                    ],
+                    "score": 0.78515625,
+                    "crop_file": "segment_2_crop.png",
+                    "mask_file": "segment_2_mask.png"
+                },
+                {
+                    "segment_id": 3,
+                    "name": "the VELO.COM company logo in the very front center of the car_3",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "area": 1051.0,
+                    "centroid": [
+                        380.05042816365363,
+                        189.3235014272122
+                    ],
+                    "score": 0.84375,
+                    "crop_file": "segment_3_crop.png",
+                    "mask_file": "segment_3_mask.png"
+                },
+                {
+                    "segment_id": 4,
+                    "name": "the VELO.COM company logo in the very front center of the car_4",
+                    "bbox": [
+                        469.0,
+                        273.0,
+                        520.0,
+                        313.0
+                    ],
+                    "area": 615.0,
+                    "centroid": [
+                        493.89268292682925,
+                        293.4439024390244
+                    ],
+                    "score": 0.609375,
+                    "crop_file": "segment_4_crop.png",
+                    "mask_file": "segment_4_mask.png"
+                },
+                {
+                    "segment_id": 5,
+                    "name": "the VELO.COM company logo in the very front center of the car_5",
+                    "bbox": [
+                        575.0,
+                        253.0,
+                        613.0,
+                        300.0
+                    ],
+                    "area": 728.0,
+                    "centroid": [
+                        594.2252747252747,
+                        276.65384615384613
+                    ],
+                    "score": 0.6875,
+                    "crop_file": "segment_5_crop.png",
+                    "mask_file": "segment_5_mask.png"
+                },
+                {
+                    "segment_id": 6,
+                    "name": "the VELO.COM company logo in the very front center of the car_6",
+                    "bbox": [
+                        154.0,
+                        264.0,
+                        191.0,
+                        335.0
+                    ],
+                    "area": 802.0,
+                    "centroid": [
+                        170.47381546134665,
+                        299.9476309226933
+                    ],
+                    "score": 0.72265625,
+                    "crop_file": "segment_6_crop.png",
+                    "mask_file": "segment_6_mask.png"
+                },
+                {
+                    "segment_id": 7,
+                    "name": "the VELO.COM company logo in the very front center of the car_7",
+                    "bbox": [
+                        50.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "area": 411.0,
+                    "centroid": [
+                        71.50608272506082,
+                        25.535279805352797
+                    ],
+                    "score": 0.58984375,
+                    "crop_file": "segment_7_crop.png",
+                    "mask_file": "segment_7_mask.png"
+                },
+                {
+                    "segment_id": 8,
+                    "name": "the VELO.COM company logo in the very front center of the car_8",
+                    "bbox": [
+                        213.0,
+                        238.0,
+                        257.0,
+                        252.0
+                    ],
+                    "area": 500.0,
+                    "centroid": [
+                        235.632,
+                        246.114
+                    ],
+                    "score": 0.60546875,
+                    "crop_file": "segment_8_crop.png",
+                    "mask_file": "segment_8_mask.png"
+                },
+                {
+                    "segment_id": 9,
+                    "name": "the VELO.COM company logo in the very front center of the car_9",
+                    "bbox": [
+                        233.0,
+                        161.0,
+                        336.0,
+                        205.0
+                    ],
+                    "area": 1704.0,
+                    "centroid": [
+                        284.6901408450704,
+                        181.58744131455398
+                    ],
+                    "score": 0.72265625,
+                    "crop_file": "segment_9_crop.png",
+                    "mask_file": "segment_9_mask.png"
+                },
+                {
+                    "segment_id": 10,
+                    "name": "the VELO.COM company logo in the very front center of the car_10",
+                    "bbox": [
+                        467.0,
+                        237.0,
+                        518.0,
+                        248.0
+                    ],
+                    "area": 514.0,
+                    "centroid": [
+                        492.15953307392994,
+                        243.02918287937743
+                    ],
+                    "score": 0.66796875,
+                    "crop_file": "segment_10_crop.png",
+                    "mask_file": "segment_10_mask.png"
+                }
+            ]
+        },
+        "4": {
+            "frame_index": 4,
+            "timestamp_ms": 160.0,
+            "num_segments": 11,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "the VELO.COM company logo in the very front center of the car_0",
+                    "bbox": [
+                        213.0,
+                        279.0,
+                        255.0,
+                        324.0
+                    ],
+                    "area": 782.0,
+                    "centroid": [
+                        235.04987212276214,
+                        301.2570332480818
+                    ],
+                    "score": 0.68359375,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                },
+                {
+                    "segment_id": 1,
+                    "name": "the VELO.COM company logo in the very front center of the car_1",
+                    "bbox": [
+                        433.0,
+                        170.0,
+                        518.0,
+                        200.0
+                    ],
+                    "area": 747.0,
+                    "centroid": [
+                        478.8460508701473,
+                        185.67871485943775
+                    ],
+                    "score": 0.8203125,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": "segment_1_mask.png"
+                },
+                {
+                    "segment_id": 2,
+                    "name": "the VELO.COM company logo in the very front center of the car_2",
+                    "bbox": [
+                        513.0,
+                        212.0,
+                        552.0,
+                        240.0
+                    ],
+                    "area": 503.0,
+                    "centroid": [
+                        532.4771371769384,
+                        225.18290258449304
+                    ],
+                    "score": 0.78515625,
+                    "crop_file": "segment_2_crop.png",
+                    "mask_file": "segment_2_mask.png"
+                },
+                {
+                    "segment_id": 3,
+                    "name": "the VELO.COM company logo in the very front center of the car_3",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "area": 1052.0,
+                    "centroid": [
+                        380.0703422053232,
+                        189.3051330798479
+                    ],
+                    "score": 0.84375,
+                    "crop_file": "segment_3_crop.png",
+                    "mask_file": "segment_3_mask.png"
+                },
+                {
+                    "segment_id": 4,
+                    "name": "the VELO.COM company logo in the very front center of the car_4",
+                    "bbox": [
+                        469.0,
+                        273.0,
+                        520.0,
+                        313.0
+                    ],
+                    "area": 643.0,
+                    "centroid": [
+                        493.6407465007776,
+                        293.50388802488334
+                    ],
+                    "score": 0.609375,
+                    "crop_file": "segment_4_crop.png",
+                    "mask_file": "segment_4_mask.png"
+                },
+                {
+                    "segment_id": 5,
+                    "name": "the VELO.COM company logo in the very front center of the car_5",
+                    "bbox": [
+                        576.0,
+                        254.0,
+                        613.0,
+                        300.0
+                    ],
+                    "area": 706.0,
+                    "centroid": [
+                        594.4305949008499,
+                        276.8441926345609
+                    ],
+                    "score": 0.6875,
+                    "crop_file": "segment_5_crop.png",
+                    "mask_file": "segment_5_mask.png"
+                },
+                {
+                    "segment_id": 6,
+                    "name": "the VELO.COM company logo in the very front center of the car_6",
+                    "bbox": [
+                        154.0,
+                        267.0,
+                        188.0,
+                        336.0
+                    ],
+                    "area": 815.0,
+                    "centroid": [
+                        169.74969325153376,
+                        301.0049079754601
+                    ],
+                    "score": 0.72265625,
+                    "crop_file": "segment_6_crop.png",
+                    "mask_file": "segment_6_mask.png"
+                },
+                {
+                    "segment_id": 7,
+                    "name": "the VELO.COM company logo in the very front center of the car_7",
+                    "bbox": [
+                        50.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "area": 407.0,
+                    "centroid": [
+                        71.21375921375922,
+                        25.535626535626534
+                    ],
+                    "score": 0.58984375,
+                    "crop_file": "segment_7_crop.png",
+                    "mask_file": "segment_7_mask.png"
+                },
+                {
+                    "segment_id": 8,
+                    "name": "the VELO.COM company logo in the very front center of the car_8",
+                    "bbox": [
+                        214.0,
+                        238.0,
+                        257.0,
+                        252.0
+                    ],
+                    "area": 497.0,
+                    "centroid": [
+                        235.80281690140845,
+                        246.0503018108652
+                    ],
+                    "score": 0.60546875,
+                    "crop_file": "segment_8_crop.png",
+                    "mask_file": "segment_8_mask.png"
+                },
+                {
+                    "segment_id": 9,
+                    "name": "the VELO.COM company logo in the very front center of the car_9",
+                    "bbox": [
+                        233.0,
+                        161.0,
+                        336.0,
+                        204.0
+                    ],
+                    "area": 1698.0,
+                    "centroid": [
+                        284.4552414605418,
+                        181.53828032979976
+                    ],
+                    "score": 0.72265625,
+                    "crop_file": "segment_9_crop.png",
+                    "mask_file": "segment_9_mask.png"
+                },
+                {
+                    "segment_id": 10,
+                    "name": "the VELO.COM company logo in the very front center of the car_10",
+                    "bbox": [
+                        467.0,
+                        237.0,
+                        518.0,
+                        248.0
+                    ],
+                    "area": 533.0,
+                    "centroid": [
+                        492.03001876172607,
+                        243.0731707317073
+                    ],
+                    "score": 0.66796875,
+                    "crop_file": "segment_10_crop.png",
+                    "mask_file": "segment_10_mask.png"
+                }
+            ]
+        },
+        "5": {
+            "frame_index": 5,
+            "timestamp_ms": 200.0,
+            "num_segments": 11,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "the VELO.COM company logo in the very front center of the car_0",
+                    "bbox": [
+                        214.0,
+                        279.0,
+                        255.0,
+                        324.0
+                    ],
+                    "area": 736.0,
+                    "centroid": [
+                        235.13451086956522,
+                        301.13722826086956
+                    ],
+                    "score": 0.68359375,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                },
+                {
+                    "segment_id": 1,
+                    "name": "the VELO.COM company logo in the very front center of the car_1",
+                    "bbox": [
+                        433.0,
+                        170.0,
+                        518.0,
+                        200.0
+                    ],
+                    "area": 734.0,
+                    "centroid": [
+                        478.9713896457766,
+                        185.7465940054496
+                    ],
+                    "score": 0.8203125,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": "segment_1_mask.png"
+                },
+                {
+                    "segment_id": 2,
+                    "name": "the VELO.COM company logo in the very front center of the car_2",
+                    "bbox": [
+                        513.0,
+                        212.0,
+                        552.0,
+                        240.0
+                    ],
+                    "area": 497.0,
+                    "centroid": [
+                        532.4587525150905,
+                        225.2394366197183
+                    ],
+                    "score": 0.78515625,
+                    "crop_file": "segment_2_crop.png",
+                    "mask_file": "segment_2_mask.png"
+                },
+                {
+                    "segment_id": 3,
+                    "name": "the VELO.COM company logo in the very front center of the car_3",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "area": 1053.0,
+                    "centroid": [
+                        380.0683760683761,
+                        189.28869895536562
+                    ],
+                    "score": 0.84375,
+                    "crop_file": "segment_3_crop.png",
+                    "mask_file": "segment_3_mask.png"
+                },
+                {
+                    "segment_id": 4,
+                    "name": "the VELO.COM company logo in the very front center of the car_4",
+                    "bbox": [
+                        469.0,
+                        273.0,
+                        520.0,
+                        313.0
+                    ],
+                    "area": 646.0,
+                    "centroid": [
+                        493.76006191950466,
+                        293.6269349845201
+                    ],
+                    "score": 0.609375,
+                    "crop_file": "segment_4_crop.png",
+                    "mask_file": "segment_4_mask.png"
+                },
+                {
+                    "segment_id": 5,
+                    "name": "the VELO.COM company logo in the very front center of the car_5",
+                    "bbox": [
+                        575.0,
+                        254.0,
+                        613.0,
+                        300.0
+                    ],
+                    "area": 722.0,
+                    "centroid": [
+                        594.3587257617728,
+                        276.85595567867034
+                    ],
+                    "score": 0.6875,
+                    "crop_file": "segment_5_crop.png",
+                    "mask_file": "segment_5_mask.png"
+                },
+                {
+                    "segment_id": 6,
+                    "name": "the VELO.COM company logo in the very front center of the car_6",
+                    "bbox": [
+                        154.0,
+                        263.0,
+                        192.0,
+                        336.0
+                    ],
+                    "area": 822.0,
+                    "centroid": [
+                        170.4610705596107,
+                        299.83698296836985
+                    ],
+                    "score": 0.72265625,
+                    "crop_file": "segment_6_crop.png",
+                    "mask_file": "segment_6_mask.png"
+                },
+                {
+                    "segment_id": 7,
+                    "name": "the VELO.COM company logo in the very front center of the car_7",
+                    "bbox": [
+                        50.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "area": 405.0,
+                    "centroid": [
+                        71.41234567901235,
+                        25.503703703703703
+                    ],
+                    "score": 0.58984375,
+                    "crop_file": "segment_7_crop.png",
+                    "mask_file": "segment_7_mask.png"
+                },
+                {
+                    "segment_id": 8,
+                    "name": "the VELO.COM company logo in the very front center of the car_8",
+                    "bbox": [
+                        214.0,
+                        238.0,
+                        257.0,
+                        252.0
+                    ],
+                    "area": 493.0,
+                    "centroid": [
+                        235.80730223123732,
+                        246.05070993914808
+                    ],
+                    "score": 0.60546875,
+                    "crop_file": "segment_8_crop.png",
+                    "mask_file": "segment_8_mask.png"
+                },
+                {
+                    "segment_id": 9,
+                    "name": "the VELO.COM company logo in the very front center of the car_9",
+                    "bbox": [
+                        233.0,
+                        161.0,
+                        336.0,
+                        204.0
+                    ],
+                    "area": 1693.0,
+                    "centroid": [
+                        284.32427643236855,
+                        181.60838747784996
+                    ],
+                    "score": 0.72265625,
+                    "crop_file": "segment_9_crop.png",
+                    "mask_file": "segment_9_mask.png"
+                },
+                {
+                    "segment_id": 10,
+                    "name": "the VELO.COM company logo in the very front center of the car_10",
+                    "bbox": [
+                        467.0,
+                        237.0,
+                        518.0,
+                        248.0
+                    ],
+                    "area": 531.0,
+                    "centroid": [
+                        491.9340866290019,
+                        243.060263653484
+                    ],
+                    "score": 0.66796875,
+                    "crop_file": "segment_10_crop.png",
+                    "mask_file": "segment_10_mask.png"
+                }
+            ]
+        },
+        "6": {
+            "frame_index": 6,
+            "timestamp_ms": 240.0,
+            "num_segments": 11,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "the VELO.COM company logo in the very front center of the car_0",
+                    "bbox": [
+                        213.0,
+                        279.0,
+                        255.0,
+                        324.0
+                    ],
+                    "area": 791.0,
+                    "centroid": [
+                        234.90265486725664,
+                        301.3881163084703
+                    ],
+                    "score": 0.68359375,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                },
+                {
+                    "segment_id": 1,
+                    "name": "the VELO.COM company logo in the very front center of the car_1",
+                    "bbox": [
+                        434.0,
+                        170.0,
+                        518.0,
+                        200.0
+                    ],
+                    "area": 734.0,
+                    "centroid": [
+                        478.8978201634877,
+                        185.69346049046322
+                    ],
+                    "score": 0.8203125,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": "segment_1_mask.png"
+                },
+                {
+                    "segment_id": 2,
+                    "name": "the VELO.COM company logo in the very front center of the car_2",
+                    "bbox": [
+                        513.0,
+                        211.0,
+                        552.0,
+                        240.0
+                    ],
+                    "area": 538.0,
+                    "centroid": [
+                        532.4089219330855,
+                        225.12639405204462
+                    ],
+                    "score": 0.78515625,
+                    "crop_file": "segment_2_crop.png",
+                    "mask_file": "segment_2_mask.png"
+                },
+                {
+                    "segment_id": 3,
+                    "name": "the VELO.COM company logo in the very front center of the car_3",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "area": 1053.0,
+                    "centroid": [
+                        380.09021842355173,
+                        189.28679962013297
+                    ],
+                    "score": 0.84375,
+                    "crop_file": "segment_3_crop.png",
+                    "mask_file": "segment_3_mask.png"
+                },
+                {
+                    "segment_id": 4,
+                    "name": "the VELO.COM company logo in the very front center of the car_4",
+                    "bbox": [
+                        469.0,
+                        273.0,
+                        520.0,
+                        313.0
+                    ],
+                    "area": 610.0,
+                    "centroid": [
+                        494.04754098360655,
+                        293.5377049180328
+                    ],
+                    "score": 0.609375,
+                    "crop_file": "segment_4_crop.png",
+                    "mask_file": "segment_4_mask.png"
+                },
+                {
+                    "segment_id": 5,
+                    "name": "the VELO.COM company logo in the very front center of the car_5",
+                    "bbox": [
+                        575.0,
+                        254.0,
+                        613.0,
+                        300.0
+                    ],
+                    "area": 719.0,
+                    "centroid": [
+                        594.3310152990264,
+                        276.8692628650904
+                    ],
+                    "score": 0.6875,
+                    "crop_file": "segment_5_crop.png",
+                    "mask_file": "segment_5_mask.png"
+                },
+                {
+                    "segment_id": 6,
+                    "name": "the VELO.COM company logo in the very front center of the car_6",
+                    "bbox": [
+                        154.0,
+                        264.0,
+                        192.0,
+                        336.0
+                    ],
+                    "area": 830.0,
+                    "centroid": [
+                        169.99518072289158,
+                        300.60722891566263
+                    ],
+                    "score": 0.72265625,
+                    "crop_file": "segment_6_crop.png",
+                    "mask_file": "segment_6_mask.png"
+                },
+                {
+                    "segment_id": 7,
+                    "name": "the VELO.COM company logo in the very front center of the car_7",
+                    "bbox": [
+                        50.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "area": 403.0,
+                    "centroid": [
+                        71.37220843672456,
+                        25.50620347394541
+                    ],
+                    "score": 0.58984375,
+                    "crop_file": "segment_7_crop.png",
+                    "mask_file": "segment_7_mask.png"
+                },
+                {
+                    "segment_id": 8,
+                    "name": "the VELO.COM company logo in the very front center of the car_8",
+                    "bbox": [
+                        214.0,
+                        238.0,
+                        257.0,
+                        252.0
+                    ],
+                    "area": 492.0,
+                    "centroid": [
+                        235.83333333333334,
+                        246.0630081300813
+                    ],
+                    "score": 0.60546875,
+                    "crop_file": "segment_8_crop.png",
+                    "mask_file": "segment_8_mask.png"
+                },
+                {
+                    "segment_id": 9,
+                    "name": "the VELO.COM company logo in the very front center of the car_9",
+                    "bbox": [
+                        233.0,
+                        161.0,
+                        336.0,
+                        204.0
+                    ],
+                    "area": 1700.0,
+                    "centroid": [
+                        284.4441176470588,
+                        181.57647058823528
+                    ],
+                    "score": 0.72265625,
+                    "crop_file": "segment_9_crop.png",
+                    "mask_file": "segment_9_mask.png"
+                },
+                {
+                    "segment_id": 10,
+                    "name": "the VELO.COM company logo in the very front center of the car_10",
+                    "bbox": [
+                        467.0,
+                        237.0,
+                        518.0,
+                        248.0
+                    ],
+                    "area": 515.0,
+                    "centroid": [
+                        491.978640776699,
+                        243.01747572815535
+                    ],
+                    "score": 0.66796875,
+                    "crop_file": "segment_10_crop.png",
+                    "mask_file": "segment_10_mask.png"
+                }
+            ]
+        },
+        "7": {
+            "frame_index": 7,
+            "timestamp_ms": 280.0,
+            "num_segments": 11,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "the VELO.COM company logo in the very front center of the car_0",
+                    "bbox": [
+                        214.0,
+                        279.0,
+                        255.0,
+                        323.0
+                    ],
+                    "area": 737.0,
+                    "centroid": [
+                        235.00407055630936,
+                        301.1981004070556
+                    ],
+                    "score": 0.68359375,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                },
+                {
+                    "segment_id": 1,
+                    "name": "the VELO.COM company logo in the very front center of the car_1",
+                    "bbox": [
+                        434.0,
+                        170.0,
+                        518.0,
+                        200.0
+                    ],
+                    "area": 739.0,
+                    "centroid": [
+                        479.2083897158322,
+                        185.77943166441136
+                    ],
+                    "score": 0.8203125,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": "segment_1_mask.png"
+                },
+                {
+                    "segment_id": 2,
+                    "name": "the VELO.COM company logo in the very front center of the car_2",
+                    "bbox": [
+                        512.0,
+                        212.0,
+                        553.0,
+                        240.0
+                    ],
+                    "area": 550.0,
+                    "centroid": [
+                        532.5254545454545,
+                        225.3272727272727
+                    ],
+                    "score": 0.78515625,
+                    "crop_file": "segment_2_crop.png",
+                    "mask_file": "segment_2_mask.png"
+                },
+                {
+                    "segment_id": 3,
+                    "name": "the VELO.COM company logo in the very front center of the car_3",
+                    "bbox": [
+                        337.0,
+                        182.0,
+                        422.0,
+                        196.0
+                    ],
+                    "area": 1083.0,
+                    "centroid": [
+                        380.0720221606648,
+                        189.17451523545705
+                    ],
+                    "score": 0.84375,
+                    "crop_file": "segment_3_crop.png",
+                    "mask_file": "segment_3_mask.png"
+                },
+                {
+                    "segment_id": 4,
+                    "name": "the VELO.COM company logo in the very front center of the car_4",
+                    "bbox": [
+                        468.0,
+                        273.0,
+                        520.0,
+                        313.0
+                    ],
+                    "area": 652.0,
+                    "centroid": [
+                        493.62883435582825,
+                        293.66564417177915
+                    ],
+                    "score": 0.609375,
+                    "crop_file": "segment_4_crop.png",
+                    "mask_file": "segment_4_mask.png"
+                },
+                {
+                    "segment_id": 5,
+                    "name": "the VELO.COM company logo in the very front center of the car_5",
+                    "bbox": [
+                        576.0,
+                        253.0,
+                        613.0,
+                        300.0
+                    ],
+                    "area": 725.0,
+                    "centroid": [
+                        594.448275862069,
+                        276.8165517241379
+                    ],
+                    "score": 0.6875,
+                    "crop_file": "segment_5_crop.png",
+                    "mask_file": "segment_5_mask.png"
+                },
+                {
+                    "segment_id": 6,
+                    "name": "the VELO.COM company logo in the very front center of the car_6",
+                    "bbox": [
+                        154.0,
+                        258.0,
+                        199.0,
+                        335.0
+                    ],
+                    "area": 892.0,
+                    "centroid": [
+                        172.12219730941703,
+                        296.99103139013454
+                    ],
+                    "score": 0.72265625,
+                    "crop_file": "segment_6_crop.png",
+                    "mask_file": "segment_6_mask.png"
+                },
+                {
+                    "segment_id": 7,
+                    "name": "the VELO.COM company logo in the very front center of the car_7",
+                    "bbox": [
+                        50.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "area": 405.0,
+                    "centroid": [
+                        71.33333333333333,
+                        25.496296296296297
+                    ],
+                    "score": 0.58984375,
+                    "crop_file": "segment_7_crop.png",
+                    "mask_file": "segment_7_mask.png"
+                },
+                {
+                    "segment_id": 8,
+                    "name": "the VELO.COM company logo in the very front center of the car_8",
+                    "bbox": [
+                        214.0,
+                        239.0,
+                        257.0,
+                        252.0
+                    ],
+                    "area": 480.0,
+                    "centroid": [
+                        235.56458333333333,
+                        246.18541666666667
+                    ],
+                    "score": 0.60546875,
+                    "crop_file": "segment_8_crop.png",
+                    "mask_file": "segment_8_mask.png"
+                },
+                {
+                    "segment_id": 9,
+                    "name": "the VELO.COM company logo in the very front center of the car_9",
+                    "bbox": [
+                        233.0,
+                        161.0,
+                        336.0,
+                        205.0
+                    ],
+                    "area": 1715.0,
+                    "centroid": [
+                        284.2139941690962,
+                        181.5935860058309
+                    ],
+                    "score": 0.72265625,
+                    "crop_file": "segment_9_crop.png",
+                    "mask_file": "segment_9_mask.png"
+                },
+                {
+                    "segment_id": 10,
+                    "name": "the VELO.COM company logo in the very front center of the car_10",
+                    "bbox": [
+                        467.0,
+                        237.0,
+                        518.0,
+                        248.0
+                    ],
+                    "area": 532.0,
+                    "centroid": [
+                        491.80075187969925,
+                        243.0563909774436
+                    ],
+                    "score": 0.66796875,
+                    "crop_file": "segment_10_crop.png",
+                    "mask_file": "segment_10_mask.png"
+                }
+            ]
+        },
+        "8": {
+            "frame_index": 8,
+            "timestamp_ms": 320.0,
+            "num_segments": 11,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "the VELO.COM company logo in the very front center of the car_0",
+                    "bbox": [
+                        213.0,
+                        279.0,
+                        255.0,
+                        324.0
+                    ],
+                    "area": 789.0,
+                    "centroid": [
+                        234.90494296577947,
+                        301.37515842839036
+                    ],
+                    "score": 0.68359375,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                },
+                {
+                    "segment_id": 1,
+                    "name": "the VELO.COM company logo in the very front center of the car_1",
+                    "bbox": [
+                        433.0,
+                        170.0,
+                        518.0,
+                        200.0
+                    ],
+                    "area": 816.0,
+                    "centroid": [
+                        478.48651960784315,
+                        185.5796568627451
+                    ],
+                    "score": 0.8203125,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": "segment_1_mask.png"
+                },
+                {
+                    "segment_id": 2,
+                    "name": "the VELO.COM company logo in the very front center of the car_2",
+                    "bbox": [
+                        512.0,
+                        211.0,
+                        553.0,
+                        240.0
+                    ],
+                    "area": 551.0,
+                    "centroid": [
+                        532.2813067150635,
+                        225.1288566243194
+                    ],
+                    "score": 0.78515625,
+                    "crop_file": "segment_2_crop.png",
+                    "mask_file": "segment_2_mask.png"
+                },
+                {
+                    "segment_id": 3,
+                    "name": "the VELO.COM company logo in the very front center of the car_3",
+                    "bbox": [
+                        337.0,
+                        182.0,
+                        422.0,
+                        196.0
+                    ],
+                    "area": 1086.0,
+                    "centroid": [
+                        380.1473296500921,
+                        189.15285451197053
+                    ],
+                    "score": 0.84375,
+                    "crop_file": "segment_3_crop.png",
+                    "mask_file": "segment_3_mask.png"
+                },
+                {
+                    "segment_id": 4,
+                    "name": "the VELO.COM company logo in the very front center of the car_4",
+                    "bbox": [
+                        469.0,
+                        273.0,
+                        520.0,
+                        313.0
+                    ],
+                    "area": 615.0,
+                    "centroid": [
+                        493.8731707317073,
+                        293.4520325203252
+                    ],
+                    "score": 0.609375,
+                    "crop_file": "segment_4_crop.png",
+                    "mask_file": "segment_4_mask.png"
+                },
+                {
+                    "segment_id": 5,
+                    "name": "the VELO.COM company logo in the very front center of the car_5",
+                    "bbox": [
+                        575.0,
+                        253.0,
+                        613.0,
+                        301.0
+                    ],
+                    "area": 731.0,
+                    "centroid": [
+                        594.4473324213407,
+                        276.8919288645691
+                    ],
+                    "score": 0.6875,
+                    "crop_file": "segment_5_crop.png",
+                    "mask_file": "segment_5_mask.png"
+                },
+                {
+                    "segment_id": 6,
+                    "name": "the VELO.COM company logo in the very front center of the car_6",
+                    "bbox": [
+                        154.0,
+                        266.0,
+                        189.0,
+                        336.0
+                    ],
+                    "area": 814.0,
+                    "centroid": [
+                        169.96314496314497,
+                        300.68304668304665
+                    ],
+                    "score": 0.72265625,
+                    "crop_file": "segment_6_crop.png",
+                    "mask_file": "segment_6_mask.png"
+                },
+                {
+                    "segment_id": 7,
+                    "name": "the VELO.COM company logo in the very front center of the car_7",
+                    "bbox": [
+                        50.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "area": 410.0,
+                    "centroid": [
+                        71.53658536585365,
+                        25.53170731707317
+                    ],
+                    "score": 0.58984375,
+                    "crop_file": "segment_7_crop.png",
+                    "mask_file": "segment_7_mask.png"
+                },
+                {
+                    "segment_id": 8,
+                    "name": "the VELO.COM company logo in the very front center of the car_8",
+                    "bbox": [
+                        214.0,
+                        238.0,
+                        257.0,
+                        252.0
+                    ],
+                    "area": 498.0,
+                    "centroid": [
+                        235.88755020080322,
+                        246.0
+                    ],
+                    "score": 0.60546875,
+                    "crop_file": "segment_8_crop.png",
+                    "mask_file": "segment_8_mask.png"
+                },
+                {
+                    "segment_id": 9,
+                    "name": "the VELO.COM company logo in the very front center of the car_9",
+                    "bbox": [
+                        233.0,
+                        161.0,
+                        337.0,
+                        205.0
+                    ],
+                    "area": 1700.0,
+                    "centroid": [
+                        284.0311764705882,
+                        181.68117647058824
+                    ],
+                    "score": 0.72265625,
+                    "crop_file": "segment_9_crop.png",
+                    "mask_file": "segment_9_mask.png"
+                },
+                {
+                    "segment_id": 10,
+                    "name": "the VELO.COM company logo in the very front center of the car_10",
+                    "bbox": [
+                        467.0,
+                        237.0,
+                        518.0,
+                        248.0
+                    ],
+                    "area": 517.0,
+                    "centroid": [
+                        492.0174081237911,
+                        243.0174081237911
+                    ],
+                    "score": 0.66796875,
+                    "crop_file": "segment_10_crop.png",
+                    "mask_file": "segment_10_mask.png"
+                }
+            ]
+        },
+        "9": {
+            "frame_index": 9,
+            "timestamp_ms": 360.0,
+            "num_segments": 11,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "the VELO.COM company logo in the very front center of the car_0",
+                    "bbox": [
+                        214.0,
+                        279.0,
+                        255.0,
+                        324.0
+                    ],
+                    "area": 739.0,
+                    "centroid": [
+                        235.07171853856562,
+                        301.1826792963464
+                    ],
+                    "score": 0.68359375,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                },
+                {
+                    "segment_id": 1,
+                    "name": "the VELO.COM company logo in the very front center of the car_1",
+                    "bbox": [
+                        433.0,
+                        170.0,
+                        518.0,
+                        200.0
+                    ],
+                    "area": 735.0,
+                    "centroid": [
+                        479.3537414965986,
+                        185.88843537414965
+                    ],
+                    "score": 0.8203125,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": "segment_1_mask.png"
+                },
+                {
+                    "segment_id": 2,
+                    "name": "the VELO.COM company logo in the very front center of the car_2",
+                    "bbox": [
+                        513.0,
+                        212.0,
+                        553.0,
+                        240.0
+                    ],
+                    "area": 541.0,
+                    "centroid": [
+                        532.5526802218114,
+                        225.26987060998152
+                    ],
+                    "score": 0.78515625,
+                    "crop_file": "segment_2_crop.png",
+                    "mask_file": "segment_2_mask.png"
+                },
+                {
+                    "segment_id": 3,
+                    "name": "the VELO.COM company logo in the very front center of the car_3",
+                    "bbox": [
+                        337.0,
+                        182.0,
+                        422.0,
+                        196.0
+                    ],
+                    "area": 1083.0,
+                    "centroid": [
+                        380.17728531855954,
+                        189.14312096029548
+                    ],
+                    "score": 0.84375,
+                    "crop_file": "segment_3_crop.png",
+                    "mask_file": "segment_3_mask.png"
+                },
+                {
+                    "segment_id": 4,
+                    "name": "the VELO.COM company logo in the very front center of the car_4",
+                    "bbox": [
+                        469.0,
+                        273.0,
+                        520.0,
+                        313.0
+                    ],
+                    "area": 608.0,
+                    "centroid": [
+                        493.8108552631579,
+                        293.38157894736844
+                    ],
+                    "score": 0.609375,
+                    "crop_file": "segment_4_crop.png",
+                    "mask_file": "segment_4_mask.png"
+                },
+                {
+                    "segment_id": 5,
+                    "name": "the VELO.COM company logo in the very front center of the car_5",
+                    "bbox": [
+                        576.0,
+                        254.0,
+                        613.0,
+                        301.0
+                    ],
+                    "area": 728.0,
+                    "centroid": [
+                        594.5906593406594,
+                        277.1387362637363
+                    ],
+                    "score": 0.6875,
+                    "crop_file": "segment_5_crop.png",
+                    "mask_file": "segment_5_mask.png"
+                },
+                {
+                    "segment_id": 6,
+                    "name": "the VELO.COM company logo in the very front center of the car_6",
+                    "bbox": [
+                        154.0,
+                        263.0,
+                        192.0,
+                        335.0
+                    ],
+                    "area": 815.0,
+                    "centroid": [
+                        170.4478527607362,
+                        300.0196319018405
+                    ],
+                    "score": 0.72265625,
+                    "crop_file": "segment_6_crop.png",
+                    "mask_file": "segment_6_mask.png"
+                },
+                {
+                    "segment_id": 7,
+                    "name": "the VELO.COM company logo in the very front center of the car_7",
+                    "bbox": [
+                        50.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "area": 415.0,
+                    "centroid": [
+                        71.65542168674699,
+                        25.556626506024095
+                    ],
+                    "score": 0.58984375,
+                    "crop_file": "segment_7_crop.png",
+                    "mask_file": "segment_7_mask.png"
+                },
+                {
+                    "segment_id": 8,
+                    "name": "the VELO.COM company logo in the very front center of the car_8",
+                    "bbox": [
+                        214.0,
+                        238.0,
+                        257.0,
+                        252.0
+                    ],
+                    "area": 502.0,
+                    "centroid": [
+                        235.83067729083666,
+                        245.99203187250995
+                    ],
+                    "score": 0.60546875,
+                    "crop_file": "segment_8_crop.png",
+                    "mask_file": "segment_8_mask.png"
+                },
+                {
+                    "segment_id": 9,
+                    "name": "the VELO.COM company logo in the very front center of the car_9",
+                    "bbox": [
+                        233.0,
+                        161.0,
+                        337.0,
+                        205.0
+                    ],
+                    "area": 1693.0,
+                    "centroid": [
+                        284.2474896633195,
+                        181.7282929710573
+                    ],
+                    "score": 0.72265625,
+                    "crop_file": "segment_9_crop.png",
+                    "mask_file": "segment_9_mask.png"
+                },
+                {
+                    "segment_id": 10,
+                    "name": "the VELO.COM company logo in the very front center of the car_10",
+                    "bbox": [
+                        467.0,
+                        237.0,
+                        518.0,
+                        248.0
+                    ],
+                    "area": 513.0,
+                    "centroid": [
+                        492.08187134502924,
+                        242.96101364522417
+                    ],
+                    "score": 0.66796875,
+                    "crop_file": "segment_10_crop.png",
+                    "mask_file": "segment_10_mask.png"
+                }
+            ]
+        },
+        "10": {
+            "frame_index": 10,
+            "timestamp_ms": 400.0,
+            "num_segments": 11,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "the VELO.COM company logo in the very front center of the car_0",
+                    "bbox": [
+                        214.0,
+                        279.0,
+                        255.0,
+                        323.0
+                    ],
+                    "area": 731.0,
+                    "centroid": [
+                        234.98358413132695,
+                        301.17783857729137
+                    ],
+                    "score": 0.68359375,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                },
+                {
+                    "segment_id": 1,
+                    "name": "the VELO.COM company logo in the very front center of the car_1",
+                    "bbox": [
+                        434.0,
+                        170.0,
+                        518.0,
+                        200.0
+                    ],
+                    "area": 732.0,
+                    "centroid": [
+                        479.1748633879781,
+                        185.82650273224044
+                    ],
+                    "score": 0.8203125,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": "segment_1_mask.png"
+                },
+                {
+                    "segment_id": 2,
+                    "name": "the VELO.COM company logo in the very front center of the car_2",
+                    "bbox": [
+                        512.0,
+                        211.0,
+                        553.0,
+                        240.0
+                    ],
+                    "area": 545.0,
+                    "centroid": [
+                        532.3798165137615,
+                        225.13577981651378
+                    ],
+                    "score": 0.78515625,
+                    "crop_file": "segment_2_crop.png",
+                    "mask_file": "segment_2_mask.png"
+                },
+                {
+                    "segment_id": 3,
+                    "name": "the VELO.COM company logo in the very front center of the car_3",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "area": 1064.0,
+                    "centroid": [
+                        379.99154135338347,
+                        189.27255639097746
+                    ],
+                    "score": 0.84375,
+                    "crop_file": "segment_3_crop.png",
+                    "mask_file": "segment_3_mask.png"
+                },
+                {
+                    "segment_id": 4,
+                    "name": "the VELO.COM company logo in the very front center of the car_4",
+                    "bbox": [
+                        469.0,
+                        273.0,
+                        520.0,
+                        313.0
+                    ],
+                    "area": 608.0,
+                    "centroid": [
+                        493.86348684210526,
+                        293.4111842105263
+                    ],
+                    "score": 0.609375,
+                    "crop_file": "segment_4_crop.png",
+                    "mask_file": "segment_4_mask.png"
+                },
+                {
+                    "segment_id": 5,
+                    "name": "the VELO.COM company logo in the very front center of the car_5",
+                    "bbox": [
+                        576.0,
+                        254.0,
+                        613.0,
+                        300.0
+                    ],
+                    "area": 724.0,
+                    "centroid": [
+                        594.4516574585635,
+                        276.86878453038673
+                    ],
+                    "score": 0.6875,
+                    "crop_file": "segment_5_crop.png",
+                    "mask_file": "segment_5_mask.png"
+                },
+                {
+                    "segment_id": 6,
+                    "name": "the VELO.COM company logo in the very front center of the car_6",
+                    "bbox": [
+                        154.0,
+                        262.0,
+                        193.0,
+                        336.0
+                    ],
+                    "area": 826.0,
+                    "centroid": [
+                        170.80629539951573,
+                        299.40677966101697
+                    ],
+                    "score": 0.72265625,
+                    "crop_file": "segment_6_crop.png",
+                    "mask_file": "segment_6_mask.png"
+                },
+                {
+                    "segment_id": 7,
+                    "name": "the VELO.COM company logo in the very front center of the car_7",
+                    "bbox": [
+                        50.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "area": 415.0,
+                    "centroid": [
+                        71.58795180722892,
+                        25.539759036144577
+                    ],
+                    "score": 0.58984375,
+                    "crop_file": "segment_7_crop.png",
+                    "mask_file": "segment_7_mask.png"
+                },
+                {
+                    "segment_id": 8,
+                    "name": "the VELO.COM company logo in the very front center of the car_8",
+                    "bbox": [
+                        213.0,
+                        239.0,
+                        257.0,
+                        252.0
+                    ],
+                    "area": 485.0,
+                    "centroid": [
+                        235.28865979381445,
+                        246.15257731958764
+                    ],
+                    "score": 0.60546875,
+                    "crop_file": "segment_8_crop.png",
+                    "mask_file": "segment_8_mask.png"
+                },
+                {
+                    "segment_id": 9,
+                    "name": "the VELO.COM company logo in the very front center of the car_9",
+                    "bbox": [
+                        233.0,
+                        161.0,
+                        337.0,
+                        205.0
+                    ],
+                    "area": 1676.0,
+                    "centroid": [
+                        284.32458233890213,
+                        181.6700477326969
+                    ],
+                    "score": 0.72265625,
+                    "crop_file": "segment_9_crop.png",
+                    "mask_file": "segment_9_mask.png"
+                },
+                {
+                    "segment_id": 10,
+                    "name": "the VELO.COM company logo in the very front center of the car_10",
+                    "bbox": [
+                        467.0,
+                        237.0,
+                        518.0,
+                        248.0
+                    ],
+                    "area": 517.0,
+                    "centroid": [
+                        492.0174081237911,
+                        243.0174081237911
+                    ],
+                    "score": 0.66796875,
+                    "crop_file": "segment_10_crop.png",
+                    "mask_file": "segment_10_mask.png"
+                }
+            ]
+        },
+        "11": {
+            "frame_index": 11,
+            "timestamp_ms": 440.0,
+            "num_segments": 11,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "the VELO.COM company logo in the very front center of the car_0",
+                    "bbox": [
+                        214.0,
+                        279.0,
+                        255.0,
+                        324.0
+                    ],
+                    "area": 732.0,
+                    "centroid": [
+                        235.11475409836066,
+                        301.17076502732243
+                    ],
+                    "score": 0.68359375,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                },
+                {
+                    "segment_id": 1,
+                    "name": "the VELO.COM company logo in the very front center of the car_1",
+                    "bbox": [
+                        434.0,
+                        170.0,
+                        518.0,
+                        200.0
+                    ],
+                    "area": 734.0,
+                    "centroid": [
+                        479.22070844686647,
+                        185.84196185286103
+                    ],
+                    "score": 0.8203125,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": "segment_1_mask.png"
+                },
+                {
+                    "segment_id": 2,
+                    "name": "the VELO.COM company logo in the very front center of the car_2",
+                    "bbox": [
+                        513.0,
+                        212.0,
+                        552.0,
+                        240.0
+                    ],
+                    "area": 509.0,
+                    "centroid": [
+                        532.4931237721022,
+                        225.24950884086445
+                    ],
+                    "score": 0.78515625,
+                    "crop_file": "segment_2_crop.png",
+                    "mask_file": "segment_2_mask.png"
+                },
+                {
+                    "segment_id": 3,
+                    "name": "the VELO.COM company logo in the very front center of the car_3",
+                    "bbox": [
+                        337.0,
+                        182.0,
+                        422.0,
+                        196.0
+                    ],
+                    "area": 1084.0,
+                    "centroid": [
+                        380.11346863468634,
+                        189.1549815498155
+                    ],
+                    "score": 0.84375,
+                    "crop_file": "segment_3_crop.png",
+                    "mask_file": "segment_3_mask.png"
+                },
+                {
+                    "segment_id": 4,
+                    "name": "the VELO.COM company logo in the very front center of the car_4",
+                    "bbox": [
+                        469.0,
+                        273.0,
+                        520.0,
+                        313.0
+                    ],
+                    "area": 639.0,
+                    "centroid": [
+                        493.6244131455399,
+                        293.5618153364632
+                    ],
+                    "score": 0.609375,
+                    "crop_file": "segment_4_crop.png",
+                    "mask_file": "segment_4_mask.png"
+                },
+                {
+                    "segment_id": 5,
+                    "name": "the VELO.COM company logo in the very front center of the car_5",
+                    "bbox": [
+                        575.0,
+                        254.0,
+                        613.0,
+                        300.0
+                    ],
+                    "area": 720.0,
+                    "centroid": [
+                        594.3513888888889,
+                        276.69166666666666
+                    ],
+                    "score": 0.6875,
+                    "crop_file": "segment_5_crop.png",
+                    "mask_file": "segment_5_mask.png"
+                },
+                {
+                    "segment_id": 6,
+                    "name": "the VELO.COM company logo in the very front center of the car_6",
+                    "bbox": [
+                        154.0,
+                        264.0,
+                        192.0,
+                        336.0
+                    ],
+                    "area": 808.0,
+                    "centroid": [
+                        170.47772277227722,
+                        299.98886138613864
+                    ],
+                    "score": 0.72265625,
+                    "crop_file": "segment_6_crop.png",
+                    "mask_file": "segment_6_mask.png"
+                },
+                {
+                    "segment_id": 7,
+                    "name": "the VELO.COM company logo in the very front center of the car_7",
+                    "bbox": [
+                        50.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "area": 409.0,
+                    "centroid": [
+                        71.23716381418093,
+                        25.508557457212714
+                    ],
+                    "score": 0.58984375,
+                    "crop_file": "segment_7_crop.png",
+                    "mask_file": "segment_7_mask.png"
+                },
+                {
+                    "segment_id": 8,
+                    "name": "the VELO.COM company logo in the very front center of the car_8",
+                    "bbox": [
+                        213.0,
+                        239.0,
+                        257.0,
+                        252.0
+                    ],
+                    "area": 484.0,
+                    "centroid": [
+                        235.31198347107437,
+                        246.16322314049586
+                    ],
+                    "score": 0.60546875,
+                    "crop_file": "segment_8_crop.png",
+                    "mask_file": "segment_8_mask.png"
+                },
+                {
+                    "segment_id": 9,
+                    "name": "the VELO.COM company logo in the very front center of the car_9",
+                    "bbox": [
+                        233.0,
+                        161.0,
+                        337.0,
+                        205.0
+                    ],
+                    "area": 1672.0,
+                    "centroid": [
+                        284.3127990430622,
+                        181.69796650717703
+                    ],
+                    "score": 0.72265625,
+                    "crop_file": "segment_9_crop.png",
+                    "mask_file": "segment_9_mask.png"
+                },
+                {
+                    "segment_id": 10,
+                    "name": "the VELO.COM company logo in the very front center of the car_10",
+                    "bbox": [
+                        467.0,
+                        237.0,
+                        518.0,
+                        248.0
+                    ],
+                    "area": 530.0,
+                    "centroid": [
+                        491.8075471698113,
+                        243.04716981132074
+                    ],
+                    "score": 0.66796875,
+                    "crop_file": "segment_10_crop.png",
+                    "mask_file": "segment_10_mask.png"
+                }
+            ]
+        },
+        "12": {
+            "frame_index": 12,
+            "timestamp_ms": 480.0,
+            "num_segments": 11,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "the VELO.COM company logo in the very front center of the car_0",
+                    "bbox": [
+                        214.0,
+                        279.0,
+                        255.0,
+                        324.0
+                    ],
+                    "area": 735.0,
+                    "centroid": [
+                        235.09931972789116,
+                        301.2598639455782
+                    ],
+                    "score": 0.68359375,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                },
+                {
+                    "segment_id": 1,
+                    "name": "the VELO.COM company logo in the very front center of the car_1",
+                    "bbox": [
+                        434.0,
+                        170.0,
+                        518.0,
+                        200.0
+                    ],
+                    "area": 742.0,
+                    "centroid": [
+                        479.64150943396226,
+                        185.91374663072776
+                    ],
+                    "score": 0.8203125,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": "segment_1_mask.png"
+                },
+                {
+                    "segment_id": 2,
+                    "name": "the VELO.COM company logo in the very front center of the car_2",
+                    "bbox": [
+                        512.0,
+                        212.0,
+                        553.0,
+                        240.0
+                    ],
+                    "area": 541.0,
+                    "centroid": [
+                        532.463955637708,
+                        225.2365988909427
+                    ],
+                    "score": 0.78515625,
+                    "crop_file": "segment_2_crop.png",
+                    "mask_file": "segment_2_mask.png"
+                },
+                {
+                    "segment_id": 3,
+                    "name": "the VELO.COM company logo in the very front center of the car_3",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "area": 1083.0,
+                    "centroid": [
+                        380.06555863342567,
+                        189.1837488457987
+                    ],
+                    "score": 0.84375,
+                    "crop_file": "segment_3_crop.png",
+                    "mask_file": "segment_3_mask.png"
+                },
+                {
+                    "segment_id": 4,
+                    "name": "the VELO.COM company logo in the very front center of the car_4",
+                    "bbox": [
+                        469.0,
+                        273.0,
+                        520.0,
+                        313.0
+                    ],
+                    "area": 641.0,
+                    "centroid": [
+                        493.61934477379094,
+                        293.5600624024961
+                    ],
+                    "score": 0.609375,
+                    "crop_file": "segment_4_crop.png",
+                    "mask_file": "segment_4_mask.png"
+                },
+                {
+                    "segment_id": 5,
+                    "name": "the VELO.COM company logo in the very front center of the car_5",
+                    "bbox": [
+                        576.0,
+                        254.0,
+                        613.0,
+                        300.0
+                    ],
+                    "area": 723.0,
+                    "centroid": [
+                        594.4135546334717,
+                        276.62655601659753
+                    ],
+                    "score": 0.6875,
+                    "crop_file": "segment_5_crop.png",
+                    "mask_file": "segment_5_mask.png"
+                },
+                {
+                    "segment_id": 6,
+                    "name": "the VELO.COM company logo in the very front center of the car_6",
+                    "bbox": [
+                        154.0,
+                        266.0,
+                        190.0,
+                        336.0
+                    ],
+                    "area": 810.0,
+                    "centroid": [
+                        170.3148148148148,
+                        300.4716049382716
+                    ],
+                    "score": 0.72265625,
+                    "crop_file": "segment_6_crop.png",
+                    "mask_file": "segment_6_mask.png"
+                },
+                {
+                    "segment_id": 7,
+                    "name": "the VELO.COM company logo in the very front center of the car_7",
+                    "bbox": [
+                        50.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "area": 406.0,
+                    "centroid": [
+                        71.26847290640394,
+                        25.47536945812808
+                    ],
+                    "score": 0.58984375,
+                    "crop_file": "segment_7_crop.png",
+                    "mask_file": "segment_7_mask.png"
+                },
+                {
+                    "segment_id": 8,
+                    "name": "the VELO.COM company logo in the very front center of the car_8",
+                    "bbox": [
+                        213.0,
+                        239.0,
+                        256.0,
+                        252.0
+                    ],
+                    "area": 473.0,
+                    "centroid": [
+                        235.06342494714588,
+                        246.2029598308668
+                    ],
+                    "score": 0.60546875,
+                    "crop_file": "segment_8_crop.png",
+                    "mask_file": "segment_8_mask.png"
+                },
+                {
+                    "segment_id": 9,
+                    "name": "the VELO.COM company logo in the very front center of the car_9",
+                    "bbox": [
+                        233.0,
+                        161.0,
+                        337.0,
+                        205.0
+                    ],
+                    "area": 1685.0,
+                    "centroid": [
+                        284.1513353115727,
+                        181.74836795252224
+                    ],
+                    "score": 0.72265625,
+                    "crop_file": "segment_9_crop.png",
+                    "mask_file": "segment_9_mask.png"
+                },
+                {
+                    "segment_id": 10,
+                    "name": "the VELO.COM company logo in the very front center of the car_10",
+                    "bbox": [
+                        467.0,
+                        237.0,
+                        518.0,
+                        248.0
+                    ],
+                    "area": 533.0,
+                    "centroid": [
+                        491.7673545966229,
+                        243.02439024390245
+                    ],
+                    "score": 0.66796875,
+                    "crop_file": "segment_10_crop.png",
+                    "mask_file": "segment_10_mask.png"
+                }
+            ]
+        },
+        "13": {
+            "frame_index": 13,
+            "timestamp_ms": 520.0,
+            "num_segments": 11,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "the VELO.COM company logo in the very front center of the car_0",
+                    "bbox": [
+                        213.0,
+                        279.0,
+                        255.0,
+                        324.0
+                    ],
+                    "area": 785.0,
+                    "centroid": [
+                        235.01019108280255,
+                        301.3834394904459
+                    ],
+                    "score": 0.68359375,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                },
+                {
+                    "segment_id": 1,
+                    "name": "the VELO.COM company logo in the very front center of the car_1",
+                    "bbox": [
+                        434.0,
+                        170.0,
+                        517.0,
+                        200.0
+                    ],
+                    "area": 736.0,
+                    "centroid": [
+                        479.3953804347826,
+                        185.8288043478261
+                    ],
+                    "score": 0.8203125,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": "segment_1_mask.png"
+                },
+                {
+                    "segment_id": 2,
+                    "name": "the VELO.COM company logo in the very front center of the car_2",
+                    "bbox": [
+                        513.0,
+                        211.0,
+                        553.0,
+                        240.0
+                    ],
+                    "area": 545.0,
+                    "centroid": [
+                        532.5853211009174,
+                        225.1816513761468
+                    ],
+                    "score": 0.78515625,
+                    "crop_file": "segment_2_crop.png",
+                    "mask_file": "segment_2_mask.png"
+                },
+                {
+                    "segment_id": 3,
+                    "name": "the VELO.COM company logo in the very front center of the car_3",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "area": 1061.0,
+                    "centroid": [
+                        380.08482563619225,
+                        189.29217719132893
+                    ],
+                    "score": 0.84375,
+                    "crop_file": "segment_3_crop.png",
+                    "mask_file": "segment_3_mask.png"
+                },
+                {
+                    "segment_id": 4,
+                    "name": "the VELO.COM company logo in the very front center of the car_4",
+                    "bbox": [
+                        469.0,
+                        273.0,
+                        520.0,
+                        313.0
+                    ],
+                    "area": 639.0,
+                    "centroid": [
+                        493.8059467918623,
+                        293.63380281690144
+                    ],
+                    "score": 0.609375,
+                    "crop_file": "segment_4_crop.png",
+                    "mask_file": "segment_4_mask.png"
+                },
+                {
+                    "segment_id": 5,
+                    "name": "the VELO.COM company logo in the very front center of the car_5",
+                    "bbox": [
+                        575.0,
+                        254.0,
+                        613.0,
+                        300.0
+                    ],
+                    "area": 724.0,
+                    "centroid": [
+                        594.4157458563536,
+                        276.8577348066298
+                    ],
+                    "score": 0.6875,
+                    "crop_file": "segment_5_crop.png",
+                    "mask_file": "segment_5_mask.png"
+                },
+                {
+                    "segment_id": 6,
+                    "name": "the VELO.COM company logo in the very front center of the car_6",
+                    "bbox": [
+                        154.0,
+                        264.0,
+                        192.0,
+                        336.0
+                    ],
+                    "area": 811.0,
+                    "centroid": [
+                        170.72503082614057,
+                        299.7620221948212
+                    ],
+                    "score": 0.72265625,
+                    "crop_file": "segment_6_crop.png",
+                    "mask_file": "segment_6_mask.png"
+                },
+                {
+                    "segment_id": 7,
+                    "name": "the VELO.COM company logo in the very front center of the car_7",
+                    "bbox": [
+                        50.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "area": 407.0,
+                    "centroid": [
+                        71.19410319410319,
+                        25.48157248157248
+                    ],
+                    "score": 0.58984375,
+                    "crop_file": "segment_7_crop.png",
+                    "mask_file": "segment_7_mask.png"
+                },
+                {
+                    "segment_id": 8,
+                    "name": "the VELO.COM company logo in the very front center of the car_8",
+                    "bbox": [
+                        213.0,
+                        238.0,
+                        257.0,
+                        252.0
+                    ],
+                    "area": 495.0,
+                    "centroid": [
+                        235.74343434343433,
+                        246.00808080808082
+                    ],
+                    "score": 0.60546875,
+                    "crop_file": "segment_8_crop.png",
+                    "mask_file": "segment_8_mask.png"
+                },
+                {
+                    "segment_id": 9,
+                    "name": "the VELO.COM company logo in the very front center of the car_9",
+                    "bbox": [
+                        233.0,
+                        161.0,
+                        337.0,
+                        205.0
+                    ],
+                    "area": 1698.0,
+                    "centroid": [
+                        284.58186101295644,
+                        181.5600706713781
+                    ],
+                    "score": 0.72265625,
+                    "crop_file": "segment_9_crop.png",
+                    "mask_file": "segment_9_mask.png"
+                },
+                {
+                    "segment_id": 10,
+                    "name": "the VELO.COM company logo in the very front center of the car_10",
+                    "bbox": [
+                        467.0,
+                        237.0,
+                        518.0,
+                        248.0
+                    ],
+                    "area": 532.0,
+                    "centroid": [
+                        491.81390977443607,
+                        243.02443609022558
+                    ],
+                    "score": 0.66796875,
+                    "crop_file": "segment_10_crop.png",
+                    "mask_file": "segment_10_mask.png"
+                }
+            ]
+        },
+        "14": {
+            "frame_index": 14,
+            "timestamp_ms": 560.0,
+            "num_segments": 11,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "the VELO.COM company logo in the very front center of the car_0",
+                    "bbox": [
+                        213.0,
+                        279.0,
+                        255.0,
+                        324.0
+                    ],
+                    "area": 789.0,
+                    "centroid": [
+                        235.0621039290241,
+                        301.3320659062104
+                    ],
+                    "score": 0.68359375,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                },
+                {
+                    "segment_id": 1,
+                    "name": "the VELO.COM company logo in the very front center of the car_1",
+                    "bbox": [
+                        433.0,
+                        170.0,
+                        519.0,
+                        200.0
+                    ],
+                    "area": 818.0,
+                    "centroid": [
+                        478.9413202933985,
+                        185.56968215158923
+                    ],
+                    "score": 0.8203125,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": "segment_1_mask.png"
+                },
+                {
+                    "segment_id": 2,
+                    "name": "the VELO.COM company logo in the very front center of the car_2",
+                    "bbox": [
+                        513.0,
+                        212.0,
+                        553.0,
+                        240.0
+                    ],
+                    "area": 542.0,
+                    "centroid": [
+                        532.6014760147601,
+                        225.2380073800738
+                    ],
+                    "score": 0.78515625,
+                    "crop_file": "segment_2_crop.png",
+                    "mask_file": "segment_2_mask.png"
+                },
+                {
+                    "segment_id": 3,
+                    "name": "the VELO.COM company logo in the very front center of the car_3",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "area": 1059.0,
+                    "centroid": [
+                        380.00377714825305,
+                        189.24929178470256
+                    ],
+                    "score": 0.84375,
+                    "crop_file": "segment_3_crop.png",
+                    "mask_file": "segment_3_mask.png"
+                },
+                {
+                    "segment_id": 4,
+                    "name": "the VELO.COM company logo in the very front center of the car_4",
+                    "bbox": [
+                        470.0,
+                        273.0,
+                        520.0,
+                        313.0
+                    ],
+                    "area": 593.0,
+                    "centroid": [
+                        494.1905564924115,
+                        293.5531197301855
+                    ],
+                    "score": 0.609375,
+                    "crop_file": "segment_4_crop.png",
+                    "mask_file": "segment_4_mask.png"
+                },
+                {
+                    "segment_id": 5,
+                    "name": "the VELO.COM company logo in the very front center of the car_5",
+                    "bbox": [
+                        575.0,
+                        254.0,
+                        613.0,
+                        300.0
+                    ],
+                    "area": 725.0,
+                    "centroid": [
+                        594.4468965517242,
+                        276.85241379310344
+                    ],
+                    "score": 0.6875,
+                    "crop_file": "segment_5_crop.png",
+                    "mask_file": "segment_5_mask.png"
+                },
+                {
+                    "segment_id": 6,
+                    "name": "the VELO.COM company logo in the very front center of the car_6",
+                    "bbox": [
+                        154.0,
+                        263.0,
+                        192.0,
+                        336.0
+                    ],
+                    "area": 820.0,
+                    "centroid": [
+                        170.96829268292683,
+                        299.31951219512194
+                    ],
+                    "score": 0.72265625,
+                    "crop_file": "segment_6_crop.png",
+                    "mask_file": "segment_6_mask.png"
+                },
+                {
+                    "segment_id": 7,
+                    "name": "the VELO.COM company logo in the very front center of the car_7",
+                    "bbox": [
+                        50.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "area": 418.0,
+                    "centroid": [
+                        71.5311004784689,
+                        25.555023923444978
+                    ],
+                    "score": 0.58984375,
+                    "crop_file": "segment_7_crop.png",
+                    "mask_file": "segment_7_mask.png"
+                },
+                {
+                    "segment_id": 8,
+                    "name": "the VELO.COM company logo in the very front center of the car_8",
+                    "bbox": [
+                        213.0,
+                        238.0,
+                        257.0,
+                        252.0
+                    ],
+                    "area": 500.0,
+                    "centroid": [
+                        235.724,
+                        245.99
+                    ],
+                    "score": 0.60546875,
+                    "crop_file": "segment_8_crop.png",
+                    "mask_file": "segment_8_mask.png"
+                },
+                {
+                    "segment_id": 9,
+                    "name": "the VELO.COM company logo in the very front center of the car_9",
+                    "bbox": [
+                        233.0,
+                        161.0,
+                        337.0,
+                        205.0
+                    ],
+                    "area": 1684.0,
+                    "centroid": [
+                        284.45546318289786,
+                        181.58016627078385
+                    ],
+                    "score": 0.72265625,
+                    "crop_file": "segment_9_crop.png",
+                    "mask_file": "segment_9_mask.png"
+                },
+                {
+                    "segment_id": 10,
+                    "name": "the VELO.COM company logo in the very front center of the car_10",
+                    "bbox": [
+                        467.0,
+                        237.0,
+                        518.0,
+                        248.0
+                    ],
+                    "area": 529.0,
+                    "centroid": [
+                        491.7844990548204,
+                        243.0
+                    ],
+                    "score": 0.66796875,
+                    "crop_file": "segment_10_crop.png",
+                    "mask_file": "segment_10_mask.png"
+                }
+            ]
+        },
+        "15": {
+            "frame_index": 15,
+            "timestamp_ms": 600.0,
+            "num_segments": 11,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "the VELO.COM company logo in the very front center of the car_0",
+                    "bbox": [
+                        214.0,
+                        279.0,
+                        255.0,
+                        324.0
+                    ],
+                    "area": 726.0,
+                    "centroid": [
+                        235.05371900826447,
+                        301.1418732782369
+                    ],
+                    "score": 0.68359375,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                },
+                {
+                    "segment_id": 1,
+                    "name": "the VELO.COM company logo in the very front center of the car_1",
+                    "bbox": [
+                        434.0,
+                        170.0,
+                        518.0,
+                        200.0
+                    ],
+                    "area": 735.0,
+                    "centroid": [
+                        479.2027210884354,
+                        185.7659863945578
+                    ],
+                    "score": 0.8203125,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": "segment_1_mask.png"
+                },
+                {
+                    "segment_id": 2,
+                    "name": "the VELO.COM company logo in the very front center of the car_2",
+                    "bbox": [
+                        513.0,
+                        212.0,
+                        553.0,
+                        240.0
+                    ],
+                    "area": 537.0,
+                    "centroid": [
+                        532.5959031657355,
+                        225.3370577281192
+                    ],
+                    "score": 0.78515625,
+                    "crop_file": "segment_2_crop.png",
+                    "mask_file": "segment_2_mask.png"
+                },
+                {
+                    "segment_id": 3,
+                    "name": "the VELO.COM company logo in the very front center of the car_3",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "area": 1080.0,
+                    "centroid": [
+                        380.0453703703704,
+                        189.20092592592593
+                    ],
+                    "score": 0.84375,
+                    "crop_file": "segment_3_crop.png",
+                    "mask_file": "segment_3_mask.png"
+                },
+                {
+                    "segment_id": 4,
+                    "name": "the VELO.COM company logo in the very front center of the car_4",
+                    "bbox": [
+                        469.0,
+                        273.0,
+                        519.0,
+                        313.0
+                    ],
+                    "area": 630.0,
+                    "centroid": [
+                        493.7079365079365,
+                        293.53968253968253
+                    ],
+                    "score": 0.609375,
+                    "crop_file": "segment_4_crop.png",
+                    "mask_file": "segment_4_mask.png"
+                },
+                {
+                    "segment_id": 5,
+                    "name": "the VELO.COM company logo in the very front center of the car_5",
+                    "bbox": [
+                        575.0,
+                        254.0,
+                        613.0,
+                        301.0
+                    ],
+                    "area": 724.0,
+                    "centroid": [
+                        594.3204419889503,
+                        276.8273480662983
+                    ],
+                    "score": 0.6875,
+                    "crop_file": "segment_5_crop.png",
+                    "mask_file": "segment_5_mask.png"
+                },
+                {
+                    "segment_id": 6,
+                    "name": "the VELO.COM company logo in the very front center of the car_6",
+                    "bbox": [
+                        154.0,
+                        267.0,
+                        189.0,
+                        336.0
+                    ],
+                    "area": 794.0,
+                    "centroid": [
+                        169.89672544080605,
+                        301.2896725440806
+                    ],
+                    "score": 0.72265625,
+                    "crop_file": "segment_6_crop.png",
+                    "mask_file": "segment_6_mask.png"
+                },
+                {
+                    "segment_id": 7,
+                    "name": "the VELO.COM company logo in the very front center of the car_7",
+                    "bbox": [
+                        50.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "area": 407.0,
+                    "centroid": [
+                        71.19410319410319,
+                        25.48157248157248
+                    ],
+                    "score": 0.58984375,
+                    "crop_file": "segment_7_crop.png",
+                    "mask_file": "segment_7_mask.png"
+                },
+                {
+                    "segment_id": 8,
+                    "name": "the VELO.COM company logo in the very front center of the car_8",
+                    "bbox": [
+                        213.0,
+                        239.0,
+                        256.0,
+                        252.0
+                    ],
+                    "area": 476.0,
+                    "centroid": [
+                        235.1155462184874,
+                        246.20378151260505
+                    ],
+                    "score": 0.60546875,
+                    "crop_file": "segment_8_crop.png",
+                    "mask_file": "segment_8_mask.png"
+                },
+                {
+                    "segment_id": 9,
+                    "name": "the VELO.COM company logo in the very front center of the car_9",
+                    "bbox": [
+                        233.0,
+                        161.0,
+                        337.0,
+                        205.0
+                    ],
+                    "area": 1685.0,
+                    "centroid": [
+                        284.40356083086056,
+                        181.6047477744807
+                    ],
+                    "score": 0.72265625,
+                    "crop_file": "segment_9_crop.png",
+                    "mask_file": "segment_9_mask.png"
+                },
+                {
+                    "segment_id": 10,
+                    "name": "the VELO.COM company logo in the very front center of the car_10",
+                    "bbox": [
+                        467.0,
+                        237.0,
+                        518.0,
+                        248.0
+                    ],
+                    "area": 511.0,
+                    "centroid": [
+                        491.8082191780822,
+                        242.93933463796478
+                    ],
+                    "score": 0.66796875,
+                    "crop_file": "segment_10_crop.png",
+                    "mask_file": "segment_10_mask.png"
+                }
+            ]
+        },
+        "16": {
+            "frame_index": 16,
+            "timestamp_ms": 640.0,
+            "num_segments": 11,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "the VELO.COM company logo in the very front center of the car_0",
+                    "bbox": [
+                        213.0,
+                        279.0,
+                        255.0,
+                        324.0
+                    ],
+                    "area": 780.0,
+                    "centroid": [
+                        234.93846153846152,
+                        301.33589743589744
+                    ],
+                    "score": 0.68359375,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                },
+                {
+                    "segment_id": 1,
+                    "name": "the VELO.COM company logo in the very front center of the car_1",
+                    "bbox": [
+                        434.0,
+                        170.0,
+                        517.0,
+                        200.0
+                    ],
+                    "area": 728.0,
+                    "centroid": [
+                        479.1620879120879,
+                        185.75274725274724
+                    ],
+                    "score": 0.8203125,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": "segment_1_mask.png"
+                },
+                {
+                    "segment_id": 2,
+                    "name": "the VELO.COM company logo in the very front center of the car_2",
+                    "bbox": [
+                        513.0,
+                        211.0,
+                        553.0,
+                        240.0
+                    ],
+                    "area": 548.0,
+                    "centroid": [
+                        532.4726277372263,
+                        225.2390510948905
+                    ],
+                    "score": 0.78515625,
+                    "crop_file": "segment_2_crop.png",
+                    "mask_file": "segment_2_mask.png"
+                },
+                {
+                    "segment_id": 3,
+                    "name": "the VELO.COM company logo in the very front center of the car_3",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        421.0,
+                        196.0
+                    ],
+                    "area": 1020.0,
+                    "centroid": [
+                        379.65,
+                        189.07254901960783
+                    ],
+                    "score": 0.84375,
+                    "crop_file": "segment_3_crop.png",
+                    "mask_file": "segment_3_mask.png"
+                },
+                {
+                    "segment_id": 4,
+                    "name": "the VELO.COM company logo in the very front center of the car_4",
+                    "bbox": [
+                        469.0,
+                        273.0,
+                        520.0,
+                        313.0
+                    ],
+                    "area": 601.0,
+                    "centroid": [
+                        493.97171381031615,
+                        293.4675540765391
+                    ],
+                    "score": 0.609375,
+                    "crop_file": "segment_4_crop.png",
+                    "mask_file": "segment_4_mask.png"
+                },
+                {
+                    "segment_id": 5,
+                    "name": "the VELO.COM company logo in the very front center of the car_5",
+                    "bbox": [
+                        575.0,
+                        254.0,
+                        613.0,
+                        301.0
+                    ],
+                    "area": 732.0,
+                    "centroid": [
+                        594.2841530054645,
+                        276.92896174863387
+                    ],
+                    "score": 0.6875,
+                    "crop_file": "segment_5_crop.png",
+                    "mask_file": "segment_5_mask.png"
+                },
+                {
+                    "segment_id": 6,
+                    "name": "the VELO.COM company logo in the very front center of the car_6",
+                    "bbox": [
+                        154.0,
+                        267.0,
+                        188.0,
+                        336.0
+                    ],
+                    "area": 755.0,
+                    "centroid": [
+                        169.8119205298013,
+                        301.45562913907287
+                    ],
+                    "score": 0.72265625,
+                    "crop_file": "segment_6_crop.png",
+                    "mask_file": "segment_6_mask.png"
+                },
+                {
+                    "segment_id": 7,
+                    "name": "the VELO.COM company logo in the very front center of the car_7",
+                    "bbox": [
+                        49.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "area": 407.0,
+                    "centroid": [
+                        71.14742014742015,
+                        25.48157248157248
+                    ],
+                    "score": 0.58984375,
+                    "crop_file": "segment_7_crop.png",
+                    "mask_file": "segment_7_mask.png"
+                },
+                {
+                    "segment_id": 8,
+                    "name": "the VELO.COM company logo in the very front center of the car_8",
+                    "bbox": [
+                        213.0,
+                        239.0,
+                        256.0,
+                        252.0
+                    ],
+                    "area": 473.0,
+                    "centroid": [
+                        235.12262156448202,
+                        246.26849894291755
+                    ],
+                    "score": 0.60546875,
+                    "crop_file": "segment_8_crop.png",
+                    "mask_file": "segment_8_mask.png"
+                },
+                {
+                    "segment_id": 9,
+                    "name": "the VELO.COM company logo in the very front center of the car_9",
+                    "bbox": [
+                        233.0,
+                        161.0,
+                        337.0,
+                        205.0
+                    ],
+                    "area": 1707.0,
+                    "centroid": [
+                        284.3222026947862,
+                        181.62272993555945
+                    ],
+                    "score": 0.72265625,
+                    "crop_file": "segment_9_crop.png",
+                    "mask_file": "segment_9_mask.png"
+                },
+                {
+                    "segment_id": 10,
+                    "name": "the VELO.COM company logo in the very front center of the car_10",
+                    "bbox": [
+                        467.0,
+                        237.0,
+                        518.0,
+                        248.0
+                    ],
+                    "area": 531.0,
+                    "centroid": [
+                        491.7683615819209,
+                        243.030131826742
+                    ],
+                    "score": 0.66796875,
+                    "crop_file": "segment_10_crop.png",
+                    "mask_file": "segment_10_mask.png"
+                }
+            ]
+        },
+        "17": {
+            "frame_index": 17,
+            "timestamp_ms": 680.0,
+            "num_segments": 11,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "the VELO.COM company logo in the very front center of the car_0",
+                    "bbox": [
+                        213.0,
+                        279.0,
+                        255.0,
+                        324.0
+                    ],
+                    "area": 786.0,
+                    "centroid": [
+                        234.9376590330789,
+                        301.441475826972
+                    ],
+                    "score": 0.68359375,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                },
+                {
+                    "segment_id": 1,
+                    "name": "the VELO.COM company logo in the very front center of the car_1",
+                    "bbox": [
+                        434.0,
+                        170.0,
+                        518.0,
+                        200.0
+                    ],
+                    "area": 734.0,
+                    "centroid": [
+                        479.3092643051771,
+                        185.81471389645776
+                    ],
+                    "score": 0.8203125,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": "segment_1_mask.png"
+                },
+                {
+                    "segment_id": 2,
+                    "name": "the VELO.COM company logo in the very front center of the car_2",
+                    "bbox": [
+                        512.0,
+                        212.0,
+                        553.0,
+                        240.0
+                    ],
+                    "area": 548.0,
+                    "centroid": [
+                        532.4616788321168,
+                        225.257299270073
+                    ],
+                    "score": 0.78515625,
+                    "crop_file": "segment_2_crop.png",
+                    "mask_file": "segment_2_mask.png"
+                },
+                {
+                    "segment_id": 3,
+                    "name": "the VELO.COM company logo in the very front center of the car_3",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "area": 1045.0,
+                    "centroid": [
+                        380.27942583732056,
+                        189.1799043062201
+                    ],
+                    "score": 0.84375,
+                    "crop_file": "segment_3_crop.png",
+                    "mask_file": "segment_3_mask.png"
+                },
+                {
+                    "segment_id": 4,
+                    "name": "the VELO.COM company logo in the very front center of the car_4",
+                    "bbox": [
+                        469.0,
+                        273.0,
+                        520.0,
+                        313.0
+                    ],
+                    "area": 605.0,
+                    "centroid": [
+                        493.8479338842975,
+                        293.42479338842975
+                    ],
+                    "score": 0.609375,
+                    "crop_file": "segment_4_crop.png",
+                    "mask_file": "segment_4_mask.png"
+                },
+                {
+                    "segment_id": 5,
+                    "name": "the VELO.COM company logo in the very front center of the car_5",
+                    "bbox": [
+                        576.0,
+                        254.0,
+                        613.0,
+                        300.0
+                    ],
+                    "area": 694.0,
+                    "centroid": [
+                        594.4048991354467,
+                        276.92651296829973
+                    ],
+                    "score": 0.6875,
+                    "crop_file": "segment_5_crop.png",
+                    "mask_file": "segment_5_mask.png"
+                },
+                {
+                    "segment_id": 6,
+                    "name": "the VELO.COM company logo in the very front center of the car_6",
+                    "bbox": [
+                        154.0,
+                        267.0,
+                        189.0,
+                        336.0
+                    ],
+                    "area": 819.0,
+                    "centroid": [
+                        169.993894993895,
+                        301.16361416361417
+                    ],
+                    "score": 0.72265625,
+                    "crop_file": "segment_6_crop.png",
+                    "mask_file": "segment_6_mask.png"
+                },
+                {
+                    "segment_id": 7,
+                    "name": "the VELO.COM company logo in the very front center of the car_7",
+                    "bbox": [
+                        50.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "area": 412.0,
+                    "centroid": [
+                        71.45631067961165,
+                        25.54126213592233
+                    ],
+                    "score": 0.58984375,
+                    "crop_file": "segment_7_crop.png",
+                    "mask_file": "segment_7_mask.png"
+                },
+                {
+                    "segment_id": 8,
+                    "name": "the VELO.COM company logo in the very front center of the car_8",
+                    "bbox": [
+                        214.0,
+                        238.0,
+                        257.0,
+                        252.0
+                    ],
+                    "area": 489.0,
+                    "centroid": [
+                        235.68916155419222,
+                        246.05725971370143
+                    ],
+                    "score": 0.60546875,
+                    "crop_file": "segment_8_crop.png",
+                    "mask_file": "segment_8_mask.png"
+                },
+                {
+                    "segment_id": 9,
+                    "name": "the VELO.COM company logo in the very front center of the car_9",
+                    "bbox": [
+                        233.0,
+                        161.0,
+                        337.0,
+                        205.0
+                    ],
+                    "area": 1699.0,
+                    "centroid": [
+                        284.46380223660975,
+                        181.52560329605652
+                    ],
+                    "score": 0.72265625,
+                    "crop_file": "segment_9_crop.png",
+                    "mask_file": "segment_9_mask.png"
+                },
+                {
+                    "segment_id": 10,
+                    "name": "the VELO.COM company logo in the very front center of the car_10",
+                    "bbox": [
+                        467.0,
+                        237.0,
+                        518.0,
+                        248.0
+                    ],
+                    "area": 538.0,
+                    "centroid": [
+                        491.9925650557621,
+                        243.0260223048327
+                    ],
+                    "score": 0.66796875,
+                    "crop_file": "segment_10_crop.png",
+                    "mask_file": "segment_10_mask.png"
+                }
+            ]
+        },
+        "18": {
+            "frame_index": 18,
+            "timestamp_ms": 720.0,
+            "num_segments": 11,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "the VELO.COM company logo in the very front center of the car_0",
+                    "bbox": [
+                        214.0,
+                        279.0,
+                        255.0,
+                        324.0
+                    ],
+                    "area": 784.0,
+                    "centroid": [
+                        235.13137755102042,
+                        301.2844387755102
+                    ],
+                    "score": 0.68359375,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                },
+                {
+                    "segment_id": 1,
+                    "name": "the VELO.COM company logo in the very front center of the car_1",
+                    "bbox": [
+                        434.0,
+                        170.0,
+                        518.0,
+                        200.0
+                    ],
+                    "area": 734.0,
+                    "centroid": [
+                        479.36648501362396,
+                        185.80245231607628
+                    ],
+                    "score": 0.8203125,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": "segment_1_mask.png"
+                },
+                {
+                    "segment_id": 2,
+                    "name": "the VELO.COM company logo in the very front center of the car_2",
+                    "bbox": [
+                        512.0,
+                        211.0,
+                        553.0,
+                        240.0
+                    ],
+                    "area": 553.0,
+                    "centroid": [
+                        532.1754068716094,
+                        225.124773960217
+                    ],
+                    "score": 0.78515625,
+                    "crop_file": "segment_2_crop.png",
+                    "mask_file": "segment_2_mask.png"
+                },
+                {
+                    "segment_id": 3,
+                    "name": "the VELO.COM company logo in the very front center of the car_3",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "area": 1065.0,
+                    "centroid": [
+                        380.38403755868546,
+                        189.12957746478872
+                    ],
+                    "score": 0.84375,
+                    "crop_file": "segment_3_crop.png",
+                    "mask_file": "segment_3_mask.png"
+                },
+                {
+                    "segment_id": 4,
+                    "name": "the VELO.COM company logo in the very front center of the car_4",
+                    "bbox": [
+                        468.0,
+                        273.0,
+                        520.0,
+                        313.0
+                    ],
+                    "area": 634.0,
+                    "centroid": [
+                        493.5725552050473,
+                        293.4589905362776
+                    ],
+                    "score": 0.609375,
+                    "crop_file": "segment_4_crop.png",
+                    "mask_file": "segment_4_mask.png"
+                },
+                {
+                    "segment_id": 5,
+                    "name": "the VELO.COM company logo in the very front center of the car_5",
+                    "bbox": [
+                        576.0,
+                        253.0,
+                        613.0,
+                        300.0
+                    ],
+                    "area": 741.0,
+                    "centroid": [
+                        594.4588394062079,
+                        276.6909581646424
+                    ],
+                    "score": 0.6875,
+                    "crop_file": "segment_5_crop.png",
+                    "mask_file": "segment_5_mask.png"
+                },
+                {
+                    "segment_id": 6,
+                    "name": "the VELO.COM company logo in the very front center of the car_6",
+                    "bbox": [
+                        154.0,
+                        267.0,
+                        188.0,
+                        336.0
+                    ],
+                    "area": 809.0,
+                    "centroid": [
+                        169.94932014833128,
+                        300.99011124845487
+                    ],
+                    "score": 0.72265625,
+                    "crop_file": "segment_6_crop.png",
+                    "mask_file": "segment_6_mask.png"
+                },
+                {
+                    "segment_id": 7,
+                    "name": "the VELO.COM company logo in the very front center of the car_7",
+                    "bbox": [
+                        50.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "area": 413.0,
+                    "centroid": [
+                        71.49878934624698,
+                        25.54721549636804
+                    ],
+                    "score": 0.58984375,
+                    "crop_file": "segment_7_crop.png",
+                    "mask_file": "segment_7_mask.png"
+                },
+                {
+                    "segment_id": 8,
+                    "name": "the VELO.COM company logo in the very front center of the car_8",
+                    "bbox": [
+                        213.0,
+                        238.0,
+                        257.0,
+                        252.0
+                    ],
+                    "area": 488.0,
+                    "centroid": [
+                        235.202868852459,
+                        246.27459016393442
+                    ],
+                    "score": 0.60546875,
+                    "crop_file": "segment_8_crop.png",
+                    "mask_file": "segment_8_mask.png"
+                },
+                {
+                    "segment_id": 9,
+                    "name": "the VELO.COM company logo in the very front center of the car_9",
+                    "bbox": [
+                        233.0,
+                        161.0,
+                        337.0,
+                        205.0
+                    ],
+                    "area": 1700.0,
+                    "centroid": [
+                        284.3623529411765,
+                        181.5264705882353
+                    ],
+                    "score": 0.72265625,
+                    "crop_file": "segment_9_crop.png",
+                    "mask_file": "segment_9_mask.png"
+                },
+                {
+                    "segment_id": 10,
+                    "name": "the VELO.COM company logo in the very front center of the car_10",
+                    "bbox": [
+                        467.0,
+                        237.0,
+                        518.0,
+                        248.0
+                    ],
+                    "area": 537.0,
+                    "centroid": [
+                        491.75977653631287,
+                        243.05214152700185
+                    ],
+                    "score": 0.66796875,
+                    "crop_file": "segment_10_crop.png",
+                    "mask_file": "segment_10_mask.png"
+                }
+            ]
+        },
+        "19": {
+            "frame_index": 19,
+            "timestamp_ms": 760.0,
+            "num_segments": 11,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "the VELO.COM company logo in the very front center of the car_0",
+                    "bbox": [
+                        213.0,
+                        279.0,
+                        255.0,
+                        324.0
+                    ],
+                    "area": 788.0,
+                    "centroid": [
+                        234.99492385786803,
+                        301.4022842639594
+                    ],
+                    "score": 0.68359375,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                },
+                {
+                    "segment_id": 1,
+                    "name": "the VELO.COM company logo in the very front center of the car_1",
+                    "bbox": [
+                        434.0,
+                        170.0,
+                        518.0,
+                        200.0
+                    ],
+                    "area": 737.0,
+                    "centroid": [
+                        479.36635006784263,
+                        185.8100407055631
+                    ],
+                    "score": 0.8203125,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": "segment_1_mask.png"
+                },
+                {
+                    "segment_id": 2,
+                    "name": "the VELO.COM company logo in the very front center of the car_2",
+                    "bbox": [
+                        512.0,
+                        211.0,
+                        553.0,
+                        240.0
+                    ],
+                    "area": 549.0,
+                    "centroid": [
+                        532.2677595628415,
+                        225.14754098360655
+                    ],
+                    "score": 0.78515625,
+                    "crop_file": "segment_2_crop.png",
+                    "mask_file": "segment_2_mask.png"
+                },
+                {
+                    "segment_id": 3,
+                    "name": "the VELO.COM company logo in the very front center of the car_3",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "area": 1064.0,
+                    "centroid": [
+                        380.22086466165416,
+                        189.12124060150376
+                    ],
+                    "score": 0.84375,
+                    "crop_file": "segment_3_crop.png",
+                    "mask_file": "segment_3_mask.png"
+                },
+                {
+                    "segment_id": 4,
+                    "name": "the VELO.COM company logo in the very front center of the car_4",
+                    "bbox": [
+                        469.0,
+                        273.0,
+                        519.0,
+                        313.0
+                    ],
+                    "area": 603.0,
+                    "centroid": [
+                        493.7844112769486,
+                        293.3665008291874
+                    ],
+                    "score": 0.609375,
+                    "crop_file": "segment_4_crop.png",
+                    "mask_file": "segment_4_mask.png"
+                },
+                {
+                    "segment_id": 5,
+                    "name": "the VELO.COM company logo in the very front center of the car_5",
+                    "bbox": [
+                        576.0,
+                        253.0,
+                        613.0,
+                        300.0
+                    ],
+                    "area": 739.0,
+                    "centroid": [
+                        594.3734776725305,
+                        276.62922868741543
+                    ],
+                    "score": 0.6875,
+                    "crop_file": "segment_5_crop.png",
+                    "mask_file": "segment_5_mask.png"
+                },
+                {
+                    "segment_id": 6,
+                    "name": "the VELO.COM company logo in the very front center of the car_6",
+                    "bbox": [
+                        154.0,
+                        267.0,
+                        188.0,
+                        336.0
+                    ],
+                    "area": 818.0,
+                    "centroid": [
+                        169.73716381418092,
+                        300.96454767726163
+                    ],
+                    "score": 0.72265625,
+                    "crop_file": "segment_6_crop.png",
+                    "mask_file": "segment_6_mask.png"
+                },
+                {
+                    "segment_id": 7,
+                    "name": "the VELO.COM company logo in the very front center of the car_7",
+                    "bbox": [
+                        49.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "area": 407.0,
+                    "centroid": [
+                        71.2088452088452,
+                        25.49140049140049
+                    ],
+                    "score": 0.58984375,
+                    "crop_file": "segment_7_crop.png",
+                    "mask_file": "segment_7_mask.png"
+                },
+                {
+                    "segment_id": 8,
+                    "name": "the VELO.COM company logo in the very front center of the car_8",
+                    "bbox": [
+                        213.0,
+                        239.0,
+                        257.0,
+                        252.0
+                    ],
+                    "area": 490.0,
+                    "centroid": [
+                        235.25102040816327,
+                        246.28979591836736
+                    ],
+                    "score": 0.60546875,
+                    "crop_file": "segment_8_crop.png",
+                    "mask_file": "segment_8_mask.png"
+                },
+                {
+                    "segment_id": 9,
+                    "name": "the VELO.COM company logo in the very front center of the car_9",
+                    "bbox": [
+                        233.0,
+                        161.0,
+                        337.0,
+                        204.0
+                    ],
+                    "area": 1701.0,
+                    "centroid": [
+                        284.6731334509112,
+                        181.3533215755438
+                    ],
+                    "score": 0.72265625,
+                    "crop_file": "segment_9_crop.png",
+                    "mask_file": "segment_9_mask.png"
+                },
+                {
+                    "segment_id": 10,
+                    "name": "the VELO.COM company logo in the very front center of the car_10",
+                    "bbox": [
+                        467.0,
+                        237.0,
+                        518.0,
+                        248.0
+                    ],
+                    "area": 516.0,
+                    "centroid": [
+                        491.968992248062,
+                        242.98837209302326
+                    ],
+                    "score": 0.66796875,
+                    "crop_file": "segment_10_crop.png",
+                    "mask_file": "segment_10_mask.png"
+                }
+            ]
+        }
+    }
+}
