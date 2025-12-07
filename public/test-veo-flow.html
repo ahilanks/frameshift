@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>🧪 Test Veo 3.1 Flow</title>
+    <style>
+        body {
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+            color: #fff;
+            margin: 0;
+            padding: 40px;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(30, 30, 30, 0.9);
+            border-radius: 20px;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 30px;
+        }
+        .test-option {
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .test-option:hover {
+            background: rgba(59, 130, 246, 0.2);
+            border-color: rgba(59, 130, 246, 0.5);
+            transform: translateY(-2px);
+        }
+        .test-option h3 {
+            margin: 0 0 15px 0;
+            color: #3b82f6;
+            font-size: 1.3rem;
+        }
+        .test-option p {
+            margin: 0;
+            opacity: 0.8;
+            line-height: 1.5;
+        }
+        .big-button {
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s;
+            width: 100%;
+            margin-top: 10px;
+        }
+        .big-button:hover {
+            transform: scale(1.05);
+        }
+        .status {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .warning {
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            color: #fbbf24;
+        }
+        .code {
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 6px;
+            padding: 15px;
+            font-family: 'Monaco', 'Consolas', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Test Veo 3.1 Video Analysis</h1>
+
+        <div class="status">
+            <strong>✅ Ready for REAL Veo 3.1 API Testing!</strong>
+            <br>Choose your testing method below:
+        </div>
+
+        <div class="test-option" onclick="autoSetup()">
+            <h3>🎯 Option 1: Automatic Setup (Recommended)</h3>
+            <p>Automatically configure test data and jump straight to video analysis with real Veo 3.1 API calls.</p>
+            <button class="big-button">🚀 Auto-Setup & Test Veo 3.1</button>
+        </div>
+
+        <div class="test-option" onclick="manualFlow()">
+            <h3>📤 Option 2: Manual Upload Flow</h3>
+            <p>Go through the complete user experience: upload video → add preferences → analyze.</p>
+            <button class="big-button">📸 Start Manual Flow</button>
+        </div>
+
+        <div class="test-option" onclick="quickConsole()">
+            <h3>💻 Option 3: Console Setup</h3>
+            <p>Set up test data via browser console (for developers).</p>
+            <button class="big-button">🛠️ Show Console Instructions</button>
+        </div>
+
+        <div class="status warning" style="display: none;" id="console-instructions">
+            <h4>Console Setup Instructions:</h4>
+            <div class="code">
+const testData = {
+  video: {
+    name: 'test_video_for_veo.mp4',
+    size: 1024000,
+    duration: 15.5,
+    url: '/api/mock-video-blob',
+    fileType: 'video/mp4'
+  },
+  preferences: {
+    likes: ['Apple', 'Technology', 'iPhone'],
+    audience: ['tech-enthusiasts', 'young-adults'],
+    selectedProducts: [{
+      name: 'iPhone 15 Pro',
+      description: 'Latest iPhone with titanium design and advanced camera system',
+      category: 'Technology',
+      brand: 'Apple',
+      targetAudience: ['tech-enthusiasts', 'young-adults']
+    }],
+    targetDemographic: 'tech-savvy young adults',
+    brandCategories: ['Technology', 'Premium Devices']
+  }
+};
+sessionStorage.setItem('frameshift-project', JSON.stringify(testData));
+sessionStorage.setItem('frameshift-video-file', testData.video.url);
+console.log('✅ Test data ready!');
+window.location.href = '/analysis';
+            </div>
+            <p>Copy and paste this into your browser console, then it will automatically redirect to analysis.</p>
+        </div>
+
+        <div class="status">
+            <h4>🔍 What You'll See During Testing:</h4>
+            <ul style="text-align: left;">
+                <li>✅ Real API key detection</li>
+                <li>🧠 Grok AI analyzing your video context</li>
+                <li>🎯 AI selecting optimal product placement</li>
+                <li>🚀 <strong>ACTUAL Veo 3.1 API calls</strong> for video modification</li>
+                <li>📊 Real-time progress and detailed console logs</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function autoSetup() {
+            window.location.href = '/api/setup-test-and-redirect';
+        }
+
+        function manualFlow() {
+            window.location.href = '/';
+        }
+
+        function quickConsole() {
+            const instructions = document.getElementById('console-instructions');
+            instructions.style.display = instructions.style.display === 'none' ? 'block' : 'none';
+        }
+
+        // Check API status on page load
+        fetch('/api/test-veo-status')
+            .then(res => res.json())
+            .then(data => {
+                console.log('🔑 API Status:', data);
+                if (data.demoMode) {
+                    document.querySelector('.status').innerHTML =
+                        '<strong>⚠️ Demo Mode Active</strong><br>Add your Google API key to .env.local for real Veo 3.1 calls';
+                    document.querySelector('.status').className = 'status warning';
+                }
+            })
+            .catch(err => console.log('API check failed:', err));
+    </script>
+</body>
+</html>

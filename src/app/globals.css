@@ -1,0 +1,169 @@
+@import "tailwindcss";
+
+/* Cool X.AI theme with proper contrast */
+:root {
+  --background: #0a0a0a;
+  --foreground: #ffffff;
+  --card-bg: rgba(30, 30, 30, 0.8);
+  --card-border: rgba(55, 65, 81, 0.3);
+  --text-primary: #ffffff;
+  --text-secondary: #d1d5db;
+  --text-muted: #9ca3af;
+  --accent-blue: #3b82f6;
+  --accent-purple: #8b5cf6;
+  --accent-cyan: #06b6d4;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/* X.AI Particle System */
+.xai-particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.xai-particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: linear-gradient(45deg, #3b82f6, #8b5cf6, #06b6d4);
+  border-radius: 50%;
+  animation: xai-float 15s infinite ease-in-out;
+  opacity: 0.6;
+}
+
+@keyframes xai-float {
+  0%, 100% { transform: translateY(0) translateX(0) scale(1); opacity: 0.6; }
+  25% { transform: translateY(-20px) translateX(10px) scale(1.1); opacity: 0.8; }
+  50% { transform: translateY(-40px) translateX(-5px) scale(0.9); opacity: 0.4; }
+  75% { transform: translateY(-30px) translateX(-10px) scale(1.05); opacity: 0.7; }
+}
+
+@keyframes xai-wave {
+  0%, 100% { transform: translateX(0) translateY(0); }
+  25% { transform: translateX(5px) translateY(-2px); }
+  50% { transform: translateX(-3px) translateY(-5px); }
+  75% { transform: translateX(-2px) translateY(2px); }
+}
+
+/* X.AI Cards with proper contrast */
+.xai-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.xai-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 48px rgba(59, 130, 246, 0.15);
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+/* Text classes with proper contrast */
+.xai-text-primary {
+  color: var(--text-primary) !important;
+}
+
+.xai-text-secondary {
+  color: var(--text-secondary) !important;
+}
+
+.xai-text-muted {
+  color: var(--text-muted) !important;
+}
+
+.xai-text-gradient {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 600;
+}
+
+/* Button styling */
+.xai-button {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  border: none;
+  color: white;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.xai-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+}
+
+.xai-button:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.xai-button:hover:before {
+  left: 100%;
+}
+
+/* Timeline glow effect */
+.xai-timeline-glow {
+  position: relative;
+}
+
+.xai-timeline-glow:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.3), transparent 70%);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+  pointer-events: none;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+  50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.8; }
+}
+
+/* Hover effects */
+.xai-hover {
+  transition: all 0.3s ease;
+}
+
+.xai-hover:hover {
+  transform: translateY(-2px);
+}
+
+/* Utility classes */
+.prevent-scroll {
+  overscroll-behavior: contain;
+  touch-action: manipulation;
+}

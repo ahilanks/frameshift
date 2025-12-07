@@ -1,0 +1,120 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e5]:
+        - link "F Frameshift" [ref=e7] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e9]: F
+          - generic [ref=e10]: Frameshift
+        - navigation [ref=e11]:
+          - link "Upload" [ref=e12] [cursor=pointer]:
+            - /url: /
+          - link "Projects" [ref=e13] [cursor=pointer]:
+            - /url: /projects
+        - link "New Project" [ref=e15] [cursor=pointer]:
+          - /url: /
+    - main [ref=e16]:
+      - generic [ref=e17]:
+        - generic:
+          - generic:
+            - img
+        - generic [ref=e18]:
+          - generic [ref=e19]:
+            - generic [ref=e20] [cursor=pointer]:
+              - img [ref=e21]
+              - generic [ref=e24]: Powered by Veo 3.1 & Grok AI
+            - heading "AI-Powered Product Placement" [level=1] [ref=e25]
+            - paragraph [ref=e26]: Transform your videos with seamless, natural product placement. Upload your content, select products, and let our AI create compelling branded content.
+          - generic [ref=e27]:
+            - generic [ref=e28]:
+              - generic [ref=e30] [cursor=pointer]:
+                - generic [ref=e31]:
+                  - generic [ref=e32]: "1"
+                  - heading "Upload Video" [level=3] [ref=e33]
+                - generic [ref=e34]:
+                  - button "Choose File" [ref=e35]
+                  - generic [ref=e36]:
+                    - img [ref=e38]
+                    - generic [ref=e41]:
+                      - heading "Upload Video" [level=3] [ref=e42]
+                      - paragraph [ref=e43]: Drop a video file here, or click to select
+                      - paragraph [ref=e44]: Supports MP4, WebM, MOV, AVI (max 100MB)
+              - generic [ref=e46] [cursor=pointer]:
+                - generic [ref=e47]:
+                  - generic [ref=e48]: "2"
+                  - heading "Brand Preferences" [level=3] [ref=e49]
+                  - generic [ref=e50]: "*Required"
+                - generic [ref=e51]:
+                  - generic [ref=e52]:
+                    - heading "Brand Names" [level=3] [ref=e54]
+                    - generic [ref=e57]:
+                      - textbox "Add brand (e.g., Apple, Nike, Tesla)" [ref=e58]
+                      - button [ref=e59]:
+                        - img [ref=e60]
+                  - generic [ref=e61]:
+                    - heading "Brand Image (Optional)" [level=3] [ref=e63]
+                    - generic [ref=e65]:
+                      - button "Choose File" [ref=e66]
+                      - generic [ref=e67]:
+                        - img [ref=e69]
+                        - generic [ref=e73]:
+                          - paragraph [ref=e74]: Upload brand image
+                          - paragraph [ref=e75]: PNG, JPG up to 10MB (optional)
+                  - generic [ref=e78]:
+                    - heading "Specific Products (Optional)" [level=3] [ref=e79]
+                    - button "Show Products" [ref=e80]
+                  - generic [ref=e81]:
+                    - heading "Target Audience (Optional)" [level=3] [ref=e83]
+                    - generic [ref=e86]:
+                      - textbox "Add audience (e.g., Young professionals, Gamers)" [ref=e87]
+                      - button [ref=e88]:
+                        - img [ref=e89]
+                  - generic [ref=e91]:
+                    - heading "Configuration Summary" [level=3] [ref=e92]
+                    - generic [ref=e93]:
+                      - generic [ref=e94]:
+                        - generic [ref=e95]: "Brand Names:"
+                        - generic [ref=e96]: Auto-generate from AI
+                      - generic [ref=e97]:
+                        - generic [ref=e98]: "Brand Image:"
+                        - generic [ref=e99]: None (AI will select)
+                      - generic [ref=e100]:
+                        - generic [ref=e101]: "Specific Products:"
+                        - generic [ref=e102]: 0 selected
+                      - generic [ref=e103]:
+                        - generic [ref=e104]: "Target Audience:"
+                        - generic [ref=e105]: General
+            - generic [ref=e106]:
+              - generic [ref=e108] [cursor=pointer]:
+                - generic [ref=e109]:
+                  - img [ref=e110]
+                  - heading "AI-Powered Product Placement" [level=3] [ref=e112]
+                - generic [ref=e113]:
+                  - paragraph [ref=e114]: "Our AI will automatically analyze your video and brand preferences to:"
+                  - generic [ref=e115]:
+                    - generic [ref=e118]: Select the perfect product for your scene
+                    - generic [ref=e121]: Find optimal placement timing and position
+                    - generic [ref=e124]: Generate natural, seamless integration
+                    - generic [ref=e127]: Match your target audience preferences
+              - generic [ref=e129] [cursor=pointer]:
+                - heading "How it works:" [level=3] [ref=e130]
+                - list [ref=e131]:
+                  - listitem [ref=e132]:
+                    - generic [ref=e133]: "1"
+                    - generic [ref=e134]: Upload your video (MP4, WebM, or MOV)
+                  - listitem [ref=e135]:
+                    - generic [ref=e136]: "2"
+                    - generic [ref=e137]: Grok AI analyzes scene context (optional)
+                  - listitem [ref=e138]:
+                    - generic [ref=e139]: "3"
+                    - generic [ref=e140]: Veo 3.1 seamlessly integrates your product
+                  - listitem [ref=e141]:
+                    - generic [ref=e142]: "4"
+                    - generic [ref=e143]: Download your enhanced video
+  - button "Open Next.js Dev Tools" [ref=e149] [cursor=pointer]:
+    - img [ref=e150]
+  - alert [ref=e153]
+```

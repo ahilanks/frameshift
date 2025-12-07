@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Veo 3.1 Flow</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 50px auto; padding: 20px; }
+        .step { margin: 20px 0; padding: 15px; border: 1px solid #ccc; border-radius: 5px; }
+        .success { background-color: #e8f5e8; border-color: #4caf50; }
+        .error { background-color: #ffe8e8; border-color: #f44336; }
+        button { padding: 10px 20px; margin: 5px; cursor: pointer; }
+        pre { background: #f5f5f5; padding: 10px; border-radius: 3px; overflow-x: auto; }
+        .log { max-height: 200px; overflow-y: auto; background: #333; color: #0f0; padding: 10px; font-family: monospace; }
+    </style>
+</head>
+<body>
+    <h1>🧪 Test Veo 3.1 Video Processing Flow</h1>
+    <p>This tool tests the complete video analysis and Veo 3.1 API integration.</p>
+
+    <div class="step">
+        <h3>Step 1: Check API Configuration</h3>
+        <button onclick="checkApiConfig()">Check API Status</button>
+        <div id="api-status"></div>
+    </div>
+
+    <div class="step">
+        <h3>Step 2: Create Test Project Data</h3>
+        <button onclick="createTestData()">Create Test Data</button>
+        <div id="test-data-result"></div>
+    </div>
+
+    <div class="step">
+        <h3>Step 3: Set SessionStorage & Navigate</h3>
+        <button onclick="setSessionStorageAndNavigate()">Setup & Go to Analysis</button>
+        <div id="navigation-result"></div>
+    </div>
+
+    <div class="step">
+        <h3>Step 4: Check Current SessionStorage</h3>
+        <button onclick="checkSessionStorage()">Check SessionStorage</button>
+        <div id="session-result"></div>
+    </div>
+
+    <div class="step">
+        <h3>Debug Console</h3>
+        <button onclick="clearLog()">Clear Log</button>
+        <div id="console-log" class="log"></div>
+    </div>
+
+    <script>
+        let testData = null;
+
+        function log(message) {
+            const logElement = document.getElementById('console-log');
+            const timestamp = new Date().toLocaleTimeString();
+            logElement.innerHTML += `[${timestamp}] ${message}\n`;
+            logElement.scrollTop = logElement.scrollHeight;
+            console.log(message);
+        }
+
+        function clearLog() {
+            document.getElementById('console-log').innerHTML = '';
+        }
+
+        async function checkApiConfig() {
+            try {
+                log('🔍 Checking API configuration...');
+                const response = await fetch('/api/test-veo-status');
+                const result = await response.json();
+
+                document.getElementById('api-status').innerHTML = `
+                    <pre>${JSON.stringify(result, null, 2)}</pre>
+                    <p><strong>Status:</strong> ${result.demoMode ? '⚠️ Demo Mode' : '✅ API Ready'}</p>
+                `;
+
+                log(`✅ API Status: ${result.demoMode ? 'Demo Mode' : 'Production Ready'}`);
+            } catch (error) {
+                document.getElementById('api-status').innerHTML = `<p class="error">❌ Error: ${error.message}</p>`;
+                log(`❌ API Check failed: ${error.message}`);
+            }
+        }
+
+        async function createTestData() {
+            try {
+                log('🧪 Creating test project data...');
+                const response = await fetch('/api/test-video-flow', { method: 'POST' });
+                const result = await response.json();
+
+                if (result.success) {
+                    testData = result.data;
+                    document.getElementById('test-data-result').innerHTML = `
+                        <div class="success">
+                            <p>✅ Test data created successfully!</p>
+                            <pre>${JSON.stringify(result.data, null, 2)}</pre>
+                        </div>
+                    `;
+                    log('✅ Test data created and stored');
+                } else {
+                    throw new Error(result.error || 'Failed to create test data');
+                }
+            } catch (error) {
+                document.getElementById('test-data-result').innerHTML = `<p class="error">❌ Error: ${error.message}</p>`;
+                log(`❌ Test data creation failed: ${error.message}`);
+            }
+        }
+
+        function setSessionStorageAndNavigate() {
+            if (!testData) {
+                alert('❌ Please create test data first!');
+                return;
+            }
+
+            try {
+                log('💾 Setting sessionStorage...');
+                sessionStorage.setItem('frameshift-project', JSON.stringify(testData));
+                sessionStorage.setItem('frameshift-video-file', testData.video.url);
+
+                document.getElementById('navigation-result').innerHTML = `
+                    <div class="success">
+                        <p>✅ SessionStorage set successfully!</p>
+                        <p>📍 Ready to navigate to analysis page</p>
+                        <button onclick="window.location.href='/analysis'">Go to Analysis Page</button>
+                    </div>
+                `;
+
+                log('✅ SessionStorage configured');
+                log('🚀 Ready for analysis page');
+            } catch (error) {
+                document.getElementById('navigation-result').innerHTML = `<p class="error">❌ Error: ${error.message}</p>`;
+                log(`❌ SessionStorage setup failed: ${error.message}`);
+            }
+        }
+
+        function checkSessionStorage() {
+            try {
+                const projectData = sessionStorage.getItem('frameshift-project');
+                const videoFile = sessionStorage.getItem('frameshift-video-file');
+
+                document.getElementById('session-result').innerHTML = `
+                    <h4>Current SessionStorage:</h4>
+                    <p><strong>frameshift-project:</strong> ${projectData ? '✅ Present' : '❌ Missing'}</p>
+                    <p><strong>frameshift-video-file:</strong> ${videoFile ? '✅ Present' : '❌ Missing'}</p>
+                    ${projectData ? `<pre>${JSON.stringify(JSON.parse(projectData), null, 2)}</pre>` : ''}
+                `;
+
+                log(`📊 SessionStorage check: project=${!!projectData}, video=${!!videoFile}`);
+            } catch (error) {
+                document.getElementById('session-result').innerHTML = `<p class="error">❌ Error: ${error.message}</p>`;
+                log(`❌ SessionStorage check failed: ${error.message}`);
+            }
+        }
+
+        // Auto-check API on load
+        window.onload = function() {
+            log('🚀 Veo 3.1 Flow Tester initialized');
+            checkApiConfig();
+            checkSessionStorage();
+        };
+    </script>
+</body>
+</html>

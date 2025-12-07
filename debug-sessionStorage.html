@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SessionStorage Debug</title>
+</head>
+<body>
+    <h1>SessionStorage Debug</h1>
+    <button onclick="checkStorage()">Check SessionStorage</button>
+    <button onclick="clearStorage()">Clear SessionStorage</button>
+    <div id="output"></div>
+
+    <script>
+        function checkStorage() {
+            const projectData = sessionStorage.getItem('frameshift-project');
+            const videoFile = sessionStorage.getItem('frameshift-video-file');
+
+            const output = document.getElementById('output');
+            output.innerHTML = `
+                <h2>SessionStorage Contents:</h2>
+                <h3>Project Data:</h3>
+                <pre>${projectData || 'NULL'}</pre>
+                <h3>Video File:</h3>
+                <pre>${videoFile || 'NULL'}</pre>
+                <h3>Parsed Project Data:</h3>
+                <pre>${projectData ? JSON.stringify(JSON.parse(projectData), null, 2) : 'NULL'}</pre>
+            `;
+        }
+
+        function clearStorage() {
+            sessionStorage.clear();
+            document.getElementById('output').innerHTML = '<p>SessionStorage cleared!</p>';
+        }
+
+        // Auto-check on page load
+        checkStorage();
+    </script>
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Video Playback Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #111;
+            color: white;
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #333;
+            border-radius: 8px;
+        }
+        button {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #2563eb;
+        }
+        .status {
+            margin-top: 10px;
+            padding: 10px;
+            background: #222;
+            border-radius: 5px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎬 Frameshift Video Playback Debugger</h1>
+
+    <div class="test-section">
+        <h2>Test 1: Open Application</h2>
+        <button onclick="window.open('http://localhost:5001', '_blank')">Open Frameshift App</button>
+        <p>Opens the application in a new tab</p>
+    </div>
+
+    <div class="test-section">
+        <h2>Test 2: Console Debug Script</h2>
+        <p>Run this in the browser console after uploading a video:</p>
+        <pre class="status">
+// Debug video playback
+const video = document.querySelector('video');
+if (video) {
+    console.log('Video found:', {
+        src: video.src,
+        duration: video.duration,
+        paused: video.paused,
+        muted: video.muted,
+        controls: video.controls,
+        readyState: video.readyState,
+        networkState: video.networkState,
+        error: video.error
+    });
+
+    // Try to play
+    video.play().then(() => {
+        console.log('✅ Video playing successfully');
+    }).catch(err => {
+        console.error('❌ Play failed:', err);
+        console.log('Try clicking on the video or unmuting first');
+    });
+} else {
+    console.log('❌ No video element found');
+}
+
+// Check for play buttons
+const playButtons = document.querySelectorAll('[data-testid="play-button"]');
+console.log('Play buttons found:', playButtons.length);
+playButtons.forEach((btn, i) => {
+    console.log(`Button ${i}:`, btn);
+    // Simulate click
+    btn.click();
+});
+        </pre>
+        <button onclick="copyDebugScript()">Copy Debug Script</button>
+    </div>
+
+    <div class="test-section">
+        <h2>Test 3: Check Z-Index Issues</h2>
+        <pre class="status">
+// Check for overlapping elements
+const elements = document.querySelectorAll('*');
+const videoRect = document.querySelector('video')?.getBoundingClientRect();
+
+if (videoRect) {
+    const overlapping = [];
+    elements.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.left < videoRect.right &&
+            rect.right > videoRect.left &&
+            rect.top < videoRect.bottom &&
+            rect.bottom > videoRect.top &&
+            el !== document.querySelector('video')) {
+            const zIndex = window.getComputedStyle(el).zIndex;
+            const pointerEvents = window.getComputedStyle(el).pointerEvents;
+            overlapping.push({
+                element: el,
+                class: el.className,
+                zIndex,
+                pointerEvents
+            });
+        }
+    });
+    console.table(overlapping);
+}
+        </pre>
+        <button onclick="copyZIndexScript()">Copy Z-Index Check</button>
+    </div>
+
+    <div class="test-section">
+        <h2>Test 4: Fix Playback Issues</h2>
+        <pre class="status">
+// Force fix video playback
+const fixPlayback = () => {
+    const video = document.querySelector('video');
+    if (!video) {
+        console.log('No video found');
+        return;
+    }
+
+    // Remove muted attribute temporarily
+    const wasMuted = video.muted;
+    video.muted = false;
+
+    // Add user interaction handler
+    const playVideo = async () => {
+        try {
+            // Try with sound first
+            await video.play();
+            console.log('✅ Playing with sound');
+        } catch (err) {
+            // Fallback to muted
+            video.muted = true;
+            try {
+                await video.play();
+                console.log('✅ Playing muted');
+            } catch (err2) {
+                console.error('❌ Cannot play:', err2);
+            }
+        }
+    };
+
+    // Try immediate play
+    playVideo();
+
+    // Add click handler to video
+    video.addEventListener('click', playVideo);
+
+    // Fix pointer events on overlays
+    document.querySelectorAll('.absolute.inset-0').forEach(el => {
+        if (!el.querySelector('button')) {
+            el.style.pointerEvents = 'none';
+        }
+    });
+
+    console.log('🔧 Playback fixes applied');
+};
+
+fixPlayback();
+        </pre>
+        <button onclick="copyFixScript()">Copy Fix Script</button>
+    </div>
+
+    <script>
+        function copyDebugScript() {
+            const script = document.querySelectorAll('.status')[0].textContent;
+            navigator.clipboard.writeText(script);
+            alert('Debug script copied to clipboard!');
+        }
+
+        function copyZIndexScript() {
+            const script = document.querySelectorAll('.status')[1].textContent;
+            navigator.clipboard.writeText(script);
+            alert('Z-Index check script copied to clipboard!');
+        }
+
+        function copyFixScript() {
+            const script = document.querySelectorAll('.status')[2].textContent;
+            navigator.clipboard.writeText(script);
+            alert('Fix script copied to clipboard!');
+        }
+    </script>
+</body>
+</html>
