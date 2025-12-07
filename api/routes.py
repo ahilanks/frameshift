@@ -24,10 +24,12 @@ from .models import (
     FrameSegmentInfo,
     SegmentInfo,
     CreateBoxesRunRequest,
-    CreateBoxesRunResponse
+    CreateBoxesRunResponse,
+    VeoGenerateRequest,
+    VeoGenerateResponse,
 )
 from .storage import storage
-from .services import segmentation_service, editing_service
+from .services import segmentation_service, editing_service, veo_service
 
 
 # Create router
@@ -523,6 +525,43 @@ async def get_frame(request: GetFrameRequest):
         )
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Failed to get frame: {str(e)}")
+
+
+@router.post("/veo/generate", response_model=VeoGenerateResponse)
+async def generate_veo_video(request: VeoGenerateRequest):
+    """
+    Generate a Veo video using the first and last frame (start/end time) plus a prompt.
+    """
+    try:
+        upload_path = storage.get_upload_path(request.upload_id)
+        if not upload_path:
+            raise HTTPException(status_code=404, detail=f"Upload not found: {request.upload_id}")
+
+        # Create a run directory for Veo output
+        run_id, run_dir = storage.create_run_dir(request.upload_id)
+
+        output_path = veo_service.generate_from_upload(
+            upload_path=str(upload_path),
+            run_dir=run_dir,
+            start_time=request.start_time,
+            end_time=request.end_time,
+            prompt=request.prompt,
+            duration=request.duration,
+            include_original=request.include_original,
+            fade_duration=request.fade_duration,
+            veo_only=request.veo_only,
+        )
+
+        return VeoGenerateResponse(
+            upload_id=request.upload_id,
+            run_id=run_id,
+            output_video_path=output_path,
+            status="completed",
+        )
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Veo generation failed: {str(e)}")
 
 
 @router.get("/download/video/{run_id}")

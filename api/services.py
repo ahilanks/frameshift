@@ -4,6 +4,7 @@ Core service functions for video segmentation and editing
 
 import sys
 import json
+import os
 from pathlib import Path
 from typing import Optional, List, Dict, Any
 
@@ -21,6 +22,7 @@ from video_edit_tracked import (
     apply_mask_to_image,
     composite_on_frame
 )
+from create_veo_video_enhanced import VeoVideoGenerator
 
 
 class VideoSegmentationService:
@@ -442,7 +444,76 @@ class VideoEditingService:
         return str(output_path)
 
 
+class VeoGenerationService:
+    """Service for Veo-based video generation using first/last frames."""
+
+    def __init__(self):
+        self._generator: Optional[VeoVideoGenerator] = None
+
+    def _get_generator(self) -> VeoVideoGenerator:
+        if self._generator is not None:
+            return self._generator
+        api_key = (
+            os.environ.get("GOOGLE_API_KEY")
+            or os.environ.get("GEMINI_API_KEY")
+            or os.environ.get("VEO_API_KEY")
+        )
+        if not api_key:
+            raise ValueError("Veo/Gemini API key not found. Set GOOGLE_API_KEY, GEMINI_API_KEY, or VEO_API_KEY.")
+        self._generator = VeoVideoGenerator(api_key)
+        return self._generator
+
+    def generate_from_upload(
+        self,
+        upload_path: str,
+        run_dir: Path,
+        start_time: float,
+        end_time: float,
+        prompt: str,
+        duration: Optional[float] = None,
+        include_original: bool = True,
+        fade_duration: float = 0.3,
+        veo_only: bool = False,
+    ) -> str:
+        generator = self._get_generator()
+        run_dir.mkdir(parents=True, exist_ok=True)
+        output_path = run_dir / "veo_video.mp4"
+
+        # If include_original is requested, leverage the enhanced sequence helper
+        if include_original and not veo_only:
+            return generator.create_enhanced_sequence(
+                input_video=upload_path,
+                start_time=start_time,
+                end_time=end_time,
+                prompt=prompt,
+                output_path=str(output_path),
+                include_original=True,
+                fade_duration=fade_duration,
+            )
+
+        # Otherwise, just generate the Veo segment using start/end frames
+        start_frame = generator.extract_frame_at_time(upload_path, start_time)
+        end_frame = generator.extract_frame_at_time(upload_path, end_time)
+        try:
+            enhanced_prompt = generator.create_consistency_prompt(prompt)
+            return generator.generate_video(
+                start_frame_path=start_frame,
+                end_frame_path=end_frame,
+                prompt=enhanced_prompt,
+                output_path=str(output_path),
+                duration=duration,
+            )
+        finally:
+            for temp_frame in (start_frame, end_frame):
+                try:
+                    if temp_frame and os.path.exists(temp_frame):
+                        os.unlink(temp_frame)
+                except:
+                    pass
+
+
 # Global service instances
 segmentation_service = VideoSegmentationService()
 editing_service = VideoEditingService()
+veo_service = VeoGenerationService()
 

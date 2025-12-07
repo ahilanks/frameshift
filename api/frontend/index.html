@@ -551,6 +551,36 @@
             <div id="runBrowserResponse"></div>
         </div>
 
+        <!-- Veo Generation -->
+        <div class="card">
+            <h2>🎥 Veo: First/Last Frame Generation</h2>
+            <p style="color: #666; margin-bottom: 10px;">Generate a Veo clip directly from the uploaded video using its first and last frame in a time range, plus a prompt.</p>
+            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px;">
+                <div class="form-group">
+                    <label>Start time (seconds)</label>
+                    <input type="number" step="0.01" id="veoStartTime" placeholder="e.g. 0">
+                </div>
+                <div class="form-group">
+                    <label>End time (seconds)</label>
+                    <input type="number" step="0.01" id="veoEndTime" placeholder="e.g. 5">
+                </div>
+                <div class="form-group">
+                    <label>Fade duration (seconds, when stitching)</label>
+                    <input type="number" step="0.05" id="veoFade" value="0.3">
+                </div>
+                <div class="form-group">
+                    <label>Veo only (skip original pre/post)</label>
+                    <input type="checkbox" id="veoOnly">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Prompt</label>
+                <textarea id="veoPrompt" placeholder="Describe the animation; first/last frame will match the selected times."></textarea>
+            </div>
+            <button onclick="generateVeoVideo()">Generate with Veo</button>
+            <div id="veoResponse" class="response"></div>
+        </div>
+
         <!-- Quick Actions -->
         <div class="card">
             <h2>🔧 Quick Actions</h2>
@@ -1347,6 +1377,54 @@
                 }
             } catch (error) {
                 showResponse('runBrowserResponse', 'Error: ' + error.message, 'error');
+            }
+        }
+
+        // Veo generation from start/end time and prompt
+        async function generateVeoVideo() {
+            if (!currentUploadId) {
+                showResponse('veoResponse', 'Please upload a video first', 'error');
+                return;
+            }
+            const start = parseFloat(document.getElementById('veoStartTime').value);
+            const end = parseFloat(document.getElementById('veoEndTime').value);
+            const prompt = document.getElementById('veoPrompt').value.trim();
+            const fade = parseFloat(document.getElementById('veoFade').value || '0.3');
+            const veoOnly = document.getElementById('veoOnly').checked;
+
+            if (isNaN(start) || isNaN(end) || end <= start) {
+                showResponse('veoResponse', 'Please provide valid start/end times (end > start).', 'error');
+                return;
+            }
+            if (!prompt) {
+                showResponse('veoResponse', 'Please enter a prompt.', 'error');
+                return;
+            }
+
+            const payload = {
+                upload_id: currentUploadId,
+                start_time: start,
+                end_time: end,
+                prompt: prompt,
+                fade_duration: fade,
+                include_original: !veoOnly,
+                veo_only: veoOnly
+            };
+
+            showResponse('veoResponse', 'Generating...', 'success');
+            try {
+                const resp = await fetch(`${API_BASE}/veo/generate`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const data = await resp.json();
+                if (!resp.ok) {
+                    throw new Error(data.detail || 'Veo generation failed');
+                }
+                showResponse('veoResponse', JSON.stringify(data, null, 2), 'success');
+            } catch (err) {
+                showResponse('veoResponse', 'Error: ' + err.message, 'error');
             }
         }
 

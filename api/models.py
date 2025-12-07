@@ -171,3 +171,23 @@ class HealthCheckResponse(BaseModel):
     status: str = "healthy"
     version: str = "1.0.0"
 
+
+class VeoGenerateRequest(BaseModel):
+    """Request to generate a video with Veo using first/last frames and prompt"""
+    upload_id: str = Field(..., description="Upload ID of the source video")
+    start_time: float = Field(..., description="Start time in seconds for the Veo segment")
+    end_time: float = Field(..., description="End time in seconds for the Veo segment")
+    prompt: str = Field(..., description="Prompt for Veo generation")
+    duration: Optional[float] = Field(None, description="Optional duration hint for Veo (seconds)")
+    include_original: bool = Field(True, description="Include original pre/post segments")
+    fade_duration: float = Field(0.3, description="Fade duration between segments when stitching")
+    veo_only: bool = Field(False, description="If true, generate only the Veo segment (no original parts)")
+
+
+class VeoGenerateResponse(BaseModel):
+    """Response after generating a Veo video"""
+    upload_id: str
+    run_id: str
+    output_video_path: str
+    status: str = "completed"
+
