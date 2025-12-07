@@ -1,0 +1,111 @@
+{
+  "source_video": "/home/ray/src/frameshift/uploads/c3876a2d6386/videoplayback (2).mp4",
+  "num_speakers": 2,
+  "segments": [
+    {
+      "speaker": "SPEAKER_A",
+      "start_ms": 80,
+      "end_ms": 3680,
+      "duration_ms": 3600,
+      "text": "Escalante. Should I call you Mr. Catton?"
+    },
+    {
+      "speaker": "SPEAKER_A",
+      "start_ms": 6080,
+      "end_ms": 13360,
+      "duration_ms": 7280,
+      "text": "You are Frank Catton, formerly of the Tropicana, the Desert Inn and the New York State Penitentiary system, are you not?"
+    },
+    {
+      "speaker": "SPEAKER_A",
+      "start_ms": 16400,
+      "end_ms": 24840,
+      "duration_ms": 8440,
+      "text": "Take it from your silence that you're not gonna refute that. Mr. Benedict, I'm afraid you've been employing an ex convict and as you know, the ngcc."
+    },
+    {
+      "speaker": "SPEAKER_B",
+      "start_ms": 24840,
+      "end_ms": 25840,
+      "duration_ms": 1000,
+      "text": "Goddamn cracker."
+    },
+    {
+      "speaker": "SPEAKER_A",
+      "start_ms": 29330,
+      "end_ms": 29850,
+      "duration_ms": 520,
+      "text": "Excuse me?"
+    },
+    {
+      "speaker": "SPEAKER_B",
+      "start_ms": 29850,
+      "end_ms": 36410,
+      "duration_ms": 6560,
+      "text": "You heard what I said. Black man can't earn a decent wage in this state. That is absolutely cowboy like. You gonna try to throw me out on the street?"
+    },
+    {
+      "speaker": "SPEAKER_A",
+      "start_ms": 36410,
+      "end_ms": 38370,
+      "duration_ms": 1960,
+      "text": "You know I'm throwing. I'm trying to do my job, sir."
+    },
+    {
+      "speaker": "SPEAKER_B",
+      "start_ms": 38610,
+      "end_ms": 48370,
+      "duration_ms": 9760,
+      "text": "What you want from me, man? Want me to get on the table and dance? You like me to shine your shoes? Want me to smile at you? But you definitely won't let me deal the cars. You might as well call it White Jack."
+    },
+    {
+      "speaker": "SPEAKER_B",
+      "start_ms": 49970,
+      "end_ms": 50610,
+      "duration_ms": 640,
+      "text": "And go."
+    },
+    {
+      "speaker": "SPEAKER_A",
+      "start_ms": 52860,
+      "end_ms": 57700,
+      "duration_ms": 4840,
+      "text": "What to say to that? That's. Sorry, Mr. Mayor. I just resent the implication that race has anything to do with this."
+    },
+    {
+      "speaker": "SPEAKER_B",
+      "start_ms": 57700,
+      "end_ms": 58300,
+      "duration_ms": 600,
+      "text": "Yeah, right."
+    },
+    {
+      "speaker": "SPEAKER_A",
+      "start_ms": 59020,
+      "end_ms": 60220,
+      "duration_ms": 1200,
+      "text": "Horrible thing to say."
+    },
+    {
+      "speaker": "SPEAKER_A",
+      "start_ms": 62780,
+      "end_ms": 67980,
+      "duration_ms": 5200,
+      "text": "You, sir, of all people, know that we at the NGC have always supported the hiring of colored."
+    },
+    {
+      "speaker": "SPEAKER_B",
+      "start_ms": 69100,
+      "end_ms": 71980,
+      "duration_ms": 2880,
+      "text": "No, no, I didn't mean. I didn't. I didn't mean to. Sit down."
+    },
+    {
+      "speaker": "SPEAKER_B",
+      "start_ms": 73740,
+      "end_ms": 75660,
+      "duration_ms": 1920,
+      "text": "Sit down. You better talk to him."
+    }
+  ]
+}

@@ -524,10 +524,10 @@
         <aside class="inspector">
             <div class="tab-bar">
                 <button class="tab-btn active" data-target="tab-veo" onclick="showTab('tab-veo')">AI Generate</button>
-                <button class="tab-btn" data-target="tab-tracking" onclick="showTab('tab-tracking')">Edit & Retouch</button>
-                <button class="tab-btn" data-target="tab-gemini" onclick="showTab('tab-gemini')">Gemini Controls</button>
-                <button class="tab-btn" data-target="tab-auto" onclick="showTab('tab-auto')">Auto Segment</button>
-        </div>
+                <button class="tab-btn" data-target="tab-bbox" onclick="showTab('tab-bbox')">Bounding Boxes</button>
+                <button class="tab-btn" data-target="tab-seg" onclick="showTab('tab-seg')">Segmentation</button>
+                <button class="tab-btn" data-target="tab-audio" onclick="showTab('tab-audio')">Audio</button>
+            </div>
 
             <!-- Tab: AI Generate (Veo) -->
             <div id="tab-veo" class="tab-content active">
@@ -556,7 +556,7 @@
             </div>
             
             <!-- Tab: Manual Tracking (Boxes) -->
-            <div id="tab-tracking" class="tab-content">
+            <div id="tab-bbox" class="tab-content">
                 <div class="property-group">
                     <div class="property-label">Manual Tracking</div>
                     <p style="font-size: 0.8rem; color: var(--text-dim); margin-bottom: 10px;">
@@ -589,6 +589,7 @@
                 </div>
                 <div class="property-group">
                     <div class="property-label">Edit Video</div>
+                    <div style="margin-bottom:8px; font-size:0.8rem; color:var(--text-dim);">Run ID: <span id="activeRunIdLabel">--</span></div>
                     <div style="display:flex; gap:8px; margin-bottom:10px;">
                         <div style="flex:1;">
                             <label class="property-label" style="font-size: 0.7rem;">Start Frame</label>
@@ -602,11 +603,12 @@
             
                     <div style="margin-bottom: 10px;">
                         <label class="property-label" style="font-size: 0.7rem;">Edit Prompt</label>
-                        <textarea id="editPrompt" placeholder="E.g. 'Add Nike logo to shirt'"></textarea>
+                        <textarea id="editPromptBbox" placeholder="E.g. 'Add Nike logo to shirt'"></textarea>
             </div>
 
                     <div style="margin-bottom: 10px;">
                         <label class="property-label" style="font-size: 0.7rem;">Segments</label>
+                        <input type="text" id="segmentIdsManual" placeholder="e.g., 0,2,5 (or use checkboxes below)" style="margin-bottom:6px;">
                         <div id="segmentList" style="max-height:150px; overflow:auto; border:1px solid var(--border); border-radius:4px; padding:6px; background: var(--bg-app);"></div>
                         <div style="margin-top:6px; display:flex; gap:6px;">
                             <button class="btn btn-secondary" onclick="selectAllSegments()">Select All</button>
@@ -617,34 +619,66 @@
                     <button class="btn btn-primary" onclick="editVideo()">Run Edit</button>
             </div>
         </div>
-
-            <!-- Tab: Gemini Controls -->
-            <div id="tab-gemini" class="tab-content">
+            <!-- Tab: Segmentation-driven Editing -->
+            <div id="tab-seg" class="tab-content">
                 <div class="property-group">
-                    <div class="property-label">Gemini Model</div>
-                    <select id="geminiModel">
-                        <option value="gemini-2.5-flash-image" selected>Gemini 2.5 Flash (image)</option>
-                        <option value="gemini-2.0-flash-exp">Gemini 2.0 Flash Experimental</option>
-                        <option value="gemini-1.5-flash">Gemini 1.5 Flash</option>
-                    </select>
+                    <div class="property-label">Auto Segmentation (SAM2)</div>
+                    <div style="display:flex; gap:8px; margin-bottom:10px;">
+                        <div style="flex:1;">
+                            <label class="property-label" style="font-size: 0.7rem;">Start Frame</label>
+                            <input type="number" id="segStartFrame" placeholder="0">
+                        </div>
+                        <div style="flex:1;">
+                            <label class="property-label" style="font-size: 0.7rem;">End Frame</label>
+                            <input type="number" id="segEndFrame" placeholder="End">
+                        </div>
+                    </div>
+                    <div style="margin-bottom: 10px;">
+                        <label class="property-label" style="font-size: 0.7rem;">Prompt (Optional)</label>
+                        <input type="text" id="segmentPrompt" placeholder="E.g., 'person', 'car'">
+                    </div>
+                    <div style="margin-bottom: 10px; display: flex; gap: 8px; align-items: center;">
+                        <input type="checkbox" id="saveMasks" style="width: auto;">
+                        <label for="saveMasks" style="font-size: 0.8rem;">Save Masks</label>
+                    </div>
+                    <div style="display:flex; gap:8px; margin-bottom:10px;">
+                        <div style="flex:1;">
+                            <label class="property-label" style="font-size: 0.7rem;">Max Frames</label>
+                            <input type="number" id="segMaxFrames" placeholder="Leave empty for all">
+                        </div>
+                        <div style="flex:1;">
+                            <label class="property-label" style="font-size: 0.7rem;">Output Every N Frames</label>
+                            <input type="number" id="segOutputEvery" value="1" min="1">
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="segmentVideo()">Segment Video</button>
                 </div>
 
                 <div class="property-group">
-                    <div class="property-label">Generation Controls</div>
-                    <div style="display:flex; gap:8px; margin-bottom:8px;">
+                    <div class="property-label">Edit Segmented Video</div>
+                    <div style="margin-bottom:8px; font-size:0.8rem; color:var(--text-dim);">Run ID: <span id="activeRunIdLabelSeg">--</span></div>
+                    <div style="display:flex; gap:8px; margin-bottom:10px;">
                         <div style="flex:1;">
-                            <label class="property-label" style="font-size: 0.7rem;">Max Output Tokens</label>
-                            <input type="number" id="maxOutputTokens" placeholder="e.g., 1024">
+                            <label class="property-label" style="font-size: 0.7rem;">Start Frame</label>
+                            <input type="number" id="editStartFrame" placeholder="0">
                         </div>
                         <div style="flex:1;">
-                            <label class="property-label" style="font-size: 0.7rem;">Regenerate Every N Tokens</label>
-                            <input type="number" id="regenEveryTokens" placeholder="e.g., 256">
+                            <label class="property-label" style="font-size: 0.7rem;">End Frame</label>
+                            <input type="number" id="editEndFrame" placeholder="End">
                         </div>
+                    </div>
+                    <div style="margin-bottom: 10px;">
+                        <label class="property-label" style="font-size: 0.7rem;">Edit Prompt</label>
+                        <textarea id="editPromptSeg" placeholder="E.g. 'Add Nike logo to shirt'"></textarea>
                     </div>
                     <div style="display:flex; gap:8px; margin-bottom:8px;">
                         <div style="flex:1;">
-                            <label class="property-label" style="font-size: 0.7rem;">Reuse Edit Every N Frames</label>
-                            <input type="number" id="reuseEveryFrames" value="1" min="1">
+                            <label class="property-label" style="font-size: 0.7rem;">Model</label>
+                            <select id="geminiModel">
+                                <option value="gemini-2.5-flash-image" selected>Gemini 2.5 Flash (image)</option>
+                                <option value="gemini-2.0-flash-exp">Gemini 2.0 Flash Experimental</option>
+                                <option value="gemini-1.5-flash">Gemini 1.5 Flash</option>
+                            </select>
                         </div>
                         <div style="flex:1;">
                             <label class="property-label" style="font-size: 0.7rem;">Resolution</label>
@@ -660,44 +694,64 @@
                             <label class="property-label" style="font-size: 0.7rem;">Aspect Ratio</label>
                             <input type="text" id="aspectRatio" placeholder="auto, square, 16:9, 9:16">
                         </div>
+                        <div style="flex:1;">
+                            <label class="property-label" style="font-size: 0.7rem;">Reuse Edit Every N Frames</label>
+                            <input type="number" id="reuseEveryFrames" value="1" min="1">
+                            <div style="font-size:0.75rem; color:var(--text-dim); margin-top:4px;">First edit is reused for N-1 frames; regenerate on every Nth.</div>
+                        </div>
+                    </div>
+                    <div style="display:flex; gap:8px; margin-bottom:8px;">
+                        <div style="flex:1;">
+                            <label class="property-label" style="font-size: 0.7rem;">Max Output Tokens</label>
+                            <input type="number" id="maxOutputTokens" placeholder="e.g., 1024">
+                        </div>
+                        <div style="flex:1;">
+                            <label class="property-label" style="font-size: 0.7rem;">Regenerate Every N Tokens</label>
+                            <input type="number" id="regenEveryTokens" placeholder="e.g., 256">
+                        </div>
                     </div>
                     <div style="display:flex; gap:8px; margin-bottom:8px;">
                         <div style="flex:1;">
                             <label class="property-label" style="font-size: 0.7rem;">Force Regeneration Frames</label>
                             <input type="text" id="regenFramesList" placeholder="e.g., 0,50">
                         </div>
+                        <div style="flex:1;">
+                            <label class="property-label" style="font-size: 0.7rem;">Segments</label>
+                            <input type="text" id="segmentIdsManual" placeholder="e.g., 0,2,5 (or use checkboxes below)" style="margin-bottom:6px;">
+                        </div>
                     </div>
-                    <p style="font-size: 0.8rem; color: var(--text-dim);">
-                        These controls map directly to the Gemini API (generation_config) so you can dial in token budgets and regeneration cadence while keeping interpolation and remasking consistent.
-                    </p>
+                    <div style="margin-bottom: 10px;">
+                        <div id="segmentList" style="max-height:120px; overflow:auto; border:1px solid var(--border); border-radius:4px; padding:6px; background: var(--bg-app);"></div>
+                        <div style="margin-top:6px; display:flex; gap:6px;">
+                            <button class="btn btn-secondary" onclick="selectAllSegments()">Select All</button>
+                            <button class="btn btn-secondary" onclick="clearSegments()">Clear</button>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="editVideo()">Run Edit</button>
                 </div>
             </div>
 
-            <!-- Tab: Auto Segmentation -->
-            <div id="tab-auto" class="tab-content">
+            <!-- Tab: Audio Pipeline -->
+            <div id="tab-audio" class="tab-content">
                 <div class="property-group">
-                    <div class="property-label">Auto Segmentation (SAM2)</div>
-                    <div style="display:flex; gap:8px; margin-bottom:10px;">
-                        <div style="flex:1;">
-                            <label class="property-label" style="font-size: 0.7rem;">Start Frame</label>
-                            <input type="number" id="segStartFrame" placeholder="0">
-            </div>
-                        <div style="flex:1;">
-                            <label class="property-label" style="font-size: 0.7rem;">End Frame</label>
-                            <input type="number" id="segEndFrame" placeholder="End">
-            </div>
-            </div>
-                    <div style="margin-bottom: 10px;">
-                        <label class="property-label" style="font-size: 0.7rem;">Prompt (Optional)</label>
-                        <input type="text" id="segmentPrompt" placeholder="E.g., 'person', 'car'">
+                    <div class="property-label">Audio Brand Placement</div>
+                    <p style="font-size: 0.8rem; color: var(--text-dim); margin-bottom: 10px;">
+                        Runs the audio pipeline (transcribe → analyze → voice insertion) on the uploaded video.
+                        The output is downloadable as a new run and visible on the audio timeline track.
+                    </p>
+                    <div style="margin-bottom: 10px; font-size:0.85rem; color:var(--text-dim);">
+                        Run ID: <span id="audioRunIdLabel">--</span>
+                    </div>
+                    <button class="btn btn-primary" onclick="runAudioPipeline()">Run Audio Pipeline</button>
                 </div>
-                    <div style="margin-bottom: 10px; display: flex; gap: 8px; align-items: center;">
-                        <input type="checkbox" id="saveMasks" style="width: auto;">
-                        <label for="saveMasks" style="font-size: 0.8rem;">Save Masks</label>
+
+                <div class="property-group">
+                    <div class="property-label">Replacements</div>
+                    <div id="audioReplacementsList" style="font-size:0.85rem; color: var(--text-dim); line-height:1.4;">
+                        No replacements yet.
+                    </div>
                 </div>
-                    <button class="btn btn-primary" onclick="segmentVideo()">Segment Video</button>
             </div>
-        </div>
         </aside>
         </div>
 
@@ -727,6 +781,11 @@
                 <div class="track-label">Objects</div>
                 <div id="boxTrack" style="position:absolute; top:0; bottom:0; left:0; right:0;"></div>
             </div>
+
+            <div class="track">
+                <div class="track-label">Audio</div>
+                <div id="audioTrack" style="position:absolute; top:0; bottom:0; left:0; right:0;"></div>
+            </div>
         </div>
     </div>
 
@@ -738,6 +797,7 @@
         let appState = {
             uploadId: null,
             runId: null,
+            audioRunId: null,
             duration: 0,
             fps: 24,
             currentTime: 0,
@@ -746,6 +806,7 @@
             outPoint: null,
             zoom: 10,
             clips: [],
+            audioReplacements: [],
             boxes: {},
             drawMode: false,
             isDrawing: false,
@@ -784,8 +845,8 @@
                 btn.classList.toggle('active', btn.dataset.target === tabId);
             });
 
-            // Auto-handle draw mode
-            if (tabId === 'tab-tracking') {
+            // Auto-handle draw mode for bounding boxes
+            if (tabId === 'tab-bbox') {
                 if (!appState.drawMode) toggleDrawMode();
             } else {
                 if (appState.drawMode) toggleDrawMode();
@@ -887,6 +948,7 @@
             }
             renderClips();
             renderKeyframes();
+            renderAudioTrack();
         }
         function updatePlayhead() {
             playhead.style.transform = `translateX(${appState.currentTime * appState.zoom}px)`;
@@ -1069,6 +1131,8 @@
         async function loadRun(runId) {
             try {
                 appState.runId = runId;
+                const runLabel = document.getElementById('activeRunIdLabel');
+                if (runLabel) runLabel.textContent = runId || '--';
                 document.querySelectorAll('#runList .asset-item').forEach(el => {
                     el.classList.toggle('active', el.dataset.runId === runId);
                 });
@@ -1093,6 +1157,22 @@
                     appState.segmentIdsAvailable = Array.from(segSet).sort((a,b)=>a-b);
                     appState.segmentIdsSelected = [...appState.segmentIdsAvailable];
                     renderSegmentList();
+                }
+
+                // Attempt to hydrate audio replacements for this run
+                try {
+                    const audioRes = await fetch(`${API_BASE}/audio/run/${runId}`);
+                    if (audioRes.ok) {
+                        const audioData = await audioRes.json();
+                        appState.audioRunId = audioData.run_id;
+                        appState.audioReplacements = audioData.replacements || [];
+                        const audioRunLabel = document.getElementById('audioRunIdLabel');
+                        if (audioRunLabel) audioRunLabel.textContent = audioData.run_id;
+                        renderAudioReplacementsList();
+                        renderTimeline();
+                    }
+                } catch (err) {
+                    console.error(err);
                 }
             } catch (e) { console.error(e); }
         }
@@ -1129,7 +1209,8 @@
                     })
                 });
                 if (!res.ok) throw new Error('Failed');
-                showToast('Veo generation complete!');
+                showToast('Veo generation complete! Check Runs to preview or download.', 'success');
+                alert('Veo generation finished. Open the run in the list to preview or download.');
                 loadRuns();
             } catch (e) { showToast('Generation failed', 'error'); }
             finally { hideProgress(); }
@@ -1152,7 +1233,7 @@
                             veo_only: true
                         })
                     });
-                    showToast(`Clip "${clip.label}" done`);
+                    showToast(`Clip "${clip.label}" done. Check Runs to preview.`, 'success');
                 } catch (e) { showToast(`Clip "${clip.label}" failed`, 'error'); }
             }
             loadRuns();
@@ -1163,11 +1244,24 @@
             if (!appState.runId) return showToast('No segmentation run selected', 'error');
             showToast('Starting edit...');
             showProgress();
-            const prompt = document.getElementById('editPrompt').value;
+
+            // Get the correct prompt based on active tab
+            let promptRaw = '';
+            if (document.getElementById('tab-seg').classList.contains('active')) {
+                promptRaw = document.getElementById('editPromptSeg').value || '';
+            } else {
+                promptRaw = document.getElementById('editPromptBbox').value || '';
+            }
+            const prompt = promptRaw.trim();
+            if (!prompt) {
+                hideProgress();
+                return showToast('Edit prompt is required', 'error');
+            }
             const model = document.getElementById('geminiModel')?.value || 'gemini-2.5-flash-image';
             const aspectRatio = document.getElementById('aspectRatio')?.value || null;
             const resolution = document.getElementById('resolutionSelect')?.value || '1K';
-            const reuseEvery = parseInt(document.getElementById('reuseEveryFrames')?.value) || 1;
+            const reuseEveryVal = parseInt(document.getElementById('reuseEveryFrames')?.value);
+            const reuseEvery = Number.isNaN(reuseEveryVal) ? 1 : reuseEveryVal;
             const maxTokensVal = document.getElementById('maxOutputTokens')?.value;
             const regenTokensVal = document.getElementById('regenEveryTokens')?.value;
             const maxOutputTokens = maxTokensVal ? parseInt(maxTokensVal) : null;
@@ -1181,6 +1275,15 @@
             const startFrameVal = parseInt(document.getElementById('editStartFrame').value);
             const endFrameField = document.getElementById('editEndFrame').value;
             const endFrameVal = endFrameField ? parseInt(endFrameField) : null;
+            const manualSegmentsText = document.getElementById('segmentIdsManual')?.value || '';
+            const manualSegments = manualSegmentsText
+                .split(',')
+                .map(v => v.trim())
+                .filter(v => v !== '' && !Number.isNaN(parseInt(v)))
+                .map(v => parseInt(v));
+            const segmentIdsMerged = manualSegments.length
+                ? manualSegments
+                : (appState.segmentIdsSelected && appState.segmentIdsSelected.length ? appState.segmentIdsSelected : null);
 
             try {
                 const payload = {
@@ -1189,7 +1292,7 @@
                     model,
                     start_frame_idx: Number.isNaN(startFrameVal) ? 0 : startFrameVal,
                     end_frame_idx: endFrameVal,
-                    segment_ids: appState.segmentIdsSelected && appState.segmentIdsSelected.length ? appState.segmentIdsSelected : null,
+                    segment_ids: segmentIdsMerged,
                     aspect_ratio: aspectRatio || null,
                     resolution,
                     reuse_edit_every_n_frames: reuseEvery,
@@ -1206,7 +1309,10 @@
                     headers: {'Content-Type': 'application/json'},
                     body: JSON.stringify(payload)
                 });
-                if (res.ok) showToast('Edit complete!');
+                if (res.ok) {
+                    showToast('Edit complete! Use Download to grab the video.', 'success');
+                    alert('Edit complete! You can now preview or click Download to save the edited video.');
+                }
                 else throw new Error('Failed');
             } catch(e) { showToast(e.message, 'error'); }
             finally { hideProgress(); }
@@ -1225,19 +1331,53 @@
                         save_masks: document.getElementById('saveMasks').checked,
                         text_prompt: document.getElementById('segmentPrompt').value,
                         start_frame_idx: parseInt(document.getElementById('segStartFrame').value) || 0,
-                        end_frame_idx: document.getElementById('segEndFrame').value ? parseInt(document.getElementById('segEndFrame').value) : null
+                        end_frame_idx: document.getElementById('segEndFrame').value ? parseInt(document.getElementById('segEndFrame').value) : null,
+                        max_frames: document.getElementById('segMaxFrames').value ? parseInt(document.getElementById('segMaxFrames').value) : null,
+                        output_every_n: parseInt(document.getElementById('segOutputEvery').value) || 1
                     })
                 });
                 const data = await res.json();
                 if (res.ok) {
                     appState.runId = data.run_id;
-                    showToast('Segmentation complete');
+                    showToast('Segmentation complete. Select the run to preview or go to Edit.', 'success');
+                    alert('Segmentation complete! Select the run, preview frames, then set your edit prompt and run Edit.');
                     await loadRuns();
                     // Immediately load the new run to hydrate segment list and playback
                     await loadRun(data.run_id);
+                    const runLabelSeg = document.getElementById('activeRunIdLabelSeg');
+                    if (runLabelSeg) runLabelSeg.textContent = data.run_id;
                 } else throw new Error(data.detail);
             } catch(e) { showToast(e.message, 'error'); }
             finally { hideProgress(); }
+        }
+
+        async function runAudioPipeline() {
+            if (!appState.uploadId) return showToast('Upload first', 'error');
+            showToast('Running audio pipeline...');
+            showProgress();
+            try {
+                const res = await fetch(`${API_BASE}/audio/pipeline`, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({ upload_id: appState.uploadId })
+                });
+                const data = await res.json();
+                if (!res.ok) throw new Error(data.detail || 'Pipeline failed');
+                appState.runId = data.run_id;
+                appState.audioRunId = data.run_id;
+                appState.audioReplacements = data.replacements || [];
+                const audioRunLabel = document.getElementById('audioRunIdLabel');
+                if (audioRunLabel) audioRunLabel.textContent = data.run_id;
+                video.src = `${API_BASE}/download/video/${data.run_id}`;
+                renderAudioReplacementsList();
+                renderTimeline();
+                loadRuns();
+                showToast('Audio pipeline complete! Preview the output.', 'success');
+            } catch(e) {
+                showToast(e.message, 'error');
+            } finally {
+                hideProgress();
+            }
         }
 
         // Drawing
@@ -1330,7 +1470,7 @@
                 m.onclick = (e) => {
                     e.stopPropagation();
                     video.currentTime = t;
-                    showTab('tab-tracking');
+                    showTab('tab-bbox');
                 };
                 
                 // Right click to delete
@@ -1345,6 +1485,49 @@
                 };
                 
                 boxTrack.appendChild(m);
+            });
+        }
+
+        function renderAudioTrack() {
+            const track = document.getElementById('audioTrack');
+            if (!track) return;
+            track.innerHTML = '';
+            const reps = appState.audioReplacements || [];
+            reps.forEach((rep, idx) => {
+                const start = rep.timestamp_start || 0;
+                const end = rep.timestamp_end || start;
+                const left = start * appState.zoom;
+                const width = Math.max(6, (end - start) * appState.zoom);
+                const el = document.createElement('div');
+                el.className = 'clip-block';
+                el.style.left = `${left}px`;
+                el.style.width = `${width}px`;
+                el.style.background = 'rgba(16, 185, 129, 0.35)';
+                el.style.borderColor = '#10B981';
+                el.textContent = rep.brand_used || `Line ${idx + 1}`;
+                el.title = `${formatTimecode(start)} → ${formatTimecode(end)}\n${rep.new_line || ''}`;
+                el.onclick = (e) => { e.stopPropagation(); video.currentTime = start; };
+                track.appendChild(el);
+            });
+        }
+
+        function renderAudioReplacementsList() {
+            const list = document.getElementById('audioReplacementsList');
+            if (!list) return;
+            const reps = appState.audioReplacements || [];
+            if (!reps.length) {
+                list.textContent = 'No replacements yet.';
+                return;
+            }
+            list.innerHTML = '';
+            reps.forEach((rep, idx) => {
+                const row = document.createElement('div');
+                row.style.marginBottom = '10px';
+                row.style.cursor = 'pointer';
+                row.onclick = () => { video.currentTime = rep.timestamp_start || 0; };
+                row.innerHTML = `<div style="color:#fff;">${rep.brand_used || 'Brand'} • ${formatTimecode(rep.timestamp_start || 0)} - ${formatTimecode(rep.timestamp_end || rep.timestamp_start || 0)}</div>
+                <div style="color:var(--text-dim); font-size:0.8rem;">${rep.new_line || rep.original_line || ''}</div>`;
+                list.appendChild(row);
             });
         }
         function clearBoxes() {
@@ -1391,6 +1574,11 @@
                     appState.runId = data.run_id;
                     await loadRuns();
                     await loadRun(data.run_id);
+                    const runLabel = document.getElementById('activeRunIdLabel');
+                    if (runLabel) runLabel.textContent = data.run_id;
+                    const runLabelSeg = document.getElementById('activeRunIdLabelSeg');
+                    if (runLabelSeg) runLabelSeg.textContent = data.run_id;
+                    alert('Bounding-box run saved! You can now review segments and run an edit.');
                 } else {
                     const d = data.detail;
                     throw new Error(typeof d === 'string' ? d : JSON.stringify(d));

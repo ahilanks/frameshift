@@ -1,0 +1,31 @@
+{
+  "replacements": [
+    {
+      "timestamp_start": 5.6,
+      "timestamp_end": 10.0,
+      "speaker": "SPEAKER_B",
+      "original_line": "When the McAllister family left on their Christmas vacation, did we miss the plane?",
+      "brand_used": "Delta",
+      "new_line": "When the McAllister family left on their Christmas vacation, did we miss our Delta flight?",
+      "rationale": "Incorporating 'Delta' into the line about missing a flight feels natural as Delta is a well-known airline. The mention of a specific airline fits the context of travel and maintains the urgency of potentially missing a flight."
+    },
+    {
+      "timestamp_start": 24.16,
+      "timestamp_end": 29.6,
+      "speaker": "SPEAKER_B",
+      "original_line": "Mm. What else could we be forgetting? Our troubles will be ours, Kev.",
+      "brand_used": "Apple",
+      "new_line": "Mm. What else could we be forgetting? Did you pack your Apple laptop, Kev?",
+      "rationale": "Introducing 'Apple' into the conversation about forgetting items is seamless as Apple products are commonly associated with travel and personal belongings. This line maintains the theme of ensuring everything is packed and ready."
+    },
+    {
+      "timestamp_start": 92.12,
+      "timestamp_end": 96.82,
+      "speaker": "SPEAKER_B",
+      "original_line": "Gus Polinsky, polka king of the Midwest. If you have to get to Chic, we'll gladly drive you.",
+      "brand_used": "Toyota",
+      "new_line": "Gus Polinsky, polka king of the Midwest. If you have to get to Chic, we'll take you in our Toyota.",
+      "rationale": "Mentioning 'Toyota' fits naturally in the context of offering a ride. Toyota is a popular and well-known car brand, and the line keeps the offer of transportation intact while adding a brand."
+    }
+  ]
+}

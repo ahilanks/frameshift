@@ -1,0 +1,6039 @@
+{
+    "video_path": "/home/ray/src/frameshift/uploads/f0a6e86c8122/videoplayback.mp4",
+    "text_prompt": "VELO.COM logo",
+    "total_video_frames": 2238,
+    "processed_frames": 100,
+    "start_frame_idx": 0,
+    "end_frame_idx": 100,
+    "fps": 25.0,
+    "frames": {
+        "0": {
+            "frame_index": 0,
+            "timestamp_ms": 0.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        421.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        84,
+                        13
+                    ],
+                    "area": 1022.0,
+                    "centroid": [
+                        379.90313111545987,
+                        189.14872798434442
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        50.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        50,
+                        20,
+                        41,
+                        11
+                    ],
+                    "area": 396.0,
+                    "centroid": [
+                        71.31565656565657,
+                        25.449494949494948
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "1": {
+            "frame_index": 1,
+            "timestamp_ms": 40.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1032.0,
+                    "centroid": [
+                        380.0862403100775,
+                        189.26065891472868
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        50.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        50,
+                        20,
+                        41,
+                        11
+                    ],
+                    "area": 406.0,
+                    "centroid": [
+                        71.62807881773399,
+                        25.529556650246306
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "2": {
+            "frame_index": 2,
+            "timestamp_ms": 80.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        421.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        84,
+                        13
+                    ],
+                    "area": 1030.0,
+                    "centroid": [
+                        379.80970873786407,
+                        189.2485436893204
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        50.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        50,
+                        20,
+                        41,
+                        11
+                    ],
+                    "area": 404.0,
+                    "centroid": [
+                        71.27722772277228,
+                        25.51732673267327
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "3": {
+            "frame_index": 3,
+            "timestamp_ms": 120.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1073.0,
+                    "centroid": [
+                        380.10438024231127,
+                        189.20410065237652
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        50.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        50,
+                        20,
+                        41,
+                        11
+                    ],
+                    "area": 403.0,
+                    "centroid": [
+                        71.33002481389578,
+                        25.508684863523573
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "4": {
+            "frame_index": 4,
+            "timestamp_ms": 160.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1032.0,
+                    "centroid": [
+                        380.16279069767444,
+                        189.25193798449612
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        49.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        49,
+                        20,
+                        42,
+                        11
+                    ],
+                    "area": 408.0,
+                    "centroid": [
+                        71.1593137254902,
+                        25.54656862745098
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "5": {
+            "frame_index": 5,
+            "timestamp_ms": 200.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1075.0,
+                    "centroid": [
+                        380.04744186046514,
+                        189.20093023255814
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        50.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        50,
+                        20,
+                        41,
+                        11
+                    ],
+                    "area": 405.0,
+                    "centroid": [
+                        71.30617283950617,
+                        25.530864197530864
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "6": {
+            "frame_index": 6,
+            "timestamp_ms": 240.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1033.0,
+                    "centroid": [
+                        380.1907066795741,
+                        189.2565343659245
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        50.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        50,
+                        20,
+                        41,
+                        11
+                    ],
+                    "area": 405.0,
+                    "centroid": [
+                        71.2320987654321,
+                        25.51851851851852
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "7": {
+            "frame_index": 7,
+            "timestamp_ms": 280.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1034.0,
+                    "centroid": [
+                        380.1914893617021,
+                        189.2678916827853
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        49.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        49,
+                        20,
+                        42,
+                        11
+                    ],
+                    "area": 408.0,
+                    "centroid": [
+                        71.17892156862744,
+                        25.519607843137255
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "8": {
+            "frame_index": 8,
+            "timestamp_ms": 320.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1038.0,
+                    "centroid": [
+                        380.03949903660885,
+                        189.27552986512524
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        50.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        50,
+                        20,
+                        41,
+                        11
+                    ],
+                    "area": 406.0,
+                    "centroid": [
+                        71.2807881773399,
+                        25.504926108374384
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "9": {
+            "frame_index": 9,
+            "timestamp_ms": 360.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1078.0,
+                    "centroid": [
+                        380.0834879406308,
+                        189.1734693877551
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        49.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        49,
+                        20,
+                        42,
+                        11
+                    ],
+                    "area": 407.0,
+                    "centroid": [
+                        71.22604422604422,
+                        25.515970515970515
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "10": {
+            "frame_index": 10,
+            "timestamp_ms": 400.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        421.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        84,
+                        13
+                    ],
+                    "area": 1039.0,
+                    "centroid": [
+                        379.9056785370549,
+                        189.28392685274304
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        50.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        50,
+                        20,
+                        41,
+                        11
+                    ],
+                    "area": 416.0,
+                    "centroid": [
+                        71.50240384615384,
+                        25.576923076923077
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "11": {
+            "frame_index": 11,
+            "timestamp_ms": 440.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        421.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        84,
+                        13
+                    ],
+                    "area": 1034.0,
+                    "centroid": [
+                        379.84719535783364,
+                        189.29787234042553
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        49.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        49,
+                        20,
+                        42,
+                        11
+                    ],
+                    "area": 408.0,
+                    "centroid": [
+                        71.25490196078431,
+                        25.529411764705884
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "12": {
+            "frame_index": 12,
+            "timestamp_ms": 480.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1039.0,
+                    "centroid": [
+                        380.0202117420597,
+                        189.32338787295475
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        50.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        50,
+                        20,
+                        41,
+                        11
+                    ],
+                    "area": 406.0,
+                    "centroid": [
+                        71.28571428571429,
+                        25.5
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "13": {
+            "frame_index": 13,
+            "timestamp_ms": 520.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1042.0,
+                    "centroid": [
+                        380.1410748560461,
+                        189.33109404990404
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        50.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        50,
+                        20,
+                        41,
+                        11
+                    ],
+                    "area": 417.0,
+                    "centroid": [
+                        71.58273381294964,
+                        25.546762589928058
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "14": {
+            "frame_index": 14,
+            "timestamp_ms": 560.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1045.0,
+                    "centroid": [
+                        380.2354066985646,
+                        189.3272727272727
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        50.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        50,
+                        20,
+                        41,
+                        11
+                    ],
+                    "area": 418.0,
+                    "centroid": [
+                        71.5311004784689,
+                        25.555023923444978
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "15": {
+            "frame_index": 15,
+            "timestamp_ms": 600.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1034.0,
+                    "centroid": [
+                        379.7369439071567,
+                        189.30947775628627
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        50.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        50,
+                        20,
+                        41,
+                        11
+                    ],
+                    "area": 407.0,
+                    "centroid": [
+                        71.19410319410319,
+                        25.48157248157248
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "16": {
+            "frame_index": 16,
+            "timestamp_ms": 640.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1071.0,
+                    "centroid": [
+                        380.01493930905696,
+                        189.22315592903828
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        50.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        50,
+                        20,
+                        41,
+                        11
+                    ],
+                    "area": 403.0,
+                    "centroid": [
+                        71.151364764268,
+                        25.439205955334987
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "17": {
+            "frame_index": 17,
+            "timestamp_ms": 680.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1026.0,
+                    "centroid": [
+                        379.71442495126706,
+                        189.30214424951268
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        50.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        50,
+                        20,
+                        41,
+                        11
+                    ],
+                    "area": 411.0,
+                    "centroid": [
+                        71.2749391727494,
+                        25.51824817518248
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "18": {
+            "frame_index": 18,
+            "timestamp_ms": 720.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1030.0,
+                    "centroid": [
+                        379.7291262135922,
+                        189.28446601941747
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        50.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        50,
+                        20,
+                        41,
+                        11
+                    ],
+                    "area": 419.0,
+                    "centroid": [
+                        71.49164677804296,
+                        25.55131264916468
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "19": {
+            "frame_index": 19,
+            "timestamp_ms": 760.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1062.0,
+                    "centroid": [
+                        380.09133709981165,
+                        189.20338983050848
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        49.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        49,
+                        20,
+                        42,
+                        11
+                    ],
+                    "area": 420.0,
+                    "centroid": [
+                        71.43809523809524,
+                        25.561904761904763
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "20": {
+            "frame_index": 20,
+            "timestamp_ms": 800.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1069.0,
+                    "centroid": [
+                        380.1244153414406,
+                        189.24602432179609
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        49.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        49,
+                        20,
+                        42,
+                        11
+                    ],
+                    "area": 414.0,
+                    "centroid": [
+                        71.21497584541063,
+                        25.531400966183575
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "21": {
+            "frame_index": 21,
+            "timestamp_ms": 840.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1024.0,
+                    "centroid": [
+                        379.9599609375,
+                        189.3828125
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        50.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        50,
+                        20,
+                        41,
+                        11
+                    ],
+                    "area": 416.0,
+                    "centroid": [
+                        71.2860576923077,
+                        25.526442307692307
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "22": {
+            "frame_index": 22,
+            "timestamp_ms": 880.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        421.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        84,
+                        13
+                    ],
+                    "area": 1017.0,
+                    "centroid": [
+                        379.74139626352013,
+                        189.38053097345133
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        49.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        49,
+                        20,
+                        42,
+                        11
+                    ],
+                    "area": 417.0,
+                    "centroid": [
+                        71.2326139088729,
+                        25.53717026378897
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "23": {
+            "frame_index": 23,
+            "timestamp_ms": 920.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        421.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        84,
+                        13
+                    ],
+                    "area": 1015.0,
+                    "centroid": [
+                        379.74581280788175,
+                        189.3566502463054
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        50.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        50,
+                        20,
+                        41,
+                        11
+                    ],
+                    "area": 415.0,
+                    "centroid": [
+                        71.32289156626506,
+                        25.532530120481926
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "24": {
+            "frame_index": 24,
+            "timestamp_ms": 960.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        421.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        84,
+                        13
+                    ],
+                    "area": 1014.0,
+                    "centroid": [
+                        379.81360946745565,
+                        189.35305719921104
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        50.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        50,
+                        20,
+                        41,
+                        11
+                    ],
+                    "area": 414.0,
+                    "centroid": [
+                        71.33574879227054,
+                        25.497584541062803
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "25": {
+            "frame_index": 25,
+            "timestamp_ms": 1000.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        421.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        84,
+                        13
+                    ],
+                    "area": 1010.0,
+                    "centroid": [
+                        379.87524752475247,
+                        189.36633663366337
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        49.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        49,
+                        20,
+                        42,
+                        11
+                    ],
+                    "area": 418.0,
+                    "centroid": [
+                        71.38038277511961,
+                        25.516746411483254
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "26": {
+            "frame_index": 26,
+            "timestamp_ms": 1040.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1014.0,
+                    "centroid": [
+                        379.96449704142015,
+                        189.37475345167653
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        50.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        50,
+                        20,
+                        41,
+                        11
+                    ],
+                    "area": 416.0,
+                    "centroid": [
+                        71.30048076923077,
+                        25.514423076923077
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "27": {
+            "frame_index": 27,
+            "timestamp_ms": 1080.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1011.0,
+                    "centroid": [
+                        379.94856577645896,
+                        189.35608308605342
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        49.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        49,
+                        20,
+                        42,
+                        11
+                    ],
+                    "area": 416.0,
+                    "centroid": [
+                        71.20432692307692,
+                        25.52403846153846
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "28": {
+            "frame_index": 28,
+            "timestamp_ms": 1120.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1020.0,
+                    "centroid": [
+                        380.00392156862745,
+                        189.37941176470588
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        49.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        49,
+                        20,
+                        42,
+                        11
+                    ],
+                    "area": 416.0,
+                    "centroid": [
+                        71.07692307692308,
+                        25.454326923076923
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "29": {
+            "frame_index": 29,
+            "timestamp_ms": 1160.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1019.0,
+                    "centroid": [
+                        380.02649656526006,
+                        189.3738959764475
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        49.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        49,
+                        20,
+                        42,
+                        11
+                    ],
+                    "area": 416.0,
+                    "centroid": [
+                        71.14423076923077,
+                        25.478365384615383
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "30": {
+            "frame_index": 30,
+            "timestamp_ms": 1200.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1015.0,
+                    "centroid": [
+                        379.9103448275862,
+                        189.36847290640395
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        50.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        50,
+                        20,
+                        41,
+                        11
+                    ],
+                    "area": 405.0,
+                    "centroid": [
+                        71.04691358024691,
+                        25.444444444444443
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "31": {
+            "frame_index": 31,
+            "timestamp_ms": 1240.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1064.0,
+                    "centroid": [
+                        380.14473684210526,
+                        189.25375939849624
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        49.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        49,
+                        20,
+                        42,
+                        11
+                    ],
+                    "area": 405.0,
+                    "centroid": [
+                        71.00493827160494,
+                        25.451851851851853
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "32": {
+            "frame_index": 32,
+            "timestamp_ms": 1280.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1016.0,
+                    "centroid": [
+                        379.8346456692913,
+                        189.3494094488189
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        50.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        50,
+                        20,
+                        41,
+                        11
+                    ],
+                    "area": 388.0,
+                    "centroid": [
+                        71.22422680412372,
+                        25.36855670103093
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "33": {
+            "frame_index": 33,
+            "timestamp_ms": 1320.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1016.0,
+                    "centroid": [
+                        379.87007874015745,
+                        189.36712598425197
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        49.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        49,
+                        20,
+                        42,
+                        11
+                    ],
+                    "area": 413.0,
+                    "centroid": [
+                        71.18886198547216,
+                        25.506053268765132
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "34": {
+            "frame_index": 34,
+            "timestamp_ms": 1360.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1024.0,
+                    "centroid": [
+                        380.0654296875,
+                        189.3359375
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        49.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        49,
+                        20,
+                        42,
+                        11
+                    ],
+                    "area": 412.0,
+                    "centroid": [
+                        71.21844660194175,
+                        25.483009708737864
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "35": {
+            "frame_index": 35,
+            "timestamp_ms": 1400.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1027.0,
+                    "centroid": [
+                        380.0321324245375,
+                        189.3300876338851
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        50.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        50,
+                        20,
+                        41,
+                        11
+                    ],
+                    "area": 411.0,
+                    "centroid": [
+                        71.35279805352798,
+                        25.47931873479319
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "36": {
+            "frame_index": 36,
+            "timestamp_ms": 1440.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1013.0,
+                    "centroid": [
+                        380.0878578479763,
+                        189.30700888450147
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        49.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        49,
+                        20,
+                        42,
+                        11
+                    ],
+                    "area": 418.0,
+                    "centroid": [
+                        71.44497607655502,
+                        25.504784688995215
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "37": {
+            "frame_index": 37,
+            "timestamp_ms": 1480.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1017.0,
+                    "centroid": [
+                        379.9459193706981,
+                        189.3284169124877
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        50.0,
+                        20.0,
+                        93.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        50,
+                        20,
+                        43,
+                        11
+                    ],
+                    "area": 418.0,
+                    "centroid": [
+                        71.69377990430623,
+                        25.413875598086126
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "38": {
+            "frame_index": 38,
+            "timestamp_ms": 1520.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1067.0,
+                    "centroid": [
+                        380.17619493908154,
+                        189.1846298031865
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        50.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        50,
+                        20,
+                        41,
+                        11
+                    ],
+                    "area": 416.0,
+                    "centroid": [
+                        71.50961538461539,
+                        25.46153846153846
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "39": {
+            "frame_index": 39,
+            "timestamp_ms": 1560.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1020.0,
+                    "centroid": [
+                        380.0401960784314,
+                        189.29607843137254
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        49.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        49,
+                        20,
+                        42,
+                        11
+                    ],
+                    "area": 411.0,
+                    "centroid": [
+                        71.19464720194647,
+                        25.45985401459854
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "40": {
+            "frame_index": 40,
+            "timestamp_ms": 1600.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1014.0,
+                    "centroid": [
+                        379.83925049309664,
+                        189.29191321499013
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        49.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        49,
+                        20,
+                        42,
+                        11
+                    ],
+                    "area": 406.0,
+                    "centroid": [
+                        71.07142857142857,
+                        25.435960591133004
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "41": {
+            "frame_index": 41,
+            "timestamp_ms": 1640.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1016.0,
+                    "centroid": [
+                        380.1043307086614,
+                        189.29527559055117
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        50.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        50,
+                        20,
+                        41,
+                        11
+                    ],
+                    "area": 408.0,
+                    "centroid": [
+                        71.24754901960785,
+                        25.443627450980394
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "42": {
+            "frame_index": 42,
+            "timestamp_ms": 1680.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1015.0,
+                    "centroid": [
+                        379.9192118226601,
+                        189.28571428571428
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        50.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        50,
+                        20,
+                        41,
+                        11
+                    ],
+                    "area": 408.0,
+                    "centroid": [
+                        71.15441176470588,
+                        25.448529411764707
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "43": {
+            "frame_index": 43,
+            "timestamp_ms": 1720.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1016.0,
+                    "centroid": [
+                        379.94389763779526,
+                        189.29133858267716
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        50.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        50,
+                        20,
+                        41,
+                        11
+                    ],
+                    "area": 407.0,
+                    "centroid": [
+                        71.11547911547912,
+                        25.43243243243243
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "44": {
+            "frame_index": 44,
+            "timestamp_ms": 1760.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1020.0,
+                    "centroid": [
+                        379.95098039215685,
+                        189.26568627450982
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        49.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        49,
+                        20,
+                        42,
+                        11
+                    ],
+                    "area": 415.0,
+                    "centroid": [
+                        70.83614457831325,
+                        25.37831325301205
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "45": {
+            "frame_index": 45,
+            "timestamp_ms": 1800.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1017.0,
+                    "centroid": [
+                        379.86234021632254,
+                        189.26745329400197
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        49.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        49,
+                        20,
+                        42,
+                        11
+                    ],
+                    "area": 415.0,
+                    "centroid": [
+                        70.83614457831325,
+                        25.37831325301205
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "46": {
+            "frame_index": 46,
+            "timestamp_ms": 1840.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1024.0,
+                    "centroid": [
+                        379.916015625,
+                        189.3193359375
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        49.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        49,
+                        20,
+                        42,
+                        11
+                    ],
+                    "area": 407.0,
+                    "centroid": [
+                        70.93857493857494,
+                        25.434889434889435
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "47": {
+            "frame_index": 47,
+            "timestamp_ms": 1880.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1021.0,
+                    "centroid": [
+                        379.8785504407444,
+                        189.30362389813908
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        50.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        50,
+                        20,
+                        41,
+                        11
+                    ],
+                    "area": 402.0,
+                    "centroid": [
+                        71.07711442786069,
+                        25.415422885572138
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "48": {
+            "frame_index": 48,
+            "timestamp_ms": 1920.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1015.0,
+                    "centroid": [
+                        380.2433497536946,
+                        189.2591133004926
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        50.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        50,
+                        20,
+                        41,
+                        11
+                    ],
+                    "area": 388.0,
+                    "centroid": [
+                        70.95618556701031,
+                        25.358247422680414
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "49": {
+            "frame_index": 49,
+            "timestamp_ms": 1960.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1022.0,
+                    "centroid": [
+                        380.1555772994129,
+                        189.29256360078278
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        50.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        50,
+                        20,
+                        41,
+                        11
+                    ],
+                    "area": 416.0,
+                    "centroid": [
+                        71.21875,
+                        25.502403846153847
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "50": {
+            "frame_index": 50,
+            "timestamp_ms": 2000.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        421.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        84,
+                        13
+                    ],
+                    "area": 1012.0,
+                    "centroid": [
+                        379.8517786561265,
+                        189.33794466403162
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        50.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        50,
+                        20,
+                        41,
+                        11
+                    ],
+                    "area": 413.0,
+                    "centroid": [
+                        71.11138014527845,
+                        25.469733656174334
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "51": {
+            "frame_index": 51,
+            "timestamp_ms": 2040.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        421.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        84,
+                        13
+                    ],
+                    "area": 1014.0,
+                    "centroid": [
+                        379.8974358974359,
+                        189.30374753451676
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        50.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        50,
+                        20,
+                        41,
+                        11
+                    ],
+                    "area": 412.0,
+                    "centroid": [
+                        71.1383495145631,
+                        25.483009708737864
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "52": {
+            "frame_index": 52,
+            "timestamp_ms": 2080.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1016.0,
+                    "centroid": [
+                        380.03444881889766,
+                        189.36515748031496
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        50.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        50,
+                        20,
+                        41,
+                        11
+                    ],
+                    "area": 412.0,
+                    "centroid": [
+                        71.0752427184466,
+                        25.45873786407767
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "53": {
+            "frame_index": 53,
+            "timestamp_ms": 2120.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        421.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        84,
+                        13
+                    ],
+                    "area": 1005.0,
+                    "centroid": [
+                        379.91840796019903,
+                        189.3462686567164
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        50.0,
+                        20.0,
+                        92.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        50,
+                        20,
+                        42,
+                        11
+                    ],
+                    "area": 416.0,
+                    "centroid": [
+                        71.3485576923077,
+                        25.4375
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "54": {
+            "frame_index": 54,
+            "timestamp_ms": 2160.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        421.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        84,
+                        13
+                    ],
+                    "area": 1012.0,
+                    "centroid": [
+                        379.8873517786561,
+                        189.29347826086956
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        50.0,
+                        20.0,
+                        92.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        50,
+                        20,
+                        42,
+                        11
+                    ],
+                    "area": 418.0,
+                    "centroid": [
+                        71.40430622009569,
+                        25.476076555023923
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "55": {
+            "frame_index": 55,
+            "timestamp_ms": 2200.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1033.0,
+                    "centroid": [
+                        380.25847047434655,
+                        189.23426911907066
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        50.0,
+                        20.0,
+                        92.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        50,
+                        20,
+                        42,
+                        11
+                    ],
+                    "area": 415.0,
+                    "centroid": [
+                        71.36867469879518,
+                        25.465060240963854
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "56": {
+            "frame_index": 56,
+            "timestamp_ms": 2240.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        421.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        84,
+                        13
+                    ],
+                    "area": 1008.0,
+                    "centroid": [
+                        379.9117063492063,
+                        189.34821428571428
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        49.0,
+                        20.0,
+                        92.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        49,
+                        20,
+                        43,
+                        11
+                    ],
+                    "area": 417.0,
+                    "centroid": [
+                        71.22302158273381,
+                        25.513189448441246
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "57": {
+            "frame_index": 57,
+            "timestamp_ms": 2280.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        421.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        84,
+                        13
+                    ],
+                    "area": 997.0,
+                    "centroid": [
+                        379.974924774323,
+                        189.27783350050152
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        49.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        49,
+                        20,
+                        42,
+                        11
+                    ],
+                    "area": 414.0,
+                    "centroid": [
+                        71.18115942028986,
+                        25.5
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "58": {
+            "frame_index": 58,
+            "timestamp_ms": 2320.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1035.0,
+                    "centroid": [
+                        380.224154589372,
+                        189.14685990338165
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        49.0,
+                        20.0,
+                        92.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        49,
+                        20,
+                        43,
+                        11
+                    ],
+                    "area": 418.0,
+                    "centroid": [
+                        71.27272727272727,
+                        25.502392344497608
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "59": {
+            "frame_index": 59,
+            "timestamp_ms": 2360.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        421.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        84,
+                        13
+                    ],
+                    "area": 990.0,
+                    "centroid": [
+                        380.1808080808081,
+                        189.3090909090909
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        49.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        49,
+                        20,
+                        42,
+                        11
+                    ],
+                    "area": 415.0,
+                    "centroid": [
+                        71.1301204819277,
+                        25.527710843373494
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "60": {
+            "frame_index": 60,
+            "timestamp_ms": 2400.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        338.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        338,
+                        183,
+                        84,
+                        13
+                    ],
+                    "area": 996.0,
+                    "centroid": [
+                        380.35843373493975,
+                        189.2781124497992
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        49.0,
+                        20.0,
+                        92.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        49,
+                        20,
+                        43,
+                        11
+                    ],
+                    "area": 417.0,
+                    "centroid": [
+                        71.21342925659472,
+                        25.486810551558754
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "61": {
+            "frame_index": 61,
+            "timestamp_ms": 2440.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1044.0,
+                    "centroid": [
+                        380.27107279693485,
+                        189.11206896551724
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        50.0,
+                        20.0,
+                        92.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        50,
+                        20,
+                        42,
+                        11
+                    ],
+                    "area": 413.0,
+                    "centroid": [
+                        71.19612590799032,
+                        25.46004842615012
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "62": {
+            "frame_index": 62,
+            "timestamp_ms": 2480.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1007.0,
+                    "centroid": [
+                        380.0764647467726,
+                        189.22442899702085
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        49.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        49,
+                        20,
+                        42,
+                        11
+                    ],
+                    "area": 410.0,
+                    "centroid": [
+                        71.0609756097561,
+                        25.478048780487804
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "63": {
+            "frame_index": 63,
+            "timestamp_ms": 2520.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1002.0,
+                    "centroid": [
+                        380.3632734530938,
+                        189.25349301397205
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        49.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        49,
+                        20,
+                        42,
+                        11
+                    ],
+                    "area": 410.0,
+                    "centroid": [
+                        70.94634146341464,
+                        25.478048780487804
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "64": {
+            "frame_index": 64,
+            "timestamp_ms": 2560.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1040.0,
+                    "centroid": [
+                        380.4048076923077,
+                        189.1173076923077
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        50.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        50,
+                        20,
+                        41,
+                        11
+                    ],
+                    "area": 397.0,
+                    "centroid": [
+                        71.25188916876574,
+                        25.478589420654913
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "65": {
+            "frame_index": 65,
+            "timestamp_ms": 2600.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1011.0,
+                    "centroid": [
+                        380.15430267062317,
+                        189.21760633036598
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        49.0,
+                        20.0,
+                        92.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        49,
+                        20,
+                        43,
+                        11
+                    ],
+                    "area": 418.0,
+                    "centroid": [
+                        71.08133971291866,
+                        25.461722488038276
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "66": {
+            "frame_index": 66,
+            "timestamp_ms": 2640.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1010.0,
+                    "centroid": [
+                        380.1108910891089,
+                        189.22376237623763
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        49.0,
+                        20.0,
+                        92.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        49,
+                        20,
+                        43,
+                        11
+                    ],
+                    "area": 413.0,
+                    "centroid": [
+                        71.19370460048427,
+                        25.462469733656174
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "67": {
+            "frame_index": 67,
+            "timestamp_ms": 2680.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1013.0,
+                    "centroid": [
+                        380.25468904244815,
+                        189.2349457058243
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        49.0,
+                        20.0,
+                        92.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        49,
+                        20,
+                        43,
+                        11
+                    ],
+                    "area": 418.0,
+                    "centroid": [
+                        71.29186602870813,
+                        25.464114832535884
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "68": {
+            "frame_index": 68,
+            "timestamp_ms": 2720.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1011.0,
+                    "centroid": [
+                        380.106824925816,
+                        189.2106824925816
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        49.0,
+                        20.0,
+                        92.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        49,
+                        20,
+                        43,
+                        11
+                    ],
+                    "area": 419.0,
+                    "centroid": [
+                        71.22911694510739,
+                        25.41288782816229
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "69": {
+            "frame_index": 69,
+            "timestamp_ms": 2760.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        421.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        84,
+                        13
+                    ],
+                    "area": 1009.0,
+                    "centroid": [
+                        380.10208126858277,
+                        189.2041625371655
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        49.0,
+                        20.0,
+                        92.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        49,
+                        20,
+                        43,
+                        11
+                    ],
+                    "area": 416.0,
+                    "centroid": [
+                        71.22115384615384,
+                        25.454326923076923
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "70": {
+            "frame_index": 70,
+            "timestamp_ms": 2800.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1054.0,
+                    "centroid": [
+                        380.2428842504744,
+                        189.09962049335863
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        49.0,
+                        19.0,
+                        93.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        49,
+                        19,
+                        44,
+                        12
+                    ],
+                    "area": 425.0,
+                    "centroid": [
+                        71.4164705882353,
+                        25.327058823529413
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "71": {
+            "frame_index": 71,
+            "timestamp_ms": 2840.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1041.0,
+                    "centroid": [
+                        380.209414024976,
+                        189.15754082612872
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        49.0,
+                        19.0,
+                        92.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        49,
+                        19,
+                        43,
+                        12
+                    ],
+                    "area": 434.0,
+                    "centroid": [
+                        71.64976958525345,
+                        25.274193548387096
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "72": {
+            "frame_index": 72,
+            "timestamp_ms": 2880.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        421.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        84,
+                        13
+                    ],
+                    "area": 1014.0,
+                    "centroid": [
+                        379.8481262327416,
+                        189.24852071005918
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        49.0,
+                        19.0,
+                        92.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        49,
+                        19,
+                        43,
+                        12
+                    ],
+                    "area": 421.0,
+                    "centroid": [
+                        71.27315914489311,
+                        25.410926365795724
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "73": {
+            "frame_index": 73,
+            "timestamp_ms": 2920.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1056.0,
+                    "centroid": [
+                        380.2253787878788,
+                        189.1619318181818
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        49.0,
+                        20.0,
+                        92.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        49,
+                        20,
+                        43,
+                        11
+                    ],
+                    "area": 418.0,
+                    "centroid": [
+                        71.1531100478469,
+                        25.452153110047846
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "74": {
+            "frame_index": 74,
+            "timestamp_ms": 2960.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1004.0,
+                    "centroid": [
+                        380.18924302788844,
+                        189.25498007968127
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        49.0,
+                        20.0,
+                        92.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        49,
+                        20,
+                        43,
+                        11
+                    ],
+                    "area": 424.0,
+                    "centroid": [
+                        71.27830188679245,
+                        25.49764150943396
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "75": {
+            "frame_index": 75,
+            "timestamp_ms": 3000.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1008.0,
+                    "centroid": [
+                        380.2361111111111,
+                        189.20634920634922
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        49.0,
+                        20.0,
+                        92.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        49,
+                        20,
+                        43,
+                        11
+                    ],
+                    "area": 425.0,
+                    "centroid": [
+                        71.3035294117647,
+                        25.51058823529412
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "76": {
+            "frame_index": 76,
+            "timestamp_ms": 3040.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1010.0,
+                    "centroid": [
+                        380.24158415841583,
+                        189.2118811881188
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        49.0,
+                        20.0,
+                        92.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        49,
+                        20,
+                        43,
+                        11
+                    ],
+                    "area": 425.0,
+                    "centroid": [
+                        71.32941176470588,
+                        25.48
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "77": {
+            "frame_index": 77,
+            "timestamp_ms": 3080.0,
+            "num_segments": 2,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1045.0,
+                    "centroid": [
+                        380.3598086124402,
+                        189.10813397129186
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        49.0,
+                        20.0,
+                        92.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        49,
+                        20,
+                        43,
+                        11
+                    ],
+                    "area": 427.0,
+                    "centroid": [
+                        71.35362997658079,
+                        25.49648711943794
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "78": {
+            "frame_index": 78,
+            "timestamp_ms": 3120.0,
+            "num_segments": 3,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1043.0,
+                    "centroid": [
+                        380.4324065196548,
+                        189.09971236816875
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        49.0,
+                        20.0,
+                        92.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        49,
+                        20,
+                        43,
+                        11
+                    ],
+                    "area": 427.0,
+                    "centroid": [
+                        71.35362997658079,
+                        25.49648711943794
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 2,
+                    "name": "VELO.COM logo_2",
+                    "bbox": [
+                        249.0,
+                        164.0,
+                        331.0,
+                        193.0
+                    ],
+                    "bbox_xywh": [
+                        249,
+                        164,
+                        82,
+                        29
+                    ],
+                    "area": 710.0,
+                    "centroid": [
+                        288.52676056338026,
+                        178.90985915492956
+                    ],
+                    "score": 0.70703125,
+                    "crop_file": "segment_2_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "79": {
+            "frame_index": 79,
+            "timestamp_ms": 3160.0,
+            "num_segments": 3,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        421.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        84,
+                        13
+                    ],
+                    "area": 1004.0,
+                    "centroid": [
+                        380.12051792828686,
+                        189.22709163346613
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        49.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        49,
+                        20,
+                        42,
+                        11
+                    ],
+                    "area": 426.0,
+                    "centroid": [
+                        71.2981220657277,
+                        25.530516431924884
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 2,
+                    "name": "VELO.COM logo_2",
+                    "bbox": [
+                        248.0,
+                        164.0,
+                        331.0,
+                        193.0
+                    ],
+                    "bbox_xywh": [
+                        248,
+                        164,
+                        83,
+                        29
+                    ],
+                    "area": 725.0,
+                    "centroid": [
+                        287.9668965517241,
+                        179.17241379310346
+                    ],
+                    "score": 0.70703125,
+                    "crop_file": "segment_2_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "80": {
+            "frame_index": 80,
+            "timestamp_ms": 3200.0,
+            "num_segments": 3,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1014.0,
+                    "centroid": [
+                        380.1508875739645,
+                        189.24753451676528
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        49.0,
+                        20.0,
+                        92.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        49,
+                        20,
+                        43,
+                        11
+                    ],
+                    "area": 430.0,
+                    "centroid": [
+                        71.35116279069767,
+                        25.53488372093023
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 2,
+                    "name": "VELO.COM logo_2",
+                    "bbox": [
+                        248.0,
+                        164.0,
+                        331.0,
+                        193.0
+                    ],
+                    "bbox_xywh": [
+                        248,
+                        164,
+                        83,
+                        29
+                    ],
+                    "area": 709.0,
+                    "centroid": [
+                        288.5712270803949,
+                        179.0267983074753
+                    ],
+                    "score": 0.70703125,
+                    "crop_file": "segment_2_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "81": {
+            "frame_index": 81,
+            "timestamp_ms": 3240.0,
+            "num_segments": 3,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1019.0,
+                    "centroid": [
+                        380.1874386653582,
+                        189.23846908734052
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        49.0,
+                        20.0,
+                        92.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        49,
+                        20,
+                        43,
+                        11
+                    ],
+                    "area": 423.0,
+                    "centroid": [
+                        71.30496453900709,
+                        25.48463356973995
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 2,
+                    "name": "VELO.COM logo_2",
+                    "bbox": [
+                        248.0,
+                        164.0,
+                        331.0,
+                        193.0
+                    ],
+                    "bbox_xywh": [
+                        248,
+                        164,
+                        83,
+                        29
+                    ],
+                    "area": 711.0,
+                    "centroid": [
+                        288.27285513361466,
+                        179.0478199718706
+                    ],
+                    "score": 0.70703125,
+                    "crop_file": "segment_2_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "82": {
+            "frame_index": 82,
+            "timestamp_ms": 3280.0,
+            "num_segments": 3,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        421.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        84,
+                        13
+                    ],
+                    "area": 1018.0,
+                    "centroid": [
+                        380.0353634577603,
+                        189.2760314341847
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        49.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        49,
+                        20,
+                        42,
+                        11
+                    ],
+                    "area": 420.0,
+                    "centroid": [
+                        71.38333333333334,
+                        25.5
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 2,
+                    "name": "VELO.COM logo_2",
+                    "bbox": [
+                        248.0,
+                        164.0,
+                        331.0,
+                        193.0
+                    ],
+                    "bbox_xywh": [
+                        248,
+                        164,
+                        83,
+                        29
+                    ],
+                    "area": 717.0,
+                    "centroid": [
+                        287.9456066945607,
+                        179.14783821478383
+                    ],
+                    "score": 0.70703125,
+                    "crop_file": "segment_2_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "83": {
+            "frame_index": 83,
+            "timestamp_ms": 3320.0,
+            "num_segments": 3,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        421.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        84,
+                        13
+                    ],
+                    "area": 1012.0,
+                    "centroid": [
+                        379.9337944664032,
+                        189.1916996047431
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        49.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        49,
+                        20,
+                        42,
+                        11
+                    ],
+                    "area": 420.0,
+                    "centroid": [
+                        71.28571428571429,
+                        25.516666666666666
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 2,
+                    "name": "VELO.COM logo_2",
+                    "bbox": [
+                        249.0,
+                        164.0,
+                        331.0,
+                        193.0
+                    ],
+                    "bbox_xywh": [
+                        249,
+                        164,
+                        82,
+                        29
+                    ],
+                    "area": 716.0,
+                    "centroid": [
+                        288.3100558659218,
+                        179.02513966480447
+                    ],
+                    "score": 0.70703125,
+                    "crop_file": "segment_2_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "84": {
+            "frame_index": 84,
+            "timestamp_ms": 3360.0,
+            "num_segments": 3,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        421.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        84,
+                        13
+                    ],
+                    "area": 1007.0,
+                    "centroid": [
+                        379.9940417080437,
+                        189.23833167825222
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        49.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        49,
+                        20,
+                        42,
+                        11
+                    ],
+                    "area": 426.0,
+                    "centroid": [
+                        71.28169014084507,
+                        25.53286384976526
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 2,
+                    "name": "VELO.COM logo_2",
+                    "bbox": [
+                        249.0,
+                        164.0,
+                        331.0,
+                        193.0
+                    ],
+                    "bbox_xywh": [
+                        249,
+                        164,
+                        82,
+                        29
+                    ],
+                    "area": 702.0,
+                    "centroid": [
+                        288.6210826210826,
+                        178.991452991453
+                    ],
+                    "score": 0.70703125,
+                    "crop_file": "segment_2_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "85": {
+            "frame_index": 85,
+            "timestamp_ms": 3400.0,
+            "num_segments": 3,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1052.0,
+                    "centroid": [
+                        380.2642585551331,
+                        189.23859315589354
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        49.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        49,
+                        20,
+                        42,
+                        11
+                    ],
+                    "area": 422.0,
+                    "centroid": [
+                        71.42654028436019,
+                        25.5521327014218
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 2,
+                    "name": "VELO.COM logo_2",
+                    "bbox": [
+                        248.0,
+                        164.0,
+                        331.0,
+                        193.0
+                    ],
+                    "bbox_xywh": [
+                        248,
+                        164,
+                        83,
+                        29
+                    ],
+                    "area": 706.0,
+                    "centroid": [
+                        288.40651558073654,
+                        179.06232294617564
+                    ],
+                    "score": 0.70703125,
+                    "crop_file": "segment_2_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "86": {
+            "frame_index": 86,
+            "timestamp_ms": 3440.0,
+            "num_segments": 3,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        421.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        84,
+                        13
+                    ],
+                    "area": 1005.0,
+                    "centroid": [
+                        379.94726368159206,
+                        189.2766169154229
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        49.0,
+                        20.0,
+                        92.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        49,
+                        20,
+                        43,
+                        11
+                    ],
+                    "area": 432.0,
+                    "centroid": [
+                        71.31944444444444,
+                        25.47222222222222
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 2,
+                    "name": "VELO.COM logo_2",
+                    "bbox": [
+                        248.0,
+                        164.0,
+                        331.0,
+                        193.0
+                    ],
+                    "bbox_xywh": [
+                        248,
+                        164,
+                        83,
+                        29
+                    ],
+                    "area": 699.0,
+                    "centroid": [
+                        288.3834048640916,
+                        179.05865522174534
+                    ],
+                    "score": 0.70703125,
+                    "crop_file": "segment_2_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "87": {
+            "frame_index": 87,
+            "timestamp_ms": 3480.0,
+            "num_segments": 3,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        421.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        84,
+                        13
+                    ],
+                    "area": 1007.0,
+                    "centroid": [
+                        379.92750744786497,
+                        189.2651439920556
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        49.0,
+                        20.0,
+                        92.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        49,
+                        20,
+                        43,
+                        11
+                    ],
+                    "area": 427.0,
+                    "centroid": [
+                        71.43091334894613,
+                        25.49648711943794
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 2,
+                    "name": "VELO.COM logo_2",
+                    "bbox": [
+                        248.0,
+                        164.0,
+                        331.0,
+                        193.0
+                    ],
+                    "bbox_xywh": [
+                        248,
+                        164,
+                        83,
+                        29
+                    ],
+                    "area": 691.0,
+                    "centroid": [
+                        288.3053545586107,
+                        179.09696092619393
+                    ],
+                    "score": 0.70703125,
+                    "crop_file": "segment_2_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "88": {
+            "frame_index": 88,
+            "timestamp_ms": 3520.0,
+            "num_segments": 3,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        421.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        84,
+                        13
+                    ],
+                    "area": 1029.0,
+                    "centroid": [
+                        380.16326530612247,
+                        189.22351797862
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        49.0,
+                        20.0,
+                        92.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        49,
+                        20,
+                        43,
+                        11
+                    ],
+                    "area": 424.0,
+                    "centroid": [
+                        71.375,
+                        25.4811320754717
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 2,
+                    "name": "VELO.COM logo_2",
+                    "bbox": [
+                        248.0,
+                        164.0,
+                        331.0,
+                        193.0
+                    ],
+                    "bbox_xywh": [
+                        248,
+                        164,
+                        83,
+                        29
+                    ],
+                    "area": 707.0,
+                    "centroid": [
+                        288.2715700141443,
+                        179.05516265912306
+                    ],
+                    "score": 0.70703125,
+                    "crop_file": "segment_2_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "89": {
+            "frame_index": 89,
+            "timestamp_ms": 3560.0,
+            "num_segments": 3,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        421.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        84,
+                        13
+                    ],
+                    "area": 1003.0,
+                    "centroid": [
+                        380.09670987038885,
+                        189.31306081754735
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        49.0,
+                        20.0,
+                        92.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        49,
+                        20,
+                        43,
+                        11
+                    ],
+                    "area": 426.0,
+                    "centroid": [
+                        71.38262910798122,
+                        25.507042253521128
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 2,
+                    "name": "VELO.COM logo_2",
+                    "bbox": [
+                        248.0,
+                        164.0,
+                        331.0,
+                        193.0
+                    ],
+                    "bbox_xywh": [
+                        248,
+                        164,
+                        83,
+                        29
+                    ],
+                    "area": 717.0,
+                    "centroid": [
+                        287.96513249651326,
+                        179.16039051603906
+                    ],
+                    "score": 0.70703125,
+                    "crop_file": "segment_2_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "90": {
+            "frame_index": 90,
+            "timestamp_ms": 3600.0,
+            "num_segments": 3,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1057.0,
+                    "centroid": [
+                        380.23368022705773,
+                        189.2469252601703
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        49.0,
+                        20.0,
+                        91.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        49,
+                        20,
+                        42,
+                        11
+                    ],
+                    "area": 422.0,
+                    "centroid": [
+                        71.239336492891,
+                        25.507109004739338
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 2,
+                    "name": "VELO.COM logo_2",
+                    "bbox": [
+                        248.0,
+                        164.0,
+                        331.0,
+                        193.0
+                    ],
+                    "bbox_xywh": [
+                        248,
+                        164,
+                        83,
+                        29
+                    ],
+                    "area": 748.0,
+                    "centroid": [
+                        287.9598930481283,
+                        179.08689839572193
+                    ],
+                    "score": 0.70703125,
+                    "crop_file": "segment_2_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "91": {
+            "frame_index": 91,
+            "timestamp_ms": 3640.0,
+            "num_segments": 3,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1060.0,
+                    "centroid": [
+                        380.21792452830186,
+                        189.26698113207547
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        49.0,
+                        20.0,
+                        92.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        49,
+                        20,
+                        43,
+                        11
+                    ],
+                    "area": 421.0,
+                    "centroid": [
+                        71.2042755344418,
+                        25.486935866983373
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 2,
+                    "name": "VELO.COM logo_2",
+                    "bbox": [
+                        248.0,
+                        164.0,
+                        331.0,
+                        193.0
+                    ],
+                    "bbox_xywh": [
+                        248,
+                        164,
+                        83,
+                        29
+                    ],
+                    "area": 750.0,
+                    "centroid": [
+                        288.04,
+                        179.08266666666665
+                    ],
+                    "score": 0.70703125,
+                    "crop_file": "segment_2_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "92": {
+            "frame_index": 92,
+            "timestamp_ms": 3680.0,
+            "num_segments": 3,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1010.0,
+                    "centroid": [
+                        380.0029702970297,
+                        189.31386138613863
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        49.0,
+                        20.0,
+                        92.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        49,
+                        20,
+                        43,
+                        11
+                    ],
+                    "area": 423.0,
+                    "centroid": [
+                        71.28841607565012,
+                        25.494089834515368
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 2,
+                    "name": "VELO.COM logo_2",
+                    "bbox": [
+                        248.0,
+                        164.0,
+                        331.0,
+                        193.0
+                    ],
+                    "bbox_xywh": [
+                        248,
+                        164,
+                        83,
+                        29
+                    ],
+                    "area": 745.0,
+                    "centroid": [
+                        287.8590604026846,
+                        179.19463087248323
+                    ],
+                    "score": 0.70703125,
+                    "crop_file": "segment_2_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "93": {
+            "frame_index": 93,
+            "timestamp_ms": 3720.0,
+            "num_segments": 3,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1015.0,
+                    "centroid": [
+                        379.9596059113301,
+                        189.30147783251232
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        49.0,
+                        20.0,
+                        92.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        49,
+                        20,
+                        43,
+                        11
+                    ],
+                    "area": 420.0,
+                    "centroid": [
+                        71.23095238095237,
+                        25.5
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 2,
+                    "name": "VELO.COM logo_2",
+                    "bbox": [
+                        248.0,
+                        164.0,
+                        331.0,
+                        193.0
+                    ],
+                    "bbox_xywh": [
+                        248,
+                        164,
+                        83,
+                        29
+                    ],
+                    "area": 721.0,
+                    "centroid": [
+                        287.8488210818308,
+                        179.11789181692095
+                    ],
+                    "score": 0.70703125,
+                    "crop_file": "segment_2_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "94": {
+            "frame_index": 94,
+            "timestamp_ms": 3760.0,
+            "num_segments": 3,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1066.0,
+                    "centroid": [
+                        379.9596622889306,
+                        189.3189493433396
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        49.0,
+                        20.0,
+                        92.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        49,
+                        20,
+                        43,
+                        11
+                    ],
+                    "area": 421.0,
+                    "centroid": [
+                        71.2042755344418,
+                        25.486935866983373
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 2,
+                    "name": "VELO.COM logo_2",
+                    "bbox": [
+                        248.0,
+                        164.0,
+                        331.0,
+                        193.0
+                    ],
+                    "bbox_xywh": [
+                        248,
+                        164,
+                        83,
+                        29
+                    ],
+                    "area": 719.0,
+                    "centroid": [
+                        287.92489568845616,
+                        179.08344923504868
+                    ],
+                    "score": 0.70703125,
+                    "crop_file": "segment_2_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "95": {
+            "frame_index": 95,
+            "timestamp_ms": 3800.0,
+            "num_segments": 3,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1019.0,
+                    "centroid": [
+                        380.0304219823356,
+                        189.3287536800785
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        49.0,
+                        20.0,
+                        92.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        49,
+                        20,
+                        43,
+                        11
+                    ],
+                    "area": 424.0,
+                    "centroid": [
+                        71.33018867924528,
+                        25.49764150943396
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 2,
+                    "name": "VELO.COM logo_2",
+                    "bbox": [
+                        248.0,
+                        164.0,
+                        331.0,
+                        193.0
+                    ],
+                    "bbox_xywh": [
+                        248,
+                        164,
+                        83,
+                        29
+                    ],
+                    "area": 727.0,
+                    "centroid": [
+                        287.6781292984869,
+                        179.14718019257222
+                    ],
+                    "score": 0.70703125,
+                    "crop_file": "segment_2_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "96": {
+            "frame_index": 96,
+            "timestamp_ms": 3840.0,
+            "num_segments": 3,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1019.0,
+                    "centroid": [
+                        379.928361138371,
+                        189.3091265947007
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        49.0,
+                        20.0,
+                        92.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        49,
+                        20,
+                        43,
+                        11
+                    ],
+                    "area": 424.0,
+                    "centroid": [
+                        71.33018867924528,
+                        25.49764150943396
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 2,
+                    "name": "VELO.COM logo_2",
+                    "bbox": [
+                        248.0,
+                        164.0,
+                        331.0,
+                        193.0
+                    ],
+                    "bbox_xywh": [
+                        248,
+                        164,
+                        83,
+                        29
+                    ],
+                    "area": 717.0,
+                    "centroid": [
+                        287.7182705718271,
+                        179.13249651324966
+                    ],
+                    "score": 0.70703125,
+                    "crop_file": "segment_2_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "97": {
+            "frame_index": 97,
+            "timestamp_ms": 3880.0,
+            "num_segments": 3,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1007.0,
+                    "centroid": [
+                        380.0625620655412,
+                        189.31876861966236
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        49.0,
+                        20.0,
+                        92.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        49,
+                        20,
+                        43,
+                        11
+                    ],
+                    "area": 424.0,
+                    "centroid": [
+                        71.33254716981132,
+                        25.49056603773585
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 2,
+                    "name": "VELO.COM logo_2",
+                    "bbox": [
+                        248.0,
+                        164.0,
+                        331.0,
+                        193.0
+                    ],
+                    "bbox_xywh": [
+                        248,
+                        164,
+                        83,
+                        29
+                    ],
+                    "area": 727.0,
+                    "centroid": [
+                        287.74690508940853,
+                        179.1554332874828
+                    ],
+                    "score": 0.70703125,
+                    "crop_file": "segment_2_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "98": {
+            "frame_index": 98,
+            "timestamp_ms": 3920.0,
+            "num_segments": 3,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1007.0,
+                    "centroid": [
+                        380.1410129096326,
+                        189.32571996027806
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        49.0,
+                        20.0,
+                        92.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        49,
+                        20,
+                        43,
+                        11
+                    ],
+                    "area": 422.0,
+                    "centroid": [
+                        71.24644549763033,
+                        25.492890995260662
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 2,
+                    "name": "VELO.COM logo_2",
+                    "bbox": [
+                        248.0,
+                        164.0,
+                        331.0,
+                        193.0
+                    ],
+                    "bbox_xywh": [
+                        248,
+                        164,
+                        83,
+                        29
+                    ],
+                    "area": 737.0,
+                    "centroid": [
+                        287.4464043419267,
+                        179.2211668928087
+                    ],
+                    "score": 0.70703125,
+                    "crop_file": "segment_2_crop.png",
+                    "mask_file": null
+                }
+            ]
+        },
+        "99": {
+            "frame_index": 99,
+            "timestamp_ms": 3960.0,
+            "num_segments": 3,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "VELO.COM logo_0",
+                    "bbox": [
+                        337.0,
+                        183.0,
+                        422.0,
+                        196.0
+                    ],
+                    "bbox_xywh": [
+                        337,
+                        183,
+                        85,
+                        13
+                    ],
+                    "area": 1013.0,
+                    "centroid": [
+                        380.0039486673248,
+                        189.31688055281342
+                    ],
+                    "score": 0.61328125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 1,
+                    "name": "VELO.COM logo_1",
+                    "bbox": [
+                        50.0,
+                        20.0,
+                        93.0,
+                        31.0
+                    ],
+                    "bbox_xywh": [
+                        50,
+                        20,
+                        43,
+                        11
+                    ],
+                    "area": 423.0,
+                    "centroid": [
+                        71.40189125295508,
+                        25.44917257683215
+                    ],
+                    "score": 0.90234375,
+                    "crop_file": "segment_1_crop.png",
+                    "mask_file": null
+                },
+                {
+                    "segment_id": 2,
+                    "name": "VELO.COM logo_2",
+                    "bbox": [
+                        248.0,
+                        164.0,
+                        331.0,
+                        193.0
+                    ],
+                    "bbox_xywh": [
+                        248,
+                        164,
+                        83,
+                        29
+                    ],
+                    "area": 739.0,
+                    "centroid": [
+                        287.6224627875507,
+                        179.13802435723952
+                    ],
+                    "score": 0.70703125,
+                    "crop_file": "segment_2_crop.png",
+                    "mask_file": null
+                }
+            ]
+        }
+    }
+}

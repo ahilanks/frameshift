@@ -4,6 +4,8 @@ FastAPI application for video segmentation and editing
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import HTMLResponse
+from pathlib import Path
 
 from .routes import router
 
@@ -30,15 +32,15 @@ app.add_middleware(
 app.include_router(router, prefix="/api/v1", tags=["video"])
 
 
-@app.get("/")
-async def root():
-    """Root endpoint"""
-    return {
-        "name": "FrameShift API",
-        "version": "1.0.0",
-        "docs": "/docs",
-        "status": "running"
-    }
+@app.get("/", response_class=HTMLResponse)
+async def serve_frontend():
+    """Serve the main frontend application"""
+    from pathlib import Path
+    frontend_path = Path(__file__).parent / "frontend" / "index.html"
+    if not frontend_path.exists():
+        return HTMLResponse(content="<h1>Frontend not found</h1>", status_code=404)
+    with open(frontend_path, 'r') as f:
+        return f.read()
 
 
 if __name__ == "__main__":

@@ -201,3 +201,29 @@ class VeoGenerateResponse(BaseModel):
     output_video_path: str
     status: str = "completed"
 
+
+class AudioReplacement(BaseModel):
+    """Single replacement item from the audio pipeline"""
+    timestamp_start: float
+    timestamp_end: float
+    speaker: str
+    original_line: str
+    brand_used: str
+    new_line: str
+    rationale: str
+
+
+class AudioPipelineRequest(BaseModel):
+    """Request to run the audio pipeline on an uploaded video"""
+    upload_id: str = Field(..., description="Upload ID for the source video")
+
+
+class AudioPipelineResponse(BaseModel):
+    """Response from the audio pipeline execution"""
+    upload_id: str
+    run_id: str
+    output_video_path: str
+    transcript_path: str
+    replacements: List[AudioReplacement]
+    status: str = "completed"
+

@@ -6,7 +6,8 @@ import json
 from pathlib import Path
 from typing import Optional, List, Dict
 from fastapi import APIRouter, UploadFile, File, HTTPException, BackgroundTasks
-from fastapi.responses import FileResponse, JSONResponse
+from fastapi.responses import FileResponse, JSONResponse, HTMLResponse
+from fastapi import FastAPI
 
 from .models import (
     VideoUploadResponse,
@@ -27,9 +28,11 @@ from .models import (
     CreateBoxesRunResponse,
     VeoGenerateRequest,
     VeoGenerateResponse,
+    AudioPipelineRequest,
+    AudioPipelineResponse,
 )
 from .storage import storage
-from .services import segmentation_service, editing_service, veo_service
+from .services import segmentation_service, editing_service, veo_service, audio_pipeline_service
 
 
 # Create router
@@ -53,6 +56,8 @@ def _segment_from_metadata(seg_data: dict) -> SegmentInfo:
 async def health_check():
     """Health check endpoint"""
     return HealthCheckResponse(status="healthy", version="1.0.0")
+
+
 
 
 @router.post("/upload", response_model=VideoUploadResponse)
@@ -127,6 +132,77 @@ async def get_upload_info(upload_id: str):
         raise
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Failed to get video info: {str(e)}")
+
+
+@router.post("/audio/pipeline", response_model=AudioPipelineResponse)
+async def run_audio_pipeline(request: AudioPipelineRequest):
+    """
+    Run the audio pipeline (transcribe, analyze, voice insert) on an uploaded video.
+    """
+    try:
+        upload_path = storage.get_upload_path(request.upload_id)
+        if not upload_path:
+            raise HTTPException(status_code=404, detail=f"Upload not found: {request.upload_id}")
+
+        run_id, run_dir = storage.create_run_dir(request.upload_id)
+
+        metadata = audio_pipeline_service.run_pipeline(
+            video_path=str(upload_path),
+            run_dir=str(run_dir),
+        )
+
+        replacements = metadata.get("replacements") or []
+        output_path = metadata.get("final_video") or str(Path(run_dir) / "edited_video.mp4")
+
+        return AudioPipelineResponse(
+            upload_id=request.upload_id,
+            run_id=run_id,
+            output_video_path=output_path,
+            transcript_path=metadata.get("transcript_json") or "",
+            replacements=replacements,
+            status="completed",
+        )
+    except HTTPException:
+        raise
+    except Exception as e:
+        if "run_id" in locals():
+            storage.cleanup_run(run_id)
+        raise HTTPException(status_code=500, detail=f"Audio pipeline failed: {str(e)}")
+
+
+@router.get("/audio/run/{run_id}", response_model=AudioPipelineResponse)
+async def get_audio_run(run_id: str):
+    """
+    Fetch persisted audio pipeline metadata for a run.
+    """
+    try:
+        run_dir = storage.get_run_dir(run_id)
+        if not run_dir:
+            raise HTTPException(status_code=404, detail=f"Run not found: {run_id}")
+
+        metadata_path = run_dir / "audio_pipeline_metadata.json"
+        if not metadata_path.exists():
+            raise HTTPException(status_code=404, detail=f"Audio metadata not found for run: {run_id}")
+
+        with open(metadata_path, "r") as f:
+            metadata = json.load(f)
+
+        upload_id = storage.get_upload_id_for_run(run_id) or run_id
+        replacements = metadata.get("replacements") or []
+        output_path = metadata.get("final_video") or str(run_dir / "edited_video.mp4")
+
+        return AudioPipelineResponse(
+            upload_id=upload_id,
+            run_id=run_id,
+            output_video_path=output_path,
+            transcript_path=metadata.get("transcript_json") or "",
+            replacements=replacements,
+            status="completed",
+        )
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Failed to load audio run: {str(e)}")
 
 
 @router.get("/upload/{upload_id}/frame/{frame_idx}")

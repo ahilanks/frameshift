@@ -518,8 +518,54 @@ class VeoGenerationService:
                     pass
 
 
+class AudioPipelineService:
+    """Service wrapper for the audio pipeline."""
+
+    def __init__(self):
+        self._pipeline = None
+        self._audio_dir = Path(__file__).parent.parent / "audio"
+
+    def _get_pipeline(self):
+        """Lazy load the audio pipeline module."""
+        if self._pipeline is not None:
+            return self._pipeline
+        if str(self._audio_dir) not in sys.path:
+            sys.path.insert(0, str(self._audio_dir))
+        import pipeline as audio_pipeline  # type: ignore
+        self._pipeline = audio_pipeline
+        return self._pipeline
+
+    def run_pipeline(self, video_path: str, run_dir: str) -> Dict[str, Any]:
+        """Execute the audio pipeline and persist metadata in the run directory."""
+        pipeline_module = self._get_pipeline()
+        artifacts_dir = Path(run_dir) / "audio_artifacts"
+        artifacts_dir.mkdir(parents=True, exist_ok=True)
+
+        result = pipeline_module.run_pipeline(
+            input_video_path=video_path,
+            output_dir=str(Path(run_dir)),
+            artifacts_dir=str(artifacts_dir),
+        ) or {}
+
+        metadata = {
+            "video_path": video_path,
+            "artifacts_dir": str(artifacts_dir),
+            "replacements": result.get("replacements", []),
+            "transcript_json": result.get("transcript_json"),
+            "analysis_path": result.get("analysis_path"),
+            "final_video": result.get("final_video"),
+        }
+
+        metadata_path = Path(run_dir) / "audio_pipeline_metadata.json"
+        with open(metadata_path, "w") as f:
+            json.dump(metadata, f, indent=4)
+
+        return metadata
+
+
 # Global service instances
 segmentation_service = VideoSegmentationService()
 editing_service = VideoEditingService()
 veo_service = VeoGenerationService()
+audio_pipeline_service = AudioPipelineService()
 
