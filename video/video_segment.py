@@ -162,6 +162,9 @@ def segment_video(video_path, text_prompt=None, max_frames=None, output_every_n=
     print(f"Metadata file: {metadata_path}")
     print(f"{'='*60}\n")
 
+    # Return run directory for downstream pipelines
+    return run_dir
+
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:

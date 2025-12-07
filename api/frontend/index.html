@@ -1,0 +1,1358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FrameShift API Tester</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .card h2 {
+            color: #333;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #667eea;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+            font-weight: 600;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="file"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        textarea {
+            min-height: 80px;
+            resize: vertical;
+        }
+
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .response {
+            background: #f5f5f5;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 4px;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 13px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .response pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .success {
+            border-left-color: #4caf50;
+            background: #e8f5e9;
+        }
+
+        .error {
+            border-left-color: #f44336;
+            background: #ffebee;
+            color: #c62828;
+        }
+
+        .loading {
+            display: inline-block;
+            margin-left: 10px;
+        }
+
+        .loading::after {
+            content: '...';
+            animation: dots 1.5s steps(3, end) infinite;
+        }
+
+        @keyframes dots {
+            0%, 20% { content: '.'; }
+            40% { content: '..'; }
+            60%, 100% { content: '...'; }
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .info {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+        }
+
+        .info strong {
+            color: #1976d2;
+        }
+
+        video {
+            width: 100%;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        #framePreviewWrapper {
+            position: relative;
+            display: inline-block;
+        }
+
+        #bboxCanvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            cursor: crosshair;
+        }
+
+        .bbox-list {
+            margin-top: 10px;
+            font-size: 13px;
+            color: #333;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+
+        .status-ready {
+            background: #4caf50;
+            color: white;
+        }
+
+        .status-waiting {
+            background: #ff9800;
+            color: white;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: auto;
+        }
+
+        .api-status {
+            background: white;
+            border-radius: 8px;
+            padding: 10px 20px;
+            text-align: center;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .api-status.online {
+            border-left: 4px solid #4caf50;
+        }
+
+        .api-status.offline {
+            border-left: 4px solid #f44336;
+        }
+
+        .workflow {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            overflow-x: auto;
+            padding: 10px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+        }
+
+        .workflow-step {
+            background: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            min-width: 150px;
+            text-align: center;
+            position: relative;
+        }
+
+        .workflow-step::after {
+            content: '→';
+            position: absolute;
+            right: -15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+            color: white;
+        }
+
+        .workflow-step:last-child::after {
+            content: '';
+        }
+
+        .workflow-step.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .workflow-step.completed {
+            background: #4caf50;
+            color: white;
+        }
+
+        .run-item {
+            background: #f9f9f9;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .run-item:hover {
+            border-color: #667eea;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .run-item.selected {
+            border-color: #667eea;
+            background: #f0f4ff;
+        }
+
+        .run-item h4 {
+            margin: 0 0 10px 0;
+            color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .run-item p {
+            margin: 5px 0;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .run-badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-left: 5px;
+        }
+
+        .run-badge.edited {
+            background: #4caf50;
+            color: white;
+        }
+
+        .run-badge.segmented {
+            background: #2196f3;
+            color: white;
+        }
+
+        .run-actions {
+            margin-top: 10px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .run-actions button {
+            padding: 8px 15px;
+            font-size: 13px;
+        }
+
+        .run-preview {
+            width: 100%;
+            max-height: 150px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎬 FrameShift API Tester</h1>
+
+        <!-- API Status -->
+        <div id="apiStatus" class="api-status">
+            <span id="statusText">Checking API status...</span>
+        </div>
+
+        <!-- Workflow Progress -->
+        <div class="workflow">
+            <div class="workflow-step" id="step-upload">
+                <div>📤 Upload</div>
+            </div>
+            <div class="workflow-step" id="step-segment">
+                <div>✂️ Segment</div>
+            </div>
+            <div class="workflow-step" id="step-edit">
+                <div>✨ Edit</div>
+            </div>
+            <div class="workflow-step" id="step-download">
+                <div>💾 Download</div>
+            </div>
+        </div>
+
+        <!-- Step 1: Upload Video -->
+        <div class="card">
+            <h2>Step 1: Upload Video</h2>
+            <div class="form-group">
+                <label>Select Video File:</label>
+                <input type="file" id="videoFile" accept="video/*">
+            </div>
+            <button onclick="uploadVideo()" id="uploadBtn">Upload Video</button>
+            <div id="uploadResponse"></div>
+        </div>
+
+        <!-- Step 2: Segment Video -->
+        <div class="card">
+            <h2>Step 2: Segment Video <span class="status-badge status-waiting" id="segmentStatus">Waiting for upload</span></h2>
+            <div class="info">
+                <strong>Upload ID:</strong> <span id="currentUploadId">-</span>
+            </div>
+            
+            <!-- Video Info -->
+            <div id="videoInfo" style="display: none;" class="info">
+                <strong>Video:</strong> <span id="videoFrameCount">-</span> frames @ <span id="videoFPS">-</span> fps | 
+                <span id="videoDuration">-</span>s | <span id="videoDimensions">-</span>
+            </div>
+            
+            <!-- Frame Scrubber -->
+            <div id="frameScrubber" style="display: none; margin: 20px 0;">
+                <h3 style="margin-bottom: 10px;">🎬 Select Frame Range</h3>
+                
+                <!-- Frame Preview -->
+                <div style="text-align: center; margin-bottom: 15px;">
+                    <div id="framePreviewWrapper">
+                        <img id="framePreview" style="max-width: 100%; max-height: 300px; border-radius: 8px; border: 2px solid #667eea;" alt="Frame preview" />
+                        <canvas id="bboxCanvas"></canvas>
+                    </div>
+                    <div style="margin-top: 10px; font-weight: 600; font-size: 16px;">
+                        Frame <span id="currentFrameNum">0</span> / <span id="totalFrames">0</span>
+                    </div>
+                    <div class="bbox-list" id="bboxList"></div>
+                </div>
+                
+                <!-- Scrubber Slider -->
+                <div class="form-group">
+                    <label>Scrub Through Frames:</label>
+                    <input type="range" id="frameScrubberSlider" min="0" max="100" value="0" 
+                           style="width: 100%;" oninput="scrubFrame(this.value)">
+                </div>
+                
+                <!-- Start/End Frame Selection -->
+                <div class="grid">
+                    <div class="form-group">
+                        <label>Start Frame:</label>
+                        <input type="number" id="startFrame" min="0" value="0" 
+                               onchange="updateFrameRange()">
+                    </div>
+                    <div class="form-group">
+                        <label>End Frame (optional):</label>
+                        <input type="number" id="endFrame" min="0" 
+                               onchange="updateFrameRange()" placeholder="Leave empty for end">
+                    </div>
+                </div>
+                
+                <div style="background: #e8f5e9; padding: 12px; border-radius: 6px; margin-top: 10px; border-left: 4px solid #4caf50;">
+                    <strong>Selected Range:</strong> 
+                    Frame <span id="selectedStart">0</span> to <span id="selectedEnd">end</span>
+                    (<span id="selectedCount">all</span> frames will be processed)
+                </div>
+
+                <div id="bboxTools" style="display: none; margin-top: 15px;">
+                    <h3 style="margin-bottom: 8px;">📦 Bounding Boxes (rectangular crops)</h3>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="drawMode">
+                        <label for="drawMode">Enable draw mode (click and drag on the frame)</label>
+                    </div>
+                    <div class="grid" style="margin-top: 10px;">
+                        <button onclick="clearBoxesForFrame()">Clear boxes on this frame</button>
+                        <button id="saveBoxesBtn" onclick="saveBoxesRun()">Save boxes as a run</button>
+                    </div>
+                    <p style="color: #666; margin-top: 8px;">Draw rectangular crops per frame or use segmentation to get boxes, then save as a run for editing.</p>
+                </div>
+            </div>
+            
+            <!-- Segmentation Options -->
+            <div class="form-group">
+                <label>Text Prompt (optional):</label>
+                <input type="text" id="segmentPrompt" placeholder="e.g., person, shirt, logo" value="person">
+            </div>
+            <div class="grid">
+                <div class="form-group">
+                    <label>Max Frames (optional):</label>
+                    <input type="number" id="maxFrames" placeholder="Leave empty for all in range" value="">
+                </div>
+                <div class="form-group">
+                    <label>Output Every N Frames:</label>
+                    <input type="number" id="outputEveryN" value="1">
+                </div>
+            </div>
+            <div class="form-group checkbox-group">
+                <input type="checkbox" id="saveMasks">
+                <label for="saveMasks">Save Masks (optional)</label>
+            </div>
+            <button onclick="segmentVideo()" id="segmentBtn" disabled>Segment Video</button>
+            <div id="segmentResponse"></div>
+        </div>
+
+        <!-- Step 3: Edit Video -->
+        <div class="card">
+            <h2>Step 3: Edit Video <span class="status-badge status-waiting" id="editStatus">Waiting for segmentation</span></h2>
+            <div class="info">
+                <strong>Run ID:</strong> <span id="currentRunId">-</span>
+            </div>
+            <div class="form-group">
+                <label>Edit Prompt:</label>
+                <textarea id="editPrompt" placeholder="e.g., add a Nike logo to the shirt in the center">add a bright red circle on the chest</textarea>
+            </div>
+            <div class="form-group">
+                <label>Segment IDs to Edit (optional, comma-separated):</label>
+                <input type="text" id="segmentIds" placeholder="e.g., 0,2,5 (leave empty for all)">
+            </div>
+            <div class="grid">
+                <div class="form-group" id="reuseContainer">
+                    <label>Reuse Edit Every N Frames:</label>
+                    <input type="number" id="reuseEveryN" value="1">
+                </div>
+                <div class="form-group">
+                    <label>Model:</label>
+                    <select id="model">
+                        <option value="gemini-2.5-flash-image">Gemini 2.5 Flash</option>
+                        <option value="gemini-2.0-flash-exp">Gemini 2.0 Flash Exp</option>
+                    </select>
+                </div>
+            </div>
+            <button onclick="editVideo()" id="editBtn" disabled>Edit Video</button>
+            <div id="editResponse"></div>
+        </div>
+
+        <!-- Step 4: Download & View Results -->
+        <div class="card">
+            <h2>Step 4: Download & View Results <span class="status-badge status-waiting" id="downloadStatus">Waiting for edit</span></h2>
+            <div class="info">
+                <strong>Output Path:</strong> <span id="outputPath">-</span>
+            </div>
+            <button onclick="downloadVideo()" id="downloadBtn" disabled>Download Edited Video</button>
+            <button onclick="viewRunInfo()" id="infoBtn" disabled>View Run Info</button>
+            <div id="downloadResponse"></div>
+            <div id="videoPreview"></div>
+        </div>
+
+        <!-- Run Browser -->
+        <div class="card">
+            <h2>📚 Browse Past Runs</h2>
+            <p style="color: #666; margin-bottom: 15px;">Select a previous run to view details, re-edit, or continue from where you left off.</p>
+            
+            <button onclick="loadRunBrowser()" id="loadRunsBtn">Load Available Runs</button>
+            
+            <div id="runBrowser" style="display: none; margin-top: 20px;">
+                <div class="form-group">
+                    <label>Filter by prompt:</label>
+                    <input type="text" id="runFilter" placeholder="Type to filter..." oninput="filterRuns()">
+                </div>
+                
+                <div id="runList" style="max-height: 500px; overflow-y: auto;">
+                    <!-- Runs will be loaded here -->
+                </div>
+            </div>
+            
+            <div id="runBrowserResponse"></div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="card">
+            <h2>🔧 Quick Actions</h2>
+            <div class="grid">
+                <button onclick="listAllRuns()">List All Runs</button>
+                <button onclick="testExistingRun()">Test with Existing Run</button>
+                <button onclick="clearAll()">Clear All</button>
+            </div>
+            <div id="quickResponse"></div>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = 'http://localhost:8000/api/v1';
+        let currentUploadId = null;
+        let currentRunId = null;
+        let currentOutputPath = null;
+        let manualBoxes = {}; // frameIdx -> [{x,y,w,h}]
+        let isDrawing = false;
+        let drawStart = null;
+        let manualBoxesMode = false;
+
+        // Check API status on load
+        async function checkAPIStatus() {
+            try {
+                const response = await fetch(`${API_BASE}/health`);
+                if (response.ok) {
+                    document.getElementById('apiStatus').className = 'api-status online';
+                    document.getElementById('statusText').textContent = '✅ API is online and ready';
+                } else {
+                    throw new Error('API returned error');
+                }
+            } catch (error) {
+                document.getElementById('apiStatus').className = 'api-status offline';
+                document.getElementById('statusText').textContent = '❌ API is offline - Make sure server is running on port 8000';
+            }
+        }
+
+        // Video info and frame scrubbing
+        let videoInfo = null;
+        let currentScrubFrame = 0;
+
+        async function loadVideoInfo(uploadId) {
+            try {
+                const response = await fetch(`${API_BASE}/upload/info?upload_id=${uploadId}`);
+                
+                if (!response.ok) {
+                    throw new Error('Failed to get video info');
+                }
+                
+                videoInfo = await response.json();
+                
+                // Update UI
+                document.getElementById('videoFrameCount').textContent = videoInfo.frame_count;
+                document.getElementById('videoFPS').textContent = videoInfo.fps.toFixed(2);
+                document.getElementById('videoDuration').textContent = videoInfo.duration_seconds.toFixed(2);
+                document.getElementById('videoDimensions').textContent = `${videoInfo.width}x${videoInfo.height}`;
+                document.getElementById('totalFrames').textContent = videoInfo.frame_count;
+                
+                // Setup scrubber
+                document.getElementById('frameScrubberSlider').max = videoInfo.frame_count - 1;
+                document.getElementById('endFrame').max = videoInfo.frame_count - 1;
+                document.getElementById('endFrame').placeholder = videoInfo.frame_count - 1;
+                document.getElementById('startFrame').max = videoInfo.frame_count - 1;
+                
+                // Show video info and scrubber
+                document.getElementById('videoInfo').style.display = 'block';
+                document.getElementById('frameScrubber').style.display = 'block';
+                document.getElementById('bboxTools').style.display = 'block';
+                manualBoxes = {};
+                
+                // Load first frame
+                await loadFrame(0);
+                updateFrameRange();
+                
+            } catch (error) {
+                console.error('Error loading video info:', error);
+                showResponse('uploadResponse', 'Note: Frame preview unavailable. You can still proceed with segmentation.', 'error');
+            }
+        }
+
+        async function loadFrame(frameIdx) {
+            if (!currentUploadId) return;
+            
+            try {
+                const img = document.getElementById('framePreview');
+                img.src = `${API_BASE}/upload/${currentUploadId}/frame/${frameIdx}`;
+                img.onload = () => {
+                    syncCanvasToImage();
+                    redrawBoxes(frameIdx);
+                };
+                document.getElementById('currentFrameNum').textContent = frameIdx;
+                currentScrubFrame = frameIdx;
+            } catch (error) {
+                console.error('Error loading frame:', error);
+            }
+        }
+
+        function scrubFrame(value) {
+            const frameIdx = parseInt(value);
+            loadFrame(frameIdx);
+            redrawBoxes(frameIdx);
+        }
+
+        function updateFrameRange() {
+            const start = parseInt(document.getElementById('startFrame').value) || 0;
+            const endInput = document.getElementById('endFrame').value;
+            const end = endInput ? parseInt(endInput) : (videoInfo ? videoInfo.frame_count - 1 : 0);
+            
+            document.getElementById('selectedStart').textContent = start;
+            document.getElementById('selectedEnd').textContent = endInput ? end : 'end';
+            
+            const count = end - start + 1;
+            document.getElementById('selectedCount').textContent = count;
+        }
+
+        // Upload video
+        async function uploadVideo() {
+            const fileInput = document.getElementById('videoFile');
+            const file = fileInput.files[0];
+            
+            if (!file) {
+                showResponse('uploadResponse', 'Please select a video file', 'error');
+                return;
+            }
+
+            const btn = document.getElementById('uploadBtn');
+            btn.disabled = true;
+            btn.innerHTML = 'Uploading<span class="loading"></span>';
+
+            const formData = new FormData();
+            formData.append('file', file);
+
+            try {
+                const response = await fetch(`${API_BASE}/upload`, {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    currentUploadId = data.upload_id;
+                    document.getElementById('currentUploadId').textContent = currentUploadId;
+                    document.getElementById('segmentBtn').disabled = false;
+                    document.getElementById('segmentStatus').className = 'status-badge status-ready';
+                    document.getElementById('segmentStatus').textContent = 'Ready';
+                    updateWorkflowStep('step-upload', 'completed');
+                    updateWorkflowStep('step-segment', 'active');
+                    showResponse('uploadResponse', JSON.stringify(data, null, 2), 'success');
+                    
+                    // Load video info and enable frame scrubbing
+                    await loadVideoInfo(currentUploadId);
+                } else {
+                    throw new Error(data.detail || 'Upload failed');
+                }
+            } catch (error) {
+                showResponse('uploadResponse', 'Error: ' + error.message, 'error');
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = 'Upload Video';
+            }
+        }
+
+        // Segment video
+        async function segmentVideo() {
+            if (!currentUploadId) {
+                showResponse('segmentResponse', 'Please upload a video first', 'error');
+                return;
+            }
+
+            const btn = document.getElementById('saveBoxesBtn') || document.getElementById('segmentBtn');
+            btn.disabled = true;
+            btn.innerHTML = 'Segmenting<span class="loading"></span>';
+
+            const payload = {
+                upload_id: currentUploadId,
+                save_masks: document.getElementById('saveMasks').checked,
+                output_every_n: parseInt(document.getElementById('outputEveryN').value) || 1
+            };
+
+            const prompt = document.getElementById('segmentPrompt').value.trim();
+            if (prompt) payload.text_prompt = prompt;
+
+            // Use selected frame range if available
+            const startFrame = parseInt(document.getElementById('startFrame').value);
+            const endFrame = parseInt(document.getElementById('endFrame').value);
+            
+            if (startFrame) {
+                payload.start_frame_idx = startFrame;
+            }
+            
+            if (endFrame) {
+                payload.end_frame_idx = endFrame;
+            }
+
+            const maxFrames = document.getElementById('maxFrames').value.trim();
+            if (maxFrames) payload.max_frames = parseInt(maxFrames);
+
+            try {
+                const response = await fetch(`${API_BASE}/segment`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    currentRunId = data.run_id;
+                    document.getElementById('currentRunId').textContent = currentRunId;
+                    document.getElementById('editBtn').disabled = false;
+                    document.getElementById('infoBtn').disabled = false;
+                    document.getElementById('editStatus').className = 'status-badge status-ready';
+                    document.getElementById('editStatus').textContent = 'Ready';
+                    updateWorkflowStep('step-segment', 'completed');
+                    updateWorkflowStep('step-edit', 'active');
+                    manualBoxesMode = false;
+                    setReuseVisibility(true);
+                    showResponse('segmentResponse', JSON.stringify(data, null, 2), 'success');
+                } else {
+                    throw new Error(data.detail || 'Segmentation failed');
+                }
+            } catch (error) {
+                showResponse('segmentResponse', 'Error: ' + error.message, 'error');
+            } finally {
+                btn.disabled = false;
+                if (btn.id === 'saveBoxesBtn') {
+                    btn.innerHTML = 'Save boxes as a run';
+                } else {
+                    btn.innerHTML = 'Segment Video';
+                }
+            }
+        }
+
+        // Edit video
+        async function editVideo() {
+            if (!currentRunId) {
+                showResponse('editResponse', 'Please segment a video first', 'error');
+                return;
+            }
+
+            const editPrompt = document.getElementById('editPrompt').value.trim();
+            if (!editPrompt) {
+                showResponse('editResponse', 'Please enter an edit prompt', 'error');
+                return;
+            }
+
+            const btn = document.getElementById('editBtn');
+            btn.disabled = true;
+            btn.innerHTML = 'Editing<span class="loading"></span>';
+
+            const payload = {
+                run_id: currentRunId,
+                edit_prompt: editPrompt,
+                model: document.getElementById('model').value,
+                reuse_edit_every_n_frames: manualBoxesMode ? 1 : (parseInt(document.getElementById('reuseEveryN').value) || 1)
+            };
+            const startFrameVal = parseInt(document.getElementById('startFrame').value);
+            const endFrameVal = parseInt(document.getElementById('endFrame').value);
+            if (!isNaN(startFrameVal)) payload.start_frame_idx = startFrameVal;
+            if (!isNaN(endFrameVal)) payload.end_frame_idx = endFrameVal;
+
+            const segmentIds = document.getElementById('segmentIds').value.trim();
+            if (segmentIds) {
+                payload.segment_ids = segmentIds.split(',').map(id => parseInt(id.trim()));
+            }
+
+            try {
+                const response = await fetch(`${API_BASE}/edit`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    currentOutputPath = data.output_video_path;
+                    document.getElementById('outputPath').textContent = currentOutputPath;
+                    document.getElementById('downloadBtn').disabled = false;
+                    document.getElementById('downloadStatus').className = 'status-badge status-ready';
+                    document.getElementById('downloadStatus').textContent = 'Ready';
+                    updateWorkflowStep('step-edit', 'completed');
+                    updateWorkflowStep('step-download', 'active');
+                    showResponse('editResponse', JSON.stringify(data, null, 2), 'success');
+                } else {
+                    throw new Error(data.detail || 'Edit failed');
+                }
+            } catch (error) {
+                showResponse('editResponse', 'Error: ' + error.message, 'error');
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = 'Edit Video';
+            }
+        }
+
+        // Download video
+        async function downloadVideo() {
+            if (!currentRunId) {
+                showResponse('downloadResponse', 'No video to download', 'error');
+                return;
+            }
+
+            try {
+                const response = await fetch(`${API_BASE}/download/video/${currentRunId}`);
+                
+                if (response.ok) {
+                    const blob = await response.blob();
+                    const url = window.URL.createObjectURL(blob);
+                    
+                    // Create download link
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = `edited_${currentRunId}.mp4`;
+                    a.click();
+                    
+                    // Show preview
+                    const videoPreview = document.getElementById('videoPreview');
+                    videoPreview.innerHTML = `
+                        <h3 style="margin-top: 20px;">Video Preview:</h3>
+                        <video controls src="${url}"></video>
+                    `;
+                    
+                    updateWorkflowStep('step-download', 'completed');
+                    showResponse('downloadResponse', '✅ Video downloaded successfully!', 'success');
+                } else {
+                    throw new Error('Download failed');
+                }
+            } catch (error) {
+                showResponse('downloadResponse', 'Error: ' + error.message, 'error');
+            }
+        }
+
+        // View run info
+        // (Function moved and enhanced above in Run Browser section)
+
+        // List all runs
+        async function listAllRuns() {
+            try {
+                const response = await fetch(`${API_BASE}/runs`);
+                const data = await response.json();
+
+                if (response.ok) {
+                    showResponse('quickResponse', JSON.stringify(data, null, 2), 'success');
+                } else {
+                    throw new Error('Failed to list runs');
+                }
+            } catch (error) {
+                showResponse('quickResponse', 'Error: ' + error.message, 'error');
+            }
+        }
+
+        // Test with existing run
+        async function testExistingRun() {
+            const runId = prompt('Enter existing run ID:');
+            if (!runId) return;
+
+            currentRunId = runId;
+            document.getElementById('currentRunId').textContent = currentRunId;
+            document.getElementById('editBtn').disabled = false;
+            document.getElementById('infoBtn').disabled = false;
+            document.getElementById('downloadBtn').disabled = false;
+            document.getElementById('editStatus').className = 'status-badge status-ready';
+            document.getElementById('editStatus').textContent = 'Ready';
+            document.getElementById('downloadStatus').className = 'status-badge status-ready';
+            document.getElementById('downloadStatus').textContent = 'Ready';
+
+            showResponse('quickResponse', `Using run ID: ${runId}`, 'success');
+            viewRunInfo();
+        }
+
+        // Clear all
+        function clearAll() {
+            currentUploadId = null;
+            currentRunId = null;
+            currentOutputPath = null;
+            manualBoxes = {};
+            manualBoxesMode = false;
+            
+            document.getElementById('currentUploadId').textContent = '-';
+            document.getElementById('currentRunId').textContent = '-';
+            document.getElementById('outputPath').textContent = '-';
+            
+            document.getElementById('segmentBtn').disabled = true;
+            document.getElementById('editBtn').disabled = true;
+            document.getElementById('downloadBtn').disabled = true;
+            document.getElementById('infoBtn').disabled = true;
+            
+            document.getElementById('segmentStatus').className = 'status-badge status-waiting';
+            document.getElementById('segmentStatus').textContent = 'Waiting for upload';
+            document.getElementById('editStatus').className = 'status-badge status-waiting';
+            document.getElementById('editStatus').textContent = 'Waiting for segmentation';
+            document.getElementById('downloadStatus').className = 'status-badge status-waiting';
+            document.getElementById('downloadStatus').textContent = 'Waiting for edit';
+            
+            document.getElementById('uploadResponse').innerHTML = '';
+            document.getElementById('segmentResponse').innerHTML = '';
+            document.getElementById('editResponse').innerHTML = '';
+            document.getElementById('downloadResponse').innerHTML = '';
+            document.getElementById('videoPreview').innerHTML = '';
+            document.getElementById('quickResponse').innerHTML = '';
+            redrawBoxes();
+            setReuseVisibility(true);
+            
+            ['step-upload', 'step-segment', 'step-edit', 'step-download'].forEach(id => {
+                document.getElementById(id).className = 'workflow-step';
+            });
+            
+            showResponse('quickResponse', 'All fields cleared', 'success');
+        }
+
+        // Helper functions
+        function showResponse(elementId, message, type = 'success') {
+            const element = document.getElementById(elementId);
+            element.innerHTML = `<div class="response ${type}"><pre>${message}</pre></div>`;
+        }
+
+        function setReuseVisibility(show) {
+            const container = document.getElementById('reuseContainer');
+            if (!container) return;
+            container.style.display = show ? 'block' : 'none';
+            if (!show) {
+                document.getElementById('reuseEveryN').value = 1;
+            }
+        }
+
+        function syncCanvasToImage() {
+            const img = document.getElementById('framePreview');
+            const canvas = document.getElementById('bboxCanvas');
+            if (!img || !canvas) return;
+            canvas.width = img.clientWidth;
+            canvas.height = img.clientHeight;
+            canvas.style.width = `${img.clientWidth}px`;
+            canvas.style.height = `${img.clientHeight}px`;
+        }
+
+        function getCanvasScale() {
+            const canvas = document.getElementById('bboxCanvas');
+            if (!canvas || !videoInfo) return { scaleX: 1, scaleY: 1 };
+            const safeW = canvas.width || 1;
+            const safeH = canvas.height || 1;
+            return {
+                scaleX: safeW / Math.max(videoInfo.width, 1),
+                scaleY: safeH / Math.max(videoInfo.height, 1)
+            };
+        }
+
+        function redrawBoxes(frameIdx = currentScrubFrame, tempRect = null) {
+            const canvas = document.getElementById('bboxCanvas');
+            const list = document.getElementById('bboxList');
+            if (!canvas || !list) return;
+            syncCanvasToImage();
+            const ctx = canvas.getContext('2d');
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            const boxes = manualBoxes[frameIdx] || [];
+            const { scaleX, scaleY } = getCanvasScale();
+
+            ctx.lineWidth = 2;
+            ctx.strokeStyle = '#ff5722';
+            boxes.forEach((box, idx) => {
+                const x = box.x * scaleX;
+                const y = box.y * scaleY;
+                const w = box.w * scaleX;
+                const h = box.h * scaleY;
+                ctx.strokeRect(x, y, w, h);
+                ctx.fillStyle = '#ff5722';
+                ctx.fillText(`#${idx}`, x + 4, y + 12);
+            });
+
+            if (tempRect) {
+                ctx.setLineDash([6, 4]);
+                ctx.strokeStyle = '#2196f3';
+                const { start, end } = tempRect;
+                ctx.strokeRect(
+                    Math.min(start.x, end.x),
+                    Math.min(start.y, end.y),
+                    Math.abs(end.x - start.x),
+                    Math.abs(end.y - start.y)
+                );
+                ctx.setLineDash([]);
+            }
+
+            if (boxes.length === 0) {
+                list.textContent = 'No boxes on this frame yet.';
+            } else {
+                list.textContent = `Boxes on this frame: ${boxes.map((b, i) => `#${i} (${b.x},${b.y},${b.w},${b.h})`).join(' | ')}`;
+            }
+        }
+
+        function canvasPos(event) {
+            const canvas = document.getElementById('bboxCanvas');
+            const rect = canvas.getBoundingClientRect();
+            return { x: event.clientX - rect.left, y: event.clientY - rect.top };
+        }
+
+        function startDraw(event) {
+            if (!videoInfo || !document.getElementById('drawMode').checked) return;
+            isDrawing = true;
+            drawStart = canvasPos(event);
+        }
+
+        function moveDraw(event) {
+            if (!isDrawing) return;
+            const pos = canvasPos(event);
+            redrawBoxes(currentScrubFrame, { start: drawStart, end: pos });
+        }
+
+        function endDraw(event) {
+            if (!isDrawing || !videoInfo) {
+                isDrawing = false;
+                return;
+            }
+            const end = canvasPos(event);
+            isDrawing = false;
+            const { scaleX, scaleY } = getCanvasScale();
+            const x = Math.round(Math.min(drawStart.x, end.x) / scaleX);
+            const y = Math.round(Math.min(drawStart.y, end.y) / scaleY);
+            const w = Math.round(Math.abs(end.x - drawStart.x) / scaleX);
+            const h = Math.round(Math.abs(end.y - drawStart.y) / scaleY);
+            if (w < 4 || h < 4) {
+                redrawBoxes(currentScrubFrame);
+                return;
+            }
+            if (!manualBoxes[currentScrubFrame]) {
+                manualBoxes[currentScrubFrame] = [];
+            }
+            manualBoxes[currentScrubFrame].push({ x, y, w, h });
+            redrawBoxes(currentScrubFrame);
+        }
+
+        function clearBoxesForFrame() {
+            if (manualBoxes[currentScrubFrame]) {
+                delete manualBoxes[currentScrubFrame];
+                redrawBoxes(currentScrubFrame);
+            }
+        }
+
+        async function saveBoxesRun() {
+            if (!currentUploadId) {
+                showResponse('segmentResponse', 'Upload a video before saving boxes', 'error');
+                return;
+            }
+            const framesPayload = Object.entries(manualBoxes).map(([frameIdx, boxes]) => ({
+                frame_index: parseInt(frameIdx),
+                boxes: boxes.map((box, idx) => ({
+                    ...box,
+                    segment_id: box.segment_id ?? idx
+                }))
+            })).sort((a, b) => a.frame_index - b.frame_index);
+
+            if (framesPayload.length === 0) {
+                showResponse('segmentResponse', 'No boxes to save. Draw boxes first.', 'error');
+                return;
+            }
+
+            const payload = {
+                upload_id: currentUploadId,
+                frames: framesPayload,
+            };
+            const startFrameVal = parseInt(document.getElementById('startFrame').value);
+            const endFrameVal = parseInt(document.getElementById('endFrame').value);
+            if (!isNaN(startFrameVal)) payload.start_frame_idx = startFrameVal;
+            if (!isNaN(endFrameVal)) payload.end_frame_idx = endFrameVal;
+            const prompt = document.getElementById('segmentPrompt').value.trim();
+            if (prompt) payload.text_prompt = prompt;
+
+            const btn = document.getElementById('segmentBtn');
+            btn.disabled = true;
+            btn.innerHTML = 'Saving boxes<span class="loading"></span>';
+
+            try {
+                const response = await fetch(`${API_BASE}/boxes/manual`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const data = await response.json();
+                if (response.ok) {
+                    currentRunId = data.run_id;
+                    document.getElementById('currentRunId').textContent = currentRunId;
+                    document.getElementById('editBtn').disabled = false;
+                    document.getElementById('infoBtn').disabled = false;
+                    document.getElementById('editStatus').className = 'status-badge status-ready';
+                    document.getElementById('editStatus').textContent = 'Ready';
+                    updateWorkflowStep('step-segment', 'completed');
+                    updateWorkflowStep('step-edit', 'active');
+                    manualBoxes = {};
+                    redrawBoxes(currentScrubFrame);
+                    manualBoxesMode = true;
+                    setReuseVisibility(false);
+                    showResponse('segmentResponse', 'Saved bounding boxes as a run. Proceed to edit!', 'success');
+                } else {
+                    throw new Error(data.detail || 'Failed to save boxes');
+                }
+            } catch (error) {
+                showResponse('segmentResponse', 'Error: ' + error.message, 'error');
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = 'Segment Video';
+            }
+        }
+
+        function updateWorkflowStep(stepId, status) {
+            const step = document.getElementById(stepId);
+            step.className = `workflow-step ${status}`;
+        }
+
+        // Bounding box canvas events
+        const bboxCanvas = document.getElementById('bboxCanvas');
+        if (bboxCanvas) {
+            bboxCanvas.addEventListener('mousedown', startDraw);
+            bboxCanvas.addEventListener('mousemove', moveDraw);
+            bboxCanvas.addEventListener('mouseup', endDraw);
+            bboxCanvas.addEventListener('mouseleave', endDraw);
+        }
+
+        // Run Browser functionality
+        let allRuns = [];
+        let selectedRun = null;
+
+        async function loadRunBrowser() {
+            const btn = document.getElementById('loadRunsBtn');
+            btn.disabled = true;
+            btn.innerHTML = 'Loading<span class="loading"></span>';
+
+            try {
+                const response = await fetch(`${API_BASE}/runs?include_metadata=true`);
+                const data = await response.json();
+
+                if (response.ok) {
+                    allRuns = data.runs;
+                    displayRuns(allRuns);
+                    document.getElementById('runBrowser').style.display = 'block';
+                    showResponse('runBrowserResponse', `Loaded ${allRuns.length} runs`, 'success');
+                } else {
+                    throw new Error(data.detail || 'Failed to load runs');
+                }
+            } catch (error) {
+                showResponse('runBrowserResponse', 'Error: ' + error.message, 'error');
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = 'Refresh Runs';
+            }
+        }
+
+        function displayRuns(runs) {
+            const runList = document.getElementById('runList');
+            
+            if (runs.length === 0) {
+                runList.innerHTML = '<p style="text-align: center; color: #999; padding: 20px;">No runs found</p>';
+                return;
+            }
+
+            runList.innerHTML = runs.map(run => {
+                const badges = [];
+                if (run.has_edited_video) badges.push('<span class="run-badge edited">Edited</span>');
+                if (run.has_metadata) badges.push('<span class="run-badge segmented">Segmented</span>');
+
+                return `
+                    <div class="run-item" onclick="selectRun('${run.run_id}')">
+                        <h4>
+                            <span>🎬 ${run.run_id}</span>
+                            <span>${badges.join(' ')}</span>
+                        </h4>
+                        ${run.has_metadata ? `
+                            <p><strong>Prompt:</strong> ${run.text_prompt || 'None'}</p>
+                            <p><strong>Frames:</strong> ${run.processed_frames} processed (${run.start_frame_idx || 0} - ${run.end_frame_idx || run.total_video_frames})</p>
+                            <p><strong>FPS:</strong> ${run.fps ? run.fps.toFixed(2) : 'N/A'} | <strong>Available Frames:</strong> ${run.total_available_frames}</p>
+                            <img class="run-preview" src="${API_BASE}/runs/${run.run_id}/preview/${run.available_frames[0] || 0}" 
+                                 onerror="this.style.display='none'" alt="Frame preview">
+                        ` : '<p><em>No metadata available</em></p>'}
+                        <div class="run-actions">
+                            <button onclick="loadRunForEdit('${run.run_id}'); event.stopPropagation();">Edit This Run</button>
+                            <button onclick="viewRunInfo('${run.run_id}'); event.stopPropagation();">View Details</button>
+                            ${run.has_edited_video ? `<button onclick="downloadVideoByRunId('${run.run_id}'); event.stopPropagation();">Download Video</button>` : ''}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function filterRuns() {
+            const filter = document.getElementById('runFilter').value.toLowerCase();
+            const filtered = allRuns.filter(run => {
+                const prompt = (run.text_prompt || '').toLowerCase();
+                const runId = run.run_id.toLowerCase();
+                return prompt.includes(filter) || runId.includes(filter);
+            });
+            displayRuns(filtered);
+        }
+
+        function selectRun(runId) {
+            // Remove previous selection
+            document.querySelectorAll('.run-item').forEach(item => {
+                item.classList.remove('selected');
+            });
+            
+            // Add selection to clicked item
+            event.currentTarget.classList.add('selected');
+            selectedRun = runId;
+        }
+
+        async function loadRunForEdit(runId) {
+            try {
+                // Load run info
+                const response = await fetch(`${API_BASE}/run/info`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ run_id: runId })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    // Set the run ID for editing
+                    currentRunId = runId;
+                    document.getElementById('currentRunId').textContent = currentRunId;
+                    
+                    // Enable edit controls
+                    document.getElementById('editBtn').disabled = false;
+                    document.getElementById('infoBtn').disabled = false;
+                    document.getElementById('downloadBtn').disabled = false;
+                    document.getElementById('editStatus').className = 'status-badge status-ready';
+                    document.getElementById('editStatus').textContent = 'Ready';
+                    document.getElementById('downloadStatus').className = 'status-badge status-ready';
+                    document.getElementById('downloadStatus').textContent = 'Ready';
+                    
+                    // Update workflow
+                    updateWorkflowStep('step-upload', 'completed');
+                    updateWorkflowStep('step-segment', 'completed');
+                    updateWorkflowStep('step-edit', 'active');
+                    
+                    // Scroll to edit section
+                    document.querySelector('.card:nth-child(5)').scrollIntoView({ behavior: 'smooth' });
+                    
+                    showResponse('runBrowserResponse', `Loaded run ${runId} - ready to edit!`, 'success');
+                } else {
+                    throw new Error(data.detail || 'Failed to load run');
+                }
+            } catch (error) {
+                showResponse('runBrowserResponse', 'Error: ' + error.message, 'error');
+            }
+        }
+
+        async function viewRunInfo(runId) {
+            // If runId is provided, use it; otherwise use currentRunId
+            const targetRunId = runId || currentRunId;
+            
+            if (!targetRunId) {
+                showResponse('runBrowserResponse', 'No run ID available', 'error');
+                return;
+            }
+
+            try {
+                const response = await fetch(`${API_BASE}/run/info`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ run_id: targetRunId })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    const responseElement = runId ? 'runBrowserResponse' : 'downloadResponse';
+                    showResponse(responseElement, JSON.stringify(data, null, 2), 'success');
+                } else {
+                    throw new Error(data.detail || 'Failed to get run info');
+                }
+            } catch (error) {
+                const responseElement = runId ? 'runBrowserResponse' : 'downloadResponse';
+                showResponse(responseElement, 'Error: ' + error.message, 'error');
+            }
+        }
+
+        async function downloadVideoByRunId(runId) {
+            try {
+                const response = await fetch(`${API_BASE}/download/video/${runId}`);
+                
+                if (response.ok) {
+                    const blob = await response.blob();
+                    const url = window.URL.createObjectURL(blob);
+                    
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = `edited_${runId}.mp4`;
+                    a.click();
+                    
+                    showResponse('runBrowserResponse', `Downloaded video for run ${runId}`, 'success');
+                } else {
+                    throw new Error('Download failed');
+                }
+            } catch (error) {
+                showResponse('runBrowserResponse', 'Error: ' + error.message, 'error');
+            }
+        }
+
+        // Initialize
+        checkAPIStatus();
+    </script>
+</body>
+</html>
+
