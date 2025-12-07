@@ -1,0 +1,18 @@
+.env
+
+# Python
+__pycache__/
+*.pyc
+
+# Media & artifacts
+*.mp4
+*.wav
+*.mp3
+pipeline_artifacts/
+temp_output_*/
+input/
+output_*
+final_output.mp4
+
+# OS
+.DS_Store
