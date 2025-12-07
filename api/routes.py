@@ -327,7 +327,10 @@ async def edit_video(request: EditVideoRequest, background_tasks: BackgroundTask
             model=request.model,
             aspect_ratio=request.aspect_ratio,
             resolution=request.resolution,
-            reuse_edit_every_n_frames=request.reuse_edit_every_n_frames
+            reuse_edit_every_n_frames=request.reuse_edit_every_n_frames,
+            max_output_tokens=request.max_output_tokens,
+            regenerate_every_n_tokens=request.regenerate_every_n_tokens,
+            regenerate_frames=request.regenerate_frames,
         )
         
         # Load metadata to get frame counts
@@ -567,13 +570,7 @@ async def generate_veo_video(request: VeoGenerateRequest):
 @router.get("/download/video/{run_id}")
 async def download_video(run_id: str):
     """
-    Download the edited video for a run
-    
-    Args:
-        run_id: Run ID
-        
-    Returns:
-        Video file
+    Download the output video for a run (edited or Veo).
     """
     try:
         # Get run directory
@@ -581,15 +578,22 @@ async def download_video(run_id: str):
         if not run_dir:
             raise HTTPException(status_code=404, detail=f"Run not found: {run_id}")
         
-        # Check for edited video
-        video_path = run_dir / "edited_video.mp4"
-        if not video_path.exists():
-            raise HTTPException(status_code=404, detail=f"Edited video not found for run: {run_id}")
+        # Prefer edited video; fallback to Veo output if present
+        edited_path = run_dir / "edited_video.mp4"
+        veo_path = run_dir / "veo_video.mp4"
+        if edited_path.exists():
+            video_path = edited_path
+            download_name = f"{run_id}_edited.mp4"
+        elif veo_path.exists():
+            video_path = veo_path
+            download_name = f"{run_id}_veo.mp4"
+        else:
+            raise HTTPException(status_code=404, detail=f"No output video found for run: {run_id}")
         
         return FileResponse(
             path=str(video_path),
             media_type="video/mp4",
-            filename=f"{run_id}_edited.mp4"
+            filename=download_name
         )
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Download failed: {str(e)}")
@@ -711,8 +715,8 @@ async def list_runs(include_metadata: bool = False):
             with open(metadata_path, 'r') as f:
                 metadata = json.load(f)
             
-            # Check for edited video
-            has_edited_video = (run_dir / "edited_video.mp4").exists()
+            # Check for edited or Veo video
+            has_edited_video = (run_dir / "edited_video.mp4").exists() or (run_dir / "veo_video.mp4").exists()
             
             # Get frame count
             available_frames = sorted([int(k) for k in metadata.get('frames', {}).keys()])

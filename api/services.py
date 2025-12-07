@@ -388,7 +388,10 @@ class VideoEditingService:
         model: str = "gemini-2.5-flash-image",
         aspect_ratio: Optional[str] = None,
         resolution: str = "1K",
-        reuse_edit_every_n_frames: int = 1
+        reuse_edit_every_n_frames: int = 1,
+        max_output_tokens: Optional[int] = None,
+        regenerate_every_n_tokens: Optional[int] = None,
+        regenerate_frames: Optional[List[int]] = None,
     ) -> str:
         """
         Edit tracked objects in a video using Gemini image editing.
@@ -438,7 +441,10 @@ class VideoEditingService:
             aspect_ratio=aspect_ratio,
             resolution=resolution,
             segment_ids=segment_ids,
-            reuse_edit_every_n_frames=reuse_edit_every_n_frames
+            reuse_edit_every_n_frames=reuse_edit_every_n_frames,
+            max_output_tokens=max_output_tokens,
+            regenerate_every_n_tokens=regenerate_every_n_tokens,
+            regenerate_frames=regenerate_frames,
         )
         
         return str(output_path)

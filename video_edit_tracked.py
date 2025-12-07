@@ -83,6 +83,25 @@ def composite_on_frame(background, foreground, position):
     return result.convert("RGB")
 
 
+def trim_black_borders(img: Image.Image, threshold: int = 5) -> Image.Image:
+    """
+    Trim near-black borders from an image to avoid residual padding showing up as dark edges.
+    """
+    if img.mode != "RGB":
+        img = img.convert("RGB")
+    arr = np.array(img)
+    mask = (arr > threshold).any(axis=2)
+    coords = np.argwhere(mask)
+    if coords.size == 0:
+        return img
+    y0, x0 = coords.min(axis=0)
+    y1, x1 = coords.max(axis=0) + 1
+    # Avoid over-cropping tiny margins
+    if (x1 - x0) < 4 or (y1 - y0) < 4:
+        return img
+    return img.crop((x0, y0, x1, y1))
+
+
 def fit_patch_to_bbox(patch: Image.Image, target_w: int, target_h: int, overscale: float = 1.05) -> Image.Image:
     """
     Fit a patch to exact bbox dimensions by overscaling slightly then center-cropping.
@@ -138,6 +157,8 @@ def edit_video_with_tracked_object(
     segment_ids=None,
     reuse_edit_every_n_frames=1,
     regenerate_frames=None,
+    max_output_tokens=None,
+    regenerate_every_n_tokens=None,
 ):
     """
     Edit tracked objects in a video using Gemini image editing.
@@ -154,6 +175,8 @@ def edit_video_with_tracked_object(
         segment_ids: List of segment IDs to edit (None = all segments). E.g., [0, 2] to only edit segments 0 and 2
         reuse_edit_every_n_frames: Edit once every N frames and reuse for intermediate frames (default: 1 = edit every frame)
         regenerate_frames: Explicit frame indices where a fresh edit should be generated regardless of reuse interval
+        max_output_tokens: Optional Gemini max token limit for image output
+        regenerate_every_n_tokens: Optional token cadence to force regeneration while streaming
     """
     run_dir = Path(run_dir)
     
@@ -197,6 +220,10 @@ def edit_video_with_tracked_object(
         print(f"♻️  Reuse edit every {reuse_edit_every_n_frames} frames")
     if regenerate_frames:
         print(f"🎞️  Force regeneration on frames: {sorted(set(regenerate_frames))}")
+    if max_output_tokens is not None:
+        print(f"🔢 Max output tokens: {max_output_tokens}")
+    if regenerate_every_n_tokens is not None:
+        print(f"♻️  Regenerate every {regenerate_every_n_tokens} tokens")
     print(f"{'='*60}\n")
     
     # Initialize Gemini client
@@ -259,11 +286,19 @@ def edit_video_with_tracked_object(
     config_dict = {
         'response_modalities': ['IMAGE'],
     }
+    if max_output_tokens is not None:
+        config_dict['max_output_tokens'] = max_output_tokens
+    if regenerate_every_n_tokens is not None:
+        config_dict['regenerate_every_n_tokens'] = regenerate_every_n_tokens
     
     # Don't set image_config for edits, let Gemini handle dimensions automatically
     # This avoids INVALID_ARGUMENT errors from incompatible aspect ratios
-    
-    generation_config = types.GenerateContentConfig(**config_dict)
+    try:
+        generation_config = types.GenerateContentConfig(**config_dict)
+    except TypeError as e:
+        # Gracefully fall back if the client library does not support one of the optional fields
+        print(f"⚠️  Generation config fallback: {e}")
+        generation_config = types.GenerateContentConfig(response_modalities=['IMAGE'])
     
     # If this run was created from manual boxes, interpolate boxes across frames
     def _interp_frames(md):
@@ -501,8 +536,10 @@ def edit_video_with_tracked_object(
                 if cached_entry is not None:
                     # Use cached edit - keep copies so we don't mutate the cache
                     edited_crop = cached_entry["image"].copy()
+                    # Trim any residual dark padding before fitting
+                    edited_crop = trim_black_borders(edited_crop)
                     # Fit to current bbox dimensions with slight overscale to eliminate black borders
-                    edited_crop = fit_patch_to_bbox(edited_crop, target_bbox_width, target_bbox_height)
+                    edited_crop = fit_patch_to_bbox(edited_crop, target_bbox_width, target_bbox_height, overscale=1.08)
                 else:
                     if manual_boxes_mode and not is_keyframe:
                         print("    ⚠️  No cached edit yet for this segment; skipping until keyframe")
@@ -641,8 +678,14 @@ def edit_video_with_tracked_object(
                                     ))
                                     print(f"        Removed padding: {edited_crop.size[0]}x{edited_crop.size[1]}")
                                 
-                                # 2. Resize back to original bbox dimensions with overscale to prevent borders
-                                edited_crop = fit_patch_to_bbox(edited_crop, transform_info['original_bbox_width'], transform_info['original_bbox_height'])
+                                # 2. Trim any black padding and resize back to original bbox dimensions with overscale to prevent borders
+                                edited_crop = trim_black_borders(edited_crop)
+                                edited_crop = fit_patch_to_bbox(
+                                    edited_crop,
+                                    transform_info['original_bbox_width'],
+                                    transform_info['original_bbox_height'],
+                                    overscale=1.08
+                                )
                         
                     except Exception as e:
                         print(f"        ❌ Error during editing: {e}")
@@ -661,7 +704,8 @@ def edit_video_with_tracked_object(
                     }
                 
                 # Ensure edited crop matches the intended bbox size (current frame) with overscale to prevent borders
-                edited_crop = fit_patch_to_bbox(edited_crop, target_bbox_width, target_bbox_height)
+                edited_crop = trim_black_borders(edited_crop)
+                edited_crop = fit_patch_to_bbox(edited_crop, target_bbox_width, target_bbox_height, overscale=1.08)
                 if edited_crop.size != (target_bbox_width, target_bbox_height):
                     # Final hard clamp to avoid any residual size drift that could cause borders
                     edited_crop = edited_crop.resize((target_bbox_width, target_bbox_height), Image.LANCZOS)

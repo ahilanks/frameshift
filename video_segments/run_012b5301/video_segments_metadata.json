@@ -1,0 +1,43 @@
+{
+    "video_path": "/home/ray/src/frameshift/uploads/28c1822f8622/videoplayback (2).mp4",
+    "text_prompt": "manual_boxes",
+    "mode": "manual_boxes",
+    "total_video_frames": 1826,
+    "processed_frames": 2,
+    "start_frame_idx": 297,
+    "end_frame_idx": 504,
+    "fps": 24.0,
+    "frames": {
+        "297": {
+            "frame_index": 297,
+            "timestamp_ms": 12375.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "box_0",
+                    "bbox": [
+                        56,
+                        81,
+                        200,
+                        246
+                    ],
+                    "bbox_xywh": [
+                        56,
+                        81,
+                        144,
+                        165
+                    ],
+                    "area": 23760.0,
+                    "centroid": [
+                        128.0,
+                        163.5
+                    ],
+                    "score": 1.0,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": null
+                }
+            ]
+        }
+    }
+}

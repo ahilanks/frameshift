@@ -74,6 +74,16 @@ class EditVideoRequest(BaseModel):
     aspect_ratio: Optional[str] = Field(None, description="Aspect ratio for generated images")
     resolution: str = Field("1K", description="Resolution for generated images")
     reuse_edit_every_n_frames: int = Field(1, description="Reuse edits every N frames")
+    max_output_tokens: Optional[int] = Field(
+        None, description="Gemini max output tokens for the edit response"
+    )
+    regenerate_every_n_tokens: Optional[int] = Field(
+        None, description="Force regeneration cadence while streaming tokens"
+    )
+    regenerate_frames: Optional[List[int]] = Field(
+        None,
+        description="Explicit frame indices that must regenerate a fresh edit (e.g., 0,50 for two keyframes)",
+    )
 
 
 class BoundingBox(BaseModel):
