@@ -484,8 +484,8 @@ def main():
         args.output = f"generated_{input_stem}_{args.start}s-{args.end}s.mp4"
 
     # Use API key from args or default from script
-   
-    api_key = args.api_key
+    
+    api_key = args.api_key or "AIzaSyDBLuBbF8ETlKxwf9-riS43lZ4PyEUz4v8"
 
     try:
         # Initialize generator
