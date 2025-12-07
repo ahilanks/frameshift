@@ -1,0 +1,6 @@
+{
+    "image_path": "outputs/run_e0c00132/edited_frame_all.png",
+    "text_prompt": "Segment out only the car body",
+    "num_segments": 0,
+    "segments": []
+}

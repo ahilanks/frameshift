@@ -1,0 +1,19 @@
+{
+    "image_path": "outputs/run_e0c00132/edited_frame_all.png",
+    "text_prompt": "crop out the formula one car body",
+    "num_segments": 1,
+    "segments": [
+        {
+            "segment_id": 0,
+            "bbox": [
+                64.23231506347656,
+                193.7509765625,
+                1478.528076171875,
+                705.3826904296875
+            ],
+            "area": 440911.0,
+            "score": 0.9409656524658203,
+            "image_file": "segment_0_crop.png"
+        }
+    ]
+}

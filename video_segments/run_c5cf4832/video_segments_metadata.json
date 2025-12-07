@@ -1,0 +1,3534 @@
+{
+    "video_path": "media/scene.mp4",
+    "text_prompt": "tshirt on the person playing baksetball",
+    "total_video_frames": 144,
+    "processed_frames": 141,
+    "fps": 25.0,
+    "frames": {
+        "0": {
+            "frame_index": 0,
+            "timestamp_ms": 0.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        421.0,
+                        0.0,
+                        717.0,
+                        253.0
+                    ],
+                    "area": 48792.0,
+                    "centroid": [
+                        549.995224626988,
+                        103.19574930316445
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "1": {
+            "frame_index": 1,
+            "timestamp_ms": 40.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        422.0,
+                        0.0,
+                        718.0,
+                        249.0
+                    ],
+                    "area": 48272.0,
+                    "centroid": [
+                        549.8935407689758,
+                        102.29244696718595
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "2": {
+            "frame_index": 2,
+            "timestamp_ms": 80.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        426.0,
+                        0.0,
+                        714.0,
+                        243.0
+                    ],
+                    "area": 45254.0,
+                    "centroid": [
+                        548.4517390727891,
+                        99.98285234454413
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "3": {
+            "frame_index": 3,
+            "timestamp_ms": 120.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        428.0,
+                        0.0,
+                        712.0,
+                        240.0
+                    ],
+                    "area": 43562.0,
+                    "centroid": [
+                        548.88756255452,
+                        99.23720214866168
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "4": {
+            "frame_index": 4,
+            "timestamp_ms": 160.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        430.0,
+                        0.0,
+                        702.0,
+                        238.0
+                    ],
+                    "area": 41325.0,
+                    "centroid": [
+                        551.3758499697519,
+                        99.78611010284331
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "5": {
+            "frame_index": 5,
+            "timestamp_ms": 200.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        436.0,
+                        0.0,
+                        699.0,
+                        233.0
+                    ],
+                    "area": 37400.0,
+                    "centroid": [
+                        560.203128342246,
+                        101.55938502673797
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "6": {
+            "frame_index": 6,
+            "timestamp_ms": 240.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        439.0,
+                        0.0,
+                        702.0,
+                        230.0
+                    ],
+                    "area": 35314.0,
+                    "centroid": [
+                        565.9580619584301,
+                        103.54604406184517
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "7": {
+            "frame_index": 7,
+            "timestamp_ms": 280.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        441.0,
+                        0.0,
+                        708.0,
+                        229.0
+                    ],
+                    "area": 33094.0,
+                    "centroid": [
+                        572.7983018069741,
+                        106.48685562337585
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "8": {
+            "frame_index": 8,
+            "timestamp_ms": 320.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        447.0,
+                        0.0,
+                        716.0,
+                        231.0
+                    ],
+                    "area": 27134.0,
+                    "centroid": [
+                        589.2555465467678,
+                        116.74386378713054
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "9": {
+            "frame_index": 9,
+            "timestamp_ms": 360.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        450.0,
+                        0.0,
+                        719.0,
+                        236.0
+                    ],
+                    "area": 22929.0,
+                    "centroid": [
+                        602.3842731911553,
+                        119.66540189279951
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "10": {
+            "frame_index": 10,
+            "timestamp_ms": 400.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        453.0,
+                        0.0,
+                        721.0,
+                        238.0
+                    ],
+                    "area": 18382.0,
+                    "centroid": [
+                        631.0296485692526,
+                        96.71510172995322
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "11": {
+            "frame_index": 11,
+            "timestamp_ms": 440.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        495.0,
+                        0.0,
+                        723.0,
+                        219.0
+                    ],
+                    "area": 21791.0,
+                    "centroid": [
+                        631.9468587949153,
+                        63.61777798173558
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "12": {
+            "frame_index": 12,
+            "timestamp_ms": 480.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        455.0,
+                        0.0,
+                        726.0,
+                        242.0
+                    ],
+                    "area": 37635.0,
+                    "centroid": [
+                        597.6788627607281,
+                        91.6446392985253
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "13": {
+            "frame_index": 13,
+            "timestamp_ms": 520.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        437.0,
+                        0.0,
+                        728.0,
+                        243.0
+                    ],
+                    "area": 42126.0,
+                    "centroid": [
+                        589.5225276551298,
+                        95.62567060722594
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "14": {
+            "frame_index": 14,
+            "timestamp_ms": 560.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        440.0,
+                        0.0,
+                        737.0,
+                        244.0
+                    ],
+                    "area": 45701.0,
+                    "centroid": [
+                        582.1241985952167,
+                        96.7890199339183
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "15": {
+            "frame_index": 15,
+            "timestamp_ms": 600.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        415.0,
+                        0.0,
+                        784.0,
+                        248.0
+                    ],
+                    "area": 48871.0,
+                    "centroid": [
+                        578.9399030099651,
+                        97.18542694031225
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "16": {
+            "frame_index": 16,
+            "timestamp_ms": 640.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        395.0,
+                        0.0,
+                        788.0,
+                        250.0
+                    ],
+                    "area": 50845.0,
+                    "centroid": [
+                        576.7174353427082,
+                        97.23882387648736
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "17": {
+            "frame_index": 17,
+            "timestamp_ms": 680.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        379.0,
+                        0.0,
+                        789.0,
+                        252.0
+                    ],
+                    "area": 52880.0,
+                    "centroid": [
+                        573.7773071104388,
+                        96.79444024205749
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "18": {
+            "frame_index": 18,
+            "timestamp_ms": 720.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        349.0,
+                        0.0,
+                        789.0,
+                        254.0
+                    ],
+                    "area": 56575.0,
+                    "centroid": [
+                        566.8513654441008,
+                        97.77564295183385
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "19": {
+            "frame_index": 19,
+            "timestamp_ms": 760.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        335.0,
+                        0.0,
+                        787.0,
+                        257.0
+                    ],
+                    "area": 58220.0,
+                    "centroid": [
+                        562.9181896255583,
+                        99.21377533493644
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "20": {
+            "frame_index": 20,
+            "timestamp_ms": 800.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        326.0,
+                        0.0,
+                        784.0,
+                        263.0
+                    ],
+                    "area": 59847.0,
+                    "centroid": [
+                        558.9463130984009,
+                        100.97994886961753
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "21": {
+            "frame_index": 21,
+            "timestamp_ms": 840.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        317.0,
+                        0.0,
+                        781.0,
+                        267.0
+                    ],
+                    "area": 60989.0,
+                    "centroid": [
+                        555.8516617750741,
+                        102.61399596648576
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "22": {
+            "frame_index": 22,
+            "timestamp_ms": 880.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        317.0,
+                        0.0,
+                        781.0,
+                        281.0
+                    ],
+                    "area": 63857.0,
+                    "centroid": [
+                        553.5776344018667,
+                        105.7892948306372
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "23": {
+            "frame_index": 23,
+            "timestamp_ms": 920.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        318.0,
+                        0.0,
+                        783.0,
+                        289.0
+                    ],
+                    "area": 65581.0,
+                    "centroid": [
+                        552.6016681660847,
+                        108.05204251231302
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "24": {
+            "frame_index": 24,
+            "timestamp_ms": 960.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        320.0,
+                        0.0,
+                        778.0,
+                        294.0
+                    ],
+                    "area": 66934.0,
+                    "centroid": [
+                        552.1446200735053,
+                        109.77518152209639
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "25": {
+            "frame_index": 25,
+            "timestamp_ms": 1000.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        317.0,
+                        0.0,
+                        764.0,
+                        301.0
+                    ],
+                    "area": 70174.0,
+                    "centroid": [
+                        550.0190098897027,
+                        113.02730355972298
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "26": {
+            "frame_index": 26,
+            "timestamp_ms": 1040.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        323.0,
+                        0.0,
+                        755.0,
+                        304.0
+                    ],
+                    "area": 71920.0,
+                    "centroid": [
+                        548.8825639599555,
+                        116.01961902113459
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "27": {
+            "frame_index": 27,
+            "timestamp_ms": 1080.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        331.0,
+                        0.0,
+                        749.0,
+                        306.0
+                    ],
+                    "area": 73361.0,
+                    "centroid": [
+                        548.8860838865337,
+                        117.9716743228691
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "28": {
+            "frame_index": 28,
+            "timestamp_ms": 1120.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        353.0,
+                        0.0,
+                        736.0,
+                        311.0
+                    ],
+                    "area": 75918.0,
+                    "centroid": [
+                        549.9856687478596,
+                        122.64225875286493
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "29": {
+            "frame_index": 29,
+            "timestamp_ms": 1160.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        368.0,
+                        0.0,
+                        734.0,
+                        315.0
+                    ],
+                    "area": 77200.0,
+                    "centroid": [
+                        552.1608808290156,
+                        126.44408031088084
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "30": {
+            "frame_index": 30,
+            "timestamp_ms": 1200.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        376.0,
+                        0.0,
+                        730.0,
+                        320.0
+                    ],
+                    "area": 79240.0,
+                    "centroid": [
+                        554.8467062089853,
+                        130.3998359414437
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "31": {
+            "frame_index": 31,
+            "timestamp_ms": 1240.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        392.0,
+                        0.0,
+                        729.0,
+                        328.0
+                    ],
+                    "area": 80656.0,
+                    "centroid": [
+                        559.2231080142828,
+                        135.21734278912913
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "32": {
+            "frame_index": 32,
+            "timestamp_ms": 1280.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        405.0,
+                        0.0,
+                        734.0,
+                        349.0
+                    ],
+                    "area": 83453.0,
+                    "centroid": [
+                        572.1790109402898,
+                        144.5291960744371
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "33": {
+            "frame_index": 33,
+            "timestamp_ms": 1320.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        418.0,
+                        0.0,
+                        739.0,
+                        364.0
+                    ],
+                    "area": 82724.0,
+                    "centroid": [
+                        584.2115226536434,
+                        148.0625815966346
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "34": {
+            "frame_index": 34,
+            "timestamp_ms": 1360.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        409.0,
+                        0.0,
+                        746.0,
+                        377.0
+                    ],
+                    "area": 83822.0,
+                    "centroid": [
+                        593.1047457708,
+                        154.05238481544225
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "35": {
+            "frame_index": 35,
+            "timestamp_ms": 1400.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        419.0,
+                        0.0,
+                        760.0,
+                        402.0
+                    ],
+                    "area": 89482.0,
+                    "centroid": [
+                        606.3041505554189,
+                        169.8262555597774
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "36": {
+            "frame_index": 36,
+            "timestamp_ms": 1440.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        426.0,
+                        0.0,
+                        767.0,
+                        418.0
+                    ],
+                    "area": 92071.0,
+                    "centroid": [
+                        613.8251240890182,
+                        182.73758295228683
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "37": {
+            "frame_index": 37,
+            "timestamp_ms": 1480.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        433.0,
+                        0.0,
+                        774.0,
+                        434.0
+                    ],
+                    "area": 92826.0,
+                    "centroid": [
+                        620.9156055415508,
+                        194.12318746902807
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "38": {
+            "frame_index": 38,
+            "timestamp_ms": 1520.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        450.0,
+                        0.0,
+                        788.0,
+                        466.0
+                    ],
+                    "area": 89259.0,
+                    "centroid": [
+                        633.6732990510761,
+                        211.71791079891102
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "39": {
+            "frame_index": 39,
+            "timestamp_ms": 1560.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        460.0,
+                        4.0,
+                        798.0,
+                        481.0
+                    ],
+                    "area": 88602.0,
+                    "centroid": [
+                        643.3756348615156,
+                        221.18948782194533
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "40": {
+            "frame_index": 40,
+            "timestamp_ms": 1600.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        469.0,
+                        14.0,
+                        809.0,
+                        495.0
+                    ],
+                    "area": 91238.0,
+                    "centroid": [
+                        651.0810517547513,
+                        234.96067428045333
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "41": {
+            "frame_index": 41,
+            "timestamp_ms": 1640.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        482.0,
+                        21.0,
+                        823.0,
+                        506.0
+                    ],
+                    "area": 91526.0,
+                    "centroid": [
+                        661.880252605817,
+                        244.81316784301728
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "42": {
+            "frame_index": 42,
+            "timestamp_ms": 1680.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        510.0,
+                        37.0,
+                        852.0,
+                        519.0
+                    ],
+                    "area": 91365.0,
+                    "centroid": [
+                        687.327324467794,
+                        257.59563290100147
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "43": {
+            "frame_index": 43,
+            "timestamp_ms": 1720.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        525.0,
+                        40.0,
+                        868.0,
+                        528.0
+                    ],
+                    "area": 93540.0,
+                    "centroid": [
+                        699.570173187941,
+                        266.28060722685484
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "44": {
+            "frame_index": 44,
+            "timestamp_ms": 1760.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        538.0,
+                        45.0,
+                        884.0,
+                        524.0
+                    ],
+                    "area": 93784.0,
+                    "centroid": [
+                        712.4310330120277,
+                        268.86667235349313
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "45": {
+            "frame_index": 45,
+            "timestamp_ms": 1800.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        565.0,
+                        51.0,
+                        915.0,
+                        536.0
+                    ],
+                    "area": 95844.0,
+                    "centroid": [
+                        738.1220942364675,
+                        277.6088852719002
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "46": {
+            "frame_index": 46,
+            "timestamp_ms": 1840.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        578.0,
+                        54.0,
+                        928.0,
+                        547.0
+                    ],
+                    "area": 96887.0,
+                    "centroid": [
+                        750.14978273659,
+                        281.06363082766524
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "47": {
+            "frame_index": 47,
+            "timestamp_ms": 1880.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        587.0,
+                        57.0,
+                        939.0,
+                        548.0
+                    ],
+                    "area": 99362.0,
+                    "centroid": [
+                        763.2812946599304,
+                        285.9352971961112
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "48": {
+            "frame_index": 48,
+            "timestamp_ms": 1920.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        603.0,
+                        59.0,
+                        965.0,
+                        528.0
+                    ],
+                    "area": 81939.0,
+                    "centroid": [
+                        783.6447967390376,
+                        248.7849131671121
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "49": {
+            "frame_index": 49,
+            "timestamp_ms": 1960.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        610.0,
+                        59.0,
+                        978.0,
+                        523.0
+                    ],
+                    "area": 79284.0,
+                    "centroid": [
+                        795.2592830835982,
+                        240.38565158165582
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "50": {
+            "frame_index": 50,
+            "timestamp_ms": 2000.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        612.0,
+                        60.0,
+                        992.0,
+                        527.0
+                    ],
+                    "area": 83023.0,
+                    "centroid": [
+                        800.8578104862507,
+                        248.2549293569252
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "51": {
+            "frame_index": 51,
+            "timestamp_ms": 2040.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        614.0,
+                        61.0,
+                        1004.0,
+                        528.0
+                    ],
+                    "area": 83784.0,
+                    "centroid": [
+                        807.617647760909,
+                        249.55347082975268
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "52": {
+            "frame_index": 52,
+            "timestamp_ms": 2080.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        616.0,
+                        66.0,
+                        1014.0,
+                        533.0
+                    ],
+                    "area": 85817.0,
+                    "centroid": [
+                        815.4005966183856,
+                        256.9478191966627
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "53": {
+            "frame_index": 53,
+            "timestamp_ms": 2120.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        615.0,
+                        71.0,
+                        1014.0,
+                        538.0
+                    ],
+                    "area": 85793.0,
+                    "centroid": [
+                        816.4771251733824,
+                        260.8567132516639
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "54": {
+            "frame_index": 54,
+            "timestamp_ms": 2160.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        611.0,
+                        76.0,
+                        1011.0,
+                        538.0
+                    ],
+                    "area": 85121.0,
+                    "centroid": [
+                        816.0928560519731,
+                        264.4972216021898
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "55": {
+            "frame_index": 55,
+            "timestamp_ms": 2200.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        604.0,
+                        87.0,
+                        992.0,
+                        546.0
+                    ],
+                    "area": 84473.0,
+                    "centroid": [
+                        807.0528216116393,
+                        273.2991488404579
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "56": {
+            "frame_index": 56,
+            "timestamp_ms": 2240.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        595.0,
+                        92.0,
+                        979.0,
+                        556.0
+                    ],
+                    "area": 84123.0,
+                    "centroid": [
+                        801.723416901442,
+                        279.9051389037481
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "57": {
+            "frame_index": 57,
+            "timestamp_ms": 2280.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        588.0,
+                        100.0,
+                        968.0,
+                        560.0
+                    ],
+                    "area": 83814.0,
+                    "centroid": [
+                        794.70697019591,
+                        287.3612642279333
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "58": {
+            "frame_index": 58,
+            "timestamp_ms": 2320.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        571.0,
+                        120.0,
+                        947.0,
+                        573.0
+                    ],
+                    "area": 80683.0,
+                    "centroid": [
+                        782.3504331767534,
+                        304.98982437440355
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "59": {
+            "frame_index": 59,
+            "timestamp_ms": 2360.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        563.0,
+                        134.0,
+                        940.0,
+                        597.0
+                    ],
+                    "area": 79898.0,
+                    "centroid": [
+                        776.3501965005382,
+                        316.0754086460237
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "60": {
+            "frame_index": 60,
+            "timestamp_ms": 2400.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        554.0,
+                        146.0,
+                        933.0,
+                        614.0
+                    ],
+                    "area": 79011.0,
+                    "centroid": [
+                        769.8881927832833,
+                        328.5970054802496
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "61": {
+            "frame_index": 61,
+            "timestamp_ms": 2440.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        547.0,
+                        157.0,
+                        928.0,
+                        622.0
+                    ],
+                    "area": 77469.0,
+                    "centroid": [
+                        764.1615097651965,
+                        338.0469478113826
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "62": {
+            "frame_index": 62,
+            "timestamp_ms": 2480.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        526.0,
+                        176.0,
+                        909.0,
+                        623.0
+                    ],
+                    "area": 74435.0,
+                    "centroid": [
+                        748.642184456237,
+                        349.83420433935646
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "63": {
+            "frame_index": 63,
+            "timestamp_ms": 2520.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        517.0,
+                        185.0,
+                        895.0,
+                        602.0
+                    ],
+                    "area": 74876.0,
+                    "centroid": [
+                        736.9581708424595,
+                        356.6134141781078
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "64": {
+            "frame_index": 64,
+            "timestamp_ms": 2560.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        561.0,
+                        190.0,
+                        883.0,
+                        517.0
+                    ],
+                    "area": 75246.0,
+                    "centroid": [
+                        723.8632884140021,
+                        360.1970603088536
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "65": {
+            "frame_index": 65,
+            "timestamp_ms": 2600.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        515.0,
+                        200.0,
+                        851.0,
+                        563.0
+                    ],
+                    "area": 78256.0,
+                    "centroid": [
+                        690.063880085872,
+                        370.88375332242896
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "66": {
+            "frame_index": 66,
+            "timestamp_ms": 2640.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        490.0,
+                        203.0,
+                        837.0,
+                        519.0
+                    ],
+                    "area": 78682.0,
+                    "centroid": [
+                        674.4376096184642,
+                        373.17500826110165
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "67": {
+            "frame_index": 67,
+            "timestamp_ms": 2680.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        462.0,
+                        205.0,
+                        823.0,
+                        526.0
+                    ],
+                    "area": 80469.0,
+                    "centroid": [
+                        656.4712125166213,
+                        375.93812524077595
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "68": {
+            "frame_index": 68,
+            "timestamp_ms": 2720.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        421.0,
+                        206.0,
+                        792.0,
+                        534.0
+                    ],
+                    "area": 81448.0,
+                    "centroid": [
+                        623.5585158628818,
+                        378.6374987722228
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "69": {
+            "frame_index": 69,
+            "timestamp_ms": 2760.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        6.0,
+                        38.0,
+                        780.0,
+                        543.0
+                    ],
+                    "area": 83457.0,
+                    "centroid": [
+                        606.9850222270151,
+                        379.9496627005524
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "70": {
+            "frame_index": 70,
+            "timestamp_ms": 2800.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        374.0,
+                        206.0,
+                        765.0,
+                        544.0
+                    ],
+                    "area": 84469.0,
+                    "centroid": [
+                        591.859782878926,
+                        379.81216777752786
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "71": {
+            "frame_index": 71,
+            "timestamp_ms": 2840.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        6.0,
+                        38.0,
+                        752.0,
+                        551.0
+                    ],
+                    "area": 86959.0,
+                    "centroid": [
+                        578.6842534987753,
+                        379.73963592037626
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "72": {
+            "frame_index": 72,
+            "timestamp_ms": 2880.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        6.0,
+                        38.0,
+                        736.0,
+                        546.0
+                    ],
+                    "area": 89445.0,
+                    "centroid": [
+                        557.8883224327799,
+                        376.7290513723517
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "73": {
+            "frame_index": 73,
+            "timestamp_ms": 2920.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        5.0,
+                        38.0,
+                        730.0,
+                        553.0
+                    ],
+                    "area": 90011.0,
+                    "centroid": [
+                        551.6519203208496,
+                        374.08570063658885
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "74": {
+            "frame_index": 74,
+            "timestamp_ms": 2960.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        0.0,
+                        18.0,
+                        726.0,
+                        545.0
+                    ],
+                    "area": 90286.0,
+                    "centroid": [
+                        546.005493653501,
+                        370.8218106904725
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "75": {
+            "frame_index": 75,
+            "timestamp_ms": 3000.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        0.0,
+                        11.0,
+                        720.0,
+                        553.0
+                    ],
+                    "area": 88018.0,
+                    "centroid": [
+                        544.9034742893499,
+                        365.65273012338383
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "76": {
+            "frame_index": 76,
+            "timestamp_ms": 3040.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        0.0,
+                        11.0,
+                        719.0,
+                        555.0
+                    ],
+                    "area": 86699.0,
+                    "centroid": [
+                        545.5991533927727,
+                        364.3360592394376
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "77": {
+            "frame_index": 77,
+            "timestamp_ms": 3080.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        0.0,
+                        11.0,
+                        718.0,
+                        563.0
+                    ],
+                    "area": 84904.0,
+                    "centroid": [
+                        548.0405399038915,
+                        366.5039574107227
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "78": {
+            "frame_index": 78,
+            "timestamp_ms": 3120.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        0.0,
+                        11.0,
+                        716.0,
+                        555.0
+                    ],
+                    "area": 80505.0,
+                    "centroid": [
+                        550.5738773989193,
+                        374.35996521955155
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "79": {
+            "frame_index": 79,
+            "timestamp_ms": 3160.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        0.0,
+                        11.0,
+                        713.0,
+                        601.0
+                    ],
+                    "area": 78292.0,
+                    "centroid": [
+                        552.0916313288714,
+                        381.9161983344403
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "80": {
+            "frame_index": 80,
+            "timestamp_ms": 3200.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        365.0,
+                        223.0,
+                        712.0,
+                        584.0
+                    ],
+                    "area": 76740.0,
+                    "centroid": [
+                        554.7808965337504,
+                        391.973677352098
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "81": {
+            "frame_index": 81,
+            "timestamp_ms": 3240.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        0.0,
+                        0.0,
+                        716.0,
+                        634.0
+                    ],
+                    "area": 75262.0,
+                    "centroid": [
+                        551.0895006776328,
+                        400.25048497249605
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "82": {
+            "frame_index": 82,
+            "timestamp_ms": 3280.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        0.0,
+                        10.0,
+                        717.0,
+                        643.0
+                    ],
+                    "area": 73092.0,
+                    "centroid": [
+                        561.021808132217,
+                        431.4866469654682
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "83": {
+            "frame_index": 83,
+            "timestamp_ms": 3320.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        0.0,
+                        11.0,
+                        719.0,
+                        659.0
+                    ],
+                    "area": 72594.0,
+                    "centroid": [
+                        566.3245171777282,
+                        448.2858913959831
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "84": {
+            "frame_index": 84,
+            "timestamp_ms": 3360.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        0.0,
+                        11.0,
+                        725.0,
+                        670.0
+                    ],
+                    "area": 71319.0,
+                    "centroid": [
+                        568.9782806825671,
+                        461.3956869838332
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "85": {
+            "frame_index": 85,
+            "timestamp_ms": 3400.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        0.0,
+                        11.0,
+                        731.0,
+                        688.0
+                    ],
+                    "area": 65811.0,
+                    "centroid": [
+                        572.8943033839328,
+                        480.81673276503926
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "86": {
+            "frame_index": 86,
+            "timestamp_ms": 3440.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        0.0,
+                        11.0,
+                        736.0,
+                        696.0
+                    ],
+                    "area": 63564.0,
+                    "centroid": [
+                        576.8178214083443,
+                        490.141731168586
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "87": {
+            "frame_index": 87,
+            "timestamp_ms": 3480.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        0.0,
+                        11.0,
+                        741.0,
+                        703.0
+                    ],
+                    "area": 62739.0,
+                    "centroid": [
+                        582.0649197468879,
+                        498.6998995839908
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "88": {
+            "frame_index": 88,
+            "timestamp_ms": 3520.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        0.0,
+                        10.0,
+                        751.0,
+                        719.0
+                    ],
+                    "area": 59677.0,
+                    "centroid": [
+                        591.609464282722,
+                        513.9511201970608
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "89": {
+            "frame_index": 89,
+            "timestamp_ms": 3560.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        0.0,
+                        31.0,
+                        755.0,
+                        719.0
+                    ],
+                    "area": 57375.0,
+                    "centroid": [
+                        601.1230326797386,
+                        520.838954248366
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "90": {
+            "frame_index": 90,
+            "timestamp_ms": 3600.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        0.0,
+                        31.0,
+                        761.0,
+                        719.0
+                    ],
+                    "area": 55983.0,
+                    "centroid": [
+                        608.3740421199293,
+                        524.128235357162
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "91": {
+            "frame_index": 91,
+            "timestamp_ms": 3640.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        0.0,
+                        31.0,
+                        765.0,
+                        719.0
+                    ],
+                    "area": 55485.0,
+                    "centroid": [
+                        617.8922231233666,
+                        527.0768315761017
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "92": {
+            "frame_index": 92,
+            "timestamp_ms": 3680.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        495.0,
+                        386.0,
+                        776.0,
+                        719.0
+                    ],
+                    "area": 58881.0,
+                    "centroid": [
+                        644.5425349433604,
+                        537.5948608209779
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "93": {
+            "frame_index": 93,
+            "timestamp_ms": 3720.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        0.0,
+                        31.0,
+                        791.0,
+                        719.0
+                    ],
+                    "area": 61250.0,
+                    "centroid": [
+                        657.9433469387756,
+                        539.9239346938775
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "94": {
+            "frame_index": 94,
+            "timestamp_ms": 3760.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        0.0,
+                        11.0,
+                        808.0,
+                        719.0
+                    ],
+                    "area": 61328.0,
+                    "centroid": [
+                        667.659731280981,
+                        536.1453822071485
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "95": {
+            "frame_index": 95,
+            "timestamp_ms": 3800.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        534.0,
+                        370.0,
+                        838.0,
+                        700.0
+                    ],
+                    "area": 61321.0,
+                    "centroid": [
+                        683.6536586161347,
+                        520.5056669004093
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "96": {
+            "frame_index": 96,
+            "timestamp_ms": 3840.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        542.0,
+                        361.0,
+                        848.0,
+                        692.0
+                    ],
+                    "area": 61423.0,
+                    "centroid": [
+                        690.1557071455318,
+                        512.3675984566042
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "97": {
+            "frame_index": 97,
+            "timestamp_ms": 3880.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        550.0,
+                        351.0,
+                        857.0,
+                        684.0
+                    ],
+                    "area": 61050.0,
+                    "centroid": [
+                        697.1380999180999,
+                        501.8864864864865
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "98": {
+            "frame_index": 98,
+            "timestamp_ms": 3920.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        563.0,
+                        331.0,
+                        871.0,
+                        667.0
+                    ],
+                    "area": 61471.0,
+                    "centroid": [
+                        708.7706072782288,
+                        482.1827853784711
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "99": {
+            "frame_index": 99,
+            "timestamp_ms": 3960.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        569.0,
+                        319.0,
+                        874.0,
+                        660.0
+                    ],
+                    "area": 62104.0,
+                    "centroid": [
+                        713.5287582120314,
+                        471.76611812443645
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "100": {
+            "frame_index": 100,
+            "timestamp_ms": 4000.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        575.0,
+                        305.0,
+                        881.0,
+                        651.0
+                    ],
+                    "area": 63507.0,
+                    "centroid": [
+                        718.622214873951,
+                        461.07123624167417
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "101": {
+            "frame_index": 101,
+            "timestamp_ms": 4040.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        576.0,
+                        291.0,
+                        882.0,
+                        640.0
+                    ],
+                    "area": 64549.0,
+                    "centroid": [
+                        722.1633487737997,
+                        449.56597313668686
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "102": {
+            "frame_index": 102,
+            "timestamp_ms": 4080.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        580.0,
+                        270.0,
+                        873.0,
+                        618.0
+                    ],
+                    "area": 63561.0,
+                    "centroid": [
+                        723.9992920186907,
+                        424.7232265068202
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "103": {
+            "frame_index": 103,
+            "timestamp_ms": 4120.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        580.0,
+                        257.0,
+                        870.0,
+                        604.0
+                    ],
+                    "area": 63175.0,
+                    "centroid": [
+                        722.2410288880095,
+                        410.56975069252076
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "104": {
+            "frame_index": 104,
+            "timestamp_ms": 4160.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        579.0,
+                        245.0,
+                        864.0,
+                        589.0
+                    ],
+                    "area": 61785.0,
+                    "centroid": [
+                        719.9560087399855,
+                        397.2784980173181
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "105": {
+            "frame_index": 105,
+            "timestamp_ms": 4200.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        574.0,
+                        224.0,
+                        851.0,
+                        562.0
+                    ],
+                    "area": 59059.0,
+                    "centroid": [
+                        712.2275521089081,
+                        370.31824108095293
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "106": {
+            "frame_index": 106,
+            "timestamp_ms": 4240.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        572.0,
+                        217.0,
+                        844.0,
+                        548.0
+                    ],
+                    "area": 57165.0,
+                    "centroid": [
+                        707.5794104784396,
+                        359.31242893378817
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "107": {
+            "frame_index": 107,
+            "timestamp_ms": 4280.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        570.0,
+                        210.0,
+                        834.0,
+                        533.0
+                    ],
+                    "area": 55559.0,
+                    "centroid": [
+                        702.2802786227254,
+                        351.3206861174607
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "108": {
+            "frame_index": 108,
+            "timestamp_ms": 4320.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        564.0,
+                        206.0,
+                        820.0,
+                        517.0
+                    ],
+                    "area": 52622.0,
+                    "centroid": [
+                        694.9417543993006,
+                        346.42085059480826
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "109": {
+            "frame_index": 109,
+            "timestamp_ms": 4360.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        563.0,
+                        207.0,
+                        817.0,
+                        533.0
+                    ],
+                    "area": 53042.0,
+                    "centroid": [
+                        696.0067493684251,
+                        350.5008295313148
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "110": {
+            "frame_index": 110,
+            "timestamp_ms": 4400.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        562.0,
+                        210.0,
+                        817.0,
+                        534.0
+                    ],
+                    "area": 52914.0,
+                    "centroid": [
+                        696.0485504781343,
+                        353.2761084023132
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "111": {
+            "frame_index": 111,
+            "timestamp_ms": 4440.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        560.0,
+                        215.0,
+                        819.0,
+                        535.0
+                    ],
+                    "area": 52708.0,
+                    "centroid": [
+                        695.8582188662062,
+                        357.4314904758291
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "112": {
+            "frame_index": 112,
+            "timestamp_ms": 4480.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        562.0,
+                        224.0,
+                        820.0,
+                        573.0
+                    ],
+                    "area": 51597.0,
+                    "centroid": [
+                        695.0485880962071,
+                        366.85689090450995
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "113": {
+            "frame_index": 113,
+            "timestamp_ms": 4520.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        558.0,
+                        228.0,
+                        819.0,
+                        545.0
+                    ],
+                    "area": 50943.0,
+                    "centroid": [
+                        694.0052215220933,
+                        369.8114952005182
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "114": {
+            "frame_index": 114,
+            "timestamp_ms": 4560.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        554.0,
+                        231.0,
+                        820.0,
+                        547.0
+                    ],
+                    "area": 50933.0,
+                    "centroid": [
+                        693.049339328137,
+                        371.62919914397344
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "115": {
+            "frame_index": 115,
+            "timestamp_ms": 4600.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        544.0,
+                        234.0,
+                        817.0,
+                        553.0
+                    ],
+                    "area": 51678.0,
+                    "centroid": [
+                        690.660977592012,
+                        373.2290142807384
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "116": {
+            "frame_index": 116,
+            "timestamp_ms": 4640.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        535.0,
+                        233.0,
+                        815.0,
+                        554.0
+                    ],
+                    "area": 52671.0,
+                    "centroid": [
+                        689.1019156651668,
+                        372.67703290235613
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "117": {
+            "frame_index": 117,
+            "timestamp_ms": 4680.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        526.0,
+                        233.0,
+                        813.0,
+                        554.0
+                    ],
+                    "area": 53731.0,
+                    "centroid": [
+                        688.0095475609983,
+                        371.593084066926
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "118": {
+            "frame_index": 118,
+            "timestamp_ms": 4720.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        509.0,
+                        228.0,
+                        822.0,
+                        542.0
+                    ],
+                    "area": 58870.0,
+                    "centroid": [
+                        686.9556989977917,
+                        370.03915406828605
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "119": {
+            "frame_index": 119,
+            "timestamp_ms": 4760.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        501.0,
+                        225.0,
+                        830.0,
+                        543.0
+                    ],
+                    "area": 61623.0,
+                    "centroid": [
+                        687.1524430813171,
+                        371.4296123200753
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "120": {
+            "frame_index": 120,
+            "timestamp_ms": 4800.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        495.0,
+                        225.0,
+                        834.0,
+                        545.0
+                    ],
+                    "area": 64594.0,
+                    "centroid": [
+                        688.1737932315694,
+                        372.728473232808
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "121": {
+            "frame_index": 121,
+            "timestamp_ms": 4840.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        489.0,
+                        225.0,
+                        838.0,
+                        547.0
+                    ],
+                    "area": 67015.0,
+                    "centroid": [
+                        686.9406103111244,
+                        372.6199656793255
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "122": {
+            "frame_index": 122,
+            "timestamp_ms": 4880.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        481.0,
+                        218.0,
+                        844.0,
+                        544.0
+                    ],
+                    "area": 70055.0,
+                    "centroid": [
+                        685.6321318963671,
+                        370.93336664049673
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "123": {
+            "frame_index": 123,
+            "timestamp_ms": 4920.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        480.0,
+                        215.0,
+                        846.0,
+                        538.0
+                    ],
+                    "area": 69879.0,
+                    "centroid": [
+                        684.8411539947624,
+                        367.0087293750626
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "124": {
+            "frame_index": 124,
+            "timestamp_ms": 4960.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        480.0,
+                        209.0,
+                        846.0,
+                        528.0
+                    ],
+                    "area": 70211.0,
+                    "centroid": [
+                        685.8739371323582,
+                        361.801655011323
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "125": {
+            "frame_index": 125,
+            "timestamp_ms": 5000.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        0.0,
+                        38.0,
+                        848.0,
+                        509.0
+                    ],
+                    "area": 69290.0,
+                    "centroid": [
+                        689.7466878337423,
+                        351.4878481743397
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "126": {
+            "frame_index": 126,
+            "timestamp_ms": 5040.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        5.0,
+                        38.0,
+                        848.0,
+                        500.0
+                    ],
+                    "area": 68885.0,
+                    "centroid": [
+                        691.371096755462,
+                        346.24948827756407
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "127": {
+            "frame_index": 127,
+            "timestamp_ms": 5080.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        0.0,
+                        18.0,
+                        849.0,
+                        494.0
+                    ],
+                    "area": 68783.0,
+                    "centroid": [
+                        693.8647921724845,
+                        342.18062602677986
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "128": {
+            "frame_index": 128,
+            "timestamp_ms": 5120.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        517.0,
+                        190.0,
+                        852.0,
+                        495.0
+                    ],
+                    "area": 70378.0,
+                    "centroid": [
+                        695.0979709568331,
+                        341.4035920316008
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "129": {
+            "frame_index": 129,
+            "timestamp_ms": 5160.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        522.0,
+                        195.0,
+                        853.0,
+                        492.0
+                    ],
+                    "area": 68914.0,
+                    "centroid": [
+                        695.851873349392,
+                        346.892939025452
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "130": {
+            "frame_index": 130,
+            "timestamp_ms": 5200.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        0.0,
+                        38.0,
+                        854.0,
+                        500.0
+                    ],
+                    "area": 67882.0,
+                    "centroid": [
+                        697.8076662443652,
+                        353.836348369229
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "131": {
+            "frame_index": 131,
+            "timestamp_ms": 5240.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        541.0,
+                        212.0,
+                        855.0,
+                        512.0
+                    ],
+                    "area": 67269.0,
+                    "centroid": [
+                        700.9860113871174,
+                        362.13450474958745
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "132": {
+            "frame_index": 132,
+            "timestamp_ms": 5280.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        566.0,
+                        230.0,
+                        860.0,
+                        538.0
+                    ],
+                    "area": 63406.0,
+                    "centroid": [
+                        711.4104658865092,
+                        379.8110273475696
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "133": {
+            "frame_index": 133,
+            "timestamp_ms": 5320.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        0.0,
+                        3.0,
+                        1224.0,
+                        573.0
+                    ],
+                    "area": 64717.0,
+                    "centroid": [
+                        705.2879614320813,
+                        390.51274008374924
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "134": {
+            "frame_index": 134,
+            "timestamp_ms": 5360.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        0.0,
+                        2.0,
+                        1226.0,
+                        572.0
+                    ],
+                    "area": 66938.0,
+                    "centroid": [
+                        699.5370193313215,
+                        400.72063700738
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "135": {
+            "frame_index": 135,
+            "timestamp_ms": 5400.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        565.0,
+                        281.0,
+                        873.0,
+                        610.0
+                    ],
+                    "area": 63982.0,
+                    "centroid": [
+                        714.5155668781845,
+                        434.9761808008502
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "136": {
+            "frame_index": 136,
+            "timestamp_ms": 5440.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        562.0,
+                        293.0,
+                        872.0,
+                        631.0
+                    ],
+                    "area": 64594.0,
+                    "centroid": [
+                        711.1218843855467,
+                        450.3617518654983
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "137": {
+            "frame_index": 137,
+            "timestamp_ms": 5480.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        0.0,
+                        30.0,
+                        867.0,
+                        651.0
+                    ],
+                    "area": 65805.0,
+                    "centroid": [
+                        703.6463946508624,
+                        463.5357495631031
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "138": {
+            "frame_index": 138,
+            "timestamp_ms": 5520.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        547.0,
+                        322.0,
+                        853.0,
+                        680.0
+                    ],
+                    "area": 66097.0,
+                    "centroid": [
+                        697.9465633841173,
+                        482.3514077794756
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "139": {
+            "frame_index": 139,
+            "timestamp_ms": 5560.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        541.0,
+                        329.0,
+                        844.0,
+                        689.0
+                    ],
+                    "area": 65551.0,
+                    "centroid": [
+                        690.7863800704795,
+                        486.84363320162925
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        },
+        "140": {
+            "frame_index": 140,
+            "timestamp_ms": 5600.0,
+            "num_segments": 1,
+            "segments": [
+                {
+                    "segment_id": 0,
+                    "name": "tshirt on the person playing baksetball_0",
+                    "bbox": [
+                        535.0,
+                        330.0,
+                        837.0,
+                        690.0
+                    ],
+                    "area": 65998.0,
+                    "centroid": [
+                        684.3359192702809,
+                        489.22044607412346
+                    ],
+                    "score": 0.92578125,
+                    "crop_file": "segment_0_crop.png",
+                    "mask_file": "segment_0_mask.png"
+                }
+            ]
+        }
+    }
+}

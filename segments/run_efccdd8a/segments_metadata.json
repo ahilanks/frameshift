@@ -1,0 +1,19 @@
+{
+    "image_path": "outputs/run_e0c00132/edited_frame_all.png",
+    "text_prompt": "vehicle machine body",
+    "num_segments": 1,
+    "segments": [
+        {
+            "segment_id": 0,
+            "bbox": [
+                64.87328338623047,
+                193.92010498046875,
+                1480.35693359375,
+                705.0718994140625
+            ],
+            "area": 423827.0,
+            "score": 0.9200286865234375,
+            "image_file": "segment_0_crop.png"
+        }
+    ]
+}

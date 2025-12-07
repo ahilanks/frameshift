@@ -1,0 +1,6 @@
+{
+    "image_path": "outputs/run_e0c00132/edited_frame_all.png",
+    "text_prompt": "i want to crop only the car out of the road and frame with the exception of the steering wheel and driver. Segment out only the car body",
+    "num_segments": 0,
+    "segments": []
+}
